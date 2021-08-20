@@ -32,7 +32,7 @@ with model:
 
     # Feedback connection. Comment out below line to remove feedback.
     # conn2 = nengo.Connection(post, pre,function=lambda x: np.random.random(1))
-    #conn2 = nengo.Connection(post, pre, synapse= 0.01)
+    recurrent_connection = nengo.Connection(post, pre, synapse= 0.01)
 
     # Error = actual - target = post - pre
     nengo.Connection(post, error)
@@ -40,7 +40,7 @@ with model:
     nengo.Connection(pre, error, transform=-1)
 
     # Add the learning rule to the connection
-    conn.learning_rule_type = nengo.PES()
+    conn.learning_rule_type = nengo.PES(pre_synapse=0.05)
 
     # Connect the error into the learning rule
     nengo.Connection(error, conn.learning_rule)
