@@ -6,7 +6,7 @@ Xpg Clk B out pg
 Xpg2 out B out2 pg
 
 *v2 Clk 0 PULSE 0 1.8 1n 20p 20p 80p 4ns
-v2 Clk 0 dc 0 trrandom (2 20p 0.3 1) $ Gaussian
+v2 Clk  0 dc 0 trrandom (2 100p 0 1 1.8)
 v3 B 0 0.0
 
 .control
