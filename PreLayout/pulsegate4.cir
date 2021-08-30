@@ -11,7 +11,7 @@ v3 B 0 0.0
 
 .control
 tran 0.1ns 10ns
-plot v(out2)+4 v(out) v(Clk)+2
+plot v(out2)+4 v(out) v(sNoise)+2
 .endc
 
 
