@@ -6,8 +6,9 @@ Xpg out2 sNoise sNoise sNoise out pg4
 Xpg2 out sNoise sNoise sNoise out2 pg4
 
 
-v2 sNoise  0 dc 0 trrandom (2 20p 0 0.1 .8)
+v2 sNoise  0 dc 0 trrandom (2 20p 0 0.5 .8)
 v3 B 0 0.0
+v4 VDD 0 1.8
 
 .control
 tran 0.1ns 10ns
