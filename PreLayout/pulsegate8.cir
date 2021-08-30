@@ -6,12 +6,12 @@ Xpg out2 sNoise sNoise sNoise sNoise sNoise sNoise sNoise out pg8
 Xpg2 out sNoise sNoise sNoise sNoise sNoise sNoise sNoise out2 pg8
 
 
-v2 sNoise  0 dc 0 trrandom (2 20p 0 0.5 .8)
+v2 sNoise  0 dc 0 trrandom (2 20p 0 0.2 .8)
 v3 B 0 0.0
 v4 VDD 0 1.8
 
 .control
-tran 0.1ns 10ns
+tran 0.1ns 100ns
 plot v(out2)+4 v(out) v(sNoise)+2
 .endc
 
