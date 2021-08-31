@@ -4,7 +4,7 @@ header = "*PulseLoop\n \
 Xpg sNoise out pg\n"
 
 footer = ".control \n \
-tran 1ps 100ns \n "
+tran 10ps 100ns \n "
 
 footer2 = "quit\n \
 .endc\n \
@@ -42,7 +42,7 @@ for n in filenames:
     name_o_file = "PreLayout\pulsegate1"+n+".cir"
     f = open(name_o_file,"w")
     f.write(header)
-    f.write("v2 sNoise 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+" .8)\n")
+    f.write("v2 sNoise 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+" .2)\n")
     std_dev += 0.1
     f.write(footer)
     f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")

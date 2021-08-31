@@ -1,9 +1,9 @@
 *PulseLoop
  .include sky130nm.lib
  Xpg sNoise out pg
-v2 sNoise 0 dc 0 trrandom (2 20p 0 1.5000000000000002 .8)
+v2 sNoise 0 dc 0 trrandom (2 20p 0 1.5000000000000002 .2)
 .control 
- tran 1ps 100ns 
+ tran 10ps 100ns 
  hardcopy plot1o v(out)+2 v(sNoise) 
 quit
  .endc
