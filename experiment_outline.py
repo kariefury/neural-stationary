@@ -7,7 +7,7 @@ from nengo.solvers import LstsqL2
 
 model = nengo.Network()
 
-num_n = 10
+num_n = 1
 time_to_run = 10.0
 
 with model:
