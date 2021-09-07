@@ -1,7 +1,8 @@
 
 header = "*PulseLoop\n \
 .include sky130nm.lib\n \
-Xpg sNoise out pg\n"
+Xpg sNoise out pg\n \
+.measure tran responseTime WHEN v(out)=1.2 CROSS=1"
 
 footer = ".control \n \
 tran 10ps 100ns \n "
@@ -39,7 +40,7 @@ filenames = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"]
 
 std_dev = 0.1
 for n in filenames:
-    name_o_file = "PreLayout\pulsegate1"+n+".cir"
+    name_o_file = "PreLayout\\noise_pulsegate1"+n+".cir"
     f = open(name_o_file,"w")
     f.write(header)
     f.write("v2 sNoise 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+" .2)\n")
@@ -47,3 +48,13 @@ for n in filenames:
     f.write(footer)
     f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")
     f.write(footer2)
+    
+    
+name_o_sh = "run_exp_first_event_time.sh"
+f = open(name_o_sh,"w")
+n = 0
+for a in filenames:
+    n = 0
+    while n < 10:
+        f.write("ngspice -b -o noiseFirstStart\data" +str(n) + a + ".txt PreLayout\\noise_pulsegate1"+a+".cir\n")
+        n += 1
