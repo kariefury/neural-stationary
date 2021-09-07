@@ -56,6 +56,6 @@ f = open(name_o_sh,"w")
 n = 0
 for a in filenames:
     n = 0
-    while n < 10:
+    while n < 1:
         f.write("ngspice -b -o noiseMeanFirstStart/data" +str(n) + a + ".txt PreLayout/mean_pulsegate1"+a+".cir\n")
         n += 1
