@@ -1,11 +1,11 @@
 *PulseLoop
  .include sky130nm.lib
  Xpg sNoise out pg
- .measure tran responseTime WHEN v(out)=1.2 CROSS=1v2 sNoise 0 dc 0 trrandom (2 20p 0 1.0999999999999999 .2)
+ .measure tran responseTime WHEN v(out)=1.2 CROSS=1
+v2 sNoise 0 dc 0 trrandom (2 20p 0 1.0999999999999999 .2)
 .control 
  tran 10ps 100ns 
- hardcopy plot1k v(out)+2 v(sNoise) 
-quit
+ *quit
  .endc
  
  
