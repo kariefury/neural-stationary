@@ -40,15 +40,15 @@ Error: measure  responsetime  (WHEN) : out of interval
  .measure tran responsetime when v(out)=1.2 cross=1 failed!
 
 
-CPU time since last call: 10.821 seconds.
+CPU time since last call: 10.521 seconds.
 
-Total CPU time: 10.821 seconds.
+Total CPU time: 10.521 seconds.
 
 Total DRAM available = 128860.191406 MB.
-DRAM currently available = 59282.292969 MB.
+DRAM currently available = 59191.558594 MB.
 Total ngspice program size = 33.816406 MB.
-Resident set size = 19.405273 MB.
-Shared ngspice pages = 2.067383 MB.
+Resident set size = 19.425781 MB.
+Shared ngspice pages = 2.090820 MB.
 Text (code) pages = 1.597656 MB.
 Stack = 0 bytes.
 Library pages = 17.435547 MB.

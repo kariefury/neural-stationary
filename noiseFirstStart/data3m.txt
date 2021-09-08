@@ -19,31 +19,27 @@ out                                9.68599e-07
 v2#branch                                    0
 v.xpg.v1#branch                   -1.18436e-09
 
+doAnalyses: TRAN:  Timestep too small; time = 6.548e-08, timestep = 1.25e-23: cause unrecorded.
 
 
-No. of Data Rows : 31195
-
-  Measurements for Transient Analysis
-
-responsetime        =   1.12057e-10
-
+tran simulation(s) aborted
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 
   Measurements for Transient Analysis
 
-responsetime        =   1.12057e-10
+responsetime        =   3.41900e-10
 
-CPU time since last call: 12.371 seconds.
+CPU time since last call: 10.979 seconds.
 
-Total CPU time: 12.371 seconds.
+Total CPU time: 10.979 seconds.
 
 Total DRAM available = 128860.191406 MB.
-DRAM currently available = 59283.476562 MB.
-Total ngspice program size = 34.516602 MB.
-Resident set size = 20.135742 MB.
-Shared ngspice pages = 2.088867 MB.
+DRAM currently available = 59194.453125 MB.
+Total ngspice program size = 33.326172 MB.
+Resident set size = 18.899414 MB.
+Shared ngspice pages = 2.077148 MB.
 Text (code) pages = 1.597656 MB.
 Stack = 0 bytes.
-Library pages = 18.135742 MB.
+Library pages = 16.945312 MB.
 
