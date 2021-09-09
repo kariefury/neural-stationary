@@ -1,14 +1,20 @@
 * SPICE3 file created from buffer.ext - technology: sky130A
 
-.subckt inverter A Y w_n145_115# a_n125_n20#
-X0 Y A w_n145_115# w_n145_115# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X1 Y A a_n125_n20# a_n125_n20# sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-.ends
-
-
 * Top level circuit buffer
+.include sky130nm.lib
 
-Xinverter_0 inverter_0/A inverter_1/A VP VN inverter
-Xinverter_1 inverter_1/A Y VP VN inverter
-.end
+Xinverter_0 clk Y 1.8 0.0 inverter
+*Xinverter_1 inverter_1/A Y VP VN inverter
+
+v2 clk 0 PULSE 0 1.8 1n 200p 200p 800p 4ns
+
+.control
+tran 0.1ns 10ns
+plot v(clk) v(Y)+2
+.endc
+
+.subckt inverter A Y vp vn
+X0 Y A vp vp sky130_fd_pr__pfet_01v8 w=360n l=150n
+X1 Y A vn vn sky130_fd_pr__nfet_01v8 w=360n l=150n
+.ends
 
