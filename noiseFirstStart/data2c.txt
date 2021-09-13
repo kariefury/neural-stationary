@@ -21,29 +21,35 @@ v.xpg.v1#branch                   -1.18436e-09
 
 
 
-No. of Data Rows : 25607
+No. of Data Rows : 2552
 
   Measurements for Transient Analysis
 
-responsetime        =   4.54335e-09
+
+Error: measure  responsetime  (WHEN) : out of interval
+ .measure tran responsetime when v(out)=1.2 cross=1 failed!
+
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 
   Measurements for Transient Analysis
 
-responsetime        =   4.54335e-09
 
-CPU time since last call: 11.066 seconds.
+Error: measure  responsetime  (WHEN) : out of interval
+ .measure tran responsetime when v(out)=1.2 cross=1 failed!
 
-Total CPU time: 11.066 seconds.
+
+CPU time since last call: 8.372 seconds.
+
+Total CPU time: 8.372 seconds.
 
 Total DRAM available = 128860.191406 MB.
-DRAM currently available = 59190.371094 MB.
-Total ngspice program size = 33.922852 MB.
-Resident set size = 19.451172 MB.
-Shared ngspice pages = 2.049805 MB.
+DRAM currently available = 58112.691406 MB.
+Total ngspice program size = 31.395508 MB.
+Resident set size = 16.876953 MB.
+Shared ngspice pages = 1.980469 MB.
 Text (code) pages = 1.597656 MB.
 Stack = 0 bytes.
-Library pages = 17.541992 MB.
+Library pages = 15.014648 MB.
 

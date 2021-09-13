@@ -21,29 +21,29 @@ v.xpg.v1#branch                   -1.18436e-09
 
 
 
-No. of Data Rows : 32211
+No. of Data Rows : 3305
 
   Measurements for Transient Analysis
 
-responsetime        =   7.85153e-11
+responsetime        =   1.81781e-10
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 
   Measurements for Transient Analysis
 
-responsetime        =   7.85153e-11
+responsetime        =   1.81781e-10
 
-CPU time since last call: 12.442 seconds.
+CPU time since last call: 8.512 seconds.
 
-Total CPU time: 12.442 seconds.
+Total CPU time: 8.512 seconds.
 
 Total DRAM available = 128860.191406 MB.
-DRAM currently available = 59188.593750 MB.
-Total ngspice program size = 34.598633 MB.
-Resident set size = 20.217773 MB.
-Shared ngspice pages = 2.109375 MB.
+DRAM currently available = 58073.621094 MB.
+Total ngspice program size = 31.500000 MB.
+Resident set size = 17.162109 MB.
+Shared ngspice pages = 2.145508 MB.
 Text (code) pages = 1.597656 MB.
 Stack = 0 bytes.
-Library pages = 18.217773 MB.
+Library pages = 15.119141 MB.
 
