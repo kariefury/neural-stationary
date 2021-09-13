@@ -58,5 +58,5 @@ n = 0
 for a in filenames:
     n = 0
     while n < 100:
-        f.write("ngspice -b -o noiseFirstStart/data" +str(n) + a + ".txt PreLayout/noise_pulsegate1n1p"+a+".cir\n")
+        f.write("ngspice -b -o noiseFirstStart1p1n/data" +str(n) + a + ".txt PreLayout/noise_pulsegate1n1p"+a+".cir\n")
         n += 1
