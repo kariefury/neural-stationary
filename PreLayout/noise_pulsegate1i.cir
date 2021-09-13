@@ -2,9 +2,9 @@
  .include sky130nm.lib
  Xpg sNoise out pg
  .measure tran responseTime WHEN v(out)=1.2 CROSS=1
-v2 sNoise 0 dc 0 trrandom (2 20p 0 0.8999999999999999 .2)
+v2 sNoise 0 dc 0 trrandom (2 20p 0 0.8999999999999999 0.1
 .control 
- tran 10ps 100ns 
+ tran 10ps 10ns 
  *quit
  .endc
  
