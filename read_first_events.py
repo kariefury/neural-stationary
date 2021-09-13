@@ -25,7 +25,7 @@ for name_o_file in files:
 			y.append(label[lab])
 			found = True
 	if (not found):
-		x.append(1000)
+		x.append(0)
 		y.append(label[lab])
 print(x)
 print(y)
@@ -33,6 +33,6 @@ print(y)
 import matplotlib.pyplot as plt
 
 plt.scatter(x, y)
-plt.ylabel("White Noise Std Dev from 0.2V")
+plt.ylabel("White Noise Std Dev from 0.1V")
 plt.xlabel("Time to first event (ns)")
 plt.show()
