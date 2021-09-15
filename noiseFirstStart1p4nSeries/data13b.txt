@@ -1,0 +1,5 @@
+
+Circuit: *pulseloop
+
+Too few parameters for subcircuit type "pg" (instance: xxpg)
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
