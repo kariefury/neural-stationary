@@ -1,6 +1,6 @@
 *PulseLoop
  .include sky130nm.lib
- Xpg sNoise sNoise sNoise sNoise out pg
+ Xpg sNoise sNoise sNoise sNoise sNoise out pg
  .measure tran responseTime WHEN v(out)=1.2 CROSS=1
 v2 sNoise 0 dc 0 trrandom (2 20p 0 1.6000000000000003 0.1
 .control 

@@ -1,7 +1,7 @@
 
 header = "*PulseLoop\n \
 .include sky130nm.lib\n \
-Xpg sNoise sNoise sNoise sNoise out pg\n \
+Xpg sNoise sNoise sNoise sNoise sNoise out pg\n \
 .measure tran responseTime WHEN v(out)=1.2 CROSS=1\n"
 
 footer = ".control \n \
