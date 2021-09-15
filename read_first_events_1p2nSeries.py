@@ -1,6 +1,6 @@
 import os
 
-path = 'noiseFirstStart/'
+path = 'noiseFirstStart1p2n/'
 
 files = os.listdir(path)
 filenames = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r"]
@@ -11,7 +11,7 @@ voltage = 0.2
 
 x = []
 y = []
-
+colors = []
 for name_o_file in files:
 	f = open(path+name_o_file,"r")
 	lab = name_o_file.split(".")[0][-1]
@@ -22,17 +22,19 @@ for name_o_file in files:
 			fValFloat = float(fVal)
 			ns = fValFloat*1000000000
 			x.append(ns)
+			colors.append('black')
 			y.append(label[lab])
 			found = True
 	if (not found):
 		x.append(0)
+		colors.append('red')
 		y.append(label[lab])
 print(x)
 print(y)
 	
 import matplotlib.pyplot as plt
 
-plt.scatter(x, y)
+plt.scatter(x, y,c=colors)
 plt.ylabel("White Noise Std Dev from 0.1V")
 plt.xlabel("Time to first event (ns)")
 plt.show()
