@@ -1,21 +1,30 @@
 *PulseLoop
  .include sky130nm.lib
- Xpg sNoise sNoise sNoise2 sNoise2 sNoise2 out pg
+ Xpg sNoise1 sNoise2 sNoise3 sNoise4 sNoise5 sNoise6 sNoise7 sNoise8 out pg
  .measure tran responseTime WHEN v(out)=1.2 CROSS=1
-v4 sNoise2 0 dc 0 trrandom (2 20p 0 1.0999999999999999 0.1)
-v2 sNoise 0 dc 0 trrandom (2 20p 0 1.0999999999999999 0.1)
+ .measure tran secondrTime WHEN v(out)=1.2 CROSS=2
+v2 sNoise1 0 dc 0 trrandom (2 20p 0 0.7999999999999999 0.1)
+v3 sNoise2 0 dc 0 trrandom (2 20p 0 0.7999999999999999 0.1)
+v4 sNoise3 0 dc 0 trrandom (2 20p 0 0.7999999999999999 0.1)
+v5 sNoise4 0 dc 0 trrandom (2 20p 0 0.7999999999999999 0.1)
+v6 sNoise5 0 dc 0 trrandom (2 20p 0 0.7999999999999999 0.1)
+v7 sNoise6 0 dc 0 trrandom (2 20p 0 0.7999999999999999 0.1)
+v8 sNoise7 0 dc 0 trrandom (2 20p 0 0.7999999999999999 0.1)
 .control 
-tran 10ps 9.5ns 
+tran 10ps 11.0ns 
  *quit
  .endc
  
  
  *PG
- .subckt pg A B C D E x
+ .subckt pg A B C D E F G H x
  
  xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- xm13 0 E Ea 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm15 0 D Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm15 0 D Ga Ha sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm14 0 D Fa Ga sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm13 0 E Ea Fa sky130_fd_pr__nfet_01v8 l=150n w=360n
  xm11 0 D Da Ea sky130_fd_pr__nfet_01v8 l=150n w=360n
  xm12 0 C Ca Da sky130_fd_pr__nfet_01v8 l=150n w=360n
  xm2 0 A critical_node Ca sky130_fd_pr__nfet_01v8 l=150n w=360n
