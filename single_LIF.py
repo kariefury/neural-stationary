@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import nengo
 from nengo.dists import Uniform
-from nengo.processes import WhiteSignal
+from nengo.processes import WhiteNoise
 from nengo.utils.matplotlib import rasterplot
 
-simt = 2
+simt = 0.2
 
 model = nengo.Network(label="A Single Neuron")
 with model:
@@ -13,19 +13,22 @@ with model:
         1,
         dimensions=1,  # Represent a scalar
         # Set intercept to 0.5
-        intercepts=Uniform(-0.5, -0.5),
+        intercepts=Uniform(-0.5, 0.5),
         # Set the maximum firing rate of the neuron to 100hz
-        max_rates=Uniform(2, 2),
+        max_rates=Uniform(20, 20),
         # Set the neuron's firing rate to increase for positive input
         encoders=[[1]],
     )
 with model:
     #cos = nengo.Node(lambda t: np.cos(8 * t))
     #
-    input_signal = nengo.Node(WhiteSignal(1, high=10,rms=0.2,y0=0.1,seed=5), size_out=1)
+    input_signal = nengo.Node(WhiteNoise(dist=nengo.dists.Gaussian(0, 0.01), seed=1))
+    #WhiteSignal(1, high=10,rms=0.2,y0=0.1,seed=5), size_out=1)
 with model:
     # Connect the input signal to the neuron
     nengo.Connection(input_signal, neuron)
+
+syn = 0.00001
 
 with model:
     # The original input
@@ -35,20 +38,21 @@ with model:
     # Subthreshold soma voltage of the neuron
     voltage = nengo.Probe(neuron.neurons, "voltage")
     # Spikes filtered by a 10ms post-synaptic filter
-    filtered = nengo.Probe(neuron, synapse=0.1)
+    filtered = nengo.Probe(neuron, synapse=syn)
 
 
 with nengo.Simulator(model) as sim:  # Create the simulator
-    sim.run(simt)  # Run it for 10 second
+    sim.run(simt)  # Run it for simt seconds
 
 # Plot the decoded output of the ensemble
 plt.figure()
+plt.title("Post Synaptic Filter " + str(syn) + "s")
 plt.ylabel("signal")
 plt.xlabel("Time (s)")
-plt.plot(sim.trange(), sim.data[filtered])
 plt.plot(sim.trange(), sim.data[input_signal_probe])
+plt.plot(sim.trange(), sim.data[filtered])
 plt.xlim(0, simt)
-plt.savefig("signals.png")
+plt.savefig("signals_postsynfilter0pt00001.png")
 # Plot the spiking output of the ensemble
 plt.figure(figsize=(8, 4))
 plt.subplot(221)
