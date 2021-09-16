@@ -1,0 +1,10 @@
+
+Circuit: *pulseloop
+
+Error on line 0 :
+  m.xpg.xm15.msky130_fd_pr__nfet_01v8 0 snoise4 xpg.ga xpg.ha xpg.xm15:sky130_fd_pr__nfet_01v8__model l=    1.50000000000000020e-07   w=    3.60000000000000047e-07   ad=    0.00000000000000000e+00   as=    0.00000000000000000e+00   pd=    0.00000000000000000e+00   ps=    0.00000000000000000e+00   nrd=    0.00000000000000000e+00   nrs=    0.00000000000000000e+00   sa=    0.00000000000000000e+00   sb=    0.00000000000000000e+00   sd=    0.00000000000000000e+00   nf=    1.00000000000000000e+00 
+device already exists, existing one being used
+
+ngspice stopped due to error, no simulation run!
+
+ERROR: fatal error in ngspice, exit(1)
