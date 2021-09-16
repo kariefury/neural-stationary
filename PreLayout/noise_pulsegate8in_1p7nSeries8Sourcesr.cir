@@ -21,9 +21,9 @@ tran 10ps 6.0ns
  
  xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- xm16 0 D Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- xm15 0 D Ga Ha sky130_fd_pr__nfet_01v8 l=150n w=360n
- xm14 0 D Fa Ga sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm16 0 H Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm15 0 G Ga Ha sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm14 0 F Fa Ga sky130_fd_pr__nfet_01v8 l=150n w=360n
  xm13 0 E Ea Fa sky130_fd_pr__nfet_01v8 l=150n w=360n
  xm11 0 D Da Ea sky130_fd_pr__nfet_01v8 l=150n w=360n
  xm12 0 C Ca Da sky130_fd_pr__nfet_01v8 l=150n w=360n
