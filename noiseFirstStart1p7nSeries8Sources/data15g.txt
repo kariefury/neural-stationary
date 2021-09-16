@@ -3,55 +3,85 @@ Circuit: *pulseloop
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
+Warning: singular matrix:  check nodes snoise8 and snoise8
 
-Initial Transient Solution
---------------------------
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Warning: singular matrix:  check nodes snoise8 and snoise8
 
-Node                                   Voltage
-----                                   -------
-xpg.1                                      1.8
-xpg.reset_loop                             1.8
-xpg.critical_node                          1.8
-snoise4                                      0
-xpg.ha                             0.000697763
-xpg.ga                               0.0021593
-xpg.fa                              0.00601864
-snoise5                                      0
-xpg.ea                               0.0168285
-xpg.da                               0.0491795
-snoise3                                      0
-xpg.ca                                0.164249
-snoise1                                      0
-snoise2                                      0
-xpg.invo                           9.68599e-07
-xpg.xe                                     1.8
-out                                9.68599e-07
-snoise6                                      0
-snoise7                                      0
-v8#branch                                    0
-v7#branch                                    0
-v6#branch                                    0
-v5#branch                                    0
-v4#branch                                    0
-v3#branch                                    0
-v2#branch                                    0
-v.xpg.v1#branch                   -1.01105e-09
+Warning: Dynamic gmin stepping failed
+Note: Starting source stepping
+Supplies reduced to   0.0000% Warning: singular matrix:  check nodes snoise8 and snoise8
 
 
+Trying gmin =   1.0000E-02 Note: One successful gmin step
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: One successful source step
+Supplies reduced to   0.1000% Warning: singular matrix:  check nodes snoise8 and snoise8
 
-No. of Data Rows : 3843
+Supplies reduced to   0.0000% Warning: singular matrix:  check nodes snoise8 and snoise8
 
-  Measurements for Transient Analysis
+Warning: source stepping failed
+
+Transient solution failed -
+
+Last Node Voltages
+------------------
+
+Node                                   Last Voltage        Previous Iter
+----                                   ------------        -------------
+xpg.1                                             0         -7.60624e-71
+xpg.reset_loop                          7.65693e-65         -2.13014e-75
+xpg.critical_node                      -1.33436e-60           7.4909e-71
+snoise8                                           0                    0
+xpg.ha                                 -6.10429e-65         -2.49841e-77
+snoise7                                           0                    0
+xpg.ga                                 -3.76206e-64          -1.3572e-76
+snoise6                                           0                    0
+xpg.fa                                  -2.2558e-63          -8.1076e-76
+snoise5                                           0                    0
+xpg.ea                                 -1.34582e-62         -4.83364e-75
+snoise4                                           0                    0
+xpg.da                                 -7.83654e-62         -2.80491e-74
+snoise3                                           0                    0
+xpg.ca                                 -4.00587e-61         -1.40519e-73
+snoise1                                           0                    0
+snoise2                                           0                    0
+xpg.invo                                8.20053e-64         -2.28137e-74
+xpg.xe                                  7.65693e-65         -2.13014e-75
+out                                      7.1655e-65         -1.99342e-75
+v8#branch                                         0                    0
+v7#branch                                         0                    0
+v6#branch                                         0                    0
+v5#branch                                         0                    0
+v4#branch                                         0                    0
+v3#branch                                         0                    0
+v2#branch                                         0                    0
+v.xpg.v1#branch                         4.92793e-72                    0
 
 
-Error: measure  responsetime  (WHEN) : out of interval
- .measure tran responsetime when v(out)=1.2 cross=1 failed!
+doAnalyses: iteration limit reached
 
-
-Error: measure  secondrtime  (WHEN) : out of interval
- .measure tran secondrtime when v(out)=1.2 cross=2 failed!
-
-
+tran simulation(s) aborted
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 
@@ -66,16 +96,16 @@ Error: measure  secondrtime  (WHEN) : out of interval
  .measure tran secondrtime when v(out)=1.2 cross=2 failed!
 
 
-CPU time since last call: 9.198 seconds.
+CPU time since last call: 8.023 seconds.
 
-Total CPU time: 9.198 seconds.
+Total CPU time: 8.023 seconds.
 
 Total DRAM available = 128860.191406 MB.
-DRAM currently available = 57260.488281 MB.
-Total ngspice program size = 39.412109 MB.
-Resident set size = 25.047852 MB.
-Shared ngspice pages = 2.105469 MB.
+DRAM currently available = 57150.710938 MB.
+Total ngspice program size = 38.909180 MB.
+Resident set size = 24.452148 MB.
+Shared ngspice pages = 2.015625 MB.
 Text (code) pages = 1.597656 MB.
 Stack = 0 bytes.
-Library pages = 23.031250 MB.
+Library pages = 22.528320 MB.
 
