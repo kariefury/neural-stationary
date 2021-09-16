@@ -1,6 +1,6 @@
 import os
 
-path = 'noiseFirstStart1p4nSeries2Sources/'
+path = 'noiseFirstStart1p7nSeries8Sources/'
 
 files = os.listdir(path)
 filenames = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r"]

@@ -1,7 +1,7 @@
 
 header = "*PulseLoop\n \
 .include sky130nm.lib\n \
-Xpg sNoise1 sNoise2 sNoise3 sNoise4 sNoise5 sNoise6 sNoise7 sNoise8 out pg\n \
+Xpg sNoise1 sNoise2 sNoise3 sNoise4 sNoise5 sNoise6 sNoise7 sNoise8 sNoise9 sNoise10 sNoise11 sNoise12 out pg\n \
 .measure tran responseTime WHEN v(out)=1.2 CROSS=1\n \
 .measure tran secondrTime WHEN v(out)=1.2 CROSS=2\n"
 
@@ -13,18 +13,22 @@ footer2 = "*quit\n \
 \n \
 \n \
 *PG\n \
-.subckt pg A B C D E F G H x\n \
+.subckt pg A B C D E F G H I J K x\n \
 \n \
 xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
-xm16 0 D Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm15 0 D Ga Ha sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm14 0 D Fa Ga sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm16 0 H Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm15 0 G Ga Ha sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm14 0 F Fa Ga sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm13 0 E Ea Fa sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm11 0 D Da Ea sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm12 0 C Ca Da sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm2 0 A critical_node Ca sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm10 1 B critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm17 1 B critical_node Cb sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm18 1 I Cb Db sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm19 1 J Db Eb sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm20 1 K Eb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+*xm21 1 L Fb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
 xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
@@ -50,7 +54,7 @@ std_dev = 0.1
 voltage = 0.1
 time = 14.5
 for n in filenames:
-    name_o_file = "PreLayout/noise_pulsegate8in_1p7nSeries8Sources"+n+".cir"
+    name_o_file = "PreLayout/noise_pulsegate11in_4p7nSeries11Sources"+n+".cir"
     f = open(name_o_file,"w")
     f.write(header)
     f.write("v2 sNoise1 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+ " " + str(voltage) + ")\n")
@@ -60,6 +64,10 @@ for n in filenames:
     f.write("v6 sNoise5 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
     f.write("v7 sNoise6 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
     f.write("v8 sNoise7 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
+    f.write("v9 sNoise8 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
+    f.write("v10 sNoise9 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
+    f.write("v11 sNoise10 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
+    f.write("v12 sNoise11 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
     std_dev += 0.1
     f.write(footer)
     #f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")

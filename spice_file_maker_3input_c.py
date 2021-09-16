@@ -1,7 +1,7 @@
 
 header = "*PulseLoop\n \
 .include sky130nm.lib\n \
-Xpg sNoise sNoise sNoise out pg\n \
+Xpg sNoise sNoise sNoise sNoise out pg\n \
 .measure tran responseTime WHEN v(out)=1.2 CROSS=1\n"
 
 footer = ".control \n \
@@ -44,7 +44,7 @@ filenames = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q"
 std_dev = 0.1
 voltage = 0.1
 for n in filenames:
-    name_o_file = "PreLayout/noise_pulsegate3in_1p2nSeries"+n+".cir"
+    name_o_file = "PreLayout/noise_pulsegate4in_1p3nSeries"+n+".cir"
     f = open(name_o_file,"w")
     f.write(header)
     f.write("v2 sNoise 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+ " " + str(voltage) + "\n")
@@ -54,12 +54,12 @@ for n in filenames:
     f.write(footer2)
     
     
-name_o_sh = "run_exp_noise_first_event_time_3input1p2nSeries.sh"
+name_o_sh = "run_exp_noise_first_event_time_4input1p3nSeries.sh"
 f = open(name_o_sh,"w")
 n = 0
 for a in filenames:
     n = 0
     while n < 50:
-        f.write("ngspice -b -o noiseFirstStart1p2nSeries/data" +str(n) + a + ".txt "
-                                                                        "PreLayout/noise_pulsegate3in_1p2nSeries"+a+".cir\n")
+        f.write("ngspice -b -o noiseFirstStart1p3nSeries/data" +str(n) + a + ".txt "
+                                                                        "PreLayout/noise_pulsegate4in_1p3nSeries"+a+".cir\n")
         n += 1

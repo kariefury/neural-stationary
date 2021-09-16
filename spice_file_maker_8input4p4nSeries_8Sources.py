@@ -17,7 +17,7 @@ footer2 = "*quit\n \
 \n \
 xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
-xm15 0 D Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm16 0 D Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm15 0 D Ga Ha sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm14 0 D Fa Ga sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm13 0 E Ea Fa sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
@@ -50,7 +50,7 @@ std_dev = 0.1
 voltage = 0.1
 time = 14.5
 for n in filenames:
-    name_o_file = "PreLayout/noise_pulsegate5in_1p4nSeries2Sources"+n+".cir"
+    name_o_file = "PreLayout/noise_pulsegate8in_1p7nSeries8Sources"+n+".cir"
     f = open(name_o_file,"w")
     f.write(header)
     f.write("v2 sNoise1 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+ " " + str(voltage) + ")\n")
@@ -60,6 +60,7 @@ for n in filenames:
     f.write("v6 sNoise5 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
     f.write("v7 sNoise6 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
     f.write("v8 sNoise7 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
+    f.write("v9 sNoise8 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
     std_dev += 0.1
     f.write(footer)
     #f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")

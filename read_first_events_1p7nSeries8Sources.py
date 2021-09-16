@@ -25,6 +25,7 @@ for name_o_file in files:
 			colors.append('black')
 			y.append(label[lab])
 			found = True
+        
 	if (not found):
 		x.append(0)
 		colors.append('red')
