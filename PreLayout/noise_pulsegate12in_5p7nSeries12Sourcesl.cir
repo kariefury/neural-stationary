@@ -1,0 +1,58 @@
+*PulseLoop
+ .include sky130nm.lib
+ Xpg sNoise1 sNoise2 sNoise3 sNoise4 sNoise5 sNoise6 sNoise7 sNoise8 sNoise9 sNoise10 sNoise11 sNoise12 out pg
+ .measure tran responseTime WHEN v(out)=1.2 CROSS=1
+ .measure tran secondrTime WHEN v(out)=1.2 CROSS=2
+v2 sNoise1 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v3 sNoise2 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v4 sNoise3 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v5 sNoise4 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v6 sNoise5 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v7 sNoise6 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v8 sNoise7 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v9 sNoise8 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v10 sNoise9 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v11 sNoise10 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v12 sNoise11 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+v13 sNoise12 0 dc 0 trrandom (2 20p 0 1.2 0.1)
+.control 
+tran 10ps 11.0ns 
+ *quit
+ .endc
+ 
+ 
+ *PG
+ .subckt pg A B C D E F G H I J K x
+ 
+ xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ 
+ xm16 0 H Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm15 0 G Ga Ha sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm14 0 F Fa Ga sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm13 0 E Ea Fa sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm11 0 D Da Ea sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm12 0 C Ca Da sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm2 0 A critical_node Ca sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm17 1 B critical_node Cb sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm18 1 I Cb Db sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm19 1 J Db Eb sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm20 1 K Eb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ *xm21 1 L Fb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ 
+ xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ 
+ xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ 
+ xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ 
+ xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ 
+ 
+ v1 1 0 1.8 
+ 
+ .ends pg 
+ 
