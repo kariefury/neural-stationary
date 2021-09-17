@@ -37,7 +37,7 @@ tran 20ps 16.5ns
  xm18 1 I Cb Db sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm19 1 J Db Eb sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm20 1 K Eb Fb sky130_fd_pr__pfet_01v8 l=150n w=720n
- *xm21 1 L Fb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm21 1 L Fb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  
  xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
