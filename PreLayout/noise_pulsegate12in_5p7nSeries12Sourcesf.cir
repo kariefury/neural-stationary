@@ -22,7 +22,7 @@ tran 10ps 14.0ns
  
  
  *PG
- .subckt pg A B C D E F G H I J K x
+ .subckt pg A B C D E F G H I J K L x
  
  xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  
