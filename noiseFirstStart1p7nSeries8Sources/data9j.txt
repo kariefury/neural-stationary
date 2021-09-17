@@ -13,14 +13,14 @@ xpg.1                                      1.8
 xpg.reset_loop                             1.8
 xpg.critical_node                          1.8
 snoise4                                      0
-xpg.ha                             0.000697768
-xpg.ga                              0.00215932
-xpg.fa                              0.00601868
+xpg.ha                              3.8082e-09
+xpg.ga                             9.73848e-08
+xpg.fa                             2.48662e-06
 snoise5                                      0
-xpg.ea                               0.0168285
-xpg.da                               0.0491795
+xpg.ea                             6.35385e-05
+xpg.da                              0.00165415
 snoise3                                      0
-xpg.ca                                0.164249
+xpg.ca                                0.163172
 snoise1                                      0
 snoise2                                      0
 xpg.invo                           9.68599e-07
@@ -41,31 +41,31 @@ v.xpg.v1#branch                   -1.01105e-09
 
 
 
-No. of Data Rows : 3594
+No. of Data Rows : 4239
 
   Measurements for Transient Analysis
 
-responsetime        =   9.40435e-11
-secondrtime         =   1.22670e-10
+responsetime        =   8.45198e-10
+secondrtime         =   8.95375e-10
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 
   Measurements for Transient Analysis
 
-responsetime        =   9.40435e-11
-secondrtime         =   1.22670e-10
+responsetime        =   8.45198e-10
+secondrtime         =   8.95375e-10
 
-CPU time since last call: 9.246 seconds.
+CPU time since last call: 9.681 seconds.
 
-Total CPU time: 9.246 seconds.
+Total CPU time: 9.681 seconds.
 
 Total DRAM available = 128860.191406 MB.
-DRAM currently available = 57158.996094 MB.
-Total ngspice program size = 39.429688 MB.
-Resident set size = 25.041016 MB.
-Shared ngspice pages = 2.098633 MB.
+DRAM currently available = 56965.410156 MB.
+Total ngspice program size = 39.535156 MB.
+Resident set size = 25.134766 MB.
+Shared ngspice pages = 2.062500 MB.
 Text (code) pages = 1.597656 MB.
 Stack = 0 bytes.
-Library pages = 23.048828 MB.
+Library pages = 23.154297 MB.
 

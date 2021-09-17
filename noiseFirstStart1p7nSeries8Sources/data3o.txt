@@ -13,14 +13,14 @@ xpg.1                                      1.8
 xpg.reset_loop                             1.8
 xpg.critical_node                          1.8
 snoise4                                      0
-xpg.ha                             0.000697768
-xpg.ga                              0.00215932
-xpg.fa                              0.00601868
+xpg.ha                              3.8082e-09
+xpg.ga                             9.73848e-08
+xpg.fa                             2.48662e-06
 snoise5                                      0
-xpg.ea                               0.0168285
-xpg.da                               0.0491795
+xpg.ea                             6.35385e-05
+xpg.da                              0.00165415
 snoise3                                      0
-xpg.ca                                0.164249
+xpg.ca                                0.163172
 snoise1                                      0
 snoise2                                      0
 xpg.invo                           9.68599e-07
@@ -39,7 +39,7 @@ v3#branch                                    0
 v2#branch                                    0
 v.xpg.v1#branch                   -1.01105e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.14e-09, timestep = 1.25e-23: trouble with node "xpg.reset_loop"
+doAnalyses: TRAN:  Timestep too small; time = 3.04e-09, timestep = 1.25e-23: trouble with node "xpg.critical_node"
 
 
 tran simulation(s) aborted
@@ -48,15 +48,15 @@ Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
   Measurements for Transient Analysis
 
-responsetime        =   6.63593e-11
-secondrtime         =   9.70246e-11
+responsetime        =   9.94848e-10
+secondrtime         =   1.04863e-09
 
-CPU time since last call: 8.412 seconds.
+CPU time since last call: 8.858 seconds.
 
-Total CPU time: 8.412 seconds.
+Total CPU time: 8.858 seconds.
 
 Total DRAM available = 128860.191406 MB.
-DRAM currently available = 57154.316406 MB.
+DRAM currently available = 56966.519531 MB.
 Total ngspice program size = 38.901367 MB.
 Resident set size = 24.408203 MB.
 Shared ngspice pages = 1.971680 MB.

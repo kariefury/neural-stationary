@@ -13,14 +13,14 @@ xpg.1                                      1.8
 xpg.reset_loop                             1.8
 xpg.critical_node                          1.8
 snoise4                                      0
-xpg.ha                             0.000697768
-xpg.ga                              0.00215932
-xpg.fa                              0.00601868
+xpg.ha                              3.8082e-09
+xpg.ga                             9.73848e-08
+xpg.fa                             2.48662e-06
 snoise5                                      0
-xpg.ea                               0.0168285
-xpg.da                               0.0491795
+xpg.ea                             6.35385e-05
+xpg.da                              0.00165415
 snoise3                                      0
-xpg.ca                                0.164249
+xpg.ca                                0.163172
 snoise1                                      0
 snoise2                                      0
 xpg.invo                           9.68599e-07
@@ -41,31 +41,43 @@ v.xpg.v1#branch                   -1.01105e-09
 
 
 
-No. of Data Rows : 3575
+No. of Data Rows : 4395
 
   Measurements for Transient Analysis
 
-responsetime        =   1.49092e-09
-secondrtime         =   1.54816e-09
+
+Error: measure  responsetime  (WHEN) : out of interval
+ .measure tran responsetime when v(out)=1.2 cross=1 failed!
+
+
+Error: measure  secondrtime  (WHEN) : out of interval
+ .measure tran secondrtime when v(out)=1.2 cross=2 failed!
+
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 
   Measurements for Transient Analysis
 
-responsetime        =   1.49092e-09
-secondrtime         =   1.54816e-09
 
-CPU time since last call: 9.353 seconds.
+Error: measure  responsetime  (WHEN) : out of interval
+ .measure tran responsetime when v(out)=1.2 cross=1 failed!
 
-Total CPU time: 9.353 seconds.
+
+Error: measure  secondrtime  (WHEN) : out of interval
+ .measure tran secondrtime when v(out)=1.2 cross=2 failed!
+
+
+CPU time since last call: 9.670 seconds.
+
+Total CPU time: 9.670 seconds.
 
 Total DRAM available = 128860.191406 MB.
-DRAM currently available = 57164.554688 MB.
-Total ngspice program size = 39.313477 MB.
-Resident set size = 24.927734 MB.
-Shared ngspice pages = 2.113281 MB.
+DRAM currently available = 56973.359375 MB.
+Total ngspice program size = 39.535156 MB.
+Resident set size = 25.180664 MB.
+Shared ngspice pages = 2.107422 MB.
 Text (code) pages = 1.597656 MB.
 Stack = 0 bytes.
-Library pages = 22.932617 MB.
+Library pages = 23.154297 MB.
 

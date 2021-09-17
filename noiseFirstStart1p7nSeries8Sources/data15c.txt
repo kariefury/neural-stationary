@@ -13,14 +13,14 @@ xpg.1                                      1.8
 xpg.reset_loop                             1.8
 xpg.critical_node                          1.8
 snoise4                                      0
-xpg.ha                             0.000697768
-xpg.ga                              0.00215932
-xpg.fa                              0.00601868
+xpg.ha                              3.8082e-09
+xpg.ga                             9.73848e-08
+xpg.fa                             2.48662e-06
 snoise5                                      0
-xpg.ea                               0.0168285
-xpg.da                               0.0491795
+xpg.ea                             6.35385e-05
+xpg.da                              0.00165415
 snoise3                                      0
-xpg.ca                                0.164249
+xpg.ca                                0.163172
 snoise1                                      0
 snoise2                                      0
 xpg.invo                           9.68599e-07
@@ -41,7 +41,7 @@ v.xpg.v1#branch                   -1.01105e-09
 
 
 
-No. of Data Rows : 3964
+No. of Data Rows : 4492
 
   Measurements for Transient Analysis
 
@@ -68,16 +68,16 @@ Error: measure  secondrtime  (WHEN) : out of interval
  .measure tran secondrtime when v(out)=1.2 cross=2 failed!
 
 
-CPU time since last call: 8.896 seconds.
+CPU time since last call: 9.074 seconds.
 
-Total CPU time: 8.896 seconds.
+Total CPU time: 9.074 seconds.
 
 Total DRAM available = 128860.191406 MB.
-DRAM currently available = 57165.019531 MB.
-Total ngspice program size = 39.429688 MB.
-Resident set size = 25.062500 MB.
-Shared ngspice pages = 2.119141 MB.
+DRAM currently available = 56976.535156 MB.
+Total ngspice program size = 39.535156 MB.
+Resident set size = 25.183594 MB.
+Shared ngspice pages = 2.111328 MB.
 Text (code) pages = 1.597656 MB.
 Stack = 0 bytes.
-Library pages = 23.048828 MB.
+Library pages = 23.154297 MB.
 
