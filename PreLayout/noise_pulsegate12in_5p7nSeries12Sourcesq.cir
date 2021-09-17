@@ -16,7 +16,7 @@ v11 sNoise10 0 dc 0 trrandom (2 20p 0 1.7000000000000004 0.1)
 v12 sNoise11 0 dc 0 trrandom (2 20p 0 1.7000000000000004 0.1)
 v13 sNoise12 0 dc 0 trrandom (2 20p 0 1.7000000000000004 0.1)
 .control 
-tran 10ps 8.5ns 
+tran 20ps 8.5ns 
  *quit
  .endc
  
