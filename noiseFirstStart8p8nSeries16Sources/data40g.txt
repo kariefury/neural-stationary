@@ -1,0 +1,107 @@
+
+Circuit: *pulseloop
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xpg.1                                      1.8
+xpg.reset_loop                             1.8
+xpg.critical_node                          1.8
+snoise13                                     0
+xpg.ma                             3.68375e-11
+snoise8                                      0
+xpg.ha                             9.42021e-10
+snoise7                                      0
+xpg.ga                             2.40528e-08
+snoise6                                      0
+xpg.fa                              6.1415e-07
+snoise5                                      0
+xpg.ea                             1.56841e-05
+snoise4                                      0
+xpg.da                             0.000402354
+snoise3                                      0
+xpg.ca                               0.0118438
+snoise1                                      0
+xpg.cb                                     1.8
+snoise2                                      0
+xpg.db                                     1.8
+snoise9                                      0
+xpg.eb                                     1.8
+snoise10                                     0
+xpg.fb                                     1.8
+snoise11                                     0
+xpg.lb                                     1.8
+snoise12                                     0
+xpg.nb                                     1.8
+snoise14                                     0
+xpg.ob                                     1.8
+snoise15                                     0
+snoise16                                     0
+xpg.invo                             9.686e-07
+xpg.xe                                     1.8
+out                                9.68599e-07
+v17#branch                                   0
+v16#branch                                   0
+v15#branch                                   0
+v14#branch                                   0
+v13#branch                                   0
+v12#branch                                   0
+v11#branch                                   0
+v10#branch                                   0
+v9#branch                                    0
+v8#branch                                    0
+v7#branch                                    0
+v6#branch                                    0
+v5#branch                                    0
+v4#branch                                    0
+v3#branch                                    0
+v2#branch                                    0
+v.xpg.v1#branch                   -1.01104e-09
+
+
+
+No. of Data Rows : 5005
+
+  Measurements for Transient Analysis
+
+
+Error: measure  responsetime  (WHEN) : out of interval
+ .measure tran responsetime when v(out)=1.2 cross=1 failed!
+
+
+Error: measure  secondrtime  (WHEN) : out of interval
+ .measure tran secondrtime when v(out)=1.2 cross=2 failed!
+
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+  Measurements for Transient Analysis
+
+
+Error: measure  responsetime  (WHEN) : out of interval
+ .measure tran responsetime when v(out)=1.2 cross=1 failed!
+
+
+Error: measure  secondrtime  (WHEN) : out of interval
+ .measure tran secondrtime when v(out)=1.2 cross=2 failed!
+
+
+CPU time since last call: 10.734 seconds.
+
+Total CPU time: 10.734 seconds.
+
+Total DRAM available = 128860.191406 MB.
+DRAM currently available = 56890.484375 MB.
+Total ngspice program size = 46.288086 MB.
+Resident set size = 31.866211 MB.
+Shared ngspice pages = 2.090820 MB.
+Text (code) pages = 1.597656 MB.
+Stack = 0 bytes.
+Library pages = 29.907227 MB.
+
