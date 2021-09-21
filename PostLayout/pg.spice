@@ -1,0 +1,33 @@
+* SPICE3 file created from pg.ext - technology: sky130A
+.include sky130nm.lib
+
+Xpg Clk out 1 0 pg
+
+*Xinv Clk out 1 0 inverter
+
+v2 Clk 0 PULSE 0 1.8 1n 20p 20p 80p 4ns
+v1 1 0 1.8
+
+.control
+tran 0.1ns 10ns
+plot v(out) v(Clk)+2 
+.endc
+
+
+.subckt pg Ain xout VP VN
+*.include sky130nm.lib
+Xinverter_0 a0 a2 VP VN inverter
+Xinverter_1 a2 y1 VP VN inverter
+Xinverter_2 a2 xe VP VN inverter
+Xinverter_3 xe xout VP VN inverter
+Xm3 a0 y1 VP VP sky130_fd_pr__pfet_01v8 l=150n w=720n
+Xm4 a0 Ain VN VN sky130_fd_pr__nfet_01v8 l=150n w=360n
+.ends pg
+
+.subckt inverter A Y VP VN
+*.include sky130nm.lib
+Xm0 Y A VP VP sky130_fd_pr__pfet_01v8 l=150n w=720n
+Xm1 Y A VN VN sky130_fd_pr__nfet_01v8 l=150n w=360n
+
+.ends inverter
+
