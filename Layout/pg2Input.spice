@@ -7,17 +7,13 @@ X0 Y A w_n145_115# w_n145_115# sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100
 X1 Y A a_n125_n20# a_n125_n20# sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 .ends
 
-.subckt pg2Input Ain Vp Bin
-Xinverter_0 inverter_0/A inverter_2/A Vp VN inverter
-Xinverter_1 inverter_2/A inverter_1/Y Vp VN inverter
-Xinverter_2 inverter_2/A xe Vp VN inverter
-Xinverter_3 xe inverter_3/Y Vp VN inverter
-X0 inverter_0/A inverter_1/Y Vp Vp sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+.subckt pg2Input Ain Bin VP
+Xinverter_0 inverter_0/A inverter_2/A VP VN inverter
+Xinverter_1 inverter_2/A inverter_1/Y VP VN inverter
+Xinverter_2 inverter_2/A xe VP VN inverter
+Xinverter_3 xe inverter_3/Y VP VN inverter
+X0 inverter_0/A inverter_1/Y VP VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 X1 a_n195_50# Bin VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 X2 inverter_0/A Ain a_n195_50# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
-C0 Vp VN 1.93fF
-C1 inverter_0/A VN 1.30fF
-C2 xe VN 1.18fF
-C3 inverter_2/A VN 1.08fF
 .ends
 
