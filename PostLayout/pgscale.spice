@@ -1,21 +1,26 @@
 * SPICE3 file created from pg.ext - technology: sky130A
+.include sky130nm.lib
 
 .option scale=10n
 
-.subckt inverter A Y w_n145_115# a_n125_n20#
-X0 Y A w_n145_115# w_n145_115# sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
-X1 Y A a_n125_n20# a_n125_n20# sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
-C0 Y w_n145_115# 0.22fF
-C1 Y a_n125_n20# 0.38fF
-C2 A a_n125_n20# 0.53fF
-C3 w_n145_115# a_n125_n20# 0.59fF
-.ends
+Xpg Clk out 1 0 pg
 
-.subckt pg Ain Vp
+*Xinv Clk out 1 0 inverter
+
+v2 Clk 0 PULSE 0 1.8 1n 20p 20p 80p 4ns
+v1 1 0 1.8
+
+.control
+ tran 0.1ns 10ns
+plot v(out) v(Clk)+2
+.endc
+
+
+.subckt pg Ain xout Vp VN
 Xinverter_0 inverter_0/A inverter_2/A Vp VN inverter
 Xinverter_1 inverter_2/A inverter_1/Y Vp VN inverter
 Xinverter_2 inverter_2/A xe Vp VN inverter
-Xinverter_3 xe inverter_3/Y Vp VN inverter
+Xinverter_3 xe xout Vp VN inverter
 X0 inverter_0/A inverter_1/Y Vp Vp sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 X1 inverter_0/A Ain VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 C0 Vp inverter_0/A 0.26fF
@@ -26,10 +31,19 @@ C4 inverter_2/A inverter_0/A 0.07fF
 C5 inverter_2/A inverter_1/Y 0.07fF
 C6 Ain VN 0.21fF
 C7 inverter_0/A VN 1.36fF
-C8 inverter_3/Y VN 0.38fF
+C8 xout VN 0.38fF
 C9 xe VN 1.18fF
 C10 inverter_1/Y VN 0.69fF
 C11 inverter_2/A VN 1.60fF
 C12 Vp VN 1.41fF
-.ends
+.ends pg
+
+.subckt inverter A Y w_n145_115# a_n125_n20#
+X0 Y A w_n145_115# w_n145_115# sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X1 Y A a_n125_n20# a_n125_n20# sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+C0 Y w_n145_115# 0.22fF
+C1 Y a_n125_n20# 0.38fF
+C2 A a_n125_n20# 0.53fF
+C3 w_n145_115# a_n125_n20# 0.59fF
+.ends inverter
 
