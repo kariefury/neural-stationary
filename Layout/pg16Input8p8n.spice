@@ -1,0 +1,71 @@
+* SPICE3 file created from pg16Input8p8n.ext - technology: sky130A
+
+.option scale=10000u
+
+.subckt inverter A Y w_n145_115# a_n125_n20#
+X0 Y A w_n145_115# w_n145_115# sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X1 Y A a_n125_n20# a_n125_n20# sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+C0 w_n145_115# Y 0.22fF
+C1 Y a_n125_n20# 0.38fF
+C2 A a_n125_n20# 0.53fF
+C3 w_n145_115# a_n125_n20# 0.59fF
+.ends
+
+.subckt pg16Input8p8n Ain Bin VP Din Ein Fin Gin Hin Cin Iin VN Jin Kin Lin Min Nin
++ Oin Pin
+Xinverter_0 inverter_0/A inverter_2/A VP VN inverter
+Xinverter_1 inverter_2/A reset_loop VP VN inverter
+Xinverter_2 inverter_2/A xe VP VN inverter
+Xinverter_3 xe inverter_3/Y VP VN inverter
+X0 a_n390_30# Ein a_n455_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X1 inverter_0/A reset_loop VP VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X2 inverter_0/A Min inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X3 inverter_0/A Kin inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X4 a_n585_30# Hin VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X5 inverter_0/A Iin inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X6 inverter_0/A Oin inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X7 a_n520_30# Gin a_n585_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X8 a_n195_30# Bin a_n260_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X9 inverter_0/A Ain a_n195_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X10 inverter_0/A Jin inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X11 a_n325_30# Din a_n390_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X12 inverter_0/A Pin VP VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X13 inverter_0/A Nin inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X14 inverter_0/A Lin inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X15 a_n260_30# Cin a_n325_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X16 a_n455_30# Fin a_n520_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+C0 inverter_0/A a_n195_30# 0.12fF
+C1 Oin Pin 0.12fF
+C2 Fin Gin 0.10fF
+C3 inverter_0/A xe 0.17fF
+C4 Kin Jin 0.12fF
+C5 Lin Min 0.12fF
+C6 Ain Bin 0.10fF
+C7 Nin Oin 0.12fF
+C8 Ein Fin 0.10fF
+C9 Nin Min 0.12fF
+C10 inverter_0/A VP 1.65fF
+C11 Din Ein 0.10fF
+C12 Din Cin 0.10fF
+C13 Iin Jin 0.12fF
+C14 Kin Lin 0.12fF
+C15 Bin Cin 0.10fF
+C16 Gin Hin 0.10fF
+C17 reset_loop VP 0.15fF
+C18 Ain VN -0.11fF
+C19 Cin VN 0.22fF
+C20 Din VN 0.22fF
+C21 Ein VN 0.22fF
+C22 Fin VN 0.22fF
+C23 Gin VN 0.22fF
+C24 Hin VN 0.22fF
+C25 inverter_0/A VN -0.53fF
+C26 a_n195_30# VN -0.12fF
+C27 a_n260_30# VN -0.14fF
+C28 inverter_3/Y VN 0.38fF
+C29 xe VN 1.18fF
+C30 reset_loop VN -1.06fF
+C31 inverter_2/A VN 1.60fF
+C32 VP VN 4.95fF
+.ends
+
