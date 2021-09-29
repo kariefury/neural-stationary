@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1632506173
+timestamp 1632940080
 << nwell >>
 rect -380 325 -30 420
 rect -440 185 -5 325
@@ -280,11 +280,13 @@ rect -210 -20 -170 -10
 rect -145 10 -105 20
 rect -60 15 -5 35
 rect 10 15 20 35
+rect 165 15 200 35
 rect -145 -10 -135 10
 rect -115 -10 -105 10
 rect -145 -20 -105 -10
 rect 230 -15 250 25
-rect 140 -45 160 -25
+rect -35 -55 -15 -25
+rect 140 -45 185 -25
 << viali >>
 rect -400 230 -380 280
 rect -355 230 -335 280
@@ -310,34 +312,31 @@ rect -660 55 -635 105
 rect -615 60 105 105
 rect -615 55 -80 60
 rect -690 40 -80 55
-rect -5 45 75 60
-rect 10 -55 75 45
+rect 10 -55 75 60
 rect -5 -70 75 -55
 rect -5 -150 140 -70
 rect 475 -225 540 215
 rect 345 -305 540 -225
 use inverter  inverter_3
-timestamp 1631209646
+timestamp 1632934578
 transform -1 0 -5 0 -1 -80
 box -145 -75 60 255
 use inverter  inverter_2
-timestamp 1631209646
+timestamp 1632934578
 transform -1 0 200 0 -1 -80
 box -145 -75 60 255
 use inverter  inverter_0
-timestamp 1631209646
+timestamp 1632934578
 transform 1 0 140 0 1 70
 box -145 -75 60 255
 use inverter  inverter_1
-timestamp 1631209646
+timestamp 1632934578
 transform 1 0 345 0 1 70
 box -145 -75 60 255
 << labels >>
 rlabel locali 140 -35 140 -35 7 xe
 rlabel space 142 -115 142 -115 7 VN
 port 3 w
-rlabel space -65 -40 -55 -30 7 xout
-port 4 w
 rlabel locali -135 -15 -135 -15 7 Ain
 port 0 w
 rlabel locali -210 0 -210 0 1 bin
@@ -363,4 +362,6 @@ port 14 w
 rlabel locali -10 355 -10 355 7 reset_loop
 rlabel metal1 -15 85 10 110 7 VN
 port 15 w
+rlabel locali -30 -50 -20 -40 7 xout
+port 4 w
 << end >>

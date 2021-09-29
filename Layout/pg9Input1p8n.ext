@@ -1,4 +1,4 @@
-timestamp 1632506173
+timestamp 1632940080
 version 8.3
 tech sky130A
 style ngspice()
@@ -10,6 +10,7 @@ use inverter inverter_0 1 0 140 0 1 70
 use inverter inverter_1 1 0 345 0 1 70
 parameters sky130_fd_pr__nfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
 parameters sky130_fd_pr__pfet_01v8 l=l w=w a1=as p1=ps a2=ad p2=pd
+port "xout" 4 -30 -50 -20 -40 li
 port "Ain" 0 -135 -15 -135 -15 li
 port "Bin" 2 -210 0 -210 0 li
 port "bin" 1 -210 0 -210 0 li
@@ -23,8 +24,10 @@ port "Iin" 14 -345 425 -305 465 li
 port "VP" 5 -440 255 -440 255 m1
 port "VN" 15 -15 85 10 110 m1
 node "m1_345_n305#" 1 852.3 345 -305 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 55000 1730 0 0 0 0 0 0 0 0 0 0
-node "xe" 12 45.48 140 -45 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 400 80 0 0 0 0 0 0 0 0 0 0 0 0
+node "xe" 27 74.83 140 -45 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 900 130 0 0 0 0 0 0 0 0 0 0 0 0
+node "xout" 18 57.22 -30 -50 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 600 100 0 0 0 0 0 0 0 0 0 0 0 0
 node "li_230_n15#" 24 68.96 230 -15 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 800 120 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_165_15#" 21 63.09 165 15 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 700 110 0 0 0 0 0 0 0 0 0 0 0 0
 node "li_10_15#" 24 50.02 10 15 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 200 60 0 0 0 0 0 0 0 0 0 0 0 0
 node "a_n195_30#" 273 128.52 -195 30 ndif 0 0 0 0 0 0 0 0 5000 300 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2400 220 0 0 0 0 0 0 0 0 0 0 0 0
 node "a_n260_30#" 273 128.52 -260 30 ndif 0 0 0 0 0 0 0 0 5000 300 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2400 220 0 0 0 0 0 0 0 0 0 0 0 0
@@ -46,68 +49,74 @@ node "a_n305_205#" 2020 796.83 -305 205 pdif 0 0 0 0 0 0 0 0 5000 300 10000 600 
 node "reset_loop" 999 896.6 -120 365 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4300 520 0 0 12200 1210 0 0 0 0 0 0 0 0 0 0 0 0
 node "Iin" 862 360.97 -345 425 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5200 640 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
 node "VP" 6256 1520.55 -440 255 m1 0 0 0 0 94150 1340 0 0 10000 600 9500 590 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12400 630 34925 1080 0 0 0 0 0 0 0 0 0 0
-substrate "VN" 0 0 -15 85 m1 0 0 0 0 0 0 0 0 5000 300 5000 300 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6400 320 84900 2390 0 0 0 0 0 0 0 0 0 0
-cap "Fin" "Din" 29.8889
-cap "a_n520_30#" "Gin" 24.75
-cap "Bin" "VP" 1.69231
-cap "a_n195_30#" "a_n305_205#" 118.271
-cap "a_n260_30#" "a_n455_30#" 16
-cap "Ein" "VP" 6.76923
-cap "a_n260_30#" "a_n195_30#" 75.4286
-cap "Fin" "a_n455_30#" 24.75
-cap "Bin" "Ein" 17.6461
-cap "a_n325_30#" "a_n305_205#" 19.4737
-cap "a_n325_30#" "a_n260_30#" 75.4286
-cap "Ain" "a_n305_205#" 37.5201
-cap "reset_loop" "VP" 31.0114
-cap "a_n585_30#" "a_n455_30#" 26.4
-cap "a_n390_30#" "a_n455_30#" 75.4286
-cap "a_n195_30#" "a_n390_30#" 16
-cap "Cin" "Ain" 29.8889
-cap "a_n520_30#" "a_n585_30#" 75.4286
-cap "a_n520_30#" "a_n390_30#" 26.4
-cap "Ein" "Gin" 29.8889
+substrate "VN" 0 0 -15 85 m1 0 0 0 0 0 0 0 0 5000 300 5000 300 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6400 320 84675 2390 0 0 0 0 0 0 0 0 0 0
 cap "a_n325_30#" "a_n390_30#" 75.4286
-cap "a_n305_205#" "VP" 553.226
-cap "Iin" "VP" 23.3077
-cap "li_10_15#" "Ain" 1.43478
-cap "Bin" "a_n305_205#" 10.6034
-cap "a_n325_30#" "Din" 24.75
-cap "Bin" "Cin" 101.1
-cap "Din" "Ain" 17.6461
-cap "Ein" "Cin" 29.8889
-cap "Fin" "Ein" 101.1
-cap "Hin" "Ein" 17.6461
-cap "a_n390_30#" "VP" 10.4211
-cap "a_n305_205#" "reset_loop" 43.1521
-cap "Iin" "reset_loop" 4.97297
-cap "a_n520_30#" "a_n455_30#" 75.4286
+cap "li_10_15#" "li_165_15#" 4.55172
+cap "a_n455_30#" "a_n260_30#" 16
+cap "a_n455_30#" "a_n520_30#" 75.4286
 cap "Ein" "a_n390_30#" 24.75
-cap "a_n325_30#" "a_n455_30#" 26.4
-cap "a_n325_30#" "a_n195_30#" 26.4
-cap "Din" "VP" 1.69231
-cap "Bin" "li_10_15#" 0.916667
-cap "Fin" "Gin" 101.1
-cap "a_n325_30#" "a_n520_30#" 16
-cap "Hin" "Gin" 101.1
+cap "xe" "li_165_15#" 16.5
+cap "Bin" "VP" 1.69231
+cap "VP" "a_n305_205#" 553.226
+cap "Gin" "Ein" 29.8889
+cap "Din" "a_n325_30#" 24.75
+cap "Gin" "Fin" 101.1
+cap "a_n585_30#" "a_n390_30#" 16
 cap "Din" "Bin" 29.8889
-cap "Din" "Ein" 101.1
+cap "VP" "Ein" 6.76923
+cap "a_n260_30#" "a_n325_30#" 75.4286
+cap "a_n520_30#" "a_n325_30#" 16
+cap "a_n305_205#" "li_165_15#" 3.88235
 cap "a_n260_30#" "a_n305_205#" 60.775
-cap "Cin" "a_n305_205#" 10.0463
-cap "a_n260_30#" "Cin" 24.75
-cap "a_n195_30#" "VP" 8.68421
-cap "Fin" "Cin" 17.6461
-cap "a_n195_30#" "Bin" 24.75
-cap "Hin" "Fin" 29.8889
-cap "Din" "Gin" 17.6461
-cap "a_n260_30#" "a_n390_30#" 26.4
-cap "Ain" "VP" 6.76923
+cap "Din" "Ein" 101.1
+cap "Hin" "Ein" 17.6461
+cap "Din" "Fin" 29.8889
+cap "xe" "xout" 4.25806
+cap "li_10_15#" "Bin" 0.916667
 cap "li_10_15#" "a_n305_205#" 44
-cap "Hin" "a_n585_30#" 24.75
-cap "Bin" "Ain" 101.1
-cap "Din" "Iin" 2.09091
-cap "a_n390_30#" "a_n585_30#" 16
+cap "a_n455_30#" "a_n325_30#" 26.4
+cap "Hin" "Fin" 29.8889
+cap "a_n585_30#" "Hin" 24.75
+cap "a_n195_30#" "a_n390_30#" 16
+cap "a_n585_30#" "a_n520_30#" 75.4286
+cap "a_n305_205#" "xout" 16.5
+cap "a_n455_30#" "Fin" 24.75
+cap "VP" "Ain" 6.76923
+cap "a_n305_205#" "a_n325_30#" 19.4737
+cap "a_n455_30#" "a_n585_30#" 26.4
+cap "a_n195_30#" "VP" 8.68421
+cap "Bin" "a_n305_205#" 10.6034
 cap "Din" "Cin" 101.1
+cap "Din" "Ain" 17.6461
+cap "Bin" "Ein" 17.6461
+cap "a_n260_30#" "Cin" 24.75
+cap "a_n260_30#" "a_n195_30#" 75.4286
+cap "li_10_15#" "Ain" 1.43478
+cap "Ein" "Fin" 101.1
+cap "li_230_n15#" "li_165_15#" 11
+cap "reset_loop" "VP" 31.0114
+cap "Bin" "Cin" 101.1
+cap "Bin" "Ain" 101.1
+cap "a_n195_30#" "a_n325_30#" 26.4
+cap "a_n305_205#" "Cin" 10.0463
+cap "a_n305_205#" "Ain" 37.5201
+cap "a_n195_30#" "Bin" 24.75
+cap "a_n195_30#" "a_n305_205#" 118.271
+cap "Cin" "Ein" 29.8889
+cap "VP" "a_n390_30#" 10.4211
+cap "reset_loop" "Iin" 4.97297
+cap "Cin" "Fin" 17.6461
+cap "a_n260_30#" "a_n390_30#" 26.4
+cap "a_n520_30#" "a_n390_30#" 26.4
+cap "Gin" "Din" 17.6461
+cap "Gin" "Hin" 101.1
+cap "Din" "VP" 1.69231
+cap "Gin" "a_n520_30#" 24.75
+cap "a_n455_30#" "a_n390_30#" 75.4286
+cap "VP" "Iin" 23.3077
+cap "Ain" "Cin" 29.8889
+cap "Din" "Iin" 2.09091
+cap "reset_loop" "a_n305_205#" 43.1521
 device msubckt sky130_fd_pr__nfet_01v8 -145 30 -144 31 l=15 w=100 "VN" "Ain" 30 0 "a_n195_30#" 100 0 "a_n305_205#" 100 0
 device msubckt sky130_fd_pr__nfet_01v8 -210 30 -209 31 l=15 w=100 "VN" "Bin" 30 0 "a_n260_30#" 100 0 "a_n195_30#" 100 0
 device msubckt sky130_fd_pr__nfet_01v8 -275 30 -274 31 l=15 w=100 "VN" "Cin" 30 0 "a_n325_30#" 100 0 "a_n260_30#" 100 0
@@ -118,7 +127,8 @@ device msubckt sky130_fd_pr__nfet_01v8 -535 30 -534 31 l=15 w=100 "VN" "Gin" 30 
 device msubckt sky130_fd_pr__nfet_01v8 -600 30 -599 31 l=15 w=100 "VN" "Hin" 30 0 "VN" 100 0 "a_n585_30#" 100 0
 device msubckt sky130_fd_pr__pfet_01v8 -95 205 -94 206 l=15 w=100 "VP" "reset_loop" 30 0 "VP" 100 0 "a_n305_205#" 100 0
 device msubckt sky130_fd_pr__pfet_01v8 -320 205 -319 206 l=15 w=100 "VP" "Iin" 30 0 "VP" 100 0 "a_n305_205#" 100 0
-subcap "xe" -367.585
+subcap "xe" -396.935
+subcap "li_165_15#" -327.27
 subcap "a_n195_30#" -128.52
 subcap "a_n260_30#" -128.52
 subcap "a_n325_30#" -128.52
@@ -138,62 +148,65 @@ subcap "a_n305_205#" -460.265
 subcap "reset_loop" -685.28
 subcap "Iin" -377.84
 subcap "VP" -595.101
-subcap "VN" -511.33
-cap "inverter_0/w_n145_115#" "inverter_0/A" 20.3077
-cap "Bin" "inverter_0/A" -0.458333
-cap "inverter_3/A" "Bin" 2.4
-cap "inverter_0/Y" "inverter_0/A" 23.3509
-cap "inverter_3/Y" "inverter_3/a_n125_n20#" 2.18
-cap "Ain" "inverter_0/A" 2.44928
-cap "inverter_3/A" "Ain" 3.81818
-cap "inverter_3/A" "inverter_3/Y" 24.0046
-cap "inverter_3/Y" "inverter_0/A" 43.3106
+subcap "VN" -548.23
+cap "inverter_3/A" "inverter_3/Y" 21.8756
+cap "inverter_0/VP" "inverter_3/VN" -3
+cap "a_n195_30#" "inverter_3/VN" 5.5
 cap "reset_loop" "inverter_0/A" 2.0641
-cap "inverter_3/a_n125_n20#" "inverter_0/A" 26.0468
-cap "inverter_3/a_n125_n20#" "inverter_0/w_n145_115#" -3
-cap "a_n195_30#" "inverter_3/a_n125_n20#" 5.5
+cap "inverter_3/Y" "inverter_0/A" 3.88235
+cap "inverter_3/A" "Bin" 2.4
+cap "inverter_3/A" "Ain" 3.81818
+cap "Bin" "inverter_0/A" -0.458333
+cap "inverter_0/A" "inverter_0/Y" 21.4097
+cap "inverter_3/Y" "inverter_3/VN" 2.18
+cap "inverter_0/A" "inverter_3/VN" 26.0468
+cap "inverter_0/A" "inverter_0/VP" 20.3077
+cap "Ain" "inverter_0/A" 2.44928
+subcap "xout" -81.64
 subcap "a_n195_30#" -237.3
 subcap "Ain" -401.695
-subcap "reset_loop" -254.69
-subcap "VN" -269.235
-cap "inverter_3/a_n125_n20#" "a_n195_30#" 5.5
-cap "inverter_3/a_n125_n20#" "inverter_0/A" 127.135
-cap "inverter_3/a_n125_n20#" "inverter_2/A" 94.9186
-cap "inverter_0/A" "inverter_2/A" 49.8161
-cap "inverter_3/A" "inverter_3/w_n145_115#" 44
-cap "inverter_3/A" "inverter_3/Y" 24.0046
-cap "inverter_0/A" "inverter_1/Y" 2.0641
-cap "inverter_0/A" "Bin" 0.0269608
+subcap "reset_loop" -289.91
+subcap "VN" -262.89
+cap "inverter_3/Y" "inverter_3/VN" -3.97
+cap "Ain" "inverter_3/A" 3.81818
+cap "inverter_1/Y" "inverter_0/A" 2.0641
 cap "inverter_1/Y" "inverter_2/A" 67.8093
-cap "inverter_3/a_n125_n20#" "inverter_3/w_n145_115#" 67.1209
-cap "inverter_3/A" "Ain" 3.81818
-cap "inverter_3/a_n125_n20#" "inverter_3/Y" -3.97
-cap "inverter_3/w_n145_115#" "inverter_0/A" 20.3077
-cap "inverter_3/w_n145_115#" "inverter_2/A" 44
-cap "inverter_3/a_n125_n20#" "inverter_3/A" 228.81
-cap "inverter_3/A" "inverter_0/A" 169.125
-cap "inverter_3/w_n145_115#" "inverter_1/Y" 118.88
-cap "inverter_3/A" "inverter_2/A" 60.6299
+cap "a_n195_30#" "inverter_3/VN" 5.5
+cap "inverter_0/A" "inverter_3/A" 169.125
+cap "inverter_0/A" "inverter_3/VN" 127.135
+cap "inverter_1/Y" "inverter_3/VP" 118.88
+cap "inverter_0/A" "inverter_2/A" 43.3232
+cap "inverter_3/A" "inverter_3/VN" 228.81
+cap "inverter_0/A" "inverter_3/VP" 20.3077
+cap "inverter_2/A" "inverter_3/A" 44.1299
+cap "inverter_2/A" "inverter_3/VN" 94.9186
+cap "inverter_0/A" "Bin" 0.0269608
+cap "inverter_3/A" "inverter_3/VP" 44
+cap "inverter_3/VP" "inverter_3/VN" 67.1209
+cap "inverter_2/A" "inverter_3/VP" 44
+cap "Bin" "inverter_3/A" 2.4
+cap "inverter_3/Y" "inverter_3/A" 21.8756
 cap "inverter_0/A" "Ain" 3.23499
-cap "inverter_3/A" "Bin" 2.4
 subcap "a_n305_205#" -1061.38
 subcap "reset_loop" -701.58
 subcap "Iin" -134.41
 subcap "reset_loop" -701.66
 merge "inverter_0/A" "li_10_15#" -210.585 0 0 0 0 0 0 0 0 0 0 -17750 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -42050 -100 0 0 0 0 0 0 0 0 0 0 0 0
 merge "li_10_15#" "a_n305_205#"
-merge "inverter_1/A" "inverter_0/Y" -89.48 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -400 -160 0 0 0 0 0 0 0 0 0 0 0 0
-merge "inverter_0/Y" "inverter_2/A"
+merge "inverter_1/A" "inverter_2/A" -90.34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6800 -210 0 0 0 0 0 0 0 0 0 0 0 0
 merge "inverter_2/A" "li_230_n15#"
-merge "inverter_1/a_n125_n20#" "inverter_0/a_n125_n20#" -420.875 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6800 -1150 0 0 0 0 0 0 0 0 0 0
-merge "inverter_0/a_n125_n20#" "inverter_2/a_n125_n20#"
-merge "inverter_2/a_n125_n20#" "inverter_3/a_n125_n20#"
-merge "inverter_3/a_n125_n20#" "VN"
-merge "inverter_1/Y" "reset_loop" -457.47 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8700 -145 0 0 5600 -640 0 0 0 0 0 0 0 0 0 0 0 0
-merge "inverter_2/Y" "inverter_3/A" -46.76 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5200 -120 0 0 0 0 0 0 0 0 0 0 0 0
+merge "li_230_n15#" "inverter_0/Y"
+merge "inverter_0/Y" "li_165_15#"
+merge "inverter_1/VN" "inverter_0/VN" -451.625 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6800 -1150 0 0 0 0 0 0 0 0 0 0
+merge "inverter_0/VN" "inverter_2/VN"
+merge "inverter_2/VN" "inverter_3/VN"
+merge "inverter_3/VN" "VN"
+merge "inverter_1/VP" "inverter_0/VP" -93.8 0 0 0 0 12100 -560 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 19250 -685 0 0 0 0 0 0 0 0 0 0
+merge "inverter_0/VP" "VP"
+merge "VP" "inverter_2/VP"
+merge "inverter_2/VP" "m1_345_n305#"
+merge "m1_345_n305#" "inverter_3/VP"
+merge "inverter_3/Y" "xout" -55.555 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -150 -100 0 0 0 0 0 0 0 0 0 0 0 0
+merge "inverter_1/Y" "reset_loop" -219.24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1700 -145 0 0 -1800 -265 0 0 0 0 0 0 0 0 0 0 0 0
+merge "inverter_2/Y" "inverter_3/A" -38.67 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5900 -110 0 0 0 0 0 0 0 0 0 0 0 0
 merge "inverter_3/A" "xe"
-merge "inverter_1/w_n145_115#" "inverter_0/w_n145_115#" -93.8 0 0 0 0 12100 -560 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 19250 -685 0 0 0 0 0 0 0 0 0 0
-merge "inverter_0/w_n145_115#" "VP"
-merge "VP" "inverter_2/w_n145_115#"
-merge "inverter_2/w_n145_115#" "m1_345_n305#"
-merge "m1_345_n305#" "inverter_3/w_n145_115#"

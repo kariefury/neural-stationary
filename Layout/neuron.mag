@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1632936783
+timestamp 1632940244
 << poly >>
 rect 780 1040 890 1055
 rect 875 780 890 1040
@@ -93,11 +93,11 @@ rect 1290 425 1300 435
 rect 1270 210 1280 220
 rect 1265 65 1275 75
 use pg17Input8p8n_para_1n  pg17Input8p8n_para_1n_0
-timestamp 1632936747
+timestamp 1632940244
 transform 1 0 895 0 1 335
 box -930 -335 405 420
 use pg17Input8p8n_para_1n  pg17Input8p8n_para_1n_1
-timestamp 1632936747
+timestamp 1632940244
 transform 1 0 895 0 -1 1175
 box -930 -335 405 420
 << labels >>
