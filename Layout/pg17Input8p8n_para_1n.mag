@@ -1,6 +1,6 @@
 magic
 tech sky130A
-timestamp 1632933319
+timestamp 1632936747
 << nwell >>
 rect -280 325 -30 420
 rect -930 185 -5 325
@@ -271,6 +271,7 @@ rect -140 -30 -100 -20
 rect -140 -50 -130 -30
 rect -110 -50 -100 -30
 rect -140 -60 -100 -50
+rect 5 -56 12 -9
 << polycont >>
 rect -790 360 -770 380
 rect -725 360 -705 380
@@ -464,7 +465,7 @@ rect -65 35 -40 80
 rect -65 30 -5 35
 rect -90 15 -5 30
 rect 10 15 20 35
-rect 168 15 202 35
+rect 150 15 202 35
 rect -315 -10 -305 10
 rect -285 -10 -275 10
 rect -315 -20 -275 -10
@@ -474,6 +475,7 @@ rect -140 -50 -130 -30
 rect -110 -50 -100 -30
 rect 140 -45 170 -25
 rect -140 -60 -100 -50
+rect -33 -195 -19 -168
 << viali >>
 rect -855 230 -835 280
 rect -810 230 -790 280
@@ -515,19 +517,19 @@ rect 210 -150 405 -70
 rect -930 -305 -65 -225
 rect 345 -305 405 -225
 use inverter  inverter_1
-timestamp 1632865684
+timestamp 1632934578
 transform 1 0 345 0 1 70
 box -145 -75 60 255
 use inverter  inverter_0
-timestamp 1632865684
+timestamp 1632934578
 transform 1 0 140 0 1 70
 box -145 -75 60 255
 use inverter  inverter_2
-timestamp 1632865684
+timestamp 1632934578
 transform -1 0 200 0 -1 -80
 box -145 -75 60 255
 use inverter  inverter_3
-timestamp 1632865684
+timestamp 1632934578
 transform -1 0 -5 0 -1 -80
 box -145 -75 60 255
 << labels >>
@@ -553,7 +555,7 @@ port 21 n
 rlabel locali -800 370 -800 370 7 Pin
 port 22 w
 rlabel metal1 375 -265 375 -265 7 VP
-rlabel space -25 -180 -25 -180 7 xout
+rlabel locali -25 -180 -25 -180 7 xout
 rlabel locali -305 -15 -305 -15 7 Ain
 port 0 w
 rlabel locali -380 0 -380 0 1 bin
@@ -573,10 +575,14 @@ port 13 w
 rlabel locali -575 -20 -535 20 7 Ein
 port 8 w
 rlabel metal1 -260 95 -260 95 3 VN
-rlabel space -35 -40 -25 -30 7 xout
-port 4 w
 rlabel metal1 -930 95 -930 95 3 VN
 rlabel metal1 -925 255 -925 255 7 VP
 port 5 w
 rlabel locali 35 355 35 355 7 reset_loop
+rlabel space 215 -45 215 -45 1 inv2input
+rlabel locali -30 -185 -20 -175 7 xout
+port 4 w
+rlabel locali 175 25 175 25 1 pgnode
+rlabel polycont -125 -40 -125 -40 1 n_para
+port 23 n
 << end >>
