@@ -1,0 +1,19 @@
+magic
+tech sky130A
+timestamp 1632891941
+<< locali >>
+rect -15 1355 880 1375
+rect -15 295 5 1355
+rect 1051 1200 1066 1220
+rect 1052 350 1096 370
+rect -15 275 755 295
+rect 1051 290 1067 310
+use pg17Input8p8n_para_1n  pg17Input8p8n_para_1n_1
+timestamp 1632867173
+transform 1 0 895 0 -1 1175
+box -895 -335 405 420
+use pg17Input8p8n_para_1n  pg17Input8p8n_para_1n_0
+timestamp 1632867173
+transform 1 0 895 0 1 335
+box -895 -335 405 420
+<< end >>

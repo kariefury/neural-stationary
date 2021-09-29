@@ -1,6 +1,9 @@
 magic
 tech sky130A
-timestamp 1632187582
+timestamp 1632866290
+<< error_s >>
+rect 153 -45 160 -25
+rect 170 -62 177 -25
 << nwell >>
 rect -155 325 -30 420
 rect -215 185 -5 325
@@ -124,21 +127,21 @@ rect -5 -70 75 -55
 rect -5 -150 140 -70
 rect 475 -225 540 215
 rect 345 -305 540 -225
-use inverter  inverter_3
-timestamp 1631209646
-transform -1 0 -5 0 -1 -80
-box -145 -75 60 255
-use inverter  inverter_2
-timestamp 1631209646
-transform -1 0 200 0 -1 -80
+use inverter  inverter_1
+timestamp 1632866290
+transform 1 0 345 0 1 70
 box -145 -75 60 255
 use inverter  inverter_0
-timestamp 1631209646
+timestamp 1632866290
 transform 1 0 140 0 1 70
 box -145 -75 60 255
-use inverter  inverter_1
-timestamp 1631209646
-transform 1 0 345 0 1 70
+use inverter  inverter_2
+timestamp 1632866290
+transform -1 0 200 0 -1 -80
+box -145 -75 60 255
+use inverter  inverter_3
+timestamp 1632866290
+transform -1 0 -5 0 -1 -80
 box -145 -75 60 255
 << labels >>
 rlabel metal1 -5 255 -5 255 7 VP

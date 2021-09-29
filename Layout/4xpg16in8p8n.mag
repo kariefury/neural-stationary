@@ -1,0 +1,30 @@
+magic
+tech sky130A
+timestamp 1632866290
+<< error_p >>
+rect 4948 290 4955 310
+rect 4965 273 4972 310
+<< error_s >>
+rect 1048 290 1055 310
+rect 1065 273 1072 310
+rect 2348 290 2355 310
+rect 2365 273 2372 310
+rect 3648 290 3655 310
+rect 3665 273 3672 310
+use pg16Input8p8n  pg16Input8p8n_3
+timestamp 1632866290
+transform 1 0 4795 0 1 335
+box -895 -335 405 420
+use pg16Input8p8n  pg16Input8p8n_2
+timestamp 1632866290
+transform 1 0 3495 0 1 335
+box -895 -335 405 420
+use pg16Input8p8n  pg16Input8p8n_1
+timestamp 1632866290
+transform 1 0 2195 0 1 335
+box -895 -335 405 420
+use pg16Input8p8n  pg16Input8p8n_0
+timestamp 1632866290
+transform 1 0 895 0 1 335
+box -895 -335 405 420
+<< end >>
