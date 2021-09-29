@@ -9,14 +9,14 @@ C0 VP Y 0.22fF
 .ends
 
 .subckt pg17Input8p8n_para_1n Ain Bin xout VP Din Ein Fin Gin Hin Cin Iin VN Jin Kin
-+ Lin Min Nin Oin Pin
-Xinverter_0 inverter_0/A inverter_2/A VP VN inverter
-Xinverter_1 inverter_2/A reset_loop VP VN inverter
-Xinverter_2 inverter_2/A xe VP VN inverter
++ Lin Min Nin Oin Pin n_para
+Xinverter_0 inverter_0/A pgnode VP VN inverter
+Xinverter_1 pgnode reset_loop VP VN inverter
+Xinverter_2 pgnode xe VP VN inverter
 Xinverter_3 xe xout VP VN inverter
 X0 a_n560_30# Ein a_n625_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 X1 inverter_0/A reset_loop VP VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=-0 ps=0 w=100 l=15
-X2 inverter_0/A a_n140_n60# VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X2 inverter_0/A n_para VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 X3 inverter_0/A Min inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 X4 a_n755_30# Hin VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 X5 inverter_0/A Kin inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
@@ -32,22 +32,22 @@ X14 inverter_0/A Nin inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0
 X15 a_n430_30# Cin a_n495_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 X16 inverter_0/A Lin inverter_0/A VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
 X17 a_n625_30# Fin a_n690_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
-C0 Din Ein 0.10fF
-C1 Bin Ain 0.10fF
-C2 Kin Lin 0.12fF
-C3 inverter_0/A xe 0.17fF
-C4 Jin Kin 0.12fF
-C5 Fin Ein 0.10fF
-C6 Hin Gin 0.10fF
-C7 Fin Gin 0.10fF
-C8 Nin Oin 0.12fF
-C9 Lin Min 0.12fF
-C10 Pin Oin 0.12fF
-C11 Jin Iin 0.12fF
-C12 Cin Din 0.10fF
-C13 Nin Min 0.12fF
-C14 inverter_0/A VP 1.64fF
-C15 Bin Cin 0.10fF
-C16 VP reset_loop 0.15fF
+C0 Kin Jin 0.12fF
+C1 xe inverter_0/A 0.17fF
+C2 Iin Jin 0.12fF
+C3 Nin Oin 0.12fF
+C4 Ain Bin 0.10fF
+C5 Nin Min 0.12fF
+C6 Din Cin 0.10fF
+C7 VP inverter_0/A 1.64fF
+C8 Gin Hin 0.10fF
+C9 Pin Oin 0.12fF
+C10 Lin Min 0.12fF
+C11 Gin Fin 0.10fF
+C12 Din Ein 0.10fF
+C13 VP reset_loop 0.15fF
+C14 Cin Bin 0.10fF
+C15 Lin Kin 0.12fF
+C16 Ein Fin 0.10fF
 .ends
 
