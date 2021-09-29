@@ -1,9 +1,9 @@
 magic
 tech sky130A
-timestamp 1632866720
+timestamp 1632933319
 << nwell >>
 rect -280 325 -30 420
-rect -895 185 -5 325
+rect -930 185 -5 325
 << nmos >>
 rect -770 30 -755 130
 rect -705 30 -690 130
@@ -13,7 +13,7 @@ rect -510 30 -495 130
 rect -445 30 -430 130
 rect -380 30 -365 130
 rect -315 30 -300 130
-rect -115 -10 -100 90
+rect -115 5 -100 105
 << pmos >>
 rect -775 205 -760 305
 rect -710 205 -695 305
@@ -61,14 +61,14 @@ rect -300 105 -250 130
 rect -300 55 -285 105
 rect -265 55 -250 105
 rect -300 30 -250 55
-rect -165 65 -115 90
-rect -165 15 -150 65
-rect -130 15 -115 65
-rect -165 -10 -115 15
-rect -100 65 -50 90
-rect -100 15 -85 65
-rect -65 15 -50 65
-rect -100 -10 -50 15
+rect -165 80 -115 105
+rect -165 30 -150 80
+rect -130 30 -115 80
+rect -165 5 -115 30
+rect -100 80 -50 105
+rect -100 30 -85 80
+rect -65 30 -50 80
+rect -100 5 -50 30
 << pdiff >>
 rect -825 280 -775 305
 rect -825 230 -810 280
@@ -124,8 +124,8 @@ rect -480 55 -460 105
 rect -415 55 -395 105
 rect -350 55 -330 105
 rect -285 55 -265 105
-rect -150 15 -130 65
-rect -85 15 -65 65
+rect -150 30 -130 80
+rect -85 30 -65 80
 << pdiffc >>
 rect -810 230 -790 280
 rect -745 230 -725 280
@@ -143,10 +143,10 @@ rect -870 105 -820 130
 rect -870 55 -850 105
 rect -830 55 -820 105
 rect -870 30 -820 55
-rect -215 65 -165 90
-rect -215 15 -195 65
-rect -175 15 -165 65
-rect -215 -10 -165 15
+rect -215 80 -165 105
+rect -215 30 -195 80
+rect -175 30 -165 80
+rect -215 5 -165 30
 << nsubdiff >>
 rect -875 280 -825 305
 rect -875 230 -855 280
@@ -158,7 +158,7 @@ rect -150 230 -140 280
 rect -190 205 -140 230
 << psubdiffcont >>
 rect -850 55 -830 105
-rect -195 15 -175 65
+rect -195 30 -175 80
 << nsubdiffcont >>
 rect -855 230 -835 280
 rect -170 230 -150 280
@@ -225,7 +225,7 @@ rect -510 130 -495 145
 rect -445 130 -430 145
 rect -380 130 -365 145
 rect -315 130 -300 145
-rect -115 90 -100 105
+rect -115 105 -100 120
 rect -770 20 -755 30
 rect -705 20 -690 30
 rect -640 20 -625 30
@@ -266,7 +266,7 @@ rect -315 10 -275 20
 rect -315 -10 -305 10
 rect -285 -10 -275 10
 rect -315 -20 -275 -10
-rect -115 -20 -100 -10
+rect -115 -20 -100 5
 rect -140 -30 -100 -20
 rect -140 -50 -130 -30
 rect -110 -50 -100 -30
@@ -422,9 +422,12 @@ rect -355 40 -325 55
 rect -290 105 -260 140
 rect -290 55 -285 105
 rect -265 55 -260 105
-rect -60 80 -40 165
+rect -60 95 -40 165
 rect -290 40 -260 55
-rect -205 65 -125 80
+rect -205 80 -125 95
+rect -205 30 -195 80
+rect -175 30 -150 80
+rect -130 30 -125 80
 rect -770 10 -730 20
 rect -770 -10 -760 10
 rect -740 -10 -730 10
@@ -454,19 +457,16 @@ rect -380 -10 -370 10
 rect -350 -10 -340 10
 rect -380 -20 -340 -10
 rect -315 10 -275 20
-rect -315 -10 -305 10
-rect -285 -10 -275 10
-rect -205 15 -195 65
-rect -175 15 -150 65
-rect -130 15 -125 65
-rect -205 0 -125 15
-rect -90 65 -40 80
-rect -90 15 -85 65
-rect -65 35 -40 65
-rect -65 15 -5 35
+rect -205 15 -125 30
+rect -90 80 -40 95
+rect -90 30 -85 80
+rect -65 35 -40 80
+rect -65 30 -5 35
+rect -90 15 -5 30
 rect 10 15 20 35
 rect 168 15 202 35
-rect -90 0 -60 15
+rect -315 -10 -305 10
+rect -285 -10 -275 10
 rect -315 -20 -275 -10
 rect 230 -15 250 25
 rect -140 -30 -100 -20
@@ -481,66 +481,63 @@ rect -170 230 -150 280
 rect -130 230 -110 280
 rect -850 55 -830 105
 rect -805 55 -785 105
-rect -195 15 -175 65
-rect -150 15 -130 65
+rect -195 30 -175 80
+rect -150 30 -130 80
 << metal1 >>
-rect -895 280 -5 295
-rect -895 230 -855 280
+rect -930 280 -5 295
+rect -930 230 -855 280
 rect -835 230 -810 280
 rect -790 230 -170 280
 rect -150 230 -130 280
 rect -110 230 -5 280
-rect -895 220 -5 230
-rect -895 215 20 220
-rect -895 105 105 140
-rect -895 60 -850 105
+rect -930 220 -5 230
+rect -930 215 20 220
+rect -930 105 105 140
+rect -930 60 -850 105
 rect -860 55 -850 60
 rect -830 55 -805 105
-rect -785 65 105 105
-rect -785 60 -195 65
+rect -785 80 105 105
+rect -785 60 -195 80
 rect -785 55 -250 60
 rect -860 40 -250 55
-rect -215 20 -195 60
-rect -205 15 -195 20
-rect -175 15 -150 65
-rect -130 60 105 65
-rect -130 15 -50 60
+rect -215 35 -195 60
+rect -205 30 -195 35
+rect -175 30 -150 80
+rect -130 60 105 80
+rect -130 30 -50 60
 rect -5 45 75 60
-rect -205 0 -50 15
+rect -205 15 -50 30
 rect 10 -55 75 45
 rect -5 -70 75 -55
-rect -895 -150 -65 -70
+rect -930 -150 -65 -70
 rect -5 -150 140 -70
 rect 210 -150 405 -70
-rect -895 -305 -65 -225
+rect -930 -305 -65 -225
 rect 345 -305 405 -225
-use inverter  inverter_3
+use inverter  inverter_1
 timestamp 1632865684
-transform -1 0 -5 0 -1 -80
-box -145 -75 60 255
-use inverter  inverter_2
-timestamp 1632865684
-transform -1 0 200 0 -1 -80
+transform 1 0 345 0 1 70
 box -145 -75 60 255
 use inverter  inverter_0
 timestamp 1632865684
 transform 1 0 140 0 1 70
 box -145 -75 60 255
-use inverter  inverter_1
+use inverter  inverter_2
 timestamp 1632865684
-transform 1 0 345 0 1 70
+transform -1 0 200 0 -1 -80
+box -145 -75 60 255
+use inverter  inverter_3
+timestamp 1632865684
+transform -1 0 -5 0 -1 -80
 box -145 -75 60 255
 << labels >>
 rlabel locali 140 -35 140 -35 7 xe
 rlabel space 142 -115 142 -115 7 VN
 port 3 w
-rlabel locali -10 355 -10 355 7 reset_loop
 rlabel metal1 -15 85 10 110 7 VN
 port 15 w
 rlabel locali -345 350 -305 390 7 Iin
 port 14 w
-rlabel metal1 -895 255 -895 255 7 VP
-port 5 w
 rlabel locali -410 370 -410 370 7 Jin
 port 16 w
 rlabel locali -475 370 -475 370 7 Kin
@@ -556,7 +553,6 @@ port 21 n
 rlabel locali -800 370 -800 370 7 Pin
 port 22 w
 rlabel metal1 375 -265 375 -265 7 VP
-rlabel metal1 -895 95 -895 95 3 VN
 rlabel space -25 -180 -25 -180 7 xout
 rlabel locali -305 -15 -305 -15 7 Ain
 port 0 w
@@ -579,4 +575,8 @@ port 8 w
 rlabel metal1 -260 95 -260 95 3 VN
 rlabel space -35 -40 -25 -30 7 xout
 port 4 w
+rlabel metal1 -930 95 -930 95 3 VN
+rlabel metal1 -925 255 -925 255 7 VP
+port 5 w
+rlabel locali 35 355 35 355 7 reset_loop
 << end >>

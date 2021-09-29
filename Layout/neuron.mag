@@ -1,19 +1,143 @@
 magic
 tech sky130A
-timestamp 1632891941
+timestamp 1632934278
+<< poly >>
+rect 780 1040 890 1055
+rect 875 780 890 1040
+rect 875 770 915 780
+rect 875 750 885 770
+rect 905 750 915 770
+rect 875 740 915 750
+rect 550 715 590 725
+rect 550 695 560 715
+rect 580 695 590 715
+rect 550 685 590 695
+rect 875 520 890 740
+rect 860 500 890 520
+rect 860 325 875 500
+rect 835 315 875 325
+rect 755 305 795 315
+rect 755 285 765 305
+rect 785 285 795 305
+rect 835 295 845 315
+rect 865 295 875 315
+rect 835 285 875 295
+rect 755 275 795 285
+<< polycont >>
+rect 885 750 905 770
+rect 560 695 580 715
+rect 765 285 785 305
+rect 845 295 865 315
 << locali >>
 rect -15 1355 880 1375
 rect -15 295 5 1355
 rect 1051 1200 1066 1220
+rect 875 770 915 780
+rect 875 750 885 770
+rect 905 750 915 770
+rect 875 740 915 750
+rect 550 715 590 725
+rect 550 695 560 715
+rect 580 695 590 715
+rect 550 685 590 695
 rect 1052 350 1096 370
-rect -15 275 755 295
+rect 835 315 880 325
+rect 755 305 795 315
+rect 755 295 765 305
+rect -15 285 765 295
+rect 785 285 795 305
+rect 835 295 845 315
+rect 865 310 880 315
+rect 865 295 875 310
+rect 835 285 875 295
 rect 1051 290 1067 310
+rect -15 275 795 285
 use pg17Input8p8n_para_1n  pg17Input8p8n_para_1n_1
-timestamp 1632867173
+timestamp 1632933319
 transform 1 0 895 0 -1 1175
-box -895 -335 405 420
+box -930 -335 405 420
 use pg17Input8p8n_para_1n  pg17Input8p8n_para_1n_0
-timestamp 1632867173
+timestamp 1632933319
 transform 1 0 895 0 1 335
-box -895 -335 405 420
+box -930 -335 405 420
+<< labels >>
+rlabel locali -10 750 -10 750 1 ring_loop
+rlabel space 590 325 590 325 1 in1
+port 1 n
+rlabel space 525 325 525 325 1 in2
+port 2 n
+rlabel space 465 325 465 325 1 in3
+port 3 n
+rlabel space 400 330 400 330 1 in4
+port 4 n
+rlabel space 330 325 330 325 1 in5
+port 5 n
+rlabel space 275 325 275 325 1 in6
+port 6 n
+rlabel space 205 335 205 335 1 in7
+port 7 n
+rlabel space 145 325 145 325 1 in8
+port 8 n
+rlabel space 605 1165 605 1165 1 in9
+port 9 n
+rlabel space 520 1160 520 1160 1 in10
+port 10 n
+rlabel space 465 1165 465 1165 1 in11
+port 11 n
+rlabel space 405 1175 405 1175 1 in12
+port 12 n
+rlabel space 335 1160 335 1160 1 in13
+port 13 n
+rlabel space 275 1165 275 1165 1 in14
+port 14 n
+rlabel space 210 1170 210 1170 1 in15
+port 15 n
+rlabel space 145 1170 145 1170 1 in16
+port 16 n
+rlabel space 1270 70 1270 70 1 VP
+rlabel space 1275 215 1275 215 1 VN
+rlabel space 1295 430 1295 430 7 VN
+rlabel space 1290 580 1290 580 1 VP
+rlabel space 510 690 510 690 1 ip2
+port 18 n
+rlabel space 435 690 435 690 1 ip3
+port 19 n
+rlabel space 380 700 380 700 1 ip4
+port 20 n
+rlabel space 305 700 305 700 1 ip5
+port 21 n
+rlabel space 240 690 240 690 1 ip6
+port 22 n
+rlabel space 180 705 180 705 1 ip7
+port 23 n
+rlabel space 105 705 105 705 1 ip8
+port 24 n
+rlabel space 565 800 565 800 1 ip9
+port 25 n
+rlabel space 500 795 500 795 1 ip10
+port 26 n
+rlabel space 435 805 435 805 1 ip11
+port 27 n
+rlabel space 370 800 370 800 1 ip12
+port 28 n
+rlabel space 305 800 305 800 1 ip13
+port 29 n
+rlabel space 240 800 240 800 1 ip14
+port 30 n
+rlabel space 175 800 175 800 1 ip15
+port 31 n
+rlabel space 110 790 110 790 1 ip16
+port 32 n
+rlabel space 1290 920 1290 920 1 VP
+rlabel space 1295 1080 1295 1080 7 VN
+rlabel space 1265 1290 1265 1290 1 VN
+port 34 n
+rlabel space 1270 1445 1270 1445 1 VP
+port 33 n
+rlabel locali 550 685 590 725 7 Iin
+port 14 w
+rlabel locali 565 695 565 695 1 ip1
+port 17 n
+rlabel locali 875 740 915 780 1 ring_loop_branch
+port 35 n
 << end >>
