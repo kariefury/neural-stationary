@@ -1,0 +1,466 @@
+timestamp 1632940244
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 1e+06
+resistclasses 2200000 3050000 1700000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12200 125 125 47 47 29 5
+use pg17Input8p8n_para_1n pg17Input8p8n_para_1n_0 1 0 895 0 1 335
+use pg17Input8p8n_para_1n pg17Input8p8n_para_1n_1 1 0 895 0 -1 1175
+port "VN" 34 1265 1290 1265 1290 m1
+port "VP" 33 1270 1445 1270 1445 m1
+port "in1" 1 590 325 590 325 li
+port "in2" 2 525 325 525 325 li
+port "in3" 3 465 325 465 325 li
+port "in4" 4 400 330 400 330 li
+port "in5" 5 330 325 330 325 li
+port "in6" 6 275 325 275 325 li
+port "in7" 7 205 335 205 335 li
+port "in8" 8 145 325 145 325 li
+port "ip2" 18 510 690 510 690 li
+port "ip3" 19 435 690 435 690 li
+port "ip4" 20 380 700 380 700 li
+port "ip5" 21 305 700 305 700 li
+port "ip6" 22 240 690 240 690 li
+port "ip7" 23 180 705 180 705 li
+port "ip8" 24 105 705 105 705 li
+port "ip9" 25 565 800 565 800 li
+port "ip10" 26 500 795 500 795 li
+port "ip11" 27 435 805 435 805 li
+port "ip12" 28 370 800 370 800 li
+port "ip13" 29 305 800 305 800 li
+port "ip14" 30 240 800 240 800 li
+port "ip15" 31 175 800 175 800 li
+port "ip16" 32 110 790 110 790 li
+port "in9" 9 605 1165 605 1165 li
+port "in10" 10 520 1160 520 1160 li
+port "in11" 11 465 1165 465 1165 li
+port "in12" 12 405 1175 405 1175 li
+port "in13" 13 335 1160 335 1160 li
+port "in14" 14 275 1165 275 1165 li
+port "in15" 15 210 1170 210 1170 li
+port "in16" 16 145 1170 145 1170 li
+port "ip1" 17 565 695 565 695 li
+port "Iin" 14 550 685 590 725 li
+port "ring_loop_branch" 35 875 740 915 780 li
+node "VP" 0 16.66 1265 65 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100 40 0 0 0 0 0 0 0 0 0 0
+node "VN" 0 16.66 1270 210 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100 40 0 0 0 0 0 0 0 0 0 0
+node "VN" 0 16.66 1290 425 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100 40 0 0 0 0 0 0 0 0 0 0
+node "VP" 0 16.66 1285 575 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100 40 0 0 0 0 0 0 0 0 0 0
+node "VP" 0 16.66 1285 915 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100 40 0 0 0 0 0 0 0 0 0 0
+node "VN" 0 16.66 1290 1075 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100 40 0 0 0 0 0 0 0 0 0 0
+node "VN" 0 16.66 1265 1290 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100 40 0 0 0 0 0 0 0 0 0 0
+node "VP" 0 16.66 1270 1445 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100 40 0 0 0 0 0 0 0 0 0 0
+node "li_1051_290#" 15 40.784 1051 290 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 320 72 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_1052_350#" 27 73.656 1052 350 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 880 128 0 0 0 0 0 0 0 0 0 0 0 0
+node "in1" 12 93.92 590 325 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in2" 12 93.92 525 325 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in3" 12 93.92 465 325 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in4" 12 93.92 400 330 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in5" 12 93.92 330 325 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in6" 12 93.92 275 325 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in7" 12 93.92 205 335 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in8" 12 93.92 145 325 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip2" 12 93.92 510 690 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip3" 12 93.92 435 690 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip4" 12 93.92 380 700 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip5" 12 93.92 305 700 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip6" 12 93.92 240 690 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip7" 12 93.92 180 705 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip8" 12 93.92 105 705 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip9" 12 93.92 565 800 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip10" 12 93.92 500 795 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip11" 12 93.92 435 805 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip12" 12 93.92 370 800 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip13" 12 93.92 305 800 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip14" 12 93.92 240 800 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip15" 12 93.92 175 800 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip16" 12 93.92 110 790 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in9" 12 93.92 605 1165 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in10" 12 93.92 520 1160 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in11" 12 93.92 465 1165 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in12" 12 93.92 405 1175 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in13" 12 93.92 335 1160 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in14" 12 93.92 275 1165 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in15" 12 93.92 210 1170 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "in16" 12 93.92 145 1170 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_1051_1200#" 16 39.61 1051 1200 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 300 70 0 0 0 0 0 0 0 0 0 0 0 0
+node "ring_loop" 1735 3392.11 755 275 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 56100 5610 0 0 0 0 0 0 0 0 0 0 0 0
+node "ip1" 60 192.96 565 695 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1600 160 0 0 1600 160 0 0 0 0 0 0 0 0 0 0 0 0
+equiv "ip1" "Iin"
+node "ring_loop_branch" 2796 1358.44 875 740 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15275 1890 0 0 3275 330 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "SUB" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "ip4" "ip7" 8.51613
+cap "in2" "ring_loop" 66
+cap "ip5" "ip7" 14.6667
+cap "in11" "ring_loop" 8.25
+cap "in4" "in7" 8.51613
+cap "ip4" "ip12" 22
+cap "in2" "in4" 14.6667
+cap "ring_loop" "ip8" 14.6667
+cap "li_1052_350#" "li_1051_290#" 12.375
+cap "in5" "in7" 14.6667
+cap "in6" "ring_loop" 66
+cap "ip11" "ip12" 52.8
+cap "in2" "in5" 8.51613
+cap "ip14" "ip12" 14.6667
+cap "ip1" "ip2" 52.8
+cap "ip3" "ip4" 52.8
+cap "ip5" "ip3" 14.6667
+cap "in6" "in4" 14.6667
+cap "ip5" "ip4" 52.8
+cap "ip11" "ip3" 22
+cap "ip10" "ip12" 14.6667
+cap "in6" "in5" 52.8
+cap "ip11" "ip14" 8.51613
+cap "VP" "VN" 1.60714
+cap "in14" "in16" 14.6667
+cap "ip8" "ip7" 52.8
+cap "ip16" "ip13" 8.51613
+cap "ip11" "ip10" 52.8
+cap "in3" "in1" 14.6667
+cap "in13" "in16" 8.51613
+cap "in10" "in9" 52.8
+cap "ip5" "ip8" 8.51613
+cap "in12" "in10" 14.6667
+cap "in13" "in10" 8.51613
+cap "ip1" "ip9" 22
+cap "in3" "ring_loop" 66
+cap "ip16" "ip15" 52.8
+cap "in14" "in12" 14.6667
+cap "in3" "in4" 52.8
+cap "in13" "in14" 52.8
+cap "ip16" "ring_loop" 14.6667
+cap "in16" "ring_loop" 19.25
+cap "in3" "in5" 14.6667
+cap "in6" "in7" 52.8
+cap "in12" "in9" 8.51613
+cap "in10" "ring_loop" 8.25
+cap "in13" "in12" 52.8
+cap "VP" "VN" 1.55172
+cap "li_1051_290#" "ring_loop_branch" 3.75
+cap "ip13" "ip15" 14.6667
+cap "in14" "ring_loop" 8.25
+cap "ip6" "ip7" 52.8
+cap "in15" "in16" 52.8
+cap "in8" "ring_loop" 77
+cap "ring_loop" "in9" 8.25
+cap "in12" "ring_loop" 8.25
+cap "ip3" "ip2" 52.8
+cap "ip3" "ip6" 8.51613
+cap "ip6" "ip4" 14.6667
+cap "in13" "ring_loop" 8.25
+cap "ip4" "ip2" 14.6667
+cap "in8" "in5" 8.51613
+cap "ip5" "ip6" 52.8
+cap "ip5" "ip2" 8.51613
+cap "ip14" "ip16" 14.6667
+cap "ip3" "ip1" 14.6667
+cap "ip6" "ip14" 22
+cap "in14" "in15" 52.8
+cap "ring_loop" "in1" 66
+cap "ip1" "ip4" 8.51613
+cap "in3" "in2" 52.8
+cap "in4" "in1" 8.51613
+cap "ring_loop" "ip15" 8.51613
+cap "ip10" "ip2" 22
+cap "ip13" "ip12" 52.8
+cap "in15" "in12" 8.51613
+cap "in3" "in6" 8.51613
+cap "in13" "in15" 14.6667
+cap "ring_loop" "ring_loop_branch" 42
+cap "ring_loop" "in4" 66
+cap "ip16" "ip8" 22
+cap "ip5" "ip13" 22
+cap "ip6" "ip8" 14.6667
+cap "ip11" "ip13" 14.6667
+cap "VN" "VP" 1.66667
+cap "ip12" "ip9" 8.51613
+cap "ip14" "ip13" 52.8
+cap "ring_loop" "in5" 66
+cap "in11" "in10" 52.8
+cap "ip7" "ip15" 22
+cap "ip10" "ip13" 8.51613
+cap "in5" "in4" 52.8
+cap "ring_loop" "ip7" 8.51613
+cap "ip11" "ip9" 14.6667
+cap "ip15" "ip12" 8.51613
+cap "in11" "in14" 8.51613
+cap "in15" "ring_loop" 15.3851
+cap "in8" "in7" 52.8
+cap "ip10" "ip9" 52.8
+cap "in11" "in9" 14.6667
+cap "ip14" "ip15" 52.8
+cap "in6" "in8" 14.6667
+cap "in11" "in12" 52.8
+cap "in13" "in11" 14.6667
+cap "in2" "in1" 52.8
+cap "VP" "VN" 1.5
+cap "ring_loop" "in7" 73.1351
+subcap "ip9" -282.535
+subcap "ip10" -282.535
+subcap "ip11" -282.535
+subcap "ip12" -282.535
+subcap "ip13" -282.535
+subcap "ip14" -282.535
+subcap "ip15" -282.535
+subcap "ip16" -282.535
+subcap "ring_loop" -2285.18
+subcap "ip1" -44.595
+cap "pg17Input8p8n_para_1n_0/Jin" "pg17Input8p8n_para_1n_0/Lin" -5.5
+cap "pg17Input8p8n_para_1n_0/Ein" "pg17Input8p8n_para_1n_0/Din" -52.8
+cap "pg17Input8p8n_para_1n_0/Ain" "pg17Input8p8n_para_1n_0/bin" -52.8
+cap "pg17Input8p8n_para_1n_0/Kin" "pg17Input8p8n_para_1n_0/Jin" -19.8
+cap "pg17Input8p8n_para_1n_0/Kin" "pg17Input8p8n_para_1n_0/Lin" -19.8
+cap "pg17Input8p8n_para_1n_0/Kin" "pg17Input8p8n_para_1n_1/Kin" -7.76471
+cap "pg17Input8p8n_para_1n_0/Hin" "pg17Input8p8n_para_1n_0/Fin" -14.6667
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/a_n625_30#" 12.375
+cap "pg17Input8p8n_para_1n_0/Nin" "pg17Input8p8n_para_1n_0/Lin" -5.5
+cap "pg17Input8p8n_para_1n_0/Jin" "pg17Input8p8n_para_1n_1/Jin" -7.76471
+cap "pg17Input8p8n_para_1n_0/Ein" "pg17Input8p8n_para_1n_0/Cin" -14.6667
+cap "pg17Input8p8n_para_1n_0/Oin" "pg17Input8p8n_para_1n_0/Min" -5.5
+cap "pg17Input8p8n_para_1n_0/Kin" "pg17Input8p8n_para_1n_0/Nin" -3.19355
+cap "pg17Input8p8n_para_1n_0/Din" "pg17Input8p8n_para_1n_0/Gin" -8.51613
+cap "pg17Input8p8n_para_1n_0/bin" "pg17Input8p8n_para_1n_0/Din" -14.6667
+cap "pg17Input8p8n_para_1n_1/Jin" "pg17Input8p8n_para_1n_0/a_n435_205#" 1.59677
+cap "pg17Input8p8n_para_1n_0/a_n560_30#" "pg17Input8p8n_para_1n_0/n_para" 12.375
+cap "pg17Input8p8n_para_1n_0/VP" "pg17Input8p8n_para_1n_1/Pin" 1.59677
+cap "pg17Input8p8n_para_1n_1/Min" "pg17Input8p8n_para_1n_0/Min" -7.76471
+cap "pg17Input8p8n_para_1n_0/Oin" "pg17Input8p8n_para_1n_0/Pin" -19.8
+cap "pg17Input8p8n_para_1n_0/Jin" "pg17Input8p8n_para_1n_0/Min" -3.19355
+cap "pg17Input8p8n_para_1n_0/a_n695_205#" "pg17Input8p8n_para_1n_1/Nin" 1.59677
+cap "pg17Input8p8n_para_1n_0/Din" "pg17Input8p8n_para_1n_0/Fin" -14.6667
+cap "pg17Input8p8n_para_1n_0/Min" "pg17Input8p8n_para_1n_0/Lin" -19.8
+cap "pg17Input8p8n_para_1n_0/a_n565_205#" "pg17Input8p8n_para_1n_1/Lin" 1.59677
+cap "pg17Input8p8n_para_1n_0/bin" "pg17Input8p8n_para_1n_0/Cin" -52.8
+cap "pg17Input8p8n_para_1n_0/a_n630_205#" "pg17Input8p8n_para_1n_1/Min" 1.59677
+cap "pg17Input8p8n_para_1n_0/Kin" "pg17Input8p8n_para_1n_0/Min" -5.5
+cap "pg17Input8p8n_para_1n_0/Ain" "pg17Input8p8n_para_1n_0/Din" -8.51613
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/a_n690_30#" 12.375
+cap "pg17Input8p8n_para_1n_1/Iin" "pg17Input8p8n_para_1n_0/a_n370_205#" 1.59677
+cap "pg17Input8p8n_para_1n_0/Nin" "pg17Input8p8n_para_1n_0/Min" -19.8
+cap "pg17Input8p8n_para_1n_0/Cin" "pg17Input8p8n_para_1n_0/Fin" -8.51613
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/a_n365_30#" 12.375
+cap "pg17Input8p8n_para_1n_0/Ein" "pg17Input8p8n_para_1n_0/Gin" -14.6667
+cap "pg17Input8p8n_para_1n_0/Ein" "pg17Input8p8n_para_1n_0/bin" -8.51613
+cap "pg17Input8p8n_para_1n_0/Iin" "pg17Input8p8n_para_1n_0/Jin" -19.8
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/VP" 213.8
+cap "pg17Input8p8n_para_1n_0/a_n760_205#" "pg17Input8p8n_para_1n_0/n_para" 18.8571
+cap "pg17Input8p8n_para_1n_0/Iin" "pg17Input8p8n_para_1n_0/Lin" -3.19355
+cap "pg17Input8p8n_para_1n_1/Lin" "pg17Input8p8n_para_1n_0/Lin" -7.76471
+cap "pg17Input8p8n_para_1n_0/a_n495_30#" "pg17Input8p8n_para_1n_0/n_para" 12.375
+cap "pg17Input8p8n_para_1n_0/Nin" "pg17Input8p8n_para_1n_0/Pin" -5.5
+cap "pg17Input8p8n_para_1n_0/Nin" "pg17Input8p8n_para_1n_1/Nin" -7.76471
+cap "pg17Input8p8n_para_1n_0/Ain" "pg17Input8p8n_para_1n_0/Cin" -14.6667
+cap "pg17Input8p8n_para_1n_0/Kin" "pg17Input8p8n_para_1n_0/Iin" -5.5
+cap "pg17Input8p8n_para_1n_0/a_n500_205#" "pg17Input8p8n_para_1n_1/Kin" 1.59677
+cap "pg17Input8p8n_para_1n_0/Ein" "pg17Input8p8n_para_1n_0/Fin" -52.8
+cap "pg17Input8p8n_para_1n_0/Ein" "pg17Input8p8n_para_1n_0/Hin" -8.51613
+cap "pg17Input8p8n_para_1n_0/inverter_3/Y" "pg17Input8p8n_para_1n_0/n_para" 0.846154
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/a_n430_30#" 12.375
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/a_n755_30#" 30.5819
+cap "pg17Input8p8n_para_1n_0/Cin" "pg17Input8p8n_para_1n_0/Din" -52.8
+cap "pg17Input8p8n_para_1n_0/Pin" "pg17Input8p8n_para_1n_0/Min" -3.19355
+cap "pg17Input8p8n_para_1n_0/Oin" "pg17Input8p8n_para_1n_0/Lin" -3.19355
+cap "pg17Input8p8n_para_1n_0/Fin" "pg17Input8p8n_para_1n_0/Gin" -52.8
+cap "pg17Input8p8n_para_1n_0/Pin" "pg17Input8p8n_para_1n_1/Pin" -7.76471
+cap "pg17Input8p8n_para_1n_0/Oin" "pg17Input8p8n_para_1n_1/Oin" -7.76471
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/a_n305_205#" 12.375
+cap "pg17Input8p8n_para_1n_0/a_n760_205#" "pg17Input8p8n_para_1n_1/Oin" 1.59677
+cap "pg17Input8p8n_para_1n_0/Hin" "pg17Input8p8n_para_1n_0/Gin" -52.8
+cap "pg17Input8p8n_para_1n_0/Nin" "pg17Input8p8n_para_1n_0/Oin" -19.8
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/VN" 218.84
+subcap "VP" -835.447
+subcap "in1" -175.39
+subcap "in2" -266.975
+subcap "in3" -299.93
+subcap "ip2" -213.26
+subcap "ring_loop" -3062.38
+subcap "ip1" -258.22
+subcap "ring_loop_branch" -724.347
+cap "pg17Input8p8n_para_1n_1/inverter_0/Y" "pg17Input8p8n_para_1n_0/reset_loop" 2.75
+cap "pg17Input8p8n_para_1n_1/reset_loop" "pg17Input8p8n_para_1n_0/inverter_0/A" 2.75
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/VN" 39
+cap "pg17Input8p8n_para_1n_1/reset_loop" "pg17Input8p8n_para_1n_0/reset_loop" 69.3333
+cap "pg17Input8p8n_para_1n_0/xe" "pg17Input8p8n_para_1n_0/pgnode" -12.375
+cap "pg17Input8p8n_para_1n_0/n_para" "pg17Input8p8n_para_1n_0/xout" 3.67308
+cap "pg17Input8p8n_para_1n_1/a_n305_205#" "pg17Input8p8n_para_1n_0/reset_loop" 2.75
+cap "pg17Input8p8n_para_1n_1/reset_loop" "pg17Input8p8n_para_1n_0/inverter_1/VP" 16.4345
+cap "pg17Input8p8n_para_1n_0/xe" "pg17Input8p8n_para_1n_0/xout" 62.4
+cap "pg17Input8p8n_para_1n_0/xout" "pg17Input8p8n_para_1n_0/VN" 46.7
+cap "pg17Input8p8n_para_1n_0/xout" "pg17Input8p8n_para_1n_0/inverter_0/A" 95.3364
+cap "pg17Input8p8n_para_1n_0/xout" "pg17Input8p8n_para_1n_0/reset_loop" 75.5867
+cap "pg17Input8p8n_para_1n_0/inverter_1/VP" "pg17Input8p8n_para_1n_0/VN" -1.60714
+cap "pg17Input8p8n_para_1n_0/VP" "pg17Input8p8n_para_1n_0/VN" -1.66667
+cap "pg17Input8p8n_para_1n_0/reset_loop" "pg17Input8p8n_para_1n_0/inverter_1/VP" 14.6667
+cap "pg17Input8p8n_para_1n_1/reset_loop" "pg17Input8p8n_para_1n_0/pgnode" 2.75
+cap "pg17Input8p8n_para_1n_0/xout" "pg17Input8p8n_para_1n_0/inverter_1/VP" 46.7
+subcap "ip2" -15.005
+subcap "ip3" -15.005
+subcap "ip4" -15.005
+subcap "ip5" -15.005
+subcap "ip6" -15.005
+subcap "ip7" -15.005
+subcap "ip8" -15.005
+subcap "ip1" -114.045
+cap "pg17Input8p8n_para_1n_1/Lin" "pg17Input8p8n_para_1n_1/Jin" -14.6667
+cap "pg17Input8p8n_para_1n_1/Kin" "pg17Input8p8n_para_1n_1/Jin" -52.8
+cap "pg17Input8p8n_para_1n_1/Nin" "pg17Input8p8n_para_1n_1/Min" -52.8
+cap "pg17Input8p8n_para_1n_0/Jin" "pg17Input8p8n_para_1n_0/Min" -5.32258
+cap "pg17Input8p8n_para_1n_1/xout" "pg17Input8p8n_para_1n_1/a_n760_205#" 18.8571
+cap "pg17Input8p8n_para_1n_0/Pin" "pg17Input8p8n_para_1n_0/Min" -5.32258
+cap "pg17Input8p8n_para_1n_0/Nin" "pg17Input8p8n_para_1n_0/Kin" -5.32258
+cap "pg17Input8p8n_para_1n_1/Ein" "pg17Input8p8n_para_1n_1/Fin" -52.8
+cap "pg17Input8p8n_para_1n_1/xout" "pg17Input8p8n_para_1n_1/VN" 185.84
+cap "pg17Input8p8n_para_1n_0/a_n760_205#" "pg17Input8p8n_para_1n_1/Oin" 1.59677
+cap "pg17Input8p8n_para_1n_0/Min" "pg17Input8p8n_para_1n_1/a_n630_205#" 3.19355
+cap "pg17Input8p8n_para_1n_1/Gin" "pg17Input8p8n_para_1n_1/Ein" -14.6667
+cap "pg17Input8p8n_para_1n_0/Iin" "pg17Input8p8n_para_1n_0/Kin" -9.16667
+cap "pg17Input8p8n_para_1n_1/Nin" "pg17Input8p8n_para_1n_1/Oin" -52.8
+cap "pg17Input8p8n_para_1n_0/Jin" "pg17Input8p8n_para_1n_0/Lin" -9.16667
+cap "pg17Input8p8n_para_1n_1/Hin" "pg17Input8p8n_para_1n_1/Fin" -14.6667
+cap "pg17Input8p8n_para_1n_1/Ein" "pg17Input8p8n_para_1n_1/bin" -8.51613
+cap "pg17Input8p8n_para_1n_1/Gin" "pg17Input8p8n_para_1n_1/Hin" -52.8
+cap "pg17Input8p8n_para_1n_1/Iin" "pg17Input8p8n_para_1n_0/a_n370_205#" 1.59677
+cap "pg17Input8p8n_para_1n_1/Oin" "pg17Input8p8n_para_1n_1/Min" -14.6667
+cap "pg17Input8p8n_para_1n_1/Nin" "pg17Input8p8n_para_1n_0/Nin" 15.3333
+cap "pg17Input8p8n_para_1n_0/Iin" "pg17Input8p8n_para_1n_1/a_n370_205#" 3.19355
+cap "pg17Input8p8n_para_1n_0/Oin" "pg17Input8p8n_para_1n_1/Oin" 15.3333
+cap "pg17Input8p8n_para_1n_0/Min" "pg17Input8p8n_para_1n_0/Kin" -9.16667
+cap "pg17Input8p8n_para_1n_1/Din" "pg17Input8p8n_para_1n_1/Fin" -14.6667
+cap "pg17Input8p8n_para_1n_1/Nin" "pg17Input8p8n_para_1n_1/Pin" -14.6667
+cap "pg17Input8p8n_para_1n_1/Jin" "pg17Input8p8n_para_1n_1/Min" -8.51613
+cap "pg17Input8p8n_para_1n_1/Gin" "pg17Input8p8n_para_1n_1/Din" -8.51613
+cap "pg17Input8p8n_para_1n_1/Lin" "pg17Input8p8n_para_1n_0/Lin" 15.3333
+cap "pg17Input8p8n_para_1n_1/xout" "pg17Input8p8n_para_1n_1/inverter_3/VN" 97.84
+cap "pg17Input8p8n_para_1n_0/a_n630_205#" "pg17Input8p8n_para_1n_1/Min" 1.59677
+cap "pg17Input8p8n_para_1n_0/Nin" "pg17Input8p8n_para_1n_0/Oin" -33
+cap "pg17Input8p8n_para_1n_0/Lin" "pg17Input8p8n_para_1n_0/Kin" -33
+cap "pg17Input8p8n_para_1n_1/Pin" "pg17Input8p8n_para_1n_1/Min" -8.51613
+cap "pg17Input8p8n_para_1n_1/Lin" "pg17Input8p8n_para_1n_1/Iin" -8.51613
+cap "pg17Input8p8n_para_1n_1/Kin" "pg17Input8p8n_para_1n_1/Iin" -14.6667
+cap "pg17Input8p8n_para_1n_1/bin" "pg17Input8p8n_para_1n_1/Din" -14.6667
+cap "pg17Input8p8n_para_1n_1/n_para" "pg17Input8p8n_para_1n_1/Ain" 0.310811
+cap "pg17Input8p8n_para_1n_1/Ein" "pg17Input8p8n_para_1n_1/Cin" -14.6667
+cap "pg17Input8p8n_para_1n_1/Ain" "pg17Input8p8n_para_1n_1/Din" -8.51613
+cap "pg17Input8p8n_para_1n_1/Lin" "pg17Input8p8n_para_1n_0/a_n565_205#" 1.59677
+cap "pg17Input8p8n_para_1n_1/Pin" "pg17Input8p8n_para_1n_1/Oin" -52.8
+cap "pg17Input8p8n_para_1n_0/Jin" "pg17Input8p8n_para_1n_0/Kin" -33
+cap "pg17Input8p8n_para_1n_0/a_n500_205#" "pg17Input8p8n_para_1n_1/Kin" 1.59677
+cap "pg17Input8p8n_para_1n_0/a_n695_205#" "pg17Input8p8n_para_1n_1/Nin" 1.59677
+cap "pg17Input8p8n_para_1n_1/a_n500_205#" "pg17Input8p8n_para_1n_0/Kin" 3.19355
+cap "pg17Input8p8n_para_1n_1/Gin" "pg17Input8p8n_para_1n_1/Fin" -52.8
+cap "pg17Input8p8n_para_1n_0/Min" "pg17Input8p8n_para_1n_1/Min" 15.3333
+cap "pg17Input8p8n_para_1n_1/a_n565_205#" "pg17Input8p8n_para_1n_0/Lin" 3.19355
+cap "pg17Input8p8n_para_1n_0/Min" "pg17Input8p8n_para_1n_0/Oin" -9.16667
+cap "pg17Input8p8n_para_1n_1/Lin" "pg17Input8p8n_para_1n_1/Kin" -52.8
+cap "pg17Input8p8n_para_1n_1/Cin" "pg17Input8p8n_para_1n_1/Din" -52.8
+cap "pg17Input8p8n_para_1n_0/Lin" "pg17Input8p8n_para_1n_0/Oin" -5.32258
+cap "pg17Input8p8n_para_1n_0/Nin" "pg17Input8p8n_para_1n_0/Min" -33
+cap "pg17Input8p8n_para_1n_1/Kin" "pg17Input8p8n_para_1n_0/Kin" 15.3333
+cap "pg17Input8p8n_para_1n_1/Ain" "pg17Input8p8n_para_1n_1/bin" -52.8
+cap "pg17Input8p8n_para_1n_1/Pin" "pg17Input8p8n_para_1n_0/VP" 1.59677
+cap "pg17Input8p8n_para_1n_1/a_n760_205#" "pg17Input8p8n_para_1n_0/Oin" 3.19355
+cap "pg17Input8p8n_para_1n_0/Lin" "pg17Input8p8n_para_1n_0/Nin" -9.16667
+cap "pg17Input8p8n_para_1n_1/a_n695_205#" "pg17Input8p8n_para_1n_0/Nin" 3.19355
+cap "pg17Input8p8n_para_1n_1/xout" "pg17Input8p8n_para_1n_1/Gin" -1.77636e-15
+cap "pg17Input8p8n_para_1n_1/Ein" "pg17Input8p8n_para_1n_1/Hin" -8.51613
+cap "pg17Input8p8n_para_1n_0/Pin" "pg17Input8p8n_para_1n_0/Oin" -33
+cap "pg17Input8p8n_para_1n_0/Iin" "pg17Input8p8n_para_1n_0/Lin" -5.32258
+cap "pg17Input8p8n_para_1n_1/Iin" "pg17Input8p8n_para_1n_1/Jin" -52.8
+cap "pg17Input8p8n_para_1n_0/a_n435_205#" "pg17Input8p8n_para_1n_1/Jin" 1.59677
+cap "pg17Input8p8n_para_1n_1/Cin" "pg17Input8p8n_para_1n_1/Fin" -8.51613
+cap "pg17Input8p8n_para_1n_1/Lin" "pg17Input8p8n_para_1n_1/Nin" -14.6667
+cap "pg17Input8p8n_para_1n_1/Nin" "pg17Input8p8n_para_1n_1/Kin" -8.51613
+cap "pg17Input8p8n_para_1n_0/Iin" "pg17Input8p8n_para_1n_1/Iin" 15.3333
+cap "pg17Input8p8n_para_1n_0/Jin" "pg17Input8p8n_para_1n_1/Jin" 15.3333
+cap "pg17Input8p8n_para_1n_0/Pin" "pg17Input8p8n_para_1n_0/Nin" -9.16667
+cap "pg17Input8p8n_para_1n_1/xout" "pg17Input8p8n_para_1n_0/VP" 213.8
+cap "pg17Input8p8n_para_1n_0/Jin" "pg17Input8p8n_para_1n_0/Iin" -33
+cap "pg17Input8p8n_para_1n_1/Lin" "pg17Input8p8n_para_1n_1/Min" -52.8
+cap "pg17Input8p8n_para_1n_1/Kin" "pg17Input8p8n_para_1n_1/Min" -14.6667
+cap "pg17Input8p8n_para_1n_1/bin" "pg17Input8p8n_para_1n_1/Cin" -52.8
+cap "pg17Input8p8n_para_1n_1/Ein" "pg17Input8p8n_para_1n_1/Din" -52.8
+cap "pg17Input8p8n_para_1n_0/Jin" "pg17Input8p8n_para_1n_1/a_n435_205#" 3.19355
+cap "pg17Input8p8n_para_1n_0/Pin" "pg17Input8p8n_para_1n_1/Pin" 15.3333
+cap "pg17Input8p8n_para_1n_1/Ain" "pg17Input8p8n_para_1n_1/Cin" -14.6667
+cap "pg17Input8p8n_para_1n_1/Lin" "pg17Input8p8n_para_1n_1/Oin" -8.51613
+cap "pg17Input8p8n_para_1n_0/Lin" "pg17Input8p8n_para_1n_0/Min" -33
+cap "pg17Input8p8n_para_1n_1/xout" "pg17Input8p8n_para_1n_1/a_n755_30#" 18.2069
+cap "pg17Input8p8n_para_1n_0/Pin" "pg17Input8p8n_para_1n_0/VP" 3.19355
+subcap "ip9" -242.835
+subcap "ip10" -361.98
+subcap "in9" -175.39
+subcap "in10" -266.975
+subcap "in11" -299.93
+subcap "ip1" -116.04
+subcap "ring_loop_branch" -544.512
+cap "pg17Input8p8n_para_1n_0/inverter_1/VP" "pg17Input8p8n_para_1n_1/VN" -1.5
+cap "pg17Input8p8n_para_1n_1/VP" "pg17Input8p8n_para_1n_1/xout" 0.555
+cap "pg17Input8p8n_para_1n_1/reset_loop" "pg17Input8p8n_para_1n_0/inverter_0/Y" 2.75
+cap "pg17Input8p8n_para_1n_1/VN" "pg17Input8p8n_para_1n_1/VP" -0.775862
+cap "pg17Input8p8n_para_1n_0/reset_loop" "pg17Input8p8n_para_1n_1/inverter_0/A" 2.75
+cap "pg17Input8p8n_para_1n_1/inverter_0/A" "pg17Input8p8n_para_1n_1/xout" 9.30769
+cap "pg17Input8p8n_para_1n_1/reset_loop" "pg17Input8p8n_para_1n_0/a_n305_205#" 2.75
+cap "pg17Input8p8n_para_1n_1/n_para" "pg17Input8p8n_para_1n_1/inverter_0/A" 41.8367
+cap "pg17Input8p8n_para_1n_0/reset_loop" "pg17Input8p8n_para_1n_1/pgnode" 2.75
+cap "pg17Input8p8n_para_1n_1/n_para" "pg17Input8p8n_para_1n_1/xout" 11
+cap "pg17Input8p8n_para_1n_1/n_para" "pg17Input8p8n_para_1n_0/reset_loop" 31.8333
+cap "pg17Input8p8n_para_1n_1/reset_loop" "pg17Input8p8n_para_1n_0/reset_loop" 149.5
+cap "pg17Input8p8n_para_1n_1/n_para" "pg17Input8p8n_para_1n_1/Ain" 0.310811
+cap "pg17Input8p8n_para_1n_1/n_para" "pg17Input8p8n_para_1n_1/reset_loop" 131.32
+cap "pg17Input8p8n_para_1n_1/VN" "pg17Input8p8n_para_1n_1/xout" 13.5385
+cap "pg17Input8p8n_para_1n_0/inverter_1/VP" "pg17Input8p8n_para_1n_0/reset_loop" 18.2024
+cap "pg17Input8p8n_para_1n_0/inverter_1/VP" "pg17Input8p8n_para_1n_1/reset_loop" 16.4345
+cap "pg17Input8p8n_para_1n_1/n_para" "pg17Input8p8n_para_1n_1/VN" 50.0125
+cap "pg17Input8p8n_para_1n_1/n_para" "pg17Input8p8n_para_1n_0/inverter_1/VP" 46.7
+subcap "VN" -761.745
+subcap "li_1051_1200#" -503.17
+cap "pg17Input8p8n_para_1n_1/VP" "pg17Input8p8n_para_1n_1/inverter_2/VN" -0.775862
+merge "pg17Input8p8n_para_1n_1/Oin" "ip15" -81.34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1800 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/xout" "pg17Input8p8n_para_1n_0/n_para" -101.748 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6400 -160 0 0 17775 -240 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/n_para" "ring_loop"
+merge "pg17Input8p8n_para_1n_0/Jin" "ip2" -73.2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4000 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/xe" "li_1051_290#" -40.784 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -320 -72 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/inverter_2/VN" "pg17Input8p8n_para_1n_1/VN" -130.305 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 650 -160 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/VN" "VN"
+merge "VN" "pg17Input8p8n_para_1n_0/VN"
+merge "pg17Input8p8n_para_1n_0/VN" "SUB"
+merge "pg17Input8p8n_para_1n_1/Min" "ip13" -81.34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1800 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/n_para" "pg17Input8p8n_para_1n_0/xout" -421.41 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -35100 -30 0 0 4500 -90 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/xout" "pg17Input8p8n_para_1n_0/inverter_3/Y"
+merge "pg17Input8p8n_para_1n_0/inverter_3/Y" "ring_loop_branch"
+merge "pg17Input8p8n_para_1n_0/Hin" "in8" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Iin" "ip1" -105.73 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4500 -160 0 0 4500 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Kin" "ip11" -81.34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1800 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Ain" "in1" -87.26 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 200 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Kin" "ip3" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/inverter_1/VP" "pg17Input8p8n_para_1n_1/VP" 28.39 0 0 0 0 11000 -500 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1150 -160 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/VP" "pg17Input8p8n_para_1n_0/VP"
+merge "pg17Input8p8n_para_1n_0/VP" "pg17Input8p8n_para_1n_0/inverter_1/VP"
+merge "pg17Input8p8n_para_1n_0/inverter_1/VP" "VP"
+merge "pg17Input8p8n_para_1n_0/bin" "in2" -77.64 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2800 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Fin" "in6" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Lin" "ip4" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Cin" "in3" -68.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5400 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Min" "ip5" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Iin" "ip9" -93.8275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1575 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Din" "in4" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Nin" "ip6" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Ein" "in5" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Oin" "ip7" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Pin" "ip8" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/pgnode" "li_1052_350#" -73.656 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -880 -128 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_0/Gin" "in7" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Gin" "in15" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Ain" "in9" -87.26 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 200 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/xe" "li_1051_1200#" -29.62 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2400 -70 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Ein" "in13" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Pin" "ip16" -81.34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1800 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Cin" "in11" -68.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5400 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Nin" "ip14" -81.34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1800 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Lin" "ip12" -81.34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1800 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/bin" "in10" -77.64 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2800 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Jin" "ip10" -104.65 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4500 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Din" "in12" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Hin" "in16" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0
+merge "pg17Input8p8n_para_1n_1/Fin" "in14" -93.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1600 -160 0 0 0 0 0 0 0 0 0 0 0 0

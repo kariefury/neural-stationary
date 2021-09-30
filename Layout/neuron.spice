@@ -1,0 +1,123 @@
+* SPICE3 file created from neuron.ext - technology: sky130A
+
+.option scale=10000u
+
+.subckt inverter A Y VP VN
+X0 Y A VP VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X1 Y A VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+C0 VP Y 0.22fF
+C1 Y VN 0.34fF
+C2 A VN 0.15fF
+C3 VP VN 0.59fF
+.ends
+
+.subckt pg17Input8p8n_para_1n Ain bin xout VP Din Ein Fin Gin Hin Cin Iin VN Jin Kin
++ Lin Min Nin Oin Pin n_para pgnode xe reset_loop
+Xinverter_0 inverter_0/A pgnode VP VN inverter
+Xinverter_1 pgnode reset_loop VP VN inverter
+Xinverter_2 pgnode xe VP VN inverter
+Xinverter_3 xe xout VP VN inverter
+X0 a_n560_30# Ein a_n625_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X1 inverter_0/A reset_loop VP VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=-0 ps=0 w=100 l=15
+X2 inverter_0/A n_para VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X3 a_n565_205# Min a_n630_205# VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X4 a_n755_30# Hin VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X5 a_n435_205# Kin a_n500_205# VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X6 a_n690_30# Gin a_n755_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X7 inverter_0/A Iin a_n370_205# VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X8 a_n695_205# Oin a_n760_205# VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X9 a_n365_30# bin a_n430_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X10 inverter_0/A Ain a_n365_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X11 a_n370_205# Jin a_n435_205# VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X12 a_n495_30# Din a_n560_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X13 a_n760_205# Pin VP VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=-0 ps=0 w=100 l=15
+X14 a_n630_205# Nin a_n695_205# VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X15 a_n430_30# Cin a_n495_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X16 a_n500_205# Lin a_n565_205# VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X17 a_n625_30# Fin a_n690_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+C0 a_n500_205# VP 0.13fF
+C1 Gin Hin 0.10fF
+C2 a_n630_205# VP 0.14fF
+C3 Cin Din 0.10fF
+C4 Din Ein 0.10fF
+C5 a_n370_205# VP 0.15fF
+C6 a_n760_205# VP 0.20fF
+C7 Lin Min 0.12fF
+C8 Nin Oin 0.12fF
+C9 Pin Oin 0.12fF
+C10 Lin Kin 0.12fF
+C11 Jin Iin 0.12fF
+C12 Gin Fin 0.10fF
+C13 Cin bin 0.10fF
+C14 Ain bin 0.10fF
+C15 a_n695_205# VP 0.15fF
+C16 a_n435_205# VP 0.13fF
+C17 a_n565_205# VP 0.13fF
+C18 Nin Min 0.12fF
+C19 Fin Ein 0.10fF
+C20 Jin Kin 0.12fF
+C21 xe inverter_0/A 0.17fF
+C22 reset_loop VP 0.15fF
+C23 inverter_0/A VP 0.52fF
+C24 n_para VN -0.20fF
+C25 Ain VN 0.22fF
+C26 bin VN 0.22fF
+C27 Cin VN 0.22fF
+C28 Din VN 0.22fF
+C29 Ein VN 0.22fF
+C30 Fin VN 0.22fF
+C31 Gin VN 0.22fF
+C32 Hin VN 0.22fF
+C33 pgnode VN 0.90fF
+C34 inverter_0/A VN -0.42fF
+C35 xe VN 0.85fF
+C36 reset_loop VN -1.11fF
+C37 VP VN 4.95fF
+.ends
+
+.subckt neuron in1 in2 in3 in4 in5 in6 in7 in8 in9 in10 in11 in12 in13 in14 in15 in16
++ ip1 ip2 ip3 ip4 ip5 ip6 ip7 ip8 ip9 ip10 ip11 ip12 ip13 ip14 ip15 ip16 VP VN ring_loop_branch
+Xpg17Input8p8n_para_1n_0 in1 in2 ring_loop_branch VP in4 in5 in6 in7 in8 in3 ip1 VN
++ ip2 ip3 ip4 ip5 ip6 ip7 ip8 ring_loop pg17Input8p8n_para_1n_0/pgnode pg17Input8p8n_para_1n_0/xe
++ pg17Input8p8n_para_1n_0/reset_loop pg17Input8p8n_para_1n
+Xpg17Input8p8n_para_1n_1 in9 in10 ring_loop VP in12 in13 in14 in15 in16 in11 ip9 VN
++ ip10 ip11 ip12 ip13 ip14 ip15 ip16 ring_loop_branch pg17Input8p8n_para_1n_1/pgnode
++ pg17Input8p8n_para_1n_1/xe pg17Input8p8n_para_1n_1/reset_loop pg17Input8p8n_para_1n
+C0 ring_loop VP 0.43fF
+C1 ring_loop_branch pg17Input8p8n_para_1n_0/reset_loop 0.11fF
+C2 ring_loop_branch pg17Input8p8n_para_1n_1/reset_loop 0.13fF
+C3 pg17Input8p8n_para_1n_0/reset_loop pg17Input8p8n_para_1n_1/reset_loop 0.22fF
+C4 in9 VN 0.13fF
+C5 in12 VN 0.31fF
+C6 in13 VN 0.31fF
+C7 in14 VN 0.31fF
+C8 in15 VN 0.31fF
+C9 in16 VN 0.31fF
+C10 ip9 VN -0.47fF
+C11 ip10 VN -0.59fF
+C12 ip11 VN -0.23fF
+C13 ip12 VN -0.23fF
+C14 ip13 VN -0.23fF
+C15 ip14 VN -0.23fF
+C16 ip15 VN -0.23fF
+C17 ip16 VN -0.23fF
+C18 pg17Input8p8n_para_1n_1/pgnode VN 0.80fF
+C19 pg17Input8p8n_para_1n_1/inverter_0/A VN -0.56fF
+C20 ring_loop VN -1.53fF
+C21 pg17Input8p8n_para_1n_1/xe VN 0.19fF
+C22 pg17Input8p8n_para_1n_1/reset_loop VN -1.11fF
+C23 in1 VN 0.13fF
+C24 in4 VN 0.31fF
+C25 in5 VN 0.31fF
+C26 in6 VN 0.31fF
+C27 in7 VN 0.31fF
+C28 in8 VN 0.31fF
+C29 ip1 VN -0.38fF
+C30 ip2 VN -0.17fF
+C31 pg17Input8p8n_para_1n_0/pgnode VN 0.88fF
+C32 pg17Input8p8n_para_1n_0/inverter_0/A VN -0.56fF
+C33 pg17Input8p8n_para_1n_0/xe VN 0.69fF
+C34 pg17Input8p8n_para_1n_0/reset_loop VN -1.11fF
+C35 VP VN 8.05fF
+.ends
+

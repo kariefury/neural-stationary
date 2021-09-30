@@ -1,0 +1,38 @@
+* SPICE3 file created from pg9Input1p8n.ext - technology: sky130A
+
+.option scale=10000u
+
+.subckt inverter A Y VP VN
+X0 Y A VP VP sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X1 Y A VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+C0 Y VP 0.22fF
+.ends
+
+.subckt pg9Input1p8n Ain Bin xout VP Din Ein Fin Gin Hin Cin Iin VN
+Xinverter_0 inverter_0/A inverter_2/A VP VN inverter
+Xinverter_1 inverter_2/A reset_loop VP VN inverter
+Xinverter_2 inverter_2/A xe VP VN inverter
+Xinverter_3 xe xout VP VN inverter
+X0 a_n390_30# Ein a_n455_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X1 inverter_0/A reset_loop VP VP sky130_fd_pr__pfet_01v8 ad=-0 pd=0 as=0 ps=0 w=100 l=15
+X2 a_n585_30# Hin VN VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X3 inverter_0/A Iin VP VP sky130_fd_pr__pfet_01v8 ad=-0 pd=0 as=0 ps=0 w=100 l=15
+X4 a_n520_30# Gin a_n585_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X5 a_n195_30# Bin a_n260_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X6 inverter_0/A Ain a_n195_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X7 a_n325_30# Din a_n390_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X8 a_n260_30# Cin a_n325_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+X9 a_n455_30# Fin a_n520_30# VN sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=100 l=15
+C0 inverter_0/A a_n195_30# 0.12fF
+C1 Gin Hin 0.10fF
+C2 VP reset_loop 0.15fF
+C3 Ain Bin 0.10fF
+C4 Cin Bin 0.10fF
+C5 VP inverter_0/A 0.59fF
+C6 Din Ein 0.10fF
+C7 xe inverter_0/A 0.17fF
+C8 Fin Ein 0.10fF
+C9 Cin Din 0.10fF
+C10 Fin Gin 0.10fF
+.ends
+
