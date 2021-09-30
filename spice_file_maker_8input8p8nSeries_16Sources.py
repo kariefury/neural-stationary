@@ -1,7 +1,9 @@
 
 header = "*PulseLoop\n \
 .include sky130nm.lib\n \
-Xpg sNoise1 sNoise2 sNoise3 sNoise4 sNoise5 sNoise6 sNoise7 sNoise8 sNoise9 sNoise10 sNoise11 sNoise12 out pg\n \
+Xpg sNoise1 sNoise2 sNoise3 sNoise4 sNoise5 sNoise6 sNoise7 sNoise8 sNoise9 sNoise10 sNoise11 sNoise12 sNoise13 " \
+         "sNoise14 sNoise15 sNoise16 out " \
+         "pg\n \
 .measure tran responseTime WHEN v(out)=1.2 CROSS=1\n \
 .measure tran secondrTime WHEN v(out)=1.2 CROSS=2\n"
 
@@ -13,11 +15,12 @@ footer2 = "*quit\n \
 \n \
 \n \
 *PG\n \
-.subckt pg A B C D E F G H I J K L x\n \
+.subckt pg A B C D E F G H I J K L M N O P x\n \
 \n \
 xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
-xm16 0 H Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm22 0 M Ma 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm16 Ma H Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm15 Ha G Ga 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm14 Ga F Fa 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm13 Fa E Ea 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
@@ -28,7 +31,10 @@ xm17 Cb B critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm18 Db I Cb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm19 Eb J Db 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm20 Fb K Eb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
-xm21 1 L Fb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm21 Lb L Fb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm23 Nb N Lb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm24 Ob O Nb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm25 1 P Ob 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
 xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
@@ -54,7 +60,7 @@ std_dev = 0.1
 voltage = 0.1
 time = 16.5
 for n in filenames:
-    name_o_file = "PreLayout/noise_pulsegate12in_5p7nSeries12Sources"+n+".cir"
+    name_o_file = "PreLayout/noise_pulsegate16in_8p8nSeries16Sources"+n+".cir"
     f = open(name_o_file,"w")
     f.write(header)
     f.write("v2 sNoise1 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+ " " + str(voltage) + ")\n")
@@ -69,6 +75,10 @@ for n in filenames:
     f.write("v11 sNoise10 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
     f.write("v12 sNoise11 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
     f.write("v13 sNoise12 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
+    f.write("v14 sNoise13 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
+    f.write("v15 sNoise14 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
+    f.write("v16 sNoise15 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
+    f.write("v17 sNoise16 0 dc 0 trrandom (2 20p 0 " + str(std_dev) + " " + str(voltage) + ")\n")
     std_dev += 0.1
     f.write(footer)
     #f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")
@@ -76,12 +86,12 @@ for n in filenames:
     f.write(footer2)
     time = time - 0.5
     
-name_o_sh = "run_exp_noise_first_event_time_12input5p7nSeries12Sources.sh"
+name_o_sh = "run_exp_noise_first_event_time_16input8p8nSeries16Sources.sh"
 f = open(name_o_sh,"w")
 n = 0
 for a in filenames:
     n = 0
     while n < 50:
-        f.write("ngspice -b -o noiseFirstStart5p7nSeries12Sources/data" +str(n) + a + ".txt "
-                                                                        "PreLayout/noise_pulsegate12in_5p7nSeries12Sources"+a+".cir\n")
+        f.write("ngspice -b -o noiseFirstStart8p8nSeries16Sources/data" +str(n) + a + ".txt "
+                                                                        "PreLayout/noise_pulsegate16in_8p8nSeries16Sources"+a+".cir\n")
         n += 1

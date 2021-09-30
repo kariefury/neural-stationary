@@ -18,11 +18,11 @@ footer2 = "*quit\n \
 xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
 xm16 0 D Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm15 0 D Ga Ha sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm14 0 D Fa Ga sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm13 0 E Ea Fa sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm11 0 D Da Ea sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm12 0 C Ca Da sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm15 Ha D Ga 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm14 Ga D Fa 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm13 Fa E Ea 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm11 Ea D Da 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm12 Da C Ca 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm2 0 A critical_node Ca sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 xm10 1 B critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \

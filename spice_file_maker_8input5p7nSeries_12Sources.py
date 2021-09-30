@@ -13,22 +13,22 @@ footer2 = "*quit\n \
 \n \
 \n \
 *PG\n \
-.subckt pg A B C D E F G H I J K x\n \
+.subckt pg A B C D E F G H I J K L x\n \
 \n \
 xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
 xm16 0 H Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm15 0 G Ga Ha sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm14 0 F Fa Ga sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm13 0 E Ea Fa sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm11 0 D Da Ea sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm12 0 C Ca Da sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm2 0 A critical_node Ca sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
-xm17 1 B critical_node Cb sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
-xm18 1 I Cb Db sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
-xm19 1 J Db Eb sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
-xm20 1 K Eb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
-*xm21 1 L Fb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm15 Ha G Ga 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm14 Ga F Fa 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm13 Fa E Ea 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm11 Ea D Da 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm12 Da C Ca 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm2 Ca A critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm17 Cb B critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm18 Db I Cb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm19 Eb J Db 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm20 Fb K Eb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm21 1 L Fb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
 xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
@@ -72,7 +72,7 @@ for n in filenames:
     std_dev += 0.1
     f.write(footer)
     #f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")
-    f.write("tran 10ps " +str(time)+"ns \n ")
+    f.write("tran 20ps " +str(time)+"ns \n ")
     f.write(footer2)
     time = time - 0.5
     

@@ -5,20 +5,28 @@ from nengo.dists import Uniform
 from nengo.processes import WhiteNoise
 from nengo.utils.matplotlib import rasterplot
 
-simt = 0.2
+simt = 2
 
-model = nengo.Network(label="A Single Neuron")
+model = nengo.Network(label="A Single Neuron",seed=91195)
 with model:
     neuron = nengo.Ensemble(
         1,
         dimensions=1,  # Represent a scalar
         # Set intercept to 0.5
         intercepts=Uniform(-0.5, 0.5),
+        neuron_type=nengo.LIF(min_voltage=0.0), # Set tau_ref= or tau_rc = here to change those parms for the neurons.
         # Set the maximum firing rate of the neuron to 100hz
         max_rates=Uniform(20, 20),
         # Set the neuron's firing rate to increase for positive input
         encoders=[[1]],
     )
+    
+with model:
+    print(neuron.max_rates)
+    print(neuron.intercepts)
+    print(neuron.neurons.ensemble.neuron_type.tau_ref)
+    print(neuron.neurons.ensemble.neuron_type.tau_rc)
+    neuron.neurons.ensemble.neuron_type.state = {'voltage':[0.5], 'refractory_time':[0.0]}
 with model:
     #cos = nengo.Node(lambda t: np.cos(8 * t))
     #
@@ -28,7 +36,7 @@ with model:
     # Connect the input signal to the neuron
     nengo.Connection(input_signal, neuron)
 
-syn = 0.00001
+syn = 0.01
 
 with model:
     # The original input
@@ -43,16 +51,23 @@ with model:
 
 with nengo.Simulator(model) as sim:  # Create the simulator
     sim.run(simt)  # Run it for simt seconds
-
+    #print(neuron.neurons.ensemble.neuron_type.state)
+    print('\n'.join(f"* {op}" for op in sim.step_order))
+    
+with model:
+    print(neuron.neurons.ensemble.neuron_type.state)
 # Plot the decoded output of the ensemble
 plt.figure()
-plt.title("Post Synaptic Filter " + str(syn) + "s")
+plt.title("Post Syn Filter 0.001 Max Rate = 100Hz")
 plt.ylabel("signal")
 plt.xlabel("Time (s)")
+
+
+plt.plot(sim.trange(),sim.data[spikes])
 plt.plot(sim.trange(), sim.data[input_signal_probe])
 plt.plot(sim.trange(), sim.data[filtered])
 plt.xlim(0, simt)
-plt.savefig("signals_postsynfilter0pt00001.png")
+plt.savefig("signals_max_rate_eq_100_trial4.png")
 # Plot the spiking output of the ensemble
 plt.figure(figsize=(8, 4))
 plt.subplot(221)
