@@ -25,7 +25,7 @@ plt.figure()
 plt.imshow(np.reshape(train_images[0], (28, 28)), cmap="gray")
 plt.axis("off")
 plt.title(f"Sample image of the digit '{train_labels[0]}'")
-plt.show()
+#plt.show()
 
 train_images = train_images.reshape((train_images.shape[0], -1, 1))
 test_images = test_images.reshape((test_images.shape[0], -1, 1))
@@ -35,7 +35,7 @@ plt.figure()
 plt.imshow(train_images[0].reshape(8, -1), cmap="gray")
 plt.axis("off")
 plt.title(f"Sample sequence of the digit '{train_labels[0]}' (reshaped to 98 x 8)")
-plt.show()
+#plt.show()
 
 perm = rng.permutation(train_images.shape[1])
 train_images = train_images[:, perm]
@@ -45,7 +45,7 @@ plt.figure()
 plt.imshow(train_images[0].reshape(8, -1), cmap="gray")
 plt.axis("off")
 plt.title(f"Permuted sequence of the digit '{train_labels[0]}' (reshaped to 98 x 8)")
-plt.show()
+#plt.show()
 
 X_train = train_images[:50000]
 X_valid = train_images[50000:]
@@ -71,7 +71,7 @@ lmu_layer = keras_lmu.LMU(
     memory_d=1,
     order=256,
     theta=n_pixels,
-    hidden_cell=tf.keras.layers.SimpleRNNCell(12),
+    hidden_cell=tf.keras.layers.SimpleRNNCell(212),
     hidden_to_memory=False,
     memory_to_memory=False,
     input_to_hidden=True,
@@ -96,7 +96,7 @@ do_training =  True
 batch_size = 100
 epochs = 10
 
-saved_weights_fname = "./psMNIST-weights-small.hdf5"
+saved_weights_fname = "./psMNIST-weights.hdf5"
 callbacks = [
     tf.keras.callbacks.ModelCheckpoint(
         filepath=saved_weights_fname, monitor="val_loss", verbose=1, save_best_only=True

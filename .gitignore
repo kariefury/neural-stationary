@@ -1,4 +1,5 @@
 .idea/
+*.hdf5
 1-bit-intelligence.PNG
 H_population_code.PNG
 LearnErrorStateNumNIs1.png
