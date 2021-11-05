@@ -1,0 +1,63 @@
+*PulseLoop
+ .include sky130nm.lib
+ Xpg sNoise1 sNoise2 sNoise3 sNoise4 sNoise5 sNoise6 sNoise7 sNoise8 sNoise9 sNoise10 sNoise11 sNoise12 sNoise13 sNoise14 sNoise15 sNoise16 out pg
+ .measure tran responseTime WHEN v(out)=1.2 CROSS=1
+ .measure tran secondrTime WHEN v(out)=1.2 CROSS=2
+v2 sNoise1 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v3 sNoise2 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v4 sNoise3 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v5 sNoise4 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v6 sNoise5 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v7 sNoise6 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v8 sNoise7 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v9 sNoise8 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v10 sNoise9 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v11 sNoise10 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v12 sNoise11 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v13 sNoise12 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v14 sNoise13 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v15 sNoise14 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v16 sNoise15 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+v17 sNoise16 0 dc 0 trrandom (2 20p 0 0.1 0.1)
+.control 
+tran 20ps 200ns 
+plot v(sNoise1)+4 v(out) v(Clk)+2
+.endc
+ 
+ 
+ *PG
+ .subckt pg A B C D E F G H I J K L M N O P x
+ 
+ xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ 
+ xm22 0 M Ma 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm16 Ma H Ha 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm15 Ha G Ga 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm14 Ga F Fa 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm13 Fa E Ea 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm11 Ea D Da 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm12 Da C Ca 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm2 Ca A critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm17 Cb B critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm18 Db I Cb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm19 Eb J Db 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm20 Fb K Eb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm21 Lb L Fb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm23 Nb N Lb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm24 Ob O Nb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm25 1 P Ob 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ 
+ xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ 
+ xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ 
+ xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ 
+ xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ 
+ 
+ v1 1 0 1.8 
