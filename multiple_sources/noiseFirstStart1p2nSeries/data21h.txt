@@ -1,0 +1,50 @@
+
+Circuit: *pulseloop
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xpg.1                                      1.8
+xpg.reset_loop                             1.8
+xpg.critical_node                          1.8
+snoise                                       0
+xpg.ca                                0.163165
+xpg.invo                           9.68599e-07
+xpg.xe                                     1.8
+out                                9.68599e-07
+v2#branch                                    0
+v.xpg.v1#branch                   -1.01105e-09
+
+
+
+No. of Data Rows : 3187
+
+  Measurements for Transient Analysis
+
+responsetime        =   6.24592e-09
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+  Measurements for Transient Analysis
+
+responsetime        =   6.24592e-09
+
+CPU time since last call: 8.484 seconds.
+
+Total CPU time: 8.484 seconds.
+
+Total DRAM available = 128860.191406 MB.
+DRAM currently available = 57712.765625 MB.
+Total ngspice program size = 33.405273 MB.
+Resident set size = 19.028320 MB.
+Shared ngspice pages = 2.142578 MB.
+Text (code) pages = 1.597656 MB.
+Stack = 0 bytes.
+Library pages = 17.024414 MB.
+

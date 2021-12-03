@@ -1,0 +1,47 @@
+
+Circuit: *pulseloop
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xpg.1                                      1.8
+xpg.reset_loop                             1.8
+xpg.critical_node                          1.8
+snoise                                       0
+xpg.da                               0.0450484
+xpg.ca                                 0.16416
+xpg.invo                           9.68599e-07
+xpg.xe                                     1.8
+out                                9.68599e-07
+v2#branch                                    0
+v.xpg.v1#branch                   -1.01105e-09
+
+doAnalyses: TRAN:  Timestep too small; time = 4.28e-09, timestep = 1.25e-23: trouble with node "xpg.reset_loop"
+
+
+tran simulation(s) aborted
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+  Measurements for Transient Analysis
+
+responsetime        =   3.60804e-10
+
+CPU time since last call: 8.359 seconds.
+
+Total CPU time: 8.359 seconds.
+
+Total DRAM available = 128860.191406 MB.
+DRAM currently available = 57642.652344 MB.
+Total ngspice program size = 34.355469 MB.
+Resident set size = 19.832031 MB.
+Shared ngspice pages = 1.971680 MB.
+Text (code) pages = 1.597656 MB.
+Stack = 0 bytes.
+Library pages = 17.974609 MB.
+
