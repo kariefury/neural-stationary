@@ -1,11 +1,12 @@
-* SPICE3 file created from pg9Input1p8n.ext - technology: sky130A
+* SPICE3 file created from neuron.ext - technology: sky130A
 .include sky130nm.lib
 .option scale=10n
 
 *Xpg Clk Clk 1 Clk Clk Clk Clk Clk Clk 1 0 out pg9Input1p8n
 Xpg Clk Clk e23 Clk Clk Clk Clk Clk Clk 1 e24 out pg9Input1p8n
 
-*Xneuron 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk e23 e24 ring_loop neuron
+Xneuron  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1
++ Clk Clk Clk Clk  Clk Clk Clk Clk  Clk Clk Clk Clk  Clk Clk Clk Clk e23 e24 branch neuron
 
 Xpg17Input8p8n_para_1n Clk Clk xout 1 Clk Clk Clk Clk Clk Clk Clk 0 Clk Clk Clk Clk Clk Clk Clk 0 pgnode xe ring_loop pg17Input8p8n_para_1n
 
@@ -19,7 +20,7 @@ v4 e24 0 DC 0 trrandom(2 100p 0 0.4 0.2)
 .control
 tran 0.1ns 10ns
 
-gnuplot gp v(out) v(Clk) v(e23) v(1) v(e24) v(ring_loop) v(out)
+gnuplot gp v(out) v(Clk) v(e23) v(1) v(e24) v(branch) v(out)
 .endc
 
 .subckt inverter A Y VP VN
