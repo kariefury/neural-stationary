@@ -2,15 +2,20 @@
 .include sky130nm.lib
 .option scale=10n
 
-Xpg Clk Clk 1 Clk Clk Clk Clk Clk Clk 1 0 out pg9Input1p8n
+*Xpg Clk Clk 1 Clk Clk Clk Clk Clk Clk 1 0 out pg9Input1p8n
+Xpg Clk Clk e23 Clk Clk Clk Clk Clk Clk 1 e24 out pg9Input1p8n
 
 v2 Clk 0 dc 0 trrandom(2 200p 0 1.9 0.1)
-*v2 Clk 0 PULSE 0 1.8 1n 20p 20p 180p 4ns
+*v2 Clk 0 PULSE 0 1.8 1n 20p 20p 180p 40ns
+*v1 1 0 1.8
 v1 1 0 1.8
-
+*v3 23 0 DC 0.0 PWL (0 0 2ns 1.8 4ns 0 6ns 1.0 8ns 0.4)
+v3 e23 0 DC 0 trrandom(2 100p 0 0.4 1.4)
+v4 e24 0 DC 0 trrandom(2 100p 0 0.4 0.2)
 .control
 tran 0.1ns 10ns
-gnuplot gp v(out) v(Clk)
+
+gnuplot gp v(out) v(Clk) v(e23) v(1) v(e24)
 .endc
 
 .subckt inverter A Y w_n145_115# a_n125_n20#
