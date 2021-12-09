@@ -5,28 +5,28 @@
 *Xpg Clk Clk 1 Clk Clk Clk Clk Clk Clk 1 0 out pg9Input1p8n
 *Xpg Clk Clk e23 Clk Clk Clk Clk Clk Clk 1 e24 out pg9Input1p8n
 
-Xneuron  Clk5 Clk6 Clk7 Clk8  Clk9 Clk10 Clk11 Clk12  Clk8 Clk9 Clk10 Clk11  Clk12 Clk13 Clk14 Clk
-+ Clk17 Clk18 1 Clk5  Clk6 Clk7 Clk8 Clk9  Clk10 Clk11 Clk12 Clk  Clk13 Clk14 Clk15 Clk16 1 0 ring_loop branch pgnode0 pgnode1 neuron
+Xneuron Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5
++ Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk Clk 1 0 ring_loop branch pgnode0 pgnode1 neuron
 
 *Xpg17Input8p8n_para_1n Clk Clk xout 1 Clk Clk Clk Clk Clk Clk Clk 0 Clk Clk Clk Clk Clk Clk Clk 0 pgnode xe ring_loop pg17Input8p8n_para_1n
 
 
-v2 Clk 0 dc 0 trrandom(2 200p 0 0.9 0.6)
-v5 Clk5 0 dc 0 trrandom(2 200p 0 0.9 0.5)
-v6 Clk6 0 dc 0 trrandom(2 200p 0 0.6 0.7)
-v7 Clk7 0 dc 0 trrandom(2 200p 0 0.2 0.8)
-v8 Clk8 0 dc 0 trrandom(2 200p 0 0.8 0.4)
-v9 Clk9 0 dc 0 trrandom(2 200p 0 0.9 0.2)
-v10 Clk10 0 dc 0 trrandom(2 200p 0 0.2 1.1)
-v11 Clk11 0 dc 0 trrandom(2 200p 0 0.1 1.0)
-v12 Clk12 0 dc 0 trrandom(2 200p 0 0.3 1.1)
-v13 Clk13 0 dc 0 trrandom(2 200p 0 0.4 1.1)
-v14 Clk14 0 dc 0 trrandom(2 200p 0 0.5 1.1)
-v15 Clk15 0 dc 0 trrandom(2 200p 0 0.9 0.6)
-v16 Clk16 0 dc 0 trrandom(2 200p 0 0.9 0.5)
-v17 Clk17 0 dc 0 trrandom(2 200p 0 1.1 0.2)
-v18 Clk18 0 dc 0 trrandom(2 200p 0 0.9 1.1)
-v19 Clk19 0 dc 0 trrandom(2 200p 0 1.9 0.1)
+v2 Clk 0 dc 0 trrandom(2 10.1n 0 0.6 1.1)
+v5 Clk5 0 dc 0 trrandom(2 10n 0 0.8 0.6)
+*v6 Clk6 0 dc 0 trrandom(2 230p 0 0.6 0.7)
+*v7 Clk7 0 dc 0 trrandom(2 240p 0 0.2 0.8)
+*v8 Clk8 0 dc 0 trrandom(2 250p 0 0.4 0.8)
+*v9 Clk9 0 dc 0 trrandom(2 260p 0 0.2 0.9)
+*v10 Clk10 0 dc 0 trrandom(2 270p 0 0.2 1.1)
+*v11 Clk11 0 dc 0 trrandom(2 280p 0 0.1 1.0)
+*v12 Clk12 0 dc 0 trrandom(2 290p 0 0.3 1.1)
+*v13 Clk13 0 dc 0 trrandom(2 300p 0 0.4 1.1)
+*v14 Clk14 0 dc 0 trrandom(2 310p 0 0.5 1.1)
+*v15 Clk15 0 dc 0 trrandom(2 320p 0 0.9 1.1)
+*v16 Clk16 0 dc 0 trrandom(2 330p 0 0.9 1.5)
+*v17 Clk17 0 dc 0 trrandom(2 340p 0 0.1 1.2)
+*v18 Clk18 0 dc 0 trrandom(2 350p 0 0.2 1.1)
+*v19 Clk19 0 dc 0 trrandom(2 360p 0 0.4 1.1)
 
 
 *v2 Clk 0 PULSE 0 1.8 1n 20p 20p 180p 40ns
@@ -35,10 +35,12 @@ v1 1 0 1.8
 *v3 23 0 DC 0.0 PWL (0 0 2ns 1.8 4ns 0 6ns 1.0 8ns 0.4)
 v3 e23 0 DC 0 trrandom(2 100p 0 0.4 1.4)
 v4 e24 0 DC 0 trrandom(2 100p 0 0.4 0.2)
-.control
-tran 0.01ns 100ns
 
-gnuplot gp  v(Clk) v(Clk5) v(branch)+2 v(ring_loop)+2 v(pgnode0)+4 v(pgnode1)+6
+.control
+tran 0.1ns 1000ns
+
+gnuplot gp  v(Clk) v(Clk5)  v(branch)+2 v(ring_loop)+2 v(pgnode0)+4 v(pgnode1)+6
+*gnuplot gp  v(Clk) v(Clk5) v(Clk6) v(Clk7) v(Clk8) v(Clk9) v(Clk10) v(Clk11) v(Clk12) v(branch)+2 v(ring_loop)+2 v(pgnode0)+4 v(pgnode1)+6
 .endc
 
 .subckt inverter A Y VP VN
