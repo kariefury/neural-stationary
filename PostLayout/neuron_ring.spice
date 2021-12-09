@@ -5,14 +5,28 @@
 *Xpg Clk Clk 1 Clk Clk Clk Clk Clk Clk 1 0 out pg9Input1p8n
 *Xpg Clk Clk e23 Clk Clk Clk Clk Clk Clk 1 e24 out pg9Input1p8n
 
-Xneuron  1 1 1 1  1 1 1 1  1 1 1 1  1 1 1 1
-+ Clk Clk Clk Clk  Clk Clk Clk Clk  Clk Clk Clk Clk  Clk Clk Clk Clk 1 0 branch neuron
-
-*C100 branch VN 10fF
+Xneuron  Clk5 Clk6 Clk7 Clk8  Clk9 Clk10 Clk11 Clk12  Clk8 Clk9 Clk10 Clk11  Clk12 Clk13 Clk14 Clk
++ Clk17 Clk18 1 Clk5  Clk6 Clk7 Clk8 Clk9  Clk10 Clk11 Clk12 Clk  Clk13 Clk14 Clk15 Clk16 1 0 branch pgnode0 neuron
 
 *Xpg17Input8p8n_para_1n Clk Clk xout 1 Clk Clk Clk Clk Clk Clk Clk 0 Clk Clk Clk Clk Clk Clk Clk 0 pgnode xe ring_loop pg17Input8p8n_para_1n
 
-v2 Clk 0 dc 0 trrandom(2 200p 0 1.9 0.1)
+
+v2 Clk 0 dc 0 trrandom(2 200p 0 0.9 0.5)
+v5 Clk5 0 dc 0 trrandom(2 200p 0 0.9 0.5)
+v6 Clk6 0 dc 0 trrandom(2 200p 0 0.9 0.2)
+v7 Clk7 0 dc 0 trrandom(2 200p 0 0.9 0.3)
+v8 Clk8 0 dc 0 trrandom(2 200p 0 0.9 0.4)
+v9 Clk9 0 dc 0 trrandom(2 200p 0 0.8 0.2)
+v10 Clk10 0 dc 0 trrandom(2 200p 0 0.2 1.1)
+v11 Clk11 0 dc 0 trrandom(2 200p 0 0.2 1.1)
+v12 Clk12 0 dc 0 trrandom(2 200p 0 0.3 1.1)
+v13 Clk13 0 dc 0 trrandom(2 200p 0 0.4 1.1)
+v14 Clk14 0 dc 0 trrandom(2 200p 0 0.5 1.1)
+v15 Clk15 0 dc 0 trrandom(2 200p 0 0.9 0.6)
+v16 Clk16 0 dc 0 trrandom(2 200p 0 0.9 0.5)
+v17 Clk17 0 dc 0 trrandom(2 200p 0 0.9 0.2)
+v18 Clk18 0 dc 0 trrandom(2 200p 0 0.9 1.1)
+
 *v2 Clk 0 PULSE 0 1.8 1n 20p 20p 180p 40ns
 *v1 1 0 1.8
 v1 1 0 1.8
@@ -20,9 +34,9 @@ v1 1 0 1.8
 v3 e23 0 DC 0 trrandom(2 100p 0 0.4 1.4)
 v4 e24 0 DC 0 trrandom(2 100p 0 0.4 0.2)
 .control
-tran 0.1ns 10ns
+tran 0.01ns 10ns
 
-gnuplot gp v(Clk) v(e23) v(1) v(e24) v(branch)
+gnuplot gp v(Clk) v(e23) v(1) v(e24) v(branch) v(pgnode0)
 .endc
 
 .subckt inverter A Y VP VN
@@ -121,7 +135,7 @@ C37 VP VN 4.95fF
 .ends
 
 .subckt neuron in1 in2 in3 in4 in5 in6 in7 in8 in9 in10 in11 in12 in13 in14 in15 in16
-+ ip1 ip2 ip3 ip4 ip5 ip6 ip7 ip8 ip9 ip10 ip11 ip12 ip13 ip14 ip15 ip16 VP VN ring_loop_branch
++ ip1 ip2 ip3 ip4 ip5 ip6 ip7 ip8 ip9 ip10 ip11 ip12 ip13 ip14 ip15 ip16 VP VN ring_loop_branch pgnode0
 Xpg17Input8p8n_para_1n_0 in1 in2 ring_loop_branch VP in4 in5 in6 in7 in8 in3 ip1 VN
 + ip2 ip3 ip4 ip5 ip6 ip7 ip8 ring_loop pgnode0 pg17Input8p8n_para_1n_0/xe
 + pg17Input8p8n_para_1n_0/reset_loop pg17Input8p8n_para_1n
