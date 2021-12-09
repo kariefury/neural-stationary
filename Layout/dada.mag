@@ -1,4 +1,9 @@
 magic
 tech sky130A
-timestamp 0
+timestamp 1639093621
+use neuron  neuron_0
+array 0 3 1335 0 3 1535
+timestamp 1639093377
+transform 1 0 30 0 1 20
+box -35 -25 1300 1510
 << end >>

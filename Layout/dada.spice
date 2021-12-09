@@ -1,0 +1,232 @@
+* SPICE3 file created from dada.ext - technology: sky130A
+
+.subckt inverter A Y VP VN
+X0 Y A VP VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1 Y A VN VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+.ends
+
+.subckt pg17Input8p8n_para_1n Ain bin xout VP Din Ein Fin Gin Hin Cin Iin VN Jin Kin
++ Lin Min Nin Oin Pin n_para pgnode xe
+Xinverter_0 inverter_0/A pgnode VP VN inverter
+Xinverter_1 pgnode reset_loop VP VN inverter
+Xinverter_2 pgnode xe VP VN inverter
+Xinverter_3 xe xout VP VN inverter
+X0 a_n560_30# Ein a_n625_30# VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1 inverter_0/A reset_loop VP VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=-0p ps=0u w=1e+06u l=150000u
+X2 inverter_0/A n_para VN VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X3 a_n565_205# Min a_n630_205# VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X4 a_n755_30# Hin VN VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X5 a_n435_205# Kin a_n500_205# VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X6 a_n690_30# Gin a_n755_30# VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X7 inverter_0/A Iin a_n370_205# VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X8 a_n695_205# Oin a_n760_205# VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X9 a_n365_30# bin a_n430_30# VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X10 inverter_0/A Ain a_n365_30# VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X11 a_n370_205# Jin a_n435_205# VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X12 a_n495_30# Din a_n560_30# VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X13 a_n760_205# Pin VP VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=-0p ps=0u w=1e+06u l=150000u
+X14 a_n630_205# Nin a_n695_205# VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X15 a_n430_30# Cin a_n495_30# VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X16 a_n500_205# Lin a_n565_205# VP sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X17 a_n625_30# Fin a_n690_30# VN sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+C0 VP VN 4.95fF
+C1 reset_loop VN -1.11fF
+.ends
+
+.subckt neuron in1 in2 in3 in4 in5 in6 in7 in8 in9 in10 in11 in12 in13 in14 in15 in16
++ ip1 ip2 ip3 ip4 ip5 ip6 ip7 ip8 ip9 ip10 ip11 ip12 ip13 ip14 ip15 ip16 VP VN ring_loop_branch
++
+Xpg17Input8p8n_para_1n_0 in1 in2 ring_loop_branch VP in4 in5 in6 in7 in8 in3 ip1 VN
++ ip2 ip3 ip4 ip5 ip6 ip7 ip8 ring_loop pg17Input8p8n_para_1n_0/pgnode pg17Input8p8n_para_1n_0/xe
++ pg17Input8p8n_para_1n
+Xpg17Input8p8n_para_1n_1 in9 in10 ring_loop VP in12 in13 in14 in15 in16 in11 ip9 VN
++ ip10 ip11 ip12 ip13 ip14 ip15 ip16 ring_loop_branch pg17Input8p8n_para_1n_1/pgnode
++ pg17Input8p8n_para_1n_1/xe pg17Input8p8n_para_1n
+C0 ring_loop VN -1.56fF
+C1 pg17Input8p8n_para_1n_1/reset_loop VN -1.11fF
+C2 VP VN 8.08fF
+C3 pg17Input8p8n_para_1n_0/reset_loop VN -1.11fF
+.ends
+
+
+* Top level circuit dada
+
+Xneuron_0[0|0] neuron_0[0|0]/in1 neuron_0[0|0]/in2 neuron_0[0|0]/in3 neuron_0[0|0]/in4
++ neuron_0[0|0]/in5 neuron_0[0|0]/in6 neuron_0[0|0]/in7 neuron_0[0|0]/in8 neuron_0[0|0]/in9
++ neuron_0[0|0]/in10 neuron_0[0|0]/in11 neuron_0[0|0]/in12 neuron_0[0|0]/in13 neuron_0[0|0]/in14
++ neuron_0[0|0]/in15 neuron_0[0|0]/in16 neuron_0[0|0]/ip1 neuron_0[0|0]/ip2 neuron_0[0|0]/ip3
++ neuron_0[0|0]/ip4 neuron_0[0|0]/ip5 neuron_0[0|0]/ip6 neuron_0[0|0]/ip7 neuron_0[0|0]/ip8
++ neuron_0[0|0]/ip9 neuron_0[0|0]/ip10 neuron_0[0|0]/ip11 neuron_0[0|0]/ip12 neuron_0[0|0]/ip13
++ neuron_0[0|0]/ip14 neuron_0[0|0]/ip15 neuron_0[0|0]/ip16 neuron_0[3|3]/VP SUB neuron_0[0|0]/ring_loop_branch
++ neuron
+Xneuron_0[1|0] neuron_0[1|0]/in1 neuron_0[1|0]/in2 neuron_0[1|0]/in3 neuron_0[1|0]/in4
++ neuron_0[1|0]/in5 neuron_0[1|0]/in6 neuron_0[1|0]/in7 neuron_0[1|0]/in8 neuron_0[1|0]/in9
++ neuron_0[1|0]/in10 neuron_0[1|0]/in11 neuron_0[1|0]/in12 neuron_0[1|0]/in13 neuron_0[1|0]/in14
++ neuron_0[1|0]/in15 neuron_0[1|0]/in16 neuron_0[1|0]/ip1 neuron_0[1|0]/ip2 neuron_0[1|0]/ip3
++ neuron_0[1|0]/ip4 neuron_0[1|0]/ip5 neuron_0[1|0]/ip6 neuron_0[1|0]/ip7 neuron_0[1|0]/ip8
++ neuron_0[1|0]/ip9 neuron_0[1|0]/ip10 neuron_0[1|0]/ip11 neuron_0[1|0]/ip12 neuron_0[1|0]/ip13
++ neuron_0[1|0]/ip14 neuron_0[1|0]/ip15 neuron_0[1|0]/ip16 neuron_0[3|3]/VP SUB neuron_0[1|0]/ring_loop_branch
++ neuron
+Xneuron_0[2|0] neuron_0[2|0]/in1 neuron_0[2|0]/in2 neuron_0[2|0]/in3 neuron_0[2|0]/in4
++ neuron_0[2|0]/in5 neuron_0[2|0]/in6 neuron_0[2|0]/in7 neuron_0[2|0]/in8 neuron_0[2|0]/in9
++ neuron_0[2|0]/in10 neuron_0[2|0]/in11 neuron_0[2|0]/in12 neuron_0[2|0]/in13 neuron_0[2|0]/in14
++ neuron_0[2|0]/in15 neuron_0[2|0]/in16 neuron_0[2|0]/ip1 neuron_0[2|0]/ip2 neuron_0[2|0]/ip3
++ neuron_0[2|0]/ip4 neuron_0[2|0]/ip5 neuron_0[2|0]/ip6 neuron_0[2|0]/ip7 neuron_0[2|0]/ip8
++ neuron_0[2|0]/ip9 neuron_0[2|0]/ip10 neuron_0[2|0]/ip11 neuron_0[2|0]/ip12 neuron_0[2|0]/ip13
++ neuron_0[2|0]/ip14 neuron_0[2|0]/ip15 neuron_0[2|0]/ip16 neuron_0[3|3]/VP SUB neuron_0[2|0]/ring_loop_branch
++ neuron
+Xneuron_0[3|0] neuron_0[3|0]/in1 neuron_0[3|0]/in2 neuron_0[3|0]/in3 neuron_0[3|0]/in4
++ neuron_0[3|0]/in5 neuron_0[3|0]/in6 neuron_0[3|0]/in7 neuron_0[3|0]/in8 neuron_0[3|0]/in9
++ neuron_0[3|0]/in10 neuron_0[3|0]/in11 neuron_0[3|0]/in12 neuron_0[3|0]/in13 neuron_0[3|0]/in14
++ neuron_0[3|0]/in15 neuron_0[3|0]/in16 neuron_0[3|0]/ip1 neuron_0[3|0]/ip2 neuron_0[3|0]/ip3
++ neuron_0[3|0]/ip4 neuron_0[3|0]/ip5 neuron_0[3|0]/ip6 neuron_0[3|0]/ip7 neuron_0[3|0]/ip8
++ neuron_0[3|0]/ip9 neuron_0[3|0]/ip10 neuron_0[3|0]/ip11 neuron_0[3|0]/ip12 neuron_0[3|0]/ip13
++ neuron_0[3|0]/ip14 neuron_0[3|0]/ip15 neuron_0[3|0]/ip16 neuron_0[3|3]/VP SUB neuron_0[3|0]/ring_loop_branch
++ neuron
+Xneuron_0[0|1] neuron_0[0|1]/in1 neuron_0[0|1]/in2 neuron_0[0|1]/in3 neuron_0[0|1]/in4
++ neuron_0[0|1]/in5 neuron_0[0|1]/in6 neuron_0[0|1]/in7 neuron_0[0|1]/in8 neuron_0[0|1]/in9
++ neuron_0[0|1]/in10 neuron_0[0|1]/in11 neuron_0[0|1]/in12 neuron_0[0|1]/in13 neuron_0[0|1]/in14
++ neuron_0[0|1]/in15 neuron_0[0|1]/in16 neuron_0[0|1]/ip1 neuron_0[0|1]/ip2 neuron_0[0|1]/ip3
++ neuron_0[0|1]/ip4 neuron_0[0|1]/ip5 neuron_0[0|1]/ip6 neuron_0[0|1]/ip7 neuron_0[0|1]/ip8
++ neuron_0[0|1]/ip9 neuron_0[0|1]/ip10 neuron_0[0|1]/ip11 neuron_0[0|1]/ip12 neuron_0[0|1]/ip13
++ neuron_0[0|1]/ip14 neuron_0[0|1]/ip15 neuron_0[0|1]/ip16 neuron_0[3|3]/VP SUB neuron_0[0|1]/ring_loop_branch
++ neuron
+Xneuron_0[1|1] neuron_0[1|1]/in1 neuron_0[1|1]/in2 neuron_0[1|1]/in3 neuron_0[1|1]/in4
++ neuron_0[1|1]/in5 neuron_0[1|1]/in6 neuron_0[1|1]/in7 neuron_0[1|1]/in8 neuron_0[1|1]/in9
++ neuron_0[1|1]/in10 neuron_0[1|1]/in11 neuron_0[1|1]/in12 neuron_0[1|1]/in13 neuron_0[1|1]/in14
++ neuron_0[1|1]/in15 neuron_0[1|1]/in16 neuron_0[1|1]/ip1 neuron_0[1|1]/ip2 neuron_0[1|1]/ip3
++ neuron_0[1|1]/ip4 neuron_0[1|1]/ip5 neuron_0[1|1]/ip6 neuron_0[1|1]/ip7 neuron_0[1|1]/ip8
++ neuron_0[1|1]/ip9 neuron_0[1|1]/ip10 neuron_0[1|1]/ip11 neuron_0[1|1]/ip12 neuron_0[1|1]/ip13
++ neuron_0[1|1]/ip14 neuron_0[1|1]/ip15 neuron_0[1|1]/ip16 neuron_0[3|3]/VP SUB neuron_0[1|1]/ring_loop_branch
++ neuron
+Xneuron_0[2|1] neuron_0[2|1]/in1 neuron_0[2|1]/in2 neuron_0[2|1]/in3 neuron_0[2|1]/in4
++ neuron_0[2|1]/in5 neuron_0[2|1]/in6 neuron_0[2|1]/in7 neuron_0[2|1]/in8 neuron_0[2|1]/in9
++ neuron_0[2|1]/in10 neuron_0[2|1]/in11 neuron_0[2|1]/in12 neuron_0[2|1]/in13 neuron_0[2|1]/in14
++ neuron_0[2|1]/in15 neuron_0[2|1]/in16 neuron_0[2|1]/ip1 neuron_0[2|1]/ip2 neuron_0[2|1]/ip3
++ neuron_0[2|1]/ip4 neuron_0[2|1]/ip5 neuron_0[2|1]/ip6 neuron_0[2|1]/ip7 neuron_0[2|1]/ip8
++ neuron_0[2|1]/ip9 neuron_0[2|1]/ip10 neuron_0[2|1]/ip11 neuron_0[2|1]/ip12 neuron_0[2|1]/ip13
++ neuron_0[2|1]/ip14 neuron_0[2|1]/ip15 neuron_0[2|1]/ip16 neuron_0[3|3]/VP SUB neuron_0[2|1]/ring_loop_branch
++ neuron
+Xneuron_0[3|1] neuron_0[3|1]/in1 neuron_0[3|1]/in2 neuron_0[3|1]/in3 neuron_0[3|1]/in4
++ neuron_0[3|1]/in5 neuron_0[3|1]/in6 neuron_0[3|1]/in7 neuron_0[3|1]/in8 neuron_0[3|1]/in9
++ neuron_0[3|1]/in10 neuron_0[3|1]/in11 neuron_0[3|1]/in12 neuron_0[3|1]/in13 neuron_0[3|1]/in14
++ neuron_0[3|1]/in15 neuron_0[3|1]/in16 neuron_0[3|1]/ip1 neuron_0[3|1]/ip2 neuron_0[3|1]/ip3
++ neuron_0[3|1]/ip4 neuron_0[3|1]/ip5 neuron_0[3|1]/ip6 neuron_0[3|1]/ip7 neuron_0[3|1]/ip8
++ neuron_0[3|1]/ip9 neuron_0[3|1]/ip10 neuron_0[3|1]/ip11 neuron_0[3|1]/ip12 neuron_0[3|1]/ip13
++ neuron_0[3|1]/ip14 neuron_0[3|1]/ip15 neuron_0[3|1]/ip16 neuron_0[3|3]/VP SUB neuron_0[3|1]/ring_loop_branch
++ neuron
+Xneuron_0[0|2] neuron_0[0|2]/in1 neuron_0[0|2]/in2 neuron_0[0|2]/in3 neuron_0[0|2]/in4
++ neuron_0[0|2]/in5 neuron_0[0|2]/in6 neuron_0[0|2]/in7 neuron_0[0|2]/in8 neuron_0[0|2]/in9
++ neuron_0[0|2]/in10 neuron_0[0|2]/in11 neuron_0[0|2]/in12 neuron_0[0|2]/in13 neuron_0[0|2]/in14
++ neuron_0[0|2]/in15 neuron_0[0|2]/in16 neuron_0[0|2]/ip1 neuron_0[0|2]/ip2 neuron_0[0|2]/ip3
++ neuron_0[0|2]/ip4 neuron_0[0|2]/ip5 neuron_0[0|2]/ip6 neuron_0[0|2]/ip7 neuron_0[0|2]/ip8
++ neuron_0[0|2]/ip9 neuron_0[0|2]/ip10 neuron_0[0|2]/ip11 neuron_0[0|2]/ip12 neuron_0[0|2]/ip13
++ neuron_0[0|2]/ip14 neuron_0[0|2]/ip15 neuron_0[0|2]/ip16 neuron_0[3|3]/VP SUB neuron_0[0|2]/ring_loop_branch
++ neuron
+Xneuron_0[1|2] neuron_0[1|2]/in1 neuron_0[1|2]/in2 neuron_0[1|2]/in3 neuron_0[1|2]/in4
++ neuron_0[1|2]/in5 neuron_0[1|2]/in6 neuron_0[1|2]/in7 neuron_0[1|2]/in8 neuron_0[1|2]/in9
++ neuron_0[1|2]/in10 neuron_0[1|2]/in11 neuron_0[1|2]/in12 neuron_0[1|2]/in13 neuron_0[1|2]/in14
++ neuron_0[1|2]/in15 neuron_0[1|2]/in16 neuron_0[1|2]/ip1 neuron_0[1|2]/ip2 neuron_0[1|2]/ip3
++ neuron_0[1|2]/ip4 neuron_0[1|2]/ip5 neuron_0[1|2]/ip6 neuron_0[1|2]/ip7 neuron_0[1|2]/ip8
++ neuron_0[1|2]/ip9 neuron_0[1|2]/ip10 neuron_0[1|2]/ip11 neuron_0[1|2]/ip12 neuron_0[1|2]/ip13
++ neuron_0[1|2]/ip14 neuron_0[1|2]/ip15 neuron_0[1|2]/ip16 neuron_0[3|3]/VP SUB neuron_0[1|2]/ring_loop_branch
++ neuron
+Xneuron_0[2|2] neuron_0[2|2]/in1 neuron_0[2|2]/in2 neuron_0[2|2]/in3 neuron_0[2|2]/in4
++ neuron_0[2|2]/in5 neuron_0[2|2]/in6 neuron_0[2|2]/in7 neuron_0[2|2]/in8 neuron_0[2|2]/in9
++ neuron_0[2|2]/in10 neuron_0[2|2]/in11 neuron_0[2|2]/in12 neuron_0[2|2]/in13 neuron_0[2|2]/in14
++ neuron_0[2|2]/in15 neuron_0[2|2]/in16 neuron_0[2|2]/ip1 neuron_0[2|2]/ip2 neuron_0[2|2]/ip3
++ neuron_0[2|2]/ip4 neuron_0[2|2]/ip5 neuron_0[2|2]/ip6 neuron_0[2|2]/ip7 neuron_0[2|2]/ip8
++ neuron_0[2|2]/ip9 neuron_0[2|2]/ip10 neuron_0[2|2]/ip11 neuron_0[2|2]/ip12 neuron_0[2|2]/ip13
++ neuron_0[2|2]/ip14 neuron_0[2|2]/ip15 neuron_0[2|2]/ip16 neuron_0[3|3]/VP SUB neuron_0[2|2]/ring_loop_branch
++ neuron
+Xneuron_0[3|2] neuron_0[3|2]/in1 neuron_0[3|2]/in2 neuron_0[3|2]/in3 neuron_0[3|2]/in4
++ neuron_0[3|2]/in5 neuron_0[3|2]/in6 neuron_0[3|2]/in7 neuron_0[3|2]/in8 neuron_0[3|2]/in9
++ neuron_0[3|2]/in10 neuron_0[3|2]/in11 neuron_0[3|2]/in12 neuron_0[3|2]/in13 neuron_0[3|2]/in14
++ neuron_0[3|2]/in15 neuron_0[3|2]/in16 neuron_0[3|2]/ip1 neuron_0[3|2]/ip2 neuron_0[3|2]/ip3
++ neuron_0[3|2]/ip4 neuron_0[3|2]/ip5 neuron_0[3|2]/ip6 neuron_0[3|2]/ip7 neuron_0[3|2]/ip8
++ neuron_0[3|2]/ip9 neuron_0[3|2]/ip10 neuron_0[3|2]/ip11 neuron_0[3|2]/ip12 neuron_0[3|2]/ip13
++ neuron_0[3|2]/ip14 neuron_0[3|2]/ip15 neuron_0[3|2]/ip16 neuron_0[3|3]/VP SUB neuron_0[3|2]/ring_loop_branch
++ neuron
+Xneuron_0[0|3] neuron_0[0|3]/in1 neuron_0[0|3]/in2 neuron_0[0|3]/in3 neuron_0[0|3]/in4
++ neuron_0[0|3]/in5 neuron_0[0|3]/in6 neuron_0[0|3]/in7 neuron_0[0|3]/in8 neuron_0[0|3]/in9
++ neuron_0[0|3]/in10 neuron_0[0|3]/in11 neuron_0[0|3]/in12 neuron_0[0|3]/in13 neuron_0[0|3]/in14
++ neuron_0[0|3]/in15 neuron_0[0|3]/in16 neuron_0[0|3]/ip1 neuron_0[0|3]/ip2 neuron_0[0|3]/ip3
++ neuron_0[0|3]/ip4 neuron_0[0|3]/ip5 neuron_0[0|3]/ip6 neuron_0[0|3]/ip7 neuron_0[0|3]/ip8
++ neuron_0[0|3]/ip9 neuron_0[0|3]/ip10 neuron_0[0|3]/ip11 neuron_0[0|3]/ip12 neuron_0[0|3]/ip13
++ neuron_0[0|3]/ip14 neuron_0[0|3]/ip15 neuron_0[0|3]/ip16 neuron_0[3|3]/VP SUB neuron_0[0|3]/ring_loop_branch
++ neuron
+Xneuron_0[1|3] neuron_0[1|3]/in1 neuron_0[1|3]/in2 neuron_0[1|3]/in3 neuron_0[1|3]/in4
++ neuron_0[1|3]/in5 neuron_0[1|3]/in6 neuron_0[1|3]/in7 neuron_0[1|3]/in8 neuron_0[1|3]/in9
++ neuron_0[1|3]/in10 neuron_0[1|3]/in11 neuron_0[1|3]/in12 neuron_0[1|3]/in13 neuron_0[1|3]/in14
++ neuron_0[1|3]/in15 neuron_0[1|3]/in16 neuron_0[1|3]/ip1 neuron_0[1|3]/ip2 neuron_0[1|3]/ip3
++ neuron_0[1|3]/ip4 neuron_0[1|3]/ip5 neuron_0[1|3]/ip6 neuron_0[1|3]/ip7 neuron_0[1|3]/ip8
++ neuron_0[1|3]/ip9 neuron_0[1|3]/ip10 neuron_0[1|3]/ip11 neuron_0[1|3]/ip12 neuron_0[1|3]/ip13
++ neuron_0[1|3]/ip14 neuron_0[1|3]/ip15 neuron_0[1|3]/ip16 neuron_0[3|3]/VP SUB neuron_0[1|3]/ring_loop_branch
++ neuron
+Xneuron_0[2|3] neuron_0[2|3]/in1 neuron_0[2|3]/in2 neuron_0[2|3]/in3 neuron_0[2|3]/in4
++ neuron_0[2|3]/in5 neuron_0[2|3]/in6 neuron_0[2|3]/in7 neuron_0[2|3]/in8 neuron_0[2|3]/in9
++ neuron_0[2|3]/in10 neuron_0[2|3]/in11 neuron_0[2|3]/in12 neuron_0[2|3]/in13 neuron_0[2|3]/in14
++ neuron_0[2|3]/in15 neuron_0[2|3]/in16 neuron_0[2|3]/ip1 neuron_0[2|3]/ip2 neuron_0[2|3]/ip3
++ neuron_0[2|3]/ip4 neuron_0[2|3]/ip5 neuron_0[2|3]/ip6 neuron_0[2|3]/ip7 neuron_0[2|3]/ip8
++ neuron_0[2|3]/ip9 neuron_0[2|3]/ip10 neuron_0[2|3]/ip11 neuron_0[2|3]/ip12 neuron_0[2|3]/ip13
++ neuron_0[2|3]/ip14 neuron_0[2|3]/ip15 neuron_0[2|3]/ip16 neuron_0[3|3]/VP SUB neuron_0[2|3]/ring_loop_branch
++ neuron
+Xneuron_0[3|3] neuron_0[3|3]/in1 neuron_0[3|3]/in2 neuron_0[3|3]/in3 neuron_0[3|3]/in4
++ neuron_0[3|3]/in5 neuron_0[3|3]/in6 neuron_0[3|3]/in7 neuron_0[3|3]/in8 neuron_0[3|3]/in9
++ neuron_0[3|3]/in10 neuron_0[3|3]/in11 neuron_0[3|3]/in12 neuron_0[3|3]/in13 neuron_0[3|3]/in14
++ neuron_0[3|3]/in15 neuron_0[3|3]/in16 neuron_0[3|3]/ip1 neuron_0[3|3]/ip2 neuron_0[3|3]/ip3
++ neuron_0[3|3]/ip4 neuron_0[3|3]/ip5 neuron_0[3|3]/ip6 neuron_0[3|3]/ip7 neuron_0[3|3]/ip8
++ neuron_0[3|3]/ip9 neuron_0[3|3]/ip10 neuron_0[3|3]/ip11 neuron_0[3|3]/ip12 neuron_0[3|3]/ip13
++ neuron_0[3|3]/ip14 neuron_0[3|3]/ip15 neuron_0[3|3]/ip16 neuron_0[3|3]/VP SUB neuron_0[3|3]/ring_loop_branch
++ neuron
+C0 neuron_0[3|3]/ring_loop SUB -2.05fF
+C1 neuron_0[3|3]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.11fF
+C2 neuron_0[3|3]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.11fF
+C3 neuron_0[2|3]/ring_loop SUB -2.05fF
+C4 neuron_0[2|3]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.11fF
+C5 neuron_0[2|3]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.11fF
+C6 neuron_0[1|3]/ring_loop SUB -2.05fF
+C7 neuron_0[1|3]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.11fF
+C8 neuron_0[1|3]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.11fF
+C9 neuron_0[0|3]/ring_loop SUB -2.05fF
+C10 neuron_0[0|3]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.11fF
+C11 neuron_0[0|3]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.11fF
+C12 neuron_0[3|2]/ring_loop SUB -2.05fF
+C13 neuron_0[3|2]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C14 neuron_0[3|2]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C15 neuron_0[2|2]/ring_loop SUB -2.05fF
+C16 neuron_0[2|2]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C17 neuron_0[2|2]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C18 neuron_0[1|2]/ring_loop SUB -2.05fF
+C19 neuron_0[1|2]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C20 neuron_0[1|2]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C21 neuron_0[0|2]/ring_loop SUB -2.05fF
+C22 neuron_0[0|2]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C23 neuron_0[0|2]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C24 neuron_0[3|1]/ring_loop SUB -2.05fF
+C25 neuron_0[3|1]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C26 neuron_0[3|1]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C27 neuron_0[2|1]/ring_loop SUB -2.05fF
+C28 neuron_0[2|1]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C29 neuron_0[2|1]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C30 neuron_0[1|1]/ring_loop SUB -2.05fF
+C31 neuron_0[1|1]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C32 neuron_0[3|3]/VP SUB 129.30fF
+C33 neuron_0[1|1]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C34 neuron_0[0|1]/ring_loop SUB -2.05fF
+C35 neuron_0[0|1]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C36 neuron_0[0|1]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C37 neuron_0[3|0]/ring_loop SUB -2.12fF
+C38 neuron_0[3|0]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C39 neuron_0[3|0]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C40 neuron_0[2|0]/ring_loop SUB -2.12fF
+C41 neuron_0[2|0]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C42 neuron_0[2|0]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C43 neuron_0[1|0]/ring_loop SUB -2.12fF
+C44 neuron_0[1|0]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C45 neuron_0[1|0]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+C46 neuron_0[0|0]/ring_loop SUB -2.12fF
+C47 neuron_0[0|0]/pg17Input8p8n_para_1n_1/reset_loop SUB -1.08fF
+C48 neuron_0[0|0]/pg17Input8p8n_para_1n_0/reset_loop SUB -1.08fF
+.end
+
