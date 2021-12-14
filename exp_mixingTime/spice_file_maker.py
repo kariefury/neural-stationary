@@ -90,9 +90,9 @@ filenames = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"]
 
 std_dev = 0.1
 voltage = 0.1
-name_o_file = "../PreLayout/exp_mixing_time_"
+name_o_file = "PreLayout/exp_mixing_time_"
 for n in filenames:
-    sim_name_o_file = name_o_file + n + ".cir"
+    sim_name_o_file = "../" + name_o_file + n + ".cir"
     f = open(sim_name_o_file,"w")
     f.write(header)
     f.write("v2 sNoise 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+ " " + str(voltage) + "\n")
@@ -108,5 +108,5 @@ q = 0
 for n in filenames:
     q = 0
     while q < 100:
-        f.write("ngspice -b -o ring2/data" +str(q) + n + ".txt "+ name_o_file + n + ".cir\n")
+        f.write("ngspice -b -o exp_mixingTime/ring2/data" +str(q) + n + ".txt "+ name_o_file + n + ".cir\n")
         q += 1
