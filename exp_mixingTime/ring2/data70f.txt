@@ -1,0 +1,2 @@
+Error: Could not find include file sky130nm.lib
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
