@@ -13,7 +13,7 @@ Xneuron Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Clk5 Cl
 
 v2 Clk 0 dc 0 trrandom(2 10.1n 0 0.6 1.1)
 v5 Clk5 0 dc 0 trrandom(2 10n 0 0.8 0.6)
-*v6 Clk6 0 dc 0 trrandom(2 230p 0 0.6 0.7)
+v6 Clk6 0 dc 0 trrandom(2 5n 0 0.6 0.7)
 *v7 Clk7 0 dc 0 trrandom(2 240p 0 0.2 0.8)
 *v8 Clk8 0 dc 0 trrandom(2 250p 0 0.4 0.8)
 *v9 Clk9 0 dc 0 trrandom(2 260p 0 0.2 0.9)
@@ -37,7 +37,7 @@ v3 e23 0 DC 0 trrandom(2 100p 0 0.4 1.4)
 v4 e24 0 DC 0 trrandom(2 100p 0 0.4 0.2)
 
 .control
-tran 0.1ns 1000ns
+tran 10ps 100ns
 
 gnuplot gp  v(Clk) v(Clk5)  v(branch)+2 v(ring_loop)+2 v(pgnode0)+4 v(pgnode1)+6
 *gnuplot gp  v(Clk) v(Clk5) v(Clk6) v(Clk7) v(Clk8) v(Clk9) v(Clk10) v(Clk11) v(Clk12) v(branch)+2 v(ring_loop)+2 v(pgnode0)+4 v(pgnode1)+6
