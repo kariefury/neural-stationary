@@ -1,0 +1,146 @@
+
+Circuit: *pulseloop
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Note: One successful gmin step
+Trying gmin =   9.3057E-07 Note: One successful gmin step
+Trying gmin =   9.3057E-08 Note: One successful gmin step
+Trying gmin =   9.3057E-09 Note: One successful gmin step
+Trying gmin =   9.3057E-10 Note: One successful gmin step
+Trying gmin =   9.3057E-11 Note: One successful gmin step
+Trying gmin =   9.3057E-12 Note: One successful gmin step
+Trying gmin =   2.9427E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xpg1.1                                     1.8
+xpg1.reset_loop                            1.8
+xpg1.critical_node                     1.74017
+snoise                                       0
+outb                               9.68599e-07
+xpg1.invo                          2.45993e-06
+xpg1.xe                                    1.8
+outa                               9.68599e-07
+xpg2.1                                     1.8
+xpg2.reset_loop                            1.8
+xpg2.critical_node                     1.74017
+xpg2.invo                          2.45993e-06
+xpg2.xe                                    1.8
+xpg3.1                                     1.8
+xpg3.reset_loop                            1.8
+xpg3.critical_node                     1.74017
+npoutb                             9.68599e-07
+xpg3.invo                          2.45993e-06
+xpg3.xe                                    1.8
+npouta                             9.68599e-07
+xpg4.1                                     1.8
+xpg4.reset_loop                            1.8
+xpg4.critical_node                         1.8
+xpg4.invo                          9.68599e-07
+xpg4.xe                                    1.8
+xpg5.1                                     1.8
+xpg5.reset_loop                            1.8
+xpg5.critical_node                     1.74017
+upb                                9.68599e-07
+xpg5.invo                          2.45993e-06
+xpg5.xe                                    1.8
+upa                                9.68599e-07
+xpg6.1                                     1.8
+xpg6.reset_loop                            1.8
+xpg6.critical_node                     1.74017
+xpg6.invo                          2.45993e-06
+xpg6.xe                                    1.8
+v2#branch                                    0
+v.xpg6.v1#branch                  -1.74993e-09
+v.xpg5.v1#branch                  -1.74993e-09
+v.xpg4.v1#branch                  -1.01106e-09
+v.xpg3.v1#branch                  -1.74993e-09
+v.xpg2.v1#branch                  -1.74993e-09
+v.xpg1.v1#branch                  -1.74993e-09
+
+
+
+No. of Data Rows : 31761
+
+  Measurements for Transient Analysis
+
+responsetimea       =   2.27549e-10
+responsetimea       =   2.86144e-10
+responsetimea       =   6.28759e-10
+responsetimea       =   6.73380e-10
+responsetimeb       =   3.09820e-10
+responsetimeb       =   3.64976e-10
+responsetimeb       =   7.11393e-10
+responsetimeb       =   7.70310e-10
+npresponsetimea     =   2.28710e-10
+npresponsetimea     =   2.86692e-10
+npresponsetimea     =   1.12234e-09
+npresponsetimea     =   1.18051e-09
+npresponsetimeb     =   2.63448e-09
+npresponsetimeb     =   2.68169e-09
+npresponsetimeb     =   7.37509e-09
+npresponsetimeb     =   7.41346e-09
+responsetimeupa     =   3.12159e-10
+responsetimeupa     =   3.70208e-10
+responsetimeupa     =   1.20133e-09
+responsetimeupa     =   1.26037e-09
+responsetimeupb     =   3.94627e-10
+responsetimeupb     =   4.51065e-10
+responsetimeupb     =   1.28449e-09
+responsetimeupb     =   1.34363e-09
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+  Measurements for Transient Analysis
+
+responsetimea       =   2.27549e-10
+responsetimea       =   2.86144e-10
+responsetimea       =   6.28759e-10
+responsetimea       =   6.73380e-10
+responsetimeb       =   3.09820e-10
+responsetimeb       =   3.64976e-10
+responsetimeb       =   7.11393e-10
+responsetimeb       =   7.70310e-10
+npresponsetimea     =   2.28710e-10
+npresponsetimea     =   2.86692e-10
+npresponsetimea     =   1.12234e-09
+npresponsetimea     =   1.18051e-09
+npresponsetimeb     =   2.63448e-09
+npresponsetimeb     =   2.68169e-09
+npresponsetimeb     =   7.37509e-09
+npresponsetimeb     =   7.41346e-09
+responsetimeupa     =   3.12159e-10
+responsetimeupa     =   3.70208e-10
+responsetimeupa     =   1.20133e-09
+responsetimeupa     =   1.26037e-09
+responsetimeupb     =   3.94627e-10
+responsetimeupb     =   4.51065e-10
+responsetimeupb     =   1.28449e-09
+responsetimeupb     =   1.34363e-09
+
+CPU time since last call: 37.062 seconds.
+
+Total CPU time: 37.062 seconds.
+
+Total DRAM available = 128860.136719 MB.
+DRAM currently available = 110438.835938 MB.
+Total ngspice program size = 100.713867 MB.
+Resident set size = 86.265625 MB.
+Shared ngspice pages = 2.024414 MB.
+Text (code) pages = 1.597656 MB.
+Stack = 0 bytes.
+Library pages = 84.333008 MB.
+
