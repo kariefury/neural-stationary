@@ -10,6 +10,9 @@ Xpg2 outA sNoise outB pgNeg\n \
 * Separate circuit for neg pos\n \
 Xpg3 sNoise NPoutB NPoutA pgNeg\n \
 Xpg4 NPoutA sNoise NPoutB pgNegPos\n \
+* Phase Circuit \n \
+Xpg5 NPoutA upB upA pgNeg\n \
+Xpg6 upA outA upB pgNeg\n \
 .measure tran responseTimeA WHEN v(outA)=1.2 CROSS=1\n \
 .measure tran responseTimeA WHEN v(outA)=1.2 CROSS=2\n \
 .measure tran responseTimeA WHEN v(outA)=1.2 CROSS=3\n \
@@ -25,7 +28,15 @@ Xpg4 NPoutA sNoise NPoutB pgNegPos\n \
 .measure tran NPresponseTimeB WHEN v(NPoutB)=1.2 CROSS=1\n \
 .measure tran NPresponseTimeB WHEN v(NPoutB)=1.2 CROSS=2\n \
 .measure tran NPresponseTimeB WHEN v(NPoutB)=1.2 CROSS=3\n \
-.measure tran NPresponseTimeB WHEN v(NPoutB)=1.2 CROSS=4\n "
+.measure tran NPresponseTimeB WHEN v(NPoutB)=1.2 CROSS=4\n \
+.measure tran responseTimeupA WHEN v(upA)=1.2 CROSS=1\n \
+.measure tran responseTimeupA WHEN v(upA)=1.2 CROSS=2\n \
+.measure tran responseTimeupA WHEN v(upA)=1.2 CROSS=3\n \
+.measure tran responseTimeupA WHEN v(upA)=1.2 CROSS=4\n \
+.measure tran responseTimeupB WHEN v(upB)=1.2 CROSS=1\n \
+.measure tran responseTimeupB WHEN v(upB)=1.2 CROSS=2\n \
+.measure tran responseTimeupB WHEN v(upB)=1.2 CROSS=3\n \
+.measure tran responseTimeupB WHEN v(upB)=1.2 CROSS=4\n "
 
 footer = ".control \n \
 tran 10ps 100ns \n "
@@ -90,7 +101,7 @@ filenames = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"]
 
 std_dev = 0.1
 voltage = 0.1
-name_o_file = "PreLayout/exp_mixing_time_"
+name_o_file = "PreLayout/phase_exp_mixing_time_"
 for n in filenames:
     sim_name_o_file = "../" + name_o_file + n + ".cir"
     f = open(sim_name_o_file,"w")
@@ -102,11 +113,11 @@ for n in filenames:
     f.write(footer2)
 
 
-name_o_sh = "run_exp_mixing_time_ring2.sh"
+name_o_sh = "run_exp_mixing_time_phase_ring2.sh"
 f = open(name_o_sh,"w")
 q = 0
 for n in filenames:
     q = 0
     while q < 100:
-        f.write("ngspice -b -o exp_mixingTime/ring2/data" +str(q) + n + ".txt "+ name_o_file + n + ".cir\n")
+        f.write("ngspice -b -o exp_mixingTime/ring2phase/data" +str(q) + n + ".txt "+ name_o_file + n + ".cir\n")
         q += 1
