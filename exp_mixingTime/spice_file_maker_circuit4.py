@@ -20,6 +20,9 @@ Xpg2 outA outB pgNeg1\n \
 footer = ".control \n \
 tran 10ps 100ns \n "
 
+shortfooter = ".control \n \
+tran 10ps 20ns \n "
+
 footer2 = "*quit\n \
 .endc\n \
 \n \
