@@ -1,0 +1,70 @@
+
+Circuit: *pulseloop
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xpg1.1                                     1.8
+xpg1.reset_loop                            1.8
+xpg1.critical_node                     1.74017
+snoise                                       0
+outb                               9.68599e-07
+xpg1.invo                          2.45983e-06
+xpg1.xe                                    1.8
+outa                               9.68599e-07
+xpg2.1                                     1.8
+xpg2.reset_loop                            1.8
+xpg2.critical_node                     1.78087
+xpg2.invo                          1.31489e-06
+xpg2.xe                                    1.8
+v2#branch                                    0
+v.xpg2.v1#branch                  -1.18436e-09
+v.xpg1.v1#branch                  -1.74993e-09
+
+
+
+No. of Data Rows : 30177
+
+  Measurements for Transient Analysis
+
+responsetimea       =   2.55210e-10
+responsetimea       =   3.11183e-10
+responsetimea       =   4.06742e-10
+responsetimea       =   4.72356e-10
+responsetimeb       =   3.37022e-10
+responsetimeb       =   3.93038e-10
+responsetimeb       =   4.90209e-10
+responsetimeb       =   5.47114e-10
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+  Measurements for Transient Analysis
+
+responsetimea       =   2.55210e-10
+responsetimea       =   3.11183e-10
+responsetimea       =   4.06742e-10
+responsetimea       =   4.72356e-10
+responsetimeb       =   3.37022e-10
+responsetimeb       =   3.93038e-10
+responsetimeb       =   4.90209e-10
+responsetimeb       =   5.47114e-10
+
+CPU time since last call: 16.436 seconds.
+
+Total CPU time: 16.436 seconds.
+
+Total DRAM available = 128860.140625 MB.
+DRAM currently available = 122027.082031 MB.
+Total ngspice program size = 47.386719 MB.
+Resident set size = 32.893555 MB.
+Shared ngspice pages = 2.019531 MB.
+Text (code) pages = 1.597656 MB.
+Stack = 0 bytes.
+Library pages = 31.005859 MB.
+
