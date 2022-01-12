@@ -1,0 +1,60 @@
+
+Circuit: *pulseloop
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xpg1.1                                     1.8
+xpg1.reset_loop                            1.8
+xpg1.critical_node                     1.74017
+snoise                                       0
+outb                               9.68599e-07
+xpg1.invo                          2.45983e-06
+xpg1.xe                                    1.8
+outa                               9.68599e-07
+xpg2.1                                     1.8
+xpg2.reset_loop                            1.8
+xpg2.critical_node                         1.8
+xpg2.bc                                    1.8
+xpg2.invo                          9.68599e-07
+xpg2.xe                                    1.8
+v2#branch                                    0
+v.xpg2.v1#branch                  -1.01106e-09
+v.xpg1.v1#branch                  -1.74993e-09
+
+doAnalyses: TRAN:  Timestep too small; time = 9.76201e-08, timestep = 1.25e-23: trouble with node "v2#branch"
+
+
+tran simulation(s) aborted
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+  Measurements for Transient Analysis
+
+responsetimea       =   1.76465e-10
+responsetimea       =   2.30923e-10
+responsetimea       =   4.59332e-10
+responsetimea       =   5.15379e-10
+responsetimeb       =   4.98220e-09
+responsetimeb       =   4.99489e-09
+responsetimeb       =   9.29225e-09
+responsetimeb       =   9.31822e-09
+
+CPU time since last call: 17.691 seconds.
+
+Total CPU time: 17.691 seconds.
+
+Total DRAM available = 128860.140625 MB.
+DRAM currently available = 121623.265625 MB.
+Total ngspice program size = 49.257812 MB.
+Resident set size = 34.785156 MB.
+Shared ngspice pages = 2.041992 MB.
+Text (code) pages = 1.597656 MB.
+Stack = 0 bytes.
+Library pages = 32.876953 MB.
+
