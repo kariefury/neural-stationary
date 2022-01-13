@@ -120,7 +120,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 dpi=300
-plt.savefig('../exp_mixing_time_circuit3_cross1through4_2ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_cross1through4_2ns.png', dpi=dpi)
 plt.close()
 
 i = 3
@@ -143,7 +143,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 dpi=300
-plt.savefig('../exp_mixing_time_circuit3_ResB_cross1through4_2ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_ResB_cross1through4_2ns.png', dpi=dpi)
 plt.close()
 
 # Average Response Time for Response A and B with Cross 1, 2, 3,4 for each
@@ -221,7 +221,7 @@ plt.legend()
 plt.ylabel("White Noise Std Dev from 0.1V")
 plt.xlabel("Time to cross 1.2V event (ns)")
 dpi = 300
-plt.savefig('../exp_mixing_time_circuit3_averages.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_averages.png', dpi=dpi)
 plt.close()
 
 # Avg Response time B with error bars
@@ -284,7 +284,7 @@ plt.legend()
 plt.ylabel("White Noise Std Dev from 0.1V")
 plt.xlabel("Time to cross 1.2V event (ns)")
 dpi = 300
-plt.savefig('../exp_mixing_time_circuit3_averages_ResB.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_averages_ResB.png', dpi=dpi)
 plt.close()
 
 
@@ -314,7 +314,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 
-plt.savefig('../exp_mixing_time_circuit3_cross1through4_10ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_cross1through4_10ns.png', dpi=dpi)
 plt.close()
 
 i = 3
@@ -337,7 +337,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 dpi=300
-plt.savefig('../exp_mixing_time_circuit3_ResB_cross1through4_10ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_ResB_cross1through4_10ns.png', dpi=dpi)
 plt.close()
 
 i = 3
@@ -365,7 +365,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 
-plt.savefig('../exp_mixing_time_circuit3_cross1through4_20ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_cross1through4_20ns.png', dpi=dpi)
 plt.close()
 
 i = 3
@@ -388,7 +388,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 dpi=300
-plt.savefig('../exp_mixing_time_circuit3_ResB_cross1through4_20ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_ResB_cross1through4_20ns.png', dpi=dpi)
 plt.close()
 
 i = 3
@@ -416,7 +416,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 
-plt.savefig('../exp_mixing_time_circuit3_cross1through4_2to10ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_cross1through4_2to10ns.png', dpi=dpi)
 plt.close()
 
 i = 3
@@ -439,7 +439,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 dpi=300
-plt.savefig('../exp_mixing_time_circuit3_ResB_cross1through4_2to10ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_ResB_cross1through4_2to10ns.png', dpi=dpi)
 plt.close()
 i = 3
 while i > -1:
@@ -466,7 +466,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 
-plt.savefig('../exp_mixing_time_circuit3_cross1through4_10to20ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_cross1through4_10to20ns.png', dpi=dpi)
 plt.close()
 
 i = 3
@@ -489,7 +489,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 dpi=300
-plt.savefig('../exp_mixing_time_circuit3_ResB_cross1through4_10to20ns.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_ResB_cross1through4_10to20ns.png', dpi=dpi)
 plt.close()
 
 i = 3
@@ -517,7 +517,7 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 
-plt.savefig('../exp_mixing_time_circuit3_cross1through4.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_cross1through4.png', dpi=dpi)
 plt.close()
 
 i = 3
@@ -539,5 +539,5 @@ while i > -1:
 	plt.xlabel("Time to cross 1.2V event (ns)")
 	i -= 1
 dpi=300
-plt.savefig('../exp_mixing_time_circuit3_ResB_cross1through4.png', dpi=dpi)
+plt.savefig('../exp_mixing_time_circuit9_ResB_cross1through4.png', dpi=dpi)
 plt.close()
