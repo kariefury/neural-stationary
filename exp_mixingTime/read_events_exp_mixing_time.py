@@ -3,7 +3,7 @@ import numpy as np
 import statistics
 import matplotlib.pyplot as plt
 
-paths = ['circuit9/']
+paths = ['circuit2/']
 circuit_label = paths[0].strip("/")
 crosses = ['Cross 1', 'Cross 2', 'Cross 3', 'Cross 4']
 crossesMarker = ["2", "3", "1", "4"]
@@ -79,7 +79,7 @@ for p in paths:
 		cross_count_a = 1
 		cross_count_b = 1
 		for line in f:
-			if line.startswith("npresponsetimea"):
+			if line.startswith("responsetimea"):
 				fVal = line.split()[2]
 				fValFloat = float(fVal)
 				if cross_count_a <= 4:
@@ -89,7 +89,7 @@ for p in paths:
 					y_responsetimea[cross_count_a-1].append(label[lab])
 					colors[cross_count_a-1].append(clab[cross_count_a-1])
 				cross_count_a += 1
-			if line.startswith("npresponsetimeb"):
+			if line.startswith("responsetimeb"):
 				fVal = line.split()[2]
 				fValFloat = float(fVal)
 				if cross_count_b <= 4:
