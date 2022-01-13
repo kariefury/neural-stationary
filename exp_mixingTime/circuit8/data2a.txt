@@ -1,0 +1,125 @@
+
+Circuit: *pulseloop
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: singular matrix:  check nodes xpg2.aneg and xpg2.aneg
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   3.1623E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Warning: singular matrix:  check nodes xpg2.aneg and xpg2.aneg
+
+Warning: Dynamic gmin stepping failed
+Note: Starting source stepping
+Supplies reduced to   0.0000% Warning: singular matrix:  check nodes xpg2.aneg and xpg2.aneg
+
+
+Trying gmin =   1.0000E-02 Note: One successful gmin step
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: One successful source step
+Supplies reduced to   0.1000% Warning: singular matrix:  check nodes xpg2.aneg and xpg2.aneg
+
+Supplies reduced to   0.0000% Warning: singular matrix:  check nodes xpg2.aneg and xpg2.aneg
+
+Warning: source stepping failed
+
+Transient solution failed -
+
+Last Node Voltages
+------------------
+
+Node                                   Last Voltage        Previous Iter
+----                                   ------------        -------------
+xpg1.1                                            0          9.88038e-75
+xpg1.reset_loop                         7.16268e-65         -1.99264e-75
+xpg1.critical_node                      6.02369e-65         -1.65112e-75
+snoise                                            0                    0
+outa                                    7.16526e-65         -1.99336e-75
+xpg1.invo                               7.16208e-65         -1.99247e-75
+xpg1.xe                                 7.16268e-65         -1.99264e-75
+outb                                    7.16478e-65         -1.99322e-75
+xpg2.1                                            0          9.60851e-75
+xpg2.reset_loop                         7.16106e-65         -1.99219e-75
+xpg2.critical_node                      5.08821e-65          -1.3815e-75
+xpg2.aneg                                         0                    0
+xpg2.bs                                 1.86176e-65          2.01174e-78
+xpg2.invo                               7.16275e-65         -1.99266e-75
+xpg2.xe                                 7.16106e-65         -1.99219e-75
+v2#branch                                         0                    0
+v.xpg2.v1#branch                       -1.65984e-75                    0
+v.xpg1.v1#branch                       -1.61688e-75                    0
+
+
+doAnalyses: iteration limit reached
+
+tran simulation(s) aborted
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+  Measurements for Transient Analysis
+
+
+Error: measure  responsetimea  (WHEN) : out of interval
+ .measure tran responsetimea when v(outa)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimea  (WHEN) : out of interval
+ .measure tran responsetimea when v(outa)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimea  (WHEN) : out of interval
+ .measure tran responsetimea when v(outa)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimea  (WHEN) : out of interval
+ .measure tran responsetimea when v(outa)=1.2 cross=4 failed!
+
+
+Error: measure  responsetimeb  (WHEN) : out of interval
+ .measure tran responsetimeb when v(outb)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeb  (WHEN) : out of interval
+ .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeb  (WHEN) : out of interval
+ .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeb  (WHEN) : out of interval
+ .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
+
+
+CPU time since last call: 8.491 seconds.
+
+Total CPU time: 8.491 seconds.
+
+Total DRAM available = 128860.140625 MB.
+DRAM currently available = 121544.796875 MB.
+Total ngspice program size = 44.039062 MB.
+Resident set size = 29.541016 MB.
+Shared ngspice pages = 1.948242 MB.
+Text (code) pages = 1.597656 MB.
+Stack = 0 bytes.
+Library pages = 27.658203 MB.
+
