@@ -3,7 +3,11 @@ import numpy as np
 import statistics
 import matplotlib.pyplot as plt
 
-paths = ['circuit2/']
+paths = ['circuit9/']
+#responsea_cir_label = "responsetimea"  # , circuits 2 - 8
+responsea_cir_label = "responsetimeupa" # Remember for circuit9 the cross is measured here
+#responseb_cir_label = "responsetimeb"  # circuits 2 - 8
+responseb_cir_label = "responsetimeupb"  # Remember for circuit9, the crossing is measured here
 circuit_label = paths[0].strip("/")
 crosses = ['Cross 1', 'Cross 2', 'Cross 3', 'Cross 4']
 crossesMarker = ["2", "3", "1", "4"]
@@ -13,9 +17,9 @@ clab = ['black', 'green', 'black', 'blue']#['black','blue','gray','red']
 filenames = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r"]
 label = {"a":0.1, "b":0.2,"c":0.3,"d":0.4,"e":0.5,"f":0.6,"g":0.7,"h":0.8,"i":0.9,"j":1.0,"k":1.1,"l":1.2,"m":1.3,
 		 "n":1.4,"o":1.5}
-label_to_index = { "0.2": 0, "0.3": 1, "0.4": 2, "0.5": 3, "0.6": 4, "0.7": 5, "0.8": 6, "0.9": 7, "1.0": 8,
-					"1.1":9, "1.2":10,"1.3": 11, "1.4": 12, "1.5": 13}
-datapoints = 14
+label_to_index = {"0.1":0, "0.2": 1, "0.3": 2, "0.4": 3, "0.5": 4, "0.6": 5, "0.7": 6, "0.8": 7, "0.9": 8, "1.0": 9,
+					"1.1":10, "1.2":11,"1.3": 12, "1.4": 13, "1.5": 14}
+datapoints = 15
 
 x_responsetimea = []
 y_responsetimea = []
@@ -79,7 +83,7 @@ for p in paths:
 		cross_count_a = 1
 		cross_count_b = 1
 		for line in f:
-			if line.startswith("responsetimea"):
+			if line.startswith(responsea_cir_label):
 				fVal = line.split()[2]
 				fValFloat = float(fVal)
 				if cross_count_a <= 4:
@@ -89,7 +93,7 @@ for p in paths:
 					y_responsetimea[cross_count_a-1].append(label[lab])
 					colors[cross_count_a-1].append(clab[cross_count_a-1])
 				cross_count_a += 1
-			if line.startswith("responsetimeb"):
+			if line.startswith(responseb_cir_label):
 				fVal = line.split()[2]
 				fValFloat = float(fVal)
 				if cross_count_b <= 4:
@@ -103,7 +107,6 @@ for p in paths:
 
 
 # Data points for Response A
-
 fig, axs = plt.subplots(2, 3, figsize=(8, 5), sharex=False, sharey=True)
 dpi = 300
 i = 3
@@ -137,6 +140,8 @@ while i > -1:
 	axs[1, 2].scatter(xnp, ynp, c=colors[i], label=crosses[i], alpha=0.25, marker=crossesMarker[i])
 	axs[1, 2].set_xlim(10, 20)
 	axs[0, 2].legend()
+	axs[0 , 0].set_ylim(0, 1.6)
+	axs[1, 0].set_ylim(0, 1.6)
 	axs[0, 0].set_ylabel("sNoise Std Dev from 0.1V")
 	axs[1, 0].set_ylabel("sNoise Std Dev from 0.1V")
 	axs[1, 0].set_xlabel("Time (ns) cross 1.2V")
@@ -144,13 +149,13 @@ while i > -1:
 	axs[1, 2].set_xlabel("Time (ns) cross 1.2V")
 	i -= 1
 
-fig.suptitle('Tap A')
+fig.suptitle(circuit_label+' Tap A ' + responsea_cir_label)
 plt.savefig('../exp_mixing_time_'+circuit_label+'_cross1through4_resA.png', dpi=dpi)
 plt.close()
 
 # Response B
 i = 3
-line_choices = ['-r', '-g', '-b', '-k'] #['-k','-b','-g','-y','m--','c--','g--']
+line_choices = ['-r', '-g', '-b', '-k']  # ['-k','-b','-g','-y','m--','c--','g--']
 fig, axs = plt.subplots(2, 3, figsize=(8, 5), sharex=False, sharey=True)
 while i > -1:
 	ynp = np.zeros(len(x_responsetimeb[i]))
@@ -190,13 +195,13 @@ while i > -1:
 	axs[1, 2].set_xlabel("Time (ns) cross 1.2V")
 	i -= 1
 
-fig.suptitle('Tap B')
+fig.suptitle(circuit_label+' Tap B ' + responseb_cir_label)
 plt.savefig('../exp_mixing_time_'+circuit_label+'_cross1through4_resB.png', dpi=dpi)
 plt.close()
 
 
 # Average Response Time for Response A (and Response B in next section) with Cross 1, 2, 3,4 for each
-fig, axs = plt.subplots(1, 2, figsize=(8, 3), sharex=False, sharey=True)
+fig, axs = plt.subplots(1, 2, figsize=(8, 4), sharex=False, sharey=True)
 i = 3
 line_choices = ['-r', '-g', '-b', '-k']  # ['-k','-b','-g','-y','m--','c--','g--']
 while i > -1:
@@ -269,17 +274,18 @@ while i < 4:
 	axs[1].scatter(tap_a_x_values_avg[i], tap_a_y_values[i], alpha=0.5, marker=crossesMarker[i], s=80)
 	axs[1].errorbar(tap_a_x_values_avg[i], tap_a_y_values[i], label=crosses[i], xerr=tap_a_x_err_std_dev[i], \
 					   fmt=crossesMarker[i])
+	axs[1].set_xlim(0, 100)
 	i += 1
 axs[0].legend()
 axs[0].set_ylabel("sNoise Std Dev from 0.1V")
 axs[0].set_xlabel("Time (ns) cross 1.2V")
 axs[1].set_xlabel("Time (ns) cross 1.2V")
-fig.suptitle('Tap A')
+fig.suptitle(circuit_label+' Tap A ' + responsea_cir_label)
 plt.savefig('../exp_mixing_time_'+circuit_label+'_averages_resA.png', dpi=dpi)
 plt.close()
 
 # Avg Response time B with error bars
-fig, axs = plt.subplots(1, 2, figsize=(8, 3), sharex=False, sharey=True)
+fig, axs = plt.subplots(1, 2, figsize=(8, 4), sharex=False, sharey=True)
 
 i = 3
 line_choices= ['-r','-g','-b','-k']
@@ -337,10 +343,11 @@ while i < 4:
 	axs[1].scatter(tap_b_x_values_avg[i], tap_b_y_values[i], alpha=0.5, marker=crossesMarker[i], s=80)
 	axs[1].errorbar(tap_b_x_values_avg[i], tap_b_y_values[i], label=crosses[i], xerr=tap_b_x_err_std_dev[i], \
 					   fmt=crossesMarker[i])
+	axs[1].set_xlim(0, 100)
 	i += 1
 axs[0].legend()
 axs[0].set_ylabel("sNoise Std Dev from 0.1V")
 axs[0].set_xlabel("Time (ns) cross 1.2V")
 axs[1].set_xlabel("Time (ns) cross 1.2V")
-fig.suptitle('Tap B')
+fig.suptitle(circuit_label+' Tap B ' + responseb_cir_label)
 plt.savefig('../exp_mixing_time_'+circuit_label+'_averages_resB.png', dpi=dpi)
