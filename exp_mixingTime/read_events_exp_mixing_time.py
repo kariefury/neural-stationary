@@ -3,11 +3,11 @@ import numpy as np
 import statistics
 import matplotlib.pyplot as plt
 
-paths = ['circuit9/']
-#responsea_cir_label = "responsetimea"  # , circuits 2 - 8
-responsea_cir_label = "responsetimeupa" # Remember for circuit9 the cross is measured here
-#responseb_cir_label = "responsetimeb"  # circuits 2 - 8
-responseb_cir_label = "responsetimeupb"  # Remember for circuit9, the crossing is measured here
+paths = ['circuit3/']
+responsea_cir_label = "responsetimea"  # , circuits 2 - 8
+#responsea_cir_label = "responsetimeupa" # Remember for circuit9 the cross is measured here
+responseb_cir_label = "responsetimeb"  # circuits 2 - 8
+#responseb_cir_label = "responsetimeupb"  # Remember for circuit9, the crossing is measured here
 circuit_label = paths[0].strip("/")
 crosses = ['Cross 1', 'Cross 2', 'Cross 3', 'Cross 4']
 crossesMarker = ["2", "3", "1", "4"]
