@@ -13,7 +13,8 @@ Xpg1 outA sNoise outB pgNegPos
  .measure tran responseTimeB WHEN v(outB)=1.2 CROSS=4
  v2 sNoise 0 dc 0 trrandom (2 20p 0 0.9999999999999999 0.1)
 .control 
- tran 10ps 20ns 
+ tran 10ps 200ns
+plot v(outA)+2 v(outB)+4 v(sNoise) 
  *quit
  .endc
  
@@ -31,7 +32,7 @@ Xpg1 outA sNoise outB pgNegPos
  xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm14 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
  
  xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
@@ -56,7 +57,7 @@ Xpg1 outA sNoise outB pgNegPos
  xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm14 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
  
  xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
@@ -81,7 +82,7 @@ Xpg1 outA sNoise outB pgNegPos
  xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm14 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
  
  xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
@@ -104,7 +105,7 @@ Xpg1 outA sNoise outB pgNegPos
  xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm14 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
  xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
  
  xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
