@@ -1,175 +1,155 @@
 *PulseLoop
  .include sky130nm.lib
  * Circuit 8, 2 pulse gate in ring, sNoise input to series NMOS, sNoise input to NMOS
-Xpg1 sNoise outA outB pgNeg
- Xpg2 outB sNoise outA pgNegSeries
- .measure tran responseTimeA WHEN v(outA)=1.2 CROSS=1
- .measure tran responseTimeA WHEN v(outA)=1.2 CROSS=2
- .measure tran responseTimeA WHEN v(outA)=1.2 CROSS=3
- .measure tran responseTimeA WHEN v(outA)=1.2 CROSS=4
- .measure tran responseTimeB WHEN v(outB)=1.2 CROSS=1
- .measure tran responseTimeB WHEN v(outB)=1.2 CROSS=2
- .measure tran responseTimeB WHEN v(outB)=1.2 CROSS=3
- .measure tran responseTimeB WHEN v(outB)=1.2 CROSS=4
+Xpg1 sNoise outA outB pos_supply neg_supply pgNeg
+ Xpg2 outB sNoise outA pos_supply neg_supply pgNegSeries
+ v3 pos_supply 0 1.8
+ v4 neg_supply 0 0.0
+ .measure tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1
+ .measure tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2
+ .measure tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3
+ .measure tran responseTimeA4 WHEN v(outA)=1.2 CROSS=4
+ .measure tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1
+ .measure tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2
+ .measure tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3
+ .measure tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4
+ .measure tran iavg i(v3) FROM=20ps TO=par('responseTimeA1') 
  v2 sNoise 0 dc 0 trrandom (2 20p 0 0.5 0.1)
 .control 
+ *plot v(outA) v(outB) v(sNoise)
+ *plot i(v3)
  tran 10ps 100ns 
  *quit
  .endc
  
  
- *PG
- .subckt pgNeg2PosSeries Aneg Bpos Cpos x
+ .subckt pgNeg2PosSeries Aneg Bpos Cpos x pow_supply gnd_supply
  
- xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- xm2 0 Aneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm11 1 Cpos critical_node bc sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm10 bc Bpos critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm11 pow_supply Cpos critical_node bc sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm10 bc Bpos critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
  
- xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ .ends pgNeg2PosSeries 
  
+ .subckt pgNegPos Aneg Bpos x pow_supply gnd_supply
  
- v1 1 0 1.8 
+ xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- .ends pg 
+ xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- .subckt pgNegPos Aneg Bpos x
+ xm10 pow_supply Bpos critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm2 0 Aneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm10 1 Bpos critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
  
- xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ .ends pgNegPos 
  
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ .subckt pgNeg Aneg Bneg x pow_supply gnd_supply
  
- xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
+ xm10 gnd_supply Bneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- v1 1 0 1.8 
+ xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- .ends pg 
+ xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- .subckt pgNeg Aneg Bneg x 
+ xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
  
- xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ .ends pgNeg 
  
- xm2 0 Aneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm10 1 Bneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ .subckt pgNeg2Series Aneg Bneg BnegSeries x pow_supply gnd_supply
  
- xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ xm10 gnd_supply Bneg critical_node bs sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ xm11 bs BnegSeries critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
+ xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- v1 1 0 1.8 
+ xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- .ends pg 
+ xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
  
+ xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ .ends pgNeg2Series 
  
- .subckt pgNeg2Series Aneg Bneg BnegSeries x 
+ .subckt pgNegSeries Bneg BnegSeries x pow_supply gnd_supply
  
- xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- xm2 0 Aneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm10 1 Bneg critical_node bs sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm10 gnd_supply Bneg critical_node bs sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm11 bs BnegSeries critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm11 bs BnegSeries critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
  
- xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ .ends pgNegSeries 
  
+ .subckt pgNeg1 Aneg x pow_supply gnd_supply
  
- v1 1 0 1.8 
+ xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
  
- .ends pg 
+ xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- .subckt pgNegSeries Bneg BnegSeries x 
+ xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
  
- xm2 0 Aneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
+ xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
  
- xm10 1 Bneg critical_node bs sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm11 bs BnegSeries critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
- 
- xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
- 
- 
- v1 1 0 1.8 
- 
- .ends pg 
- 
- .subckt pgNeg1 Aneg x 
- 
- xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- 
- xm2 0 Aneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
- 
- xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
- 
- 
- v1 1 0 1.8 
- 
- .ends pg 
+ xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ .ends pgNeg1 
  

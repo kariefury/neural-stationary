@@ -18,33 +18,6 @@ Xpg1 outA sNoise outB pgNegPos
  .endc
  
  
- *PG
- .subckt pgNeg2PosSeries Aneg Bpos Cpos x
- 
- xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- 
- xm2 0 Aneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm11 1 Cpos critical_node bc sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm10 bc Bpos critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- 
- xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
- xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n
- 
- xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
- 
- xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
- xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
- 
- 
- v1 1 0 1.8 
- 
- .ends pg 
- 
  .subckt pgNegPos Aneg Bpos x
  
  xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n
