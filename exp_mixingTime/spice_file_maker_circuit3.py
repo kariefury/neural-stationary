@@ -19,12 +19,16 @@ v4 neg_supply 0 0.0\n \
 .measure tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2\n \
 .measure tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3\n \
 .measure tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4\n \
-.measure tran iavg i(v3) FROM=20ps TO=par('responseTimeA1') \n "
+.measure tran iavg avg i(v3) FROM=200ps TO=500ps \n "
 
 footer = ".control \n \
+*plot v(outA) v(outB) v(sNoise)\n \
+*plot i(v3)\n \
 tran 10ps 100ns \n "
 
 shortfooter = ".control \n \
+*plot v(outA) v(outB) v(sNoise)\n \
+*plot i(v3)\n \
 tran 10ps 20ns \n "
 
 footer2 = "*quit\n \

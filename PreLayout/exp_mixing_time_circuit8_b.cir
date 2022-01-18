@@ -13,7 +13,7 @@ Xpg1 sNoise outA outB pos_supply neg_supply pgNeg
  .measure tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2
  .measure tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3
  .measure tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4
- .measure tran iavg i(v3) FROM=20ps TO=par('responseTimeA1') 
+ .measure tran iavg avg i(v3) FROM=200ps TO=500ps 
  v2 sNoise 0 dc 0 trrandom (2 20p 0 0.2 0.1)
 .control 
  *plot v(outA) v(outB) v(sNoise)
