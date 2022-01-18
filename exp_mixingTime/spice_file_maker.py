@@ -5,38 +5,40 @@
 # Part 2. Write a Shell script to run the spice file and save a result.
 header = "*PulseLoop\n \
 .include sky130nm.lib\n \
-Xpg1 sNoise outB outA pgNeg\n \
-Xpg2 outA sNoise outB pgNeg\n \
+Xpg1 sNoise outB outA pos_supply neg_supply pgNeg\n \
+Xpg2 outA sNoise outB pos_supply neg_supply pgNeg\n \
 * Separate circuit for neg pos\n \
-Xpg3 sNoise NPoutB NPoutA pgNeg\n \
-Xpg4 NPoutA sNoise NPoutB pgNegPos\n \
+Xpg3 sNoise NPoutB NPoutA pos_supply neg_supply pgNeg\n \
+Xpg4 NPoutA sNoise NPoutB pos_supply neg_supply pgNegPos\n \
 * Phase Circuit \n \
-Xpg5 NPoutA upB upA pgNeg\n \
-Xpg6 upA outA upB pgNeg\n \
-.measure tran responseTimeA WHEN v(outA)=1.2 CROSS=1\n \
-.measure tran responseTimeA WHEN v(outA)=1.2 CROSS=2\n \
-.measure tran responseTimeA WHEN v(outA)=1.2 CROSS=3\n \
-.measure tran responseTimeA WHEN v(outA)=1.2 CROSS=4\n \
-.measure tran responseTimeB WHEN v(outB)=1.2 CROSS=1\n \
-.measure tran responseTimeB WHEN v(outB)=1.2 CROSS=2\n \
-.measure tran responseTimeB WHEN v(outB)=1.2 CROSS=3\n \
-.measure tran responseTimeB WHEN v(outB)=1.2 CROSS=4\n \
-.measure tran NPresponseTimeA WHEN v(NPoutA)=1.2 CROSS=1\n \
-.measure tran NPresponseTimeA WHEN v(NPoutA)=1.2 CROSS=2\n \
-.measure tran NPresponseTimeA WHEN v(NPoutA)=1.2 CROSS=3\n \
-.measure tran NPresponseTimeA WHEN v(NPoutA)=1.2 CROSS=4\n \
-.measure tran NPresponseTimeB WHEN v(NPoutB)=1.2 CROSS=1\n \
-.measure tran NPresponseTimeB WHEN v(NPoutB)=1.2 CROSS=2\n \
-.measure tran NPresponseTimeB WHEN v(NPoutB)=1.2 CROSS=3\n \
-.measure tran NPresponseTimeB WHEN v(NPoutB)=1.2 CROSS=4\n \
-.measure tran responseTimeupA WHEN v(upA)=1.2 CROSS=1\n \
-.measure tran responseTimeupA WHEN v(upA)=1.2 CROSS=2\n \
-.measure tran responseTimeupA WHEN v(upA)=1.2 CROSS=3\n \
-.measure tran responseTimeupA WHEN v(upA)=1.2 CROSS=4\n \
-.measure tran responseTimeupB WHEN v(upB)=1.2 CROSS=1\n \
-.measure tran responseTimeupB WHEN v(upB)=1.2 CROSS=2\n \
-.measure tran responseTimeupB WHEN v(upB)=1.2 CROSS=3\n \
-.measure tran responseTimeupB WHEN v(upB)=1.2 CROSS=4\n "
+Xpg5 NPoutA upB upA pos_supply neg_supply pgNeg\n \
+Xpg6 upA outA upB pos_supply neg_supply pgNeg\n \
+v3 pos_supply 0 1.8\n \
+v4 neg_supply 0 0.0\n \
+.measure tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1\n \
+.measure tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2\n \
+.measure tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3\n \
+.measure tran responseTimeA4 WHEN v(outA)=1.2 CROSS=4\n \
+.measure tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1\n \
+.measure tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2\n \
+.measure tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3\n \
+.measure tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4\n \
+.measure tran NPresponseTimeA1 WHEN v(NPoutA)=1.2 CROSS=1\n \
+.measure tran NPresponseTimeA2 WHEN v(NPoutA)=1.2 CROSS=2\n \
+.measure tran NPresponseTimeA3 WHEN v(NPoutA)=1.2 CROSS=3\n \
+.measure tran NPresponseTimeA4 WHEN v(NPoutA)=1.2 CROSS=4\n \
+.measure tran NPresponseTimeB1 WHEN v(NPoutB)=1.2 CROSS=1\n \
+.measure tran NPresponseTimeB2 WHEN v(NPoutB)=1.2 CROSS=2\n \
+.measure tran NPresponseTimeB3 WHEN v(NPoutB)=1.2 CROSS=3\n \
+.measure tran NPresponseTimeB4 WHEN v(NPoutB)=1.2 CROSS=4\n \
+.measure tran responseTimeupA1 WHEN v(upA)=1.2 CROSS=1\n \
+.measure tran responseTimeupA2 WHEN v(upA)=1.2 CROSS=2\n \
+.measure tran responseTimeupA3 WHEN v(upA)=1.2 CROSS=3\n \
+.measure tran responseTimeupA4 WHEN v(upA)=1.2 CROSS=4\n \
+.measure tran responseTimeupB1 WHEN v(upB)=1.2 CROSS=1\n \
+.measure tran responseTimeupB2 WHEN v(upB)=1.2 CROSS=2\n \
+.measure tran responseTimeupB3 WHEN v(upB)=1.2 CROSS=3\n \
+.measure tran responseTimeupB4 WHEN v(upB)=1.2 CROSS=4\n "
 
 footer = ".control \n \
 tran 10ps 100ns \n "
@@ -45,56 +47,135 @@ footer2 = "*quit\n \
 .endc\n \
 \n \
 \n \
-*PG\n \
-.subckt pgNegPos Aneg Bpos x\n \
+.subckt pgNeg2PosSeries Aneg Bpos Cpos x pow_supply gnd_supply\n \
 \n \
-xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
-xm2 0 Aneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm10 1 Bpos critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm11 pow_supply Cpos critical_node bc sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm10 bc Bpos critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
-xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
-xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
-xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
-xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
 \n \
-xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
-xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+.ends pgNeg2PosSeries \n \
+\n \
+.subckt pgNegPos Aneg Bpos x pow_supply gnd_supply\n \
+\n \
+xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+\n \
+xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm10 pow_supply Bpos critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+\n \
+xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+\n \
+xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+.ends pgNegPos \n \
+\n \
+.subckt pgNeg Aneg Bneg x pow_supply gnd_supply\n \
+\n \
+xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+\n \
+xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm10 gnd_supply Bneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+\n \
+xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+.ends pgNeg \n \
 \n \
 \n \
-v1 1 0 1.8 \n \
+.subckt pgNeg2Series Aneg Bneg BnegSeries x pow_supply gnd_supply\n \
 \n \
-.ends pg \n \
+xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
-.subckt pgNeg Aneg Bneg x \n \
+xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm1 1 reset_loop critical_node 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm10 gnd_supply Bneg critical_node bs sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm2 0 Aneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm11 bs BnegSeries critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm10 1 Bneg critical_node 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm3 1 critical_node invO 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
-xm4 0 critical_node invO 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm4 1 invO reset_loop 1 sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
-xm5 0 invO reset_loop 0 sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
 \n \
-xm6 1 invO xe 1 sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
-xm7 0 invO xe 0 sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+.ends pgNeg2Series \n \
 \n \
-xm8 1 xe x 1 sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
-xm9 0 xe x 0 sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+.subckt pgNegSeries Bneg BnegSeries x pow_supply gnd_supply\n \
 \n \
+xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 \n \
-v1 1 0 1.8 \n \
+xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-.ends pg \n \
+xm10 gnd_supply Bneg critical_node bs sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm11 bs BnegSeries critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+\n \
+xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+.ends pgNegSeries \n \
+\n \
+.subckt pgNeg1 Aneg x pow_supply gnd_supply\n \
+\n \
+xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+\n \
+xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+\n \
+xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+\n \
+xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
+xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n \n \
+.ends pgNeg1 \n \
 "
 
 filenames = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"]
@@ -119,5 +200,5 @@ q = 0
 for n in filenames:
     q = 0
     while q < 100:
-        f.write("ngspice -b -o exp_mixingTime/ring2phase/data" +str(q) + n + ".txt "+ name_o_file + n + ".cir\n")
+        f.write("ngspice -b -o exp_mixingTime/circuit9/data" +str(q) + n + ".txt "+ name_o_file + n + ".cir\n")
         q += 1
