@@ -9,63 +9,42 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52675e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.bc                                    1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          2.79167e-09
+v3#branch                         -2.79167e-09
 
 
 
-No. of Data Rows : 29583
+No. of Data Rows : 9455
+responsetimea1      =  1.104729e-09
+responsetimea2      =  1.156771e-09
+responsetimea3      =  2.037385e-09
+responsetimea4      =  2.083628e-09
+responsetimeb1      =  1.404628e-08
+responsetimeb2      =  1.406418e-08
 
-  Measurements for Transient Analysis
-
-responsetimea       =   6.22676e-10
-responsetimea       =   6.67188e-10
-responsetimea       =   1.60717e-09
-responsetimea       =   1.66014e-09
-responsetimeb       =   1.23998e-08
-responsetimeb       =   1.24468e-08
-responsetimeb       =   4.17708e-08
-responsetimeb       =   4.18190e-08
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
 
 
-  Measurements for Transient Analysis
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-responsetimea       =   6.22676e-10
-responsetimea       =   6.67188e-10
-responsetimea       =   1.60717e-09
-responsetimea       =   1.66014e-09
-responsetimeb       =   1.23998e-08
-responsetimeb       =   1.24468e-08
-responsetimeb       =   4.17708e-08
-responsetimeb       =   4.18190e-08
-
-CPU time since last call: 16.850 seconds.
-
-Total CPU time: 16.850 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121635.636719 MB.
-Total ngspice program size = 49.212891 MB.
-Resident set size = 34.776367 MB.
-Shared ngspice pages = 2.034180 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 32.832031 MB.
-
+tdiff = 9.788990e-10
+iavg                =  -3.269945e-05 from=  1.104729e-09 to=  2.087000e-09
+iavg = -3.26995e-05
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

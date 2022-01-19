@@ -9,52 +9,37 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52675e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.bc                                    1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          2.79167e-09
+v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 4.28e-09, timestep = 1.25e-23: cause unrecorded.
+doAnalyses: TRAN:  Timestep too small; time = 5.68006e-09, timestep = 1.25e-23: trouble with node "m.xpg2.xm9.msky130_fd_pr__nfet_01v8#sbody"
 
 
 tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-responsetimea       =   1.56810e-10
-responsetimea       =   2.42871e-10
-responsetimea       =   3.73089e-10
-responsetimea       =   4.33625e-10
-responsetimeb       =   8.52257e-10
-responsetimeb       =   9.09516e-10
-responsetimeb       =   1.50658e-09
-responsetimeb       =   1.54819e-09
-
-CPU time since last call: 9.191 seconds.
-
-Total CPU time: 9.191 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121616.949219 MB.
-Total ngspice program size = 43.207031 MB.
-Resident set size = 28.668945 MB.
-Shared ngspice pages = 1.912109 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 26.826172 MB.
-
+responsetimea1      =  1.327433e-10
+responsetimea2      =  2.480548e-10
+responsetimea3      =  5.473982e-10
+responsetimea4      =  6.190041e-10
+responsetimeb1      =  1.273754e-09
+responsetimeb2      =  1.443574e-09
+responsetimeb3      =  1.481906e-09
+responsetimeb4      =  1.526964e-09
+tdiff = 4.862608e-10
+iavg                =  -1.910121e-04 from=  1.327433e-10 to=  6.200000e-10
+iavg = -1.91012e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
