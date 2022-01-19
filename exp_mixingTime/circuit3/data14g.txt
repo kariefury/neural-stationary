@@ -3,68 +3,86 @@ Circuit: *pulseloop
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Note: One successful gmin step
+Trying gmin =   9.3057E-07 Note: One successful gmin step
+Trying gmin =   9.3057E-08 Note: One successful gmin step
+Trying gmin =   9.3057E-09 Note: One successful gmin step
+Trying gmin =   9.3057E-10 Note: One successful gmin step
+Trying gmin =   9.3057E-11 Note: One successful gmin step
+Trying gmin =   9.3057E-12 Note: One successful gmin step
+Trying gmin =   2.9427E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
 
 Initial Transient Solution
 --------------------------
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52787e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          2.79155e-09
+v3#branch                         -2.79155e-09
 
 
 
-No. of Data Rows : 28280
+No. of Data Rows : 28345
 
   Measurements for Transient Analysis
 
-responsetimea       =   3.16889e-10
-responsetimea       =   3.69858e-10
-responsetimea       =   5.54034e-10
-responsetimea       =   6.07941e-10
-responsetimeb       =   1.94971e-08
-responsetimeb       =   1.95543e-08
-responsetimeb       =   3.74221e-08
-responsetimeb       =   3.74796e-08
+responsetimea1      =   5.73516e-10
+responsetimea2      =   6.20580e-10
+responsetimea3      =   7.95100e-10
+responsetimea4      =   8.49186e-10
+responsetimeb1      =   3.93925e-09
+responsetimeb2      =   4.00006e-09
+responsetimeb3      =   1.84663e-08
+responsetimeb4      =   1.85197e-08
+iavg                =  -1.432410e-05 from=  2.000000e-10 to=  5.010000e-10
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
 
   Measurements for Transient Analysis
 
-responsetimea       =   3.16889e-10
-responsetimea       =   3.69858e-10
-responsetimea       =   5.54034e-10
-responsetimea       =   6.07941e-10
-responsetimeb       =   1.94971e-08
-responsetimeb       =   1.95543e-08
-responsetimeb       =   3.74221e-08
-responsetimeb       =   3.74796e-08
+responsetimea1      =   5.73516e-10
+responsetimea2      =   6.20580e-10
+responsetimea3      =   7.95100e-10
+responsetimea4      =   8.49186e-10
+responsetimeb1      =   3.93925e-09
+responsetimeb2      =   4.00006e-09
+responsetimeb3      =   1.84663e-08
+responsetimeb4      =   1.85197e-08
+iavg                =  -1.432410e-05 from=  2.000000e-10 to=  5.010000e-10
 
-CPU time since last call: 15.425 seconds.
+CPU time since last call: 15.992 seconds.
 
-Total CPU time: 15.425 seconds.
+Total CPU time: 15.992 seconds.
 
 Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121268.222656 MB.
-Total ngspice program size = 47.970703 MB.
-Resident set size = 33.470703 MB.
-Shared ngspice pages = 2.018555 MB.
+DRAM currently available = 120020.484375 MB.
+Total ngspice program size = 48.122070 MB.
+Resident set size = 33.651367 MB.
+Shared ngspice pages = 2.002930 MB.
 Text (code) pages = 1.597656 MB.
 Stack = 0 bytes.
-Library pages = 31.589844 MB.
+Library pages = 31.741211 MB.
 
