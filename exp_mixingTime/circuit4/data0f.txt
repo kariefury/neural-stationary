@@ -9,62 +9,35 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
-xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+pos_supply                                 1.8
+xpg1.reset_loop                       0.863901
+xpg1.critical_node                    0.863901
+neg_supply                                   0
 snoise                                       0
-outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
-xpg1.xe                                    1.8
-outa                               9.68599e-07
-xpg2.1                                     1.8
-xpg2.reset_loop                            1.8
-xpg2.critical_node                     1.78087
-xpg2.invo                          1.31489e-06
-xpg2.xe                                    1.8
+outb                                  0.863901
+xpg1.invo                             0.863901
+xpg1.xe                               0.863901
+outa                                  0.863901
+xpg2.reset_loop                       0.863901
+xpg2.critical_node                    0.863901
+xpg2.invo                             0.863901
+xpg2.xe                               0.863901
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.18436e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          0.000118001
+v3#branch                         -0.000118001
 
 
 
-No. of Data Rows : 27745
-
-  Measurements for Transient Analysis
-
-responsetimea       =   7.82609e-10
-responsetimea       =   8.37838e-10
-responsetimea       =   1.60630e-09
-responsetimea       =   1.65828e-09
-responsetimeb       =   8.62261e-10
-responsetimeb       =   9.19951e-10
-responsetimeb       =   1.68867e-09
-responsetimeb       =   1.74652e-09
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-responsetimea       =   7.82609e-10
-responsetimea       =   8.37838e-10
-responsetimea       =   1.60630e-09
-responsetimea       =   1.65828e-09
-responsetimeb       =   8.62261e-10
-responsetimeb       =   9.19951e-10
-responsetimeb       =   1.68867e-09
-responsetimeb       =   1.74652e-09
-
-CPU time since last call: 14.930 seconds.
-
-Total CPU time: 14.930 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 122063.242188 MB.
-Total ngspice program size = 46.990234 MB.
-Resident set size = 32.525391 MB.
-Shared ngspice pages = 2.038086 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 30.609375 MB.
-
+No. of Data Rows : 6530
+responsetimea1      =  5.796136e-10
+responsetimea2      =  6.059816e-10
+responsetimea3      =  7.320846e-10
+responsetimea4      =  7.913017e-10
+responsetimeb1      =  6.480653e-10
+responsetimeb2      =  7.054997e-10
+responsetimeb3      =  8.159816e-10
+responsetimeb4      =  8.724423e-10
+tdiff = 2.116881e-10
+iavg                =  -1.957477e-04 from=  5.796136e-10 to=  7.985544e-10
+iavg = -1.95748e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
