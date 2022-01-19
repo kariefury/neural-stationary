@@ -9,52 +9,43 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52675e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.bc                                    1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          2.79167e-09
+v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 2.72005e-09, timestep = 1.25e-23: trouble with node "v2#branch"
+doAnalyses: TRAN:  Timestep too small; time = 5.10003e-09, timestep = 1.25e-23: trouble with node "v2#branch"
 
 
 tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+responsetimea1      =  2.094951e-10
+responsetimea2      =  2.720025e-10
+responsetimea3      =  7.756164e-10
+responsetimea4      =  8.341922e-10
+responsetimeb1      =  3.571878e-09
+responsetimeb2      =  3.633485e-09
+
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
 
 
-  Measurements for Transient Analysis
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-responsetimea       =   3.49801e-10
-responsetimea       =   3.86148e-10
-responsetimea       =   5.51888e-10
-responsetimea       =   6.08016e-10
-responsetimeb       =   1.18450e-09
-responsetimeb       =   1.21649e-09
-responsetimeb       =   2.47025e-09
-responsetimeb       =   2.51816e-09
-
-CPU time since last call: 8.801 seconds.
-
-Total CPU time: 8.801 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121633.289062 MB.
-Total ngspice program size = 43.207031 MB.
-Resident set size = 28.690430 MB.
-Shared ngspice pages = 1.933594 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 26.826172 MB.
-
+tdiff = 6.246971e-10
+iavg                =  -1.057820e-04 from=  2.094951e-10 to=  8.400000e-10
+iavg = -1.05782e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

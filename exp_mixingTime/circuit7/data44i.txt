@@ -9,64 +9,43 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52675e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.bc                                    1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          2.79167e-09
+v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.28e-09, timestep = 1.25e-23: cause unrecorded.
+doAnalyses: TRAN:  Timestep too small; time = 2.06e-09, timestep = 1.25e-23: cause unrecorded.
 
 
 tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+responsetimea1      =  3.793088e-10
+responsetimea2      =  4.440030e-10
+responsetimea3      =  5.582966e-10
+responsetimea4      =  6.254599e-10
+responsetimeb1      =  4.764040e-10
+responsetimeb2      =  5.105642e-10
+
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
 
 
-  Measurements for Transient Analysis
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-responsetimea       =   1.63104e-10
-responsetimea       =   2.10125e-10
-responsetimea       =   3.62990e-10
-responsetimea       =   4.24149e-10
-
-CPU time since last call: 8.720 seconds.
-
-Total CPU time: 8.720 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121640.121094 MB.
-Total ngspice program size = 43.207031 MB.
-Resident set size = 28.666016 MB.
-Shared ngspice pages = 1.910156 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 26.826172 MB.
-
+tdiff = 2.461511e-10
+iavg                =  -2.254403e-04 from=  3.793088e-10 to=  6.270000e-10
+iavg = -2.25440e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

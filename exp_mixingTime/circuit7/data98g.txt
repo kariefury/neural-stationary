@@ -9,64 +9,36 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52675e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.bc                                    1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
-
-doAnalyses: TRAN:  Timestep too small; time = 7.94002e-09, timestep = 1.25e-23: trouble with node "v2#branch"
+v4#branch                          2.79167e-09
+v3#branch                         -2.79167e-09
 
 
-tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-responsetimea       =   5.32336e-10
-responsetimea       =   5.57726e-10
-responsetimea       =   9.51208e-10
-responsetimea       =   1.00993e-09
-
-CPU time since last call: 9.381 seconds.
-
-Total CPU time: 9.381 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121637.585938 MB.
-Total ngspice program size = 43.345703 MB.
-Resident set size = 28.879883 MB.
-Shared ngspice pages = 2.003906 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 26.964844 MB.
-
+No. of Data Rows : 5601
+responsetimea1      =  2.625598e-10
+responsetimea2      =  3.171600e-10
+responsetimea3      =  5.556316e-10
+responsetimea4      =  6.100752e-10
+responsetimeb1      =  2.057675e-09
+responsetimeb2      =  2.080036e-09
+responsetimeb3      =  6.788305e-09
+responsetimeb4      =  6.825586e-09
+tdiff = 3.475154e-10
+iavg                =  -1.066430e-04 from=  2.625598e-10 to=  6.106038e-10
+iavg = -1.06643e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

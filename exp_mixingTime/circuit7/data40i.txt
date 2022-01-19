@@ -9,58 +9,37 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52675e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.bc                                    1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          2.79167e-09
+v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 5.4e-10, timestep = 1.25e-23: cause unrecorded.
+doAnalyses: TRAN:  Timestep too small; time = 3.36e-09, timestep = 1.25e-23: cause unrecorded.
 
 
 tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-responsetimea       =   1.26148e-10
-responsetimea       =   2.08332e-10
-responsetimea       =   3.18808e-10
-responsetimea       =   3.89389e-10
-responsetimeb       =   2.27733e-10
-responsetimeb       =   2.67247e-10
-
-CPU time since last call: 8.631 seconds.
-
-Total CPU time: 8.631 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121640.042969 MB.
-Total ngspice program size = 43.207031 MB.
-Resident set size = 28.643555 MB.
-Shared ngspice pages = 1.886719 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 26.826172 MB.
-
+responsetimea1      =  4.046633e-10
+responsetimea2      =  4.689627e-10
+responsetimea3      =  6.428015e-10
+responsetimea4      =  7.059048e-10
+responsetimeb1      =  7.421115e-10
+responsetimeb2      =  7.822350e-10
+responsetimeb3      =  3.061368e-09
+responsetimeb4      =  3.109990e-09
+tdiff = 3.012415e-10
+iavg                =  -9.072771e-05 from=  4.046633e-10 to=  7.062118e-10
+iavg = -9.07277e-05
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

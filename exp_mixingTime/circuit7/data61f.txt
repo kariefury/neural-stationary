@@ -9,64 +9,37 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52675e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.bc                                    1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          2.79167e-09
+v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 8e-10, timestep = 1.25e-23: trouble with node "outb"
+doAnalyses: TRAN:  Timestep too small; time = 1.432e-08, timestep = 1.25e-23: trouble with node "v2#branch"
 
 
 tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-responsetimea       =   1.55368e-10
-responsetimea       =   2.11117e-10
-responsetimea       =   5.22394e-10
-responsetimea       =   5.77614e-10
-
-CPU time since last call: 8.351 seconds.
-
-Total CPU time: 8.351 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121650.457031 MB.
-Total ngspice program size = 43.207031 MB.
-Resident set size = 28.671875 MB.
-Shared ngspice pages = 1.915039 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 26.826172 MB.
-
+responsetimea1      =  5.971958e-10
+responsetimea2      =  6.541232e-10
+responsetimea3      =  1.348009e-09
+responsetimea4      =  1.409834e-09
+responsetimeb1      =  2.220316e-09
+responsetimeb2      =  2.260541e-09
+responsetimeb3      =  2.366927e-09
+responsetimeb4      =  2.405405e-09
+tdiff = 8.126382e-10
+iavg                =  -1.123126e-04 from=  5.971958e-10 to=  1.411412e-09
+iavg = -1.12313e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

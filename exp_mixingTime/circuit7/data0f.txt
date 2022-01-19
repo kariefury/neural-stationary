@@ -9,55 +9,36 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52675e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.bc                                    1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
-
-doAnalyses: TRAN:  Timestep too small; time = 1.616e-08, timestep = 1.25e-23: trouble with node "v2#branch"
+v4#branch                          2.79167e-09
+v3#branch                         -2.79167e-09
 
 
-tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-responsetimea       =   6.94275e-10
-responsetimea       =   7.43615e-10
-responsetimea       =   1.96031e-09
-responsetimea       =   1.98697e-09
-responsetimeb       =   1.61594e-08
-responsetimeb       =   1.61600e-08
-responsetimeb       =   1.61600e-08
-
-CPU time since last call: 10.095 seconds.
-
-Total CPU time: 10.095 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121651.425781 MB.
-Total ngspice program size = 43.997070 MB.
-Resident set size = 29.542969 MB.
-Shared ngspice pages = 2.019531 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 27.616211 MB.
-
+No. of Data Rows : 7192
+responsetimea1      =  1.639865e-10
+responsetimea2      =  2.106488e-10
+responsetimea3      =  9.625891e-10
+responsetimea4      =  1.004464e-09
+responsetimeb1      =  1.527960e-08
+responsetimeb2      =  1.532246e-08
+responsetimeb3      =  1.539875e-08
+responsetimeb4      =  1.544836e-08
+tdiff = 8.404775e-10
+iavg                =  -4.799621e-05 from=  1.639865e-10 to=  1.005119e-09
+iavg = -4.79962e-05
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

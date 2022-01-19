@@ -9,52 +9,36 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+xpg1.critical_node                     1.73839
+neg_supply                                   0
 snoise                                       0
 outb                               9.68599e-07
-xpg1.invo                          2.45983e-06
+xpg1.invo                          2.52675e-06
 xpg1.xe                                    1.8
 outa                               9.68599e-07
-xpg2.1                                     1.8
 xpg2.reset_loop                            1.8
 xpg2.critical_node                         1.8
 xpg2.bc                                    1.8
 xpg2.invo                          9.68599e-07
 xpg2.xe                                    1.8
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.01106e-09
-v.xpg1.v1#branch                  -1.74993e-09
-
-doAnalyses: TRAN:  Timestep too small; time = 1.736e-08, timestep = 1.25e-23: cause unrecorded.
+v4#branch                          2.79167e-09
+v3#branch                         -2.79167e-09
 
 
-tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
-
-  Measurements for Transient Analysis
-
-responsetimea       =   6.08976e-10
-responsetimea       =   6.57434e-10
-responsetimea       =   7.01077e-10
-responsetimea       =   7.55941e-10
-responsetimeb       =   6.98568e-10
-responsetimeb       =   7.44627e-10
-responsetimeb       =   8.02406e-10
-responsetimeb       =   8.45597e-10
-
-CPU time since last call: 9.887 seconds.
-
-Total CPU time: 9.887 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121649.472656 MB.
-Total ngspice program size = 44.133789 MB.
-Resident set size = 29.662109 MB.
-Shared ngspice pages = 2.010742 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 27.752930 MB.
-
+No. of Data Rows : 7206
+responsetimea1      =  2.788275e-10
+responsetimea2      =  3.294738e-10
+responsetimea3      =  9.284943e-10
+responsetimea4      =  9.592194e-10
+responsetimeb1      =  1.710633e-08
+responsetimeb2      =  1.715103e-08
+responsetimeb3      =  1.987674e-08
+responsetimeb4      =  1.991838e-08
+tdiff = 6.803919e-10
+iavg                =  -5.578977e-05 from=  2.788275e-10 to=  9.600000e-10
+iavg = -5.57898e-05
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
