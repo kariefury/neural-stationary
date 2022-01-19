@@ -9,26 +9,27 @@ header = "*PulseLoop\n \
 Xpg1 sNoise outA outB pos_supply neg_supply pgNeg\n \
 Xpg2 outB sNoise outA pos_supply neg_supply pgNegSeries\n \
 v3 pos_supply 0 1.8\n \
-v4 neg_supply 0 0.0\n \
-.measure tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1\n \
-.measure tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2\n \
-.measure tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3\n \
-.measure tran responseTimeA4 WHEN v(outA)=1.2 CROSS=4\n \
-.measure tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1\n \
-.measure tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2\n \
-.measure tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3\n \
-.measure tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4\n \
-.measure tran iavg avg i(v3) FROM=200ps TO=500ps \n "
+v4 neg_supply 0 0.0\n "
 
 footer = ".control \n \
 *plot v(outA) v(outB) v(sNoise)\n \
 *plot i(v3)\n \
-tran 10ps 100ns \n "
+tran 10ps "
 
-shortfooter = ".control \n \
-*plot v(outA) v(outB) v(sNoise)\n \
-*plot i(v3)\n \
-tran 10ps 20ns \n "
+meas_footer = "ns \n \
+meas tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1 \n \
+meas tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2\n \
+meas tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3\n \
+meas tran responseTimeA4 WHEN v(outA)=1.2 CROSS=4\n \
+meas tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1\n \
+meas tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2\n \
+meas tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3\n \
+meas tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4\n \
+let tdiff = responsetimea4-responsetimea1\n \
+print tdiff\n \
+meas tran iavg avg i(v3) FROM=responsetimea1 TO=responsetimea4 \n \
+print iavg\n "
+
 
 footer2 = "*quit\n \
 .endc\n \
@@ -176,10 +177,9 @@ for n in filenames:
     f.write(header)
     f.write("v2 sNoise 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+ " " + str(voltage) + ")\n")
     std_dev += 0.1
-    if std_dev > 0.8:
-        f.write(shortfooter)
-    else:
-        f.write(footer)
+    f.write(footer)
+    f.write(str(30.0/(std_dev*std_dev*2.6)))
+    f.write(meas_footer)
     #f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")
     f.write(footer2)
 

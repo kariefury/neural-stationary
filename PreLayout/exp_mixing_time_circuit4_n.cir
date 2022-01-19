@@ -5,20 +5,23 @@ Xpg1 sNoise outB outA pos_supply neg_supply pgNeg
  Xpg2 outA outB pos_supply neg_supply pgNeg1
  v3 pos_supply 0 1.8
  v4 neg_supply 0 0.0
- .measure tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1
- .measure tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2
- .measure tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3
- .measure tran responseTimeA4 WHEN v(outA)=1.2 CROSS=4
- .measure tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1
- .measure tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2
- .measure tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3
- .measure tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4
- .measure tran iavg avg i(v3) FROM=200ps TO=500ps 
  v2 sNoise 0 dc 0 trrandom (2 20p 0 1.4000000000000001 0.1)
 .control 
  *plot v(outA) v(outB) v(sNoise)
  *plot i(v3)
- tran 10ps 100ns 
+ tran 10ps 5.128205128205126ns 
+ meas tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1 
+ meas tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2
+ meas tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3
+ meas tran responseTimeA4 WHEN v(outA)=1.2 CROSS=4
+ meas tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1
+ meas tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2
+ meas tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3
+ meas tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4
+ let tdiff = responsetimea4-responsetimea1
+ print tdiff
+ meas tran iavg avg i(v3) FROM=responsetimea1 TO=responsetimea4 
+ print iavg
  *quit
  .endc
  
