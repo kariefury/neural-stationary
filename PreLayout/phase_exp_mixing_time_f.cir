@@ -12,8 +12,9 @@
  v4 neg_supply 0 0.0
  v2 sNoise 0 dc 0 trrandom (2 20p 0 0.6 0.1
 .control 
- tran 10ps 100ns 
- 23.547880690737838ns 
+ *plot v(outA) v(outB) v(sNoise)
+ *plot i(v3)
+ tran 10ps 23.547880690737838ns 
  meas tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1 
  meas tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2
  meas tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3
@@ -47,9 +48,9 @@
  meas tran iavgb avg i(v3) FROM=responsetimeb1 TO=responsetimeb4 
  print iavgb
  .control 
- tran 10ps 100ns 
- *quit
- .endc
+ *plot v(outA) v(outB) v(sNoise)
+ *plot i(v3)
+ tran 10ps .endc
  
  
  .subckt pgNeg2PosSeries Aneg Bpos Cpos x pow_supply gnd_supply

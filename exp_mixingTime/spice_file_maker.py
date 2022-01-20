@@ -80,11 +80,7 @@ print iavgb\n "
 # .measure tran responseTimeupB3 WHEN v(upB)=1.2 CROSS=3\n \
 # .measure tran responseTimeupB4 WHEN v(upB)=1.2 CROSS=4\n "
 
-footer = ".control \n \
-tran 10ps 100ns \n "
-
-footer2 = "*quit\n \
-.endc\n \
+footer2 = ".endc\n \
 \n \
 \n \
 .subckt pgNeg2PosSeries Aneg Bpos Cpos x pow_supply gnd_supply\n \
