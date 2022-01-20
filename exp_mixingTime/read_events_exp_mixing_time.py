@@ -3,7 +3,7 @@ import numpy as np
 import statistics
 import matplotlib.pyplot as plt
 
-paths = ['circuit8/']
+paths = ['circuit6/']
 responsea_cir_label = "responsetimea"  # , circuits 2 - 8
 #responsea_cir_label = "responsetimeupa" # Remember for circuit9 the cross is measured here
 responseb_cir_label = "responsetimeb"  # circuits 2 - 8

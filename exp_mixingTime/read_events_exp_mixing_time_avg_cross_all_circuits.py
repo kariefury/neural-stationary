@@ -12,7 +12,7 @@ responseb_cir_labels = ['responsetimeb','responsetimeb','responsetimeb','respons
 #responseb_cir_label = "responsetimeupb"  # Remember for circuit9, the crossing is measured here
 crosses = ['Cross 1', 'Cross 2', 'Cross 3', 'Cross 4']
 crossesMarker = ["2", "3", "1", "4"]
-clab = ['black', 'green', 'black', 'blue']#['black','blue','gray','red']
+clab = ['black', 'green', 'black', 'blue']#['black','blue','gray','red'] 
 
 circuit_marker = ["|","d","x","+","h","^","*","."]
 #circuit_marker = ['$2$','$3$','$4$','$5','$6$','$7$','$8$','$9$']
