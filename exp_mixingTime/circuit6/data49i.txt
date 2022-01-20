@@ -9,63 +9,46 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                       0.863901
 xpg1.critical_node                    0.863901
+neg_supply                                   0
 outa                                  0.863901
 xpg1.invo                             0.863901
 xpg1.xe                               0.863901
 outb                                  0.863901
-xpg2.1                                     1.8
 xpg2.reset_loop                       0.863901
 xpg2.critical_node                    0.863901
 snoise                                       0
-xpg2.bs                                0.88503
+xpg2.bs                               0.129781
 xpg2.invo                             0.863901
 xpg2.xe                               0.863901
 v2#branch                                    0
-v.xpg2.v1#branch                  -5.90003e-05
-v.xpg1.v1#branch                  -5.90003e-05
+v4#branch                          0.000118001
+v3#branch                         -0.000118001
 
 
 
-No. of Data Rows : 5666
+No. of Data Rows : 3362
+responsetimea1      =  8.895844e-11
+responsetimea2      =  1.410633e-10
+responsetimea3      =  1.734299e-10
 
-  Measurements for Transient Analysis
+Error: measure  responsetimea4  (WHEN) : out of interval
+ meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
 
-responsetimea       =   8.75309e-11
-responsetimea       =   1.20305e-10
-responsetimea       =   2.36454e-10
-responsetimea       =   2.95510e-10
-responsetimeb       =   1.48353e-10
-responsetimeb       =   2.07938e-10
-responsetimeb       =   3.19592e-10
-responsetimeb       =   3.76710e-10
+responsetimeb1      =  1.438273e-10
+responsetimeb2      =  2.161015e-10
+responsetimeb3      =  2.415028e-10
 
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
+Error(parse.c--checkvalid): responsetimea4: no such vector.
+Error(parse.c--checkvalid): tdiff: no such vector.
 
-  Measurements for Transient Analysis
+Error: measure  iavg  (TRIG) : bad syntax of ??
+ meas tran iavg avg i(v3) from=8.895844e-11 to=responsetimea4 failed!
 
-responsetimea       =   8.75309e-11
-responsetimea       =   1.20305e-10
-responsetimea       =   2.36454e-10
-responsetimea       =   2.95510e-10
-responsetimeb       =   1.48353e-10
-responsetimeb       =   2.07938e-10
-responsetimeb       =   3.19592e-10
-responsetimeb       =   3.76710e-10
-
-CPU time since last call: 9.673 seconds.
-
-Total CPU time: 9.673 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121667.660156 MB.
-Total ngspice program size = 43.911133 MB.
-Resident set size = 29.432617 MB.
-Shared ngspice pages = 2.040039 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 27.530273 MB.
-
+Error(parse.c--checkvalid): iavg: no such vector.
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

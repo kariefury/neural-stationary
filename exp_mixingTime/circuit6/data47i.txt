@@ -9,87 +9,36 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                       0.863901
 xpg1.critical_node                    0.863901
+neg_supply                                   0
 outa                                  0.863901
 xpg1.invo                             0.863901
 xpg1.xe                               0.863901
 outb                                  0.863901
-xpg2.1                                     1.8
 xpg2.reset_loop                       0.863901
 xpg2.critical_node                    0.863901
 snoise                                       0
-xpg2.bs                                0.88503
+xpg2.bs                               0.129781
 xpg2.invo                             0.863901
 xpg2.xe                               0.863901
 v2#branch                                    0
-v.xpg2.v1#branch                  -5.90003e-05
-v.xpg1.v1#branch                  -5.90003e-05
+v4#branch                          0.000118001
+v3#branch                         -0.000118001
 
 
 
-No. of Data Rows : 5685
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-responsetimea       =   4.36906e-11
-responsetimea       =   9.54969e-11
-responsetimea       =   1.18766e-10
-responsetimeb       =   6.53500e-11
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-responsetimea       =   4.36906e-11
-responsetimea       =   9.54969e-11
-responsetimea       =   1.18766e-10
-responsetimeb       =   6.53500e-11
-
-CPU time since last call: 9.715 seconds.
-
-Total CPU time: 9.715 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121666.660156 MB.
-Total ngspice program size = 43.911133 MB.
-Resident set size = 29.456055 MB.
-Shared ngspice pages = 2.062500 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 27.530273 MB.
-
+No. of Data Rows : 3370
+responsetimea1      =  5.387827e-11
+responsetimea2      =  1.236988e-10
+responsetimea3      =  1.771811e-10
+responsetimea4      =  2.688885e-10
+responsetimeb1      =  9.696321e-11
+responsetimeb2      =  1.932277e-10
+responsetimeb3      =  2.567725e-10
+responsetimeb4      =  3.390009e-10
+tdiff = 2.150102e-10
+iavg                =  -2.798738e-04 from=  5.387827e-11 to=  2.713864e-10
+iavg = -2.79874e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
