@@ -9,111 +9,36 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                       0.863901
 xpg1.critical_node                    0.863901
+neg_supply                                   0
 outa                                  0.863901
 xpg1.invo                             0.863901
 xpg1.xe                               0.863901
 outb                                  0.863901
-xpg2.1                                     1.8
 xpg2.reset_loop                       0.863901
 xpg2.critical_node                    0.863901
 snoise                                       0
-xpg2.bs                                0.88503
+xpg2.bs                               0.129781
 xpg2.invo                             0.863901
 xpg2.xe                               0.863901
 v2#branch                                    0
-v.xpg2.v1#branch                  -5.90003e-05
-v.xpg1.v1#branch                  -5.90003e-05
+v4#branch                          0.000118001
+v3#branch                         -0.000118001
 
 
 
-No. of Data Rows : 26396
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-
-CPU time since last call: 14.286 seconds.
-
-Total CPU time: 14.286 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121687.507812 MB.
-Total ngspice program size = 48.099609 MB.
-Resident set size = 33.625000 MB.
-Shared ngspice pages = 2.041016 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 31.718750 MB.
-
+No. of Data Rows : 8549
+responsetimea1      =  3.109273e-10
+responsetimea2      =  3.725663e-10
+responsetimea3      =  4.794877e-10
+responsetimea4      =  5.408779e-10
+responsetimeb1      =  2.384792e-10
+responsetimeb2      =  2.781475e-10
+responsetimeb3      =  3.948154e-10
+responsetimeb4      =  4.509638e-10
+tdiff = 2.299506e-10
+iavg                =  -2.031462e-04 from=  3.109273e-10 to=  5.410000e-10
+iavg = -2.03146e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

@@ -9,63 +9,36 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
+pos_supply                                 1.8
 xpg1.reset_loop                       0.863901
 xpg1.critical_node                    0.863901
+neg_supply                                   0
 outa                                  0.863901
 xpg1.invo                             0.863901
 xpg1.xe                               0.863901
 outb                                  0.863901
-xpg2.1                                     1.8
 xpg2.reset_loop                       0.863901
 xpg2.critical_node                    0.863901
 snoise                                       0
-xpg2.bs                                0.88503
+xpg2.bs                               0.129781
 xpg2.invo                             0.863901
 xpg2.xe                               0.863901
 v2#branch                                    0
-v.xpg2.v1#branch                  -5.90003e-05
-v.xpg1.v1#branch                  -5.90003e-05
+v4#branch                          0.000118001
+v3#branch                         -0.000118001
 
 
 
-No. of Data Rows : 6183
-
-  Measurements for Transient Analysis
-
-responsetimea       =   1.67834e-08
-responsetimea       =   1.68370e-08
-responsetimea       =   1.69428e-08
-responsetimea       =   1.69993e-08
-responsetimeb       =   1.68578e-08
-responsetimeb       =   1.69145e-08
-responsetimeb       =   1.70252e-08
-responsetimeb       =   1.70841e-08
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-responsetimea       =   1.67834e-08
-responsetimea       =   1.68370e-08
-responsetimea       =   1.69428e-08
-responsetimea       =   1.69993e-08
-responsetimeb       =   1.68578e-08
-responsetimeb       =   1.69145e-08
-responsetimeb       =   1.70252e-08
-responsetimeb       =   1.70841e-08
-
-CPU time since last call: 10.090 seconds.
-
-Total CPU time: 10.090 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121636.710938 MB.
-Total ngspice program size = 43.949219 MB.
-Resident set size = 29.498047 MB.
-Shared ngspice pages = 2.041992 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 27.568359 MB.
-
+No. of Data Rows : 1572
+responsetimea1      =  3.720136e-11
+responsetimea2      =  8.253094e-11
+responsetimea3      =  1.285324e-10
+responsetimea4      =  2.211140e-10
+responsetimeb1      =  6.145405e-11
+responsetimeb2      =  1.494245e-10
+responsetimeb3      =  2.070080e-10
+responsetimeb4      =  2.903738e-10
+tdiff = 1.839126e-10
+iavg                =  -2.768780e-04 from=  3.720136e-11 to=  2.230000e-10
+iavg = -2.76878e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
