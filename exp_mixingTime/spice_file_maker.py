@@ -246,12 +246,11 @@ for n in filenames:
     sim_name_o_file = "../" + name_o_file + n + ".cir"
     f = open(sim_name_o_file,"w")
     f.write(header)
-    f.write("v2 sNoise 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+ " " + str(voltage) + "\n")
+    f.write("v2 sNoise 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+ " " + str(voltage) + ")\n")
     std_dev += 0.1
     f.write(footer)
     f.write(str(30.0 / (std_dev * std_dev * 2.6)))
     f.write(meas_footer)
-    f.write(footer)
     #f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")
     f.write(footer2)
 
