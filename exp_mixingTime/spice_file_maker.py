@@ -14,8 +14,6 @@ Xpg4 NPoutA sNoise NPoutB pos_supply neg_supply pgNegPos\n \
 Xpg5 NPoutA upB upA pos_supply neg_supply pgNeg\n \
 Xpg6 upA outA upB pos_supply neg_supply pgNeg\n \
 v3 pos_supply 0 1.8\n \
-v4 neg_supply 0 0.0\n \
-v3 pos_supply 0 1.8\n \
 v4 neg_supply 0 0.0\n "
 
 footer = ".control \n \
@@ -53,8 +51,9 @@ print tdiff\n \
 meas tran iavg avg i(v3) FROM=responsetimea1 TO=responsetimea4 \n \
 let tdiff = responsetimeB4-responsetimeB1\n \
 print tdiff\n \
+print iavg \n \
 meas tran iavgb avg i(v3) FROM=responsetimeb1 TO=responsetimeb4 \n \
-print iavg\n "
+print iavgb\n "
 
 # .measure tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1\n \
 # .measure tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2\n \
