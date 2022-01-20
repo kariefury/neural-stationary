@@ -1,119 +1,14 @@
+Warning: redundant .control card
 
 Circuit: *pulseloop
 
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Error on line 13 :
+  v3 pos_supply 0 1.8
+device already exists, existing one being used
+Error on line 14 :
+  v4 neg_supply 0 0.0
+device already exists, existing one being used
 
-Note: Starting dynamic gmin stepping
-Trying gmin =   1.0000E-03 Note: One successful gmin step
-Trying gmin =   1.0000E-04 Note: One successful gmin step
-Trying gmin =   1.0000E-05 Warning: Further gmin increment
-Trying gmin =   5.6234E-05 Note: One successful gmin step
-Trying gmin =   2.3714E-05 Note: One successful gmin step
-Trying gmin =   6.4938E-06 Note: One successful gmin step
-Trying gmin =   9.3057E-07 Note: One successful gmin step
-Trying gmin =   9.3057E-08 Note: One successful gmin step
-Trying gmin =   9.3057E-09 Note: One successful gmin step
-Trying gmin =   9.3057E-10 Note: One successful gmin step
-Trying gmin =   9.3057E-11 Note: One successful gmin step
-Trying gmin =   9.3057E-12 Note: One successful gmin step
-Trying gmin =   2.9427E-12 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
-Note: Dynamic gmin stepping completed
+ngspice stopped due to error, no simulation run!
 
-Initial Transient Solution
---------------------------
-
-Node                                   Voltage
-----                                   -------
-xpg1.1                                     1.8
-xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
-snoise                                       0
-outb                               9.68599e-07
-xpg1.invo                          2.45993e-06
-xpg1.xe                                    1.8
-outa                               9.68599e-07
-xpg2.1                                     1.8
-xpg2.reset_loop                            1.8
-xpg2.critical_node                     1.74017
-xpg2.invo                          2.45993e-06
-xpg2.xe                                    1.8
-xpg3.1                                     1.8
-xpg3.reset_loop                            1.8
-xpg3.critical_node                     1.74017
-npoutb                             9.68599e-07
-xpg3.invo                          2.45993e-06
-xpg3.xe                                    1.8
-npouta                             9.68599e-07
-xpg4.1                                     1.8
-xpg4.reset_loop                            1.8
-xpg4.critical_node                         1.8
-xpg4.invo                          9.68599e-07
-xpg4.xe                                    1.8
-xpg5.1                                     1.8
-xpg5.reset_loop                            1.8
-xpg5.critical_node                     1.74017
-upb                                9.68599e-07
-xpg5.invo                          2.45993e-06
-xpg5.xe                                    1.8
-upa                                9.68599e-07
-xpg6.1                                     1.8
-xpg6.reset_loop                            1.8
-xpg6.critical_node                     1.74017
-xpg6.invo                          2.45993e-06
-xpg6.xe                                    1.8
-v2#branch                                    0
-v.xpg6.v1#branch                  -1.74993e-09
-v.xpg5.v1#branch                  -1.74993e-09
-v.xpg4.v1#branch                  -1.01106e-09
-v.xpg3.v1#branch                  -1.74993e-09
-v.xpg2.v1#branch                  -1.74993e-09
-v.xpg1.v1#branch                  -1.74993e-09
-
-doAnalyses: TRAN:  Timestep too small; time = 4.39e-08, timestep = 1.25e-23: trouble with node "npoutb"
-
-
-tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-responsetimea       =   2.38563e-10
-responsetimea       =   2.94617e-10
-responsetimea       =   4.43702e-10
-responsetimea       =   5.44984e-10
-responsetimeb       =   3.19487e-10
-responsetimeb       =   3.76683e-10
-responsetimeb       =   5.36158e-10
-responsetimeb       =   6.12982e-10
-npresponsetimea     =   2.39660e-10
-npresponsetimea     =   2.95887e-10
-npresponsetimea     =   4.44717e-10
-npresponsetimea     =   5.46862e-10
-npresponsetimeb     =   1.25022e-09
-npresponsetimeb     =   1.28071e-09
-npresponsetimeb     =   1.67797e-09
-npresponsetimeb     =   1.71179e-09
-responsetimeupa     =   3.21867e-10
-responsetimeupa     =   3.80997e-10
-responsetimeupa     =   5.29945e-10
-responsetimeupa     =   6.17874e-10
-responsetimeupb     =   4.01997e-10
-responsetimeupb     =   4.60891e-10
-responsetimeupb     =   6.13262e-10
-responsetimeupb     =   6.85673e-10
-
-CPU time since last call: 22.665 seconds.
-
-Total CPU time: 22.665 seconds.
-
-Total DRAM available = 128860.136719 MB.
-DRAM currently available = 110476.082031 MB.
-Total ngspice program size = 91.382812 MB.
-Resident set size = 76.949219 MB.
-Shared ngspice pages = 2.056641 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 75.001953 MB.
-
+ERROR: fatal error in ngspice, exit(1)
