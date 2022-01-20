@@ -10,32 +10,44 @@
  Xpg6 upA outA upB pos_supply neg_supply pgNeg
  v3 pos_supply 0 1.8
  v4 neg_supply 0 0.0
- .measure tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1
- .measure tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2
- .measure tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3
- .measure tran responseTimeA4 WHEN v(outA)=1.2 CROSS=4
- .measure tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1
- .measure tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2
- .measure tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3
- .measure tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4
- .measure tran NPresponseTimeA1 WHEN v(NPoutA)=1.2 CROSS=1
- .measure tran NPresponseTimeA2 WHEN v(NPoutA)=1.2 CROSS=2
- .measure tran NPresponseTimeA3 WHEN v(NPoutA)=1.2 CROSS=3
- .measure tran NPresponseTimeA4 WHEN v(NPoutA)=1.2 CROSS=4
- .measure tran NPresponseTimeB1 WHEN v(NPoutB)=1.2 CROSS=1
- .measure tran NPresponseTimeB2 WHEN v(NPoutB)=1.2 CROSS=2
- .measure tran NPresponseTimeB3 WHEN v(NPoutB)=1.2 CROSS=3
- .measure tran NPresponseTimeB4 WHEN v(NPoutB)=1.2 CROSS=4
- .measure tran responseTimeupA1 WHEN v(upA)=1.2 CROSS=1
- .measure tran responseTimeupA2 WHEN v(upA)=1.2 CROSS=2
- .measure tran responseTimeupA3 WHEN v(upA)=1.2 CROSS=3
- .measure tran responseTimeupA4 WHEN v(upA)=1.2 CROSS=4
- .measure tran responseTimeupB1 WHEN v(upB)=1.2 CROSS=1
- .measure tran responseTimeupB2 WHEN v(upB)=1.2 CROSS=2
- .measure tran responseTimeupB3 WHEN v(upB)=1.2 CROSS=3
- .measure tran responseTimeupB4 WHEN v(upB)=1.2 CROSS=4
+ v3 pos_supply 0 1.8
+ v4 neg_supply 0 0.0
  v2 sNoise 0 dc 0 trrandom (2 20p 0 0.4 0.1
 .control 
+ tran 10ps 100ns 
+ 46.15384615384615ns 
+ meas tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1 
+ meas tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2
+ meas tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3
+ meas tran responseTimeA4 WHEN v(outA)=1.2 CROSS=4
+ meas tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1
+ meas tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2
+ meas tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3
+ meas tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4
+ meas tran NPresponseTimeA1 WHEN v(NPoutA)=1.2 CROSS=1
+ meas tran NPresponseTimeA2 WHEN v(NPoutA)=1.2 CROSS=2
+ meas tran NPresponseTimeA3 WHEN v(NPoutA)=1.2 CROSS=3
+ meas tran NPresponseTimeA4 WHEN v(NPoutA)=1.2 CROSS=4
+ meas tran NPresponseTimeB1 WHEN v(NPoutB)=1.2 CROSS=1
+ meas tran NPresponseTimeB2 WHEN v(NPoutB)=1.2 CROSS=2
+ meas tran NPresponseTimeB3 WHEN v(NPoutB)=1.2 CROSS=3
+ meas tran NPresponseTimeB4 WHEN v(NPoutB)=1.2 CROSS=4
+ meas tran responseTimeupA1 WHEN v(upA)=1.2 CROSS=1
+ meas tran responseTimeupA2 WHEN v(upA)=1.2 CROSS=2
+ meas tran responseTimeupA3 WHEN v(upA)=1.2 CROSS=3
+ meas tran responseTimeupA4 WHEN v(upA)=1.2 CROSS=4
+ meas tran responseTimeupB1 WHEN v(upB)=1.2 CROSS=1
+ meas tran responseTimeupB2 WHEN v(upB)=1.2 CROSS=2
+ meas tran responseTimeupB3 WHEN v(upB)=1.2 CROSS=3
+ meas tran responseTimeupB4 WHEN v(upB)=1.2 CROSS=4
+ let tdiff = responsetimea4-responsetimea1
+ print tdiff
+ meas tran iavg avg i(v3) FROM=responsetimea1 TO=responsetimea4 
+ let tdiff = responsetimeB4-responsetimeB1
+ print tdiff
+ meas tran iavgb avg i(v3) FROM=responsetimeb1 TO=responsetimeb4 
+ print iavg
+ .control 
  tran 10ps 100ns 
  *quit
  .endc
@@ -105,6 +117,28 @@
  xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
  .ends pgNeg 
  
+ .subckt pgNeg3Parallel Aneg Bneg Cneg x pow_supply gnd_supply
+ 
+ xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ 
+ xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
+ 
+ xm10 gnd_supply Bneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
+ 
+ xm11 gnd_supply Cneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
+ 
+ xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
+ 
+ xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n
+ xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n
+ 
+ xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm7 gnd_supply invO xe gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ 
+ xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
+ xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
+ .ends pgNeg2Series 
  
  .subckt pgNeg2Series Aneg Bneg BnegSeries x pow_supply gnd_supply
  
@@ -128,6 +162,7 @@
  xm8 pow_supply xe x pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n 
  xm9 gnd_supply xe x gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n 
  .ends pgNeg2Series 
+ 
  
  .subckt pgNegSeries Bneg BnegSeries x pow_supply gnd_supply
  
