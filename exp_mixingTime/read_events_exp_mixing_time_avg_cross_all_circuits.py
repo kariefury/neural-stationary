@@ -29,6 +29,12 @@ tap_a_cross1 = []
 tap_a_cross1_std_dev = []
 tap_a_cross1_circuit_label = []
 tap_a_cross1_y_val = []
+
+tap_b_cross1 = []
+tap_b_cross1_std_dev = []
+tap_b_cross1_circuit_label = []
+tap_b_cross1_y_val = []
+
 # Gather data points from results files (format data.txt)
 l_cnt = 0
 for path in paths:
@@ -361,6 +367,11 @@ for path in paths:
 		axs[1].errorbar(tap_b_x_values_avg[i], tap_b_y_values[i], label=crosses[i], xerr=tap_b_x_err_std_dev[i], \
 						   fmt=crossesMarker[i])
 		axs[1].set_xlim(0, 100)
+		if i == 0:
+			tap_b_cross1.append(tap_b_x_values_avg[i])
+			tap_b_cross1_std_dev.append(tap_b_x_err_std_dev[i])
+			tap_b_cross1_y_val.append(tap_b_y_values[i])
+			tap_b_cross1_circuit_label.append(circuit_label)
 		i += 1
 	axs[0].legend()
 	axs[0].set_ylabel("sNoise Std Dev from 0.1V")
@@ -370,27 +381,36 @@ for path in paths:
 	plt.savefig('../exp_mixing_time_'+circuit_label+'_averages_resB.png', dpi=dpi)
 	plt.close()
 	
+#Plot Tap A Cross 1
 fig, axs = plt.subplots(2, 3, figsize=(8, 5), sharex=False, sharey=True)
-
-
 r = 0
 for e in tap_a_cross1:
+	q = 0
+	start_length = len(e)
+	while q < len(e):
+		if (e[q] == tap_a_cross1_y_val[r][q] == tap_a_cross1_std_dev[r][0]):
+			tap_a_cross1[r].pop(q)
+			tap_a_cross1_y_val[r].pop(q)
+			tap_a_cross1_std_dev[r].pop(q)
+			q -= 1
+			start_length -= 1
+		q += 1
 	print(tap_a_cross1_circuit_label[r])
-	print(len(e),e)
+	print(len(e), e)
 	print(len(tap_a_cross1_y_val[r]), tap_a_cross1_y_val[r])
 	print(len(tap_a_cross1_std_dev[r]),tap_a_cross1_std_dev[r])
 	axs[0, 0].scatter(tap_a_cross1[r], tap_a_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
 	axs[0, 0].errorbar(tap_a_cross1[r], tap_a_cross1_y_val[r], label=tap_a_cross1_circuit_label[r],xerr=tap_a_cross1_std_dev[r], fmt=circuit_marker[r])
-	axs[0, 0].set_xlim(0, 2)
+	axs[0, 0].set_xlim(0, 1)
 	axs[0, 1].scatter(tap_a_cross1[r], tap_a_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
 	axs[0, 1].errorbar(tap_a_cross1[r], tap_a_cross1_y_val[r], label=tap_a_cross1_circuit_label[r],
 					   xerr=tap_a_cross1_std_dev[r], fmt=circuit_marker[r])
-	axs[0, 1].set_xlim(0, 10)
+	axs[0, 1].set_xlim(0, 2)
 
 	axs[0, 2].scatter(tap_a_cross1[r], tap_a_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
 	axs[0, 2].errorbar(tap_a_cross1[r], tap_a_cross1_y_val[r], label=tap_a_cross1_circuit_label[r],
 					   xerr=tap_a_cross1_std_dev[r], fmt=circuit_marker[r])
-	axs[0, 2].set_xlim(0, 20)
+	axs[0, 2].set_xlim(0, 5)
 
 	axs[1, 0].scatter(tap_a_cross1[r], tap_a_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
 	axs[1, 0].errorbar(tap_a_cross1[r], tap_a_cross1_y_val[r], label=tap_a_cross1_circuit_label[r],
@@ -405,7 +425,7 @@ for e in tap_a_cross1:
 	axs[1, 2].scatter(tap_a_cross1[r], tap_a_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
 	axs[1, 2].errorbar(tap_a_cross1[r], tap_a_cross1_y_val[r], label=tap_a_cross1_circuit_label[r],
 					   xerr=tap_a_cross1_std_dev[r], fmt=circuit_marker[r])
-	axs[1, 2].set_xlim(10, 20)
+	axs[1, 2].set_xlim(5, 20)
 	axs[0, 2].legend()
 	axs[0, 0].set_ylim(0, 1.6)
 	axs[1, 0].set_ylim(0, 1.6)
@@ -415,6 +435,137 @@ for e in tap_a_cross1:
 	axs[1, 1].set_xlabel("Time (ns) cross 1.2V")
 	axs[1, 2].set_xlabel("Time (ns) cross 1.2V")
 	r += 1
-fig.suptitle("Time to Cross 1, 1.2V event")
+fig.suptitle("Tap A Time to Cross 1, 1.2V event")
 plt.savefig('../exp_mixing_time_cross1_tapa_cross1.png', dpi=dpi)
+plt.close()
+
+# Tap B Cross 1
+fig, axs = plt.subplots(2, 3, figsize=(8, 5), sharex=False, sharey=True)
+r = 0
+for e in tap_b_cross1:
+	q = 0
+	start_length = len(e)
+	while q < start_length:
+		if (e[q] == tap_b_cross1_y_val[r][q] == tap_b_cross1_std_dev[r][q]):
+			tap_b_cross1[r].pop(q)
+			tap_b_cross1_y_val[r].pop(q)
+			tap_b_cross1_std_dev[r].pop(q)
+			q -= 1
+			start_length -= 1
+		q += 1
+	print(tap_b_cross1_circuit_label[r])
+	print(len(e), e)
+	print(len(tap_b_cross1_y_val[r]), tap_b_cross1_y_val[r])
+	print(len(tap_b_cross1_std_dev[r]),tap_b_cross1_std_dev[r])
+	axs[0, 0].scatter(tap_b_cross1[r], tap_b_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
+	axs[0, 0].errorbar(tap_b_cross1[r], tap_b_cross1_y_val[r], label=tap_b_cross1_circuit_label[r],xerr=tap_b_cross1_std_dev[r], fmt=circuit_marker[r])
+	axs[0, 0].set_xlim(0, 1)
+	axs[0, 1].scatter(tap_b_cross1[r], tap_b_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
+	axs[0, 1].errorbar(tap_b_cross1[r], tap_b_cross1_y_val[r], label=tap_b_cross1_circuit_label[r],
+					   xerr=tap_b_cross1_std_dev[r], fmt=circuit_marker[r])
+	axs[0, 1].set_xlim(0, 2)
+
+	axs[0, 2].scatter(tap_b_cross1[r], tap_b_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
+	axs[0, 2].errorbar(tap_b_cross1[r], tap_b_cross1_y_val[r], label=tap_b_cross1_circuit_label[r],
+					   xerr=tap_b_cross1_std_dev[r], fmt=circuit_marker[r])
+	axs[0, 2].set_xlim(0, 5)
+
+	axs[1, 0].scatter(tap_b_cross1[r], tap_b_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
+	axs[1, 0].errorbar(tap_b_cross1[r], tap_b_cross1_y_val[r], label=tap_b_cross1_circuit_label[r],
+					   xerr=tap_b_cross1_std_dev[r], fmt=circuit_marker[r])
+	axs[1, 0].set_xlim(0, 100)
+
+	axs[1, 1].scatter(tap_b_cross1[r], tap_b_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
+	axs[1, 1].errorbar(tap_b_cross1[r], tap_b_cross1_y_val[r], label=tap_b_cross1_circuit_label[r],
+					   xerr=tap_b_cross1_std_dev[r], fmt=circuit_marker[r])
+	axs[1, 1].set_xlim(2, 10)
+
+	axs[1, 2].scatter(tap_b_cross1[r], tap_b_cross1_y_val[r], c=circuit_color[r], alpha=0.25, marker=circuit_marker[r],s=80)
+	axs[1, 2].errorbar(tap_b_cross1[r], tap_b_cross1_y_val[r], label=tap_b_cross1_circuit_label[r],
+					   xerr=tap_b_cross1_std_dev[r], fmt=circuit_marker[r])
+	axs[1, 2].set_xlim(5, 20)
+	axs[0, 2].legend()
+	axs[0, 0].set_ylim(0, 1.6)
+	axs[1, 0].set_ylim(0, 1.6)
+	axs[0, 0].set_ylabel("sNoise Std Dev from 0.1V")
+	axs[1, 0].set_ylabel("sNoise Std Dev from 0.1V")
+	axs[1, 0].set_xlabel("Time (ns) cross 1.2V")
+	axs[1, 1].set_xlabel("Time (ns) cross 1.2V")
+	axs[1, 2].set_xlabel("Time (ns) cross 1.2V")
+	r += 1
+fig.suptitle("Tap B Time to Cross 1, 1.2V event")
+plt.savefig('../exp_mixing_time_cross1_tapb_cross1.png', dpi=dpi)
+plt.close()
+
+print("DIFFERENCE BETWEEN TAP A AND TAP B, CROSS 1")
+r = 0
+z = -1
+difference_tap_a_C1_tap_b_C1 = []
+difference_tap_a_C1_tap_b_C1_y = []
+difference_tap_a_C1_tap_b_C1_label = []
+difference_tap_a_C1_tap_b_C1_marker = []
+while r < len(paths):
+	circuit_label = paths[r].strip("/")
+	maxval = max(len(tap_a_cross1_y_val[r]),len(tap_b_cross1_y_val[r]))
+	if (maxval > 0):
+		difference_tap_a_C1_tap_b_C1_label.append(circuit_label)
+		difference_tap_a_C1_tap_b_C1_marker.append(circuit_marker[r])
+		difference_tap_a_C1_tap_b_C1.append([])
+		difference_tap_a_C1_tap_b_C1_y.append([])
+		z += 1
+	print("circuit count", r)
+	print(len(tap_a_cross1_y_val[r]))
+	print(len(tap_b_cross1_y_val[r]))
+	ra = 0
+	rb = 0
+	q = 0
+	while q < maxval:
+		print(ra,rb)
+		print(tap_a_cross1_y_val[r][ra])
+		print(tap_b_cross1_y_val[r][rb])
+		intA = int(tap_a_cross1_y_val[r][ra]*10)
+		intB = int(tap_b_cross1_y_val[r][rb]*10)
+		print(intA, intB)
+		if(intA == intB):
+			diff = abs(tap_a_cross1[r][ra]-tap_b_cross1[r][rb])
+			difference_tap_a_C1_tap_b_C1[z].append(diff)
+			difference_tap_a_C1_tap_b_C1_y[z].append(tap_a_cross1_y_val[r][ra])
+			print(tap_a_cross1_y_val[r][ra])
+			print(tap_a_cross1_std_dev[r][ra])
+			ra += 1
+			rb += 1
+		elif (tap_a_cross1_y_val[r][ra] < tap_b_cross1_y_val[r][rb]):
+			ra += 1
+		elif (tap_a_cross1_y_val[r][ra] > tap_b_cross1_y_val[r][rb]):
+			rb+= 1
+		q += 1
+	r += 1
+	
+r = 0
+print('difference Tap A to Tap B')
+# 'difference Tap A to Tap B cross 1
+fig, axs = plt.subplots(1, 3, figsize=(10, 3.5), sharex=False, sharey=True)
+i = 0
+while i < len(difference_tap_a_C1_tap_b_C1_label):
+	axs[0].set_ylim(0, 1.6)
+	axs[0].scatter(difference_tap_a_C1_tap_b_C1[i], difference_tap_a_C1_tap_b_C1_y[i],
+				   label=difference_tap_a_C1_tap_b_C1_label[i], marker = difference_tap_a_C1_tap_b_C1_marker[i], 
+			alpha=0.5, s=80)
+	axs[0].set_xlim(0, 0.2)
+	axs[1].scatter(difference_tap_a_C1_tap_b_C1[i], difference_tap_a_C1_tap_b_C1_y[i],
+				   label=difference_tap_a_C1_tap_b_C1_label[i],marker = difference_tap_a_C1_tap_b_C1_marker[i], alpha=0.5, s=80)
+	axs[1].set_xlim(0, 0.8)
+	axs[2].scatter(difference_tap_a_C1_tap_b_C1[i], difference_tap_a_C1_tap_b_C1_y[i],
+				   label=difference_tap_a_C1_tap_b_C1_label[i],marker = difference_tap_a_C1_tap_b_C1_marker[i], alpha=0.5, s=80)
+	axs[2].set_xlim(0, 100)
+	
+	i += 1
+axs[2].legend()
+axs[0].set_ylabel("sNoise Std Dev from 0.1V")
+axs[0].set_xlabel("Time (ns) 1st cross 1.2V")
+axs[1].set_xlabel("Time (ns) 1st cross 1.2V")
+axs[2].set_xlabel("Time (ns) 1st cross 1.2V")
+fig.suptitle('First Event Timing Difference')
+plt.tight_layout()
+plt.savefig('../exp_mixing_time_diff_TapA_TapB_cross1.png', dpi=dpi)
 plt.close()
