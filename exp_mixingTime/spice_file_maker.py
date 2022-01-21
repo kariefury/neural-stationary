@@ -49,9 +49,9 @@ meas tran responseTimeupB4 WHEN v(upB)=1.2 CROSS=4\n \
 let tdiff = responsetimea4-responsetimea1\n \
 print tdiff\n \
 meas tran iavg avg i(v3) FROM=responsetimea1 TO=responsetimea4 \n \
-let tdiff = responsetimeB4-responsetimeB1\n \
-print tdiff\n \
 print iavg \n \
+let tdiffb = responsetimeB4-responsetimeB1\n \
+print tdiffb\n \
 meas tran iavgb avg i(v3) FROM=responsetimeb1 TO=responsetimeb4 \n \
 print iavgb\n "
 

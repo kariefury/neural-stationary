@@ -42,9 +42,9 @@
  let tdiff = responsetimea4-responsetimea1
  print tdiff
  meas tran iavg avg i(v3) FROM=responsetimea1 TO=responsetimea4 
- let tdiff = responsetimeB4-responsetimeB1
- print tdiff
  print iavg 
+ let tdiffb = responsetimeB4-responsetimeB1
+ print tdiffb
  meas tran iavgb avg i(v3) FROM=responsetimeb1 TO=responsetimeb4 
  print iavgb
  .endc
