@@ -260,6 +260,6 @@ f = open(name_o_sh,"w")
 q = 0
 for n in filenames:
     q = 0
-    while q < 1:
+    while q < 100:
         f.write("ngspice -b -o exp_mixingTime/circuit9/data" +str(q) + n + ".txt "+ name_o_file + n + ".cir\n")
         q += 1
