@@ -116,7 +116,7 @@ xm10 pow_supply Bpos critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150n w=7
 xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm4 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
 xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
@@ -132,12 +132,12 @@ xm1 pow_supply reset_loop critical_node pow_supply sky130_fd_pr__pfet_01v8 l=150
 \n \
 xm2 gnd_supply Aneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm10 gnd_supply Bneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
+xm10 pow_supply Bneg critical_node gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
 xm3 pow_supply critical_node invO pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm4 gnd_supply critical_node invO gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
-xm14 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
+xm4 pow_supply invO reset_loop pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n\n \
 xm5 gnd_supply invO reset_loop gnd_supply sky130_fd_pr__nfet_01v8 l=150n w=360n\n \
 \n \
 xm6 pow_supply invO xe pow_supply sky130_fd_pr__pfet_01v8 l=150n w=720n \n \
@@ -260,6 +260,6 @@ f = open(name_o_sh,"w")
 q = 0
 for n in filenames:
     q = 0
-    while q < 100:
+    while q < 1:
         f.write("ngspice -b -o exp_mixingTime/circuit9/data" +str(q) + n + ".txt "+ name_o_file + n + ".cir\n")
         q += 1

@@ -3,113 +3,116 @@ Circuit: *pulseloop
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
-Note: Starting dynamic gmin stepping
-Trying gmin =   1.0000E-03 Note: One successful gmin step
-Trying gmin =   1.0000E-04 Note: One successful gmin step
-Trying gmin =   1.0000E-05 Warning: Further gmin increment
-Trying gmin =   5.6234E-05 Note: One successful gmin step
-Trying gmin =   2.3714E-05 Note: One successful gmin step
-Trying gmin =   6.4938E-06 Note: One successful gmin step
-Trying gmin =   9.3057E-07 Note: One successful gmin step
-Trying gmin =   9.3057E-08 Note: One successful gmin step
-Trying gmin =   9.3057E-09 Note: One successful gmin step
-Trying gmin =   9.3057E-10 Note: One successful gmin step
-Trying gmin =   9.3057E-11 Note: One successful gmin step
-Trying gmin =   9.3057E-12 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
-Note: Dynamic gmin stepping completed
 
 Initial Transient Solution
 --------------------------
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
-xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+pos_supply                                 1.8
+xpg1.reset_loop                       0.863901
+xpg1.critical_node                    0.863901
+neg_supply                                   0
 snoise                                       0
-outb                               9.68599e-07
-xpg1.invo                          2.45993e-06
-xpg1.xe                                    1.8
-outa                               9.68599e-07
-xpg2.1                                     1.8
-xpg2.reset_loop                            1.8
-xpg2.critical_node                     1.74017
-xpg2.invo                          2.45993e-06
-xpg2.xe                                    1.8
-xpg3.1                                     1.8
+outb                                  0.863901
+xpg1.invo                             0.863901
+xpg1.xe                               0.863901
+outa                                  0.863901
+xpg2.reset_loop                       0.863901
+xpg2.critical_node                    0.863901
+xpg2.invo                             0.863901
+xpg2.xe                               0.863901
 xpg3.reset_loop                            1.8
-xpg3.critical_node                     1.74017
+xpg3.critical_node                     1.73839
 npoutb                             9.68599e-07
-xpg3.invo                          2.45993e-06
+xpg3.invo                          2.52675e-06
 xpg3.xe                                    1.8
 npouta                             9.68599e-07
-xpg4.1                                     1.8
 xpg4.reset_loop                            1.8
 xpg4.critical_node                         1.8
 xpg4.invo                          9.68599e-07
 xpg4.xe                                    1.8
+xpg5.reset_loop                    9.68802e-07
+xpg5.critical_node                    0.387854
+upb                                        1.8
+xpg5.invo                              1.79999
+xpg5.xe                            9.68802e-07
+upa                                        1.8
+xpg6.reset_loop                    9.68666e-07
+xpg6.critical_node                    0.349173
+xpg6.invo                                  1.8
+xpg6.xe                            9.68666e-07
 v2#branch                                    0
-v.xpg4.v1#branch                  -1.01106e-09
-v.xpg3.v1#branch                  -1.74993e-09
-v.xpg2.v1#branch                  -1.74993e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          0.000389733
+v3#branch                         -0.000389733
 
 
 
-No. of Data Rows : 30072
+No. of Data Rows : 9690
+responsetimea1      =  1.162586e-09
+responsetimea2      =  1.220726e-09
+responsetimea3      =  1.336161e-09
+responsetimea4      =  1.398981e-09
+responsetimeb1      =  1.109808e-09
+responsetimeb2      =  1.141770e-09
+responsetimeb3      =  1.246309e-09
+responsetimeb4      =  1.305527e-09
+npresponsetimea1    =  1.086583e-09
+npresponsetimea2    =  1.124241e-09
+npresponsetimea3    =  1.597190e-09
+npresponsetimea4    =  1.644335e-09
 
-  Measurements for Transient Analysis
-
-responsetimea       =   1.78186e-09
-responsetimea       =   1.82774e-09
-responsetimea       =   2.91759e-09
-responsetimea       =   2.95003e-09
-responsetimeb       =   1.86295e-09
-responsetimeb       =   1.92261e-09
-responsetimeb       =   3.00081e-09
-responsetimeb       =   3.05734e-09
-npresponsetimea     =   1.78196e-09
-npresponsetimea     =   1.82789e-09
-npresponsetimea     =   2.91750e-09
-npresponsetimea     =   2.95033e-09
-npresponsetimeb     =   5.01289e-09
-npresponsetimeb     =   5.05626e-09
-npresponsetimeb     =   5.69820e-09
-npresponsetimeb     =   5.72764e-09
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Error: measure  npresponsetimeb1  (WHEN) : out of interval
+ meas tran npresponsetimeb1 when v(npoutb)=1.2 cross=1 failed!
 
 
-  Measurements for Transient Analysis
+Error: measure  npresponsetimeb2  (WHEN) : out of interval
+ meas tran npresponsetimeb2 when v(npoutb)=1.2 cross=2 failed!
 
-responsetimea       =   1.78186e-09
-responsetimea       =   1.82774e-09
-responsetimea       =   2.91759e-09
-responsetimea       =   2.95003e-09
-responsetimeb       =   1.86295e-09
-responsetimeb       =   1.92261e-09
-responsetimeb       =   3.00081e-09
-responsetimeb       =   3.05734e-09
-npresponsetimea     =   1.78196e-09
-npresponsetimea     =   1.82789e-09
-npresponsetimea     =   2.91750e-09
-npresponsetimea     =   2.95033e-09
-npresponsetimeb     =   5.01289e-09
-npresponsetimeb     =   5.05626e-09
-npresponsetimeb     =   5.69820e-09
-npresponsetimeb     =   5.72764e-09
 
-CPU time since last call: 25.118 seconds.
+Error: measure  npresponsetimeb3  (WHEN) : out of interval
+ meas tran npresponsetimeb3 when v(npoutb)=1.2 cross=3 failed!
 
-Total CPU time: 25.118 seconds.
 
-Total DRAM available = 128860.136719 MB.
-DRAM currently available = 110605.027344 MB.
-Total ngspice program size = 74.169922 MB.
-Resident set size = 59.755859 MB.
-Shared ngspice pages = 2.071289 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 57.789062 MB.
+Error: measure  npresponsetimeb4  (WHEN) : out of interval
+ meas tran npresponsetimeb4 when v(npoutb)=1.2 cross=4 failed!
 
+
+Error: measure  responsetimeupa1  (WHEN) : out of interval
+ meas tran responsetimeupa1 when v(upa)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeupa2  (WHEN) : out of interval
+ meas tran responsetimeupa2 when v(upa)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeupa3  (WHEN) : out of interval
+ meas tran responsetimeupa3 when v(upa)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeupa4  (WHEN) : out of interval
+ meas tran responsetimeupa4 when v(upa)=1.2 cross=4 failed!
+
+
+Error: measure  responsetimeupb1  (WHEN) : out of interval
+ meas tran responsetimeupb1 when v(upb)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeupb2  (WHEN) : out of interval
+ meas tran responsetimeupb2 when v(upb)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeupb3  (WHEN) : out of interval
+ meas tran responsetimeupb3 when v(upb)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeupb4  (WHEN) : out of interval
+ meas tran responsetimeupb4 when v(upb)=1.2 cross=4 failed!
+
+tdiff = 2.363950e-10
+iavg                =  -4.151818e-04 from=  1.162586e-09 to=  1.400000e-09
+tdiff = 1.957190e-10
+iavg = -4.15182e-04
+iavgb               =  -4.316834e-04 from=  1.109808e-09 to=  1.307000e-09
+iavgb = -4.31683e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

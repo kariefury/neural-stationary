@@ -3,209 +3,160 @@ Circuit: *pulseloop
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
-Note: Starting dynamic gmin stepping
-Trying gmin =   1.0000E-03 Note: One successful gmin step
-Trying gmin =   1.0000E-04 Note: One successful gmin step
-Trying gmin =   1.0000E-05 Warning: Further gmin increment
-Trying gmin =   5.6234E-05 Note: One successful gmin step
-Trying gmin =   2.3714E-05 Note: One successful gmin step
-Trying gmin =   6.4938E-06 Note: One successful gmin step
-Trying gmin =   9.3057E-07 Note: One successful gmin step
-Trying gmin =   9.3057E-08 Note: One successful gmin step
-Trying gmin =   9.3057E-09 Note: One successful gmin step
-Trying gmin =   9.3057E-10 Note: One successful gmin step
-Trying gmin =   9.3057E-11 Note: One successful gmin step
-Trying gmin =   9.3057E-12 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
-Note: Dynamic gmin stepping completed
 
 Initial Transient Solution
 --------------------------
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
-xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+pos_supply                                 1.8
+xpg1.reset_loop                       0.863901
+xpg1.critical_node                    0.863901
+neg_supply                                   0
 snoise                                       0
-outb                               9.68599e-07
-xpg1.invo                          2.45993e-06
-xpg1.xe                                    1.8
-outa                               9.68599e-07
-xpg2.1                                     1.8
-xpg2.reset_loop                            1.8
-xpg2.critical_node                     1.74017
-xpg2.invo                          2.45993e-06
-xpg2.xe                                    1.8
-xpg3.1                                     1.8
+outb                                  0.863901
+xpg1.invo                             0.863901
+xpg1.xe                               0.863901
+outa                                  0.863901
+xpg2.reset_loop                       0.863901
+xpg2.critical_node                    0.863901
+xpg2.invo                             0.863901
+xpg2.xe                               0.863901
 xpg3.reset_loop                            1.8
-xpg3.critical_node                     1.74017
+xpg3.critical_node                     1.73839
 npoutb                             9.68599e-07
-xpg3.invo                          2.45993e-06
+xpg3.invo                          2.52675e-06
 xpg3.xe                                    1.8
 npouta                             9.68599e-07
-xpg4.1                                     1.8
 xpg4.reset_loop                            1.8
 xpg4.critical_node                         1.8
 xpg4.invo                          9.68599e-07
 xpg4.xe                                    1.8
+xpg5.reset_loop                    9.68802e-07
+xpg5.critical_node                    0.387854
+upb                                        1.8
+xpg5.invo                              1.79999
+xpg5.xe                            9.68802e-07
+upa                                        1.8
+xpg6.reset_loop                    9.68666e-07
+xpg6.critical_node                    0.349173
+xpg6.invo                                  1.8
+xpg6.xe                            9.68666e-07
 v2#branch                                    0
-v.xpg4.v1#branch                  -1.01106e-09
-v.xpg3.v1#branch                  -1.74993e-09
-v.xpg2.v1#branch                  -1.74993e-09
-v.xpg1.v1#branch                  -1.74993e-09
+v4#branch                          0.000389733
+v3#branch                         -0.000389733
 
 
 
-No. of Data Rows : 27268
+No. of Data Rows : 34936
 
-  Measurements for Transient Analysis
+Error: measure  responsetimea1  (WHEN) : out of interval
+ meas tran responsetimea1 when v(outa)=1.2 cross=1 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=1 failed!
+Error: measure  responsetimea2  (WHEN) : out of interval
+ meas tran responsetimea2 when v(outa)=1.2 cross=2 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=2 failed!
+Error: measure  responsetimea3  (WHEN) : out of interval
+ meas tran responsetimea3 when v(outa)=1.2 cross=3 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=3 failed!
+Error: measure  responsetimea4  (WHEN) : out of interval
+ meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=4 failed!
+Error: measure  responsetimeb1  (WHEN) : out of interval
+ meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
 
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=1 failed!
+Error: measure  responsetimeb2  (WHEN) : out of interval
+ meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
 
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
 
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
+Error: measure  npresponsetimea1  (WHEN) : out of interval
+ meas tran npresponsetimea1 when v(npouta)=1.2 cross=1 failed!
 
 
-Error: measure  npresponsetimea  (WHEN) : out of interval
- .measure tran npresponsetimea when v(npouta)=1.2 cross=1 failed!
+Error: measure  npresponsetimea2  (WHEN) : out of interval
+ meas tran npresponsetimea2 when v(npouta)=1.2 cross=2 failed!
 
 
-Error: measure  npresponsetimea  (WHEN) : out of interval
- .measure tran npresponsetimea when v(npouta)=1.2 cross=2 failed!
+Error: measure  npresponsetimea3  (WHEN) : out of interval
+ meas tran npresponsetimea3 when v(npouta)=1.2 cross=3 failed!
 
 
-Error: measure  npresponsetimea  (WHEN) : out of interval
- .measure tran npresponsetimea when v(npouta)=1.2 cross=3 failed!
+Error: measure  npresponsetimea4  (WHEN) : out of interval
+ meas tran npresponsetimea4 when v(npouta)=1.2 cross=4 failed!
 
 
-Error: measure  npresponsetimea  (WHEN) : out of interval
- .measure tran npresponsetimea when v(npouta)=1.2 cross=4 failed!
+Error: measure  npresponsetimeb1  (WHEN) : out of interval
+ meas tran npresponsetimeb1 when v(npoutb)=1.2 cross=1 failed!
 
 
-Error: measure  npresponsetimeb  (WHEN) : out of interval
- .measure tran npresponsetimeb when v(npoutb)=1.2 cross=1 failed!
+Error: measure  npresponsetimeb2  (WHEN) : out of interval
+ meas tran npresponsetimeb2 when v(npoutb)=1.2 cross=2 failed!
 
 
-Error: measure  npresponsetimeb  (WHEN) : out of interval
- .measure tran npresponsetimeb when v(npoutb)=1.2 cross=2 failed!
+Error: measure  npresponsetimeb3  (WHEN) : out of interval
+ meas tran npresponsetimeb3 when v(npoutb)=1.2 cross=3 failed!
 
 
-Error: measure  npresponsetimeb  (WHEN) : out of interval
- .measure tran npresponsetimeb when v(npoutb)=1.2 cross=3 failed!
+Error: measure  npresponsetimeb4  (WHEN) : out of interval
+ meas tran npresponsetimeb4 when v(npoutb)=1.2 cross=4 failed!
 
 
-Error: measure  npresponsetimeb  (WHEN) : out of interval
- .measure tran npresponsetimeb when v(npoutb)=1.2 cross=4 failed!
+Error: measure  responsetimeupa1  (WHEN) : out of interval
+ meas tran responsetimeupa1 when v(upa)=1.2 cross=1 failed!
 
 
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Error: measure  responsetimeupa2  (WHEN) : out of interval
+ meas tran responsetimeupa2 when v(upa)=1.2 cross=2 failed!
 
 
-  Measurements for Transient Analysis
+Error: measure  responsetimeupa3  (WHEN) : out of interval
+ meas tran responsetimeupa3 when v(upa)=1.2 cross=3 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=1 failed!
+Error: measure  responsetimeupa4  (WHEN) : out of interval
+ meas tran responsetimeupa4 when v(upa)=1.2 cross=4 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=2 failed!
+Error: measure  responsetimeupb1  (WHEN) : out of interval
+ meas tran responsetimeupb1 when v(upb)=1.2 cross=1 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=3 failed!
+Error: measure  responsetimeupb2  (WHEN) : out of interval
+ meas tran responsetimeupb2 when v(upb)=1.2 cross=2 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=4 failed!
+Error: measure  responsetimeupb3  (WHEN) : out of interval
+ meas tran responsetimeupb3 when v(upb)=1.2 cross=3 failed!
 
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=1 failed!
+Error: measure  responsetimeupb4  (WHEN) : out of interval
+ meas tran responsetimeupb4 when v(upb)=1.2 cross=4 failed!
 
+Error(parse.c--checkvalid): responsetimea4: no such vector.
+Error(parse.c--checkvalid): tdiff: no such vector.
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
+Error: measure  iavg  (TRIG) : bad syntax of ??
+ meas tran iavg avg i(v3) from=responsetimea1 to=responsetimea4 failed!
 
+Error(parse.c--checkvalid): responsetimeb4: no such vector.
+Error(parse.c--checkvalid): tdiff: no such vector.
+Error(parse.c--checkvalid): iavg: no such vector.
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
+Error: measure  iavgb  (TRIG) : bad syntax of ??
+ meas tran iavgb avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
 
-
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
-
-
-Error: measure  npresponsetimea  (WHEN) : out of interval
- .measure tran npresponsetimea when v(npouta)=1.2 cross=1 failed!
-
-
-Error: measure  npresponsetimea  (WHEN) : out of interval
- .measure tran npresponsetimea when v(npouta)=1.2 cross=2 failed!
-
-
-Error: measure  npresponsetimea  (WHEN) : out of interval
- .measure tran npresponsetimea when v(npouta)=1.2 cross=3 failed!
-
-
-Error: measure  npresponsetimea  (WHEN) : out of interval
- .measure tran npresponsetimea when v(npouta)=1.2 cross=4 failed!
-
-
-Error: measure  npresponsetimeb  (WHEN) : out of interval
- .measure tran npresponsetimeb when v(npoutb)=1.2 cross=1 failed!
-
-
-Error: measure  npresponsetimeb  (WHEN) : out of interval
- .measure tran npresponsetimeb when v(npoutb)=1.2 cross=2 failed!
-
-
-Error: measure  npresponsetimeb  (WHEN) : out of interval
- .measure tran npresponsetimeb when v(npoutb)=1.2 cross=3 failed!
-
-
-Error: measure  npresponsetimeb  (WHEN) : out of interval
- .measure tran npresponsetimeb when v(npoutb)=1.2 cross=4 failed!
-
-
-CPU time since last call: 22.252 seconds.
-
-Total CPU time: 22.252 seconds.
-
-Total DRAM available = 128860.136719 MB.
-DRAM currently available = 110558.062500 MB.
-Total ngspice program size = 72.949219 MB.
-Resident set size = 58.472656 MB.
-Shared ngspice pages = 2.010742 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 56.568359 MB.
-
+Error(parse.c--checkvalid): iavgb: no such vector.
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
