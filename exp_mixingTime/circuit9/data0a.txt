@@ -64,7 +64,7 @@ v3#branch                         -9.76073e-09
 
 
 
-No. of Data Rows : 73502
+No. of Data Rows : 73431
 
 Error: measure  responsetimea1  (WHEN) : out of interval
  meas tran responsetimea1 when v(outa)=1.2 cross=1 failed!
@@ -167,9 +167,9 @@ Error(parse.c--checkvalid): tdiff: no such vector.
 Error: measure  iavg  (TRIG) : bad syntax of ??
  meas tran iavg avg i(v3) from=responsetimea1 to=responsetimea4 failed!
 
-Error(parse.c--checkvalid): responsetimeb4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
 Error(parse.c--checkvalid): iavg: no such vector.
+Error(parse.c--checkvalid): responsetimeb4: no such vector.
+Error(parse.c--checkvalid): tdiffb: no such vector.
 
 Error: measure  iavgb  (TRIG) : bad syntax of ??
  meas tran iavgb avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!

@@ -64,19 +64,19 @@ v3#branch                         -9.76073e-09
 
 
 
-No. of Data Rows : 13520
-responsetimea1      =  3.994361e-09
-responsetimea2      =  4.043219e-09
-responsetimea3      =  9.045590e-09
-responsetimea4      =  9.083386e-09
-responsetimeb1      =  4.067954e-09
-responsetimeb2      =  4.127325e-09
-responsetimeb3      =  9.127047e-09
-responsetimeb4      =  9.187081e-09
-npresponsetimea1    =  3.995552e-09
-npresponsetimea2    =  4.043995e-09
-npresponsetimea3    =  9.046834e-09
-npresponsetimea4    =  9.083475e-09
+No. of Data Rows : 13562
+responsetimea1      =  3.065105e-09
+responsetimea2      =  3.080886e-09
+responsetimea3      =  6.275233e-09
+responsetimea4      =  6.313345e-09
+responsetimeb1      =  3.219604e-09
+responsetimeb2      =  3.252312e-09
+responsetimeb3      =  6.357230e-09
+responsetimeb4      =  6.414722e-09
+npresponsetimea1    =  3.067705e-09
+npresponsetimea2    =  3.078569e-09
+npresponsetimea3    =  6.276505e-09
+npresponsetimea4    =  6.314222e-09
 
 Error: measure  npresponsetimeb1  (WHEN) : out of interval
  meas tran npresponsetimeb1 when v(npoutb)=1.2 cross=1 failed!
@@ -93,18 +93,18 @@ Error: measure  npresponsetimeb3  (WHEN) : out of interval
 Error: measure  npresponsetimeb4  (WHEN) : out of interval
  meas tran npresponsetimeb4 when v(npoutb)=1.2 cross=4 failed!
 
-responsetimeupa1    =  4.072645e-09
-responsetimeupa2    =  4.131519e-09
-responsetimeupa3    =  9.130351e-09
-responsetimeupa4    =  9.189960e-09
-responsetimeupb1    =  4.154133e-09
-responsetimeupb2    =  4.212110e-09
-responsetimeupb3    =  9.213946e-09
-responsetimeupb4    =  9.272559e-09
-tdiff = 5.089025e-09
-iavg                =  -2.675840e-05 from=  3.994361e-09 to=  9.087000e-09
-tdiff = 5.119127e-09
-iavg = -2.67584e-05
-iavgb               =  -2.662222e-05 from=  4.067954e-09 to=  9.189331e-09
-iavgb = -2.66222e-05
+responsetimeupa1    =  6.350342e-09
+responsetimeupa2    =  6.410610e-09
+responsetimeupa3    =  7.499088e-09
+responsetimeupa4    =  7.556993e-09
+responsetimeupb1    =  6.432068e-09
+responsetimeupb2    =  6.489678e-09
+responsetimeupb3    =  7.581541e-09
+responsetimeupb4    =  7.640967e-09
+tdiff = 3.248240e-09
+iavg                =  -3.688959e-05 from=  3.065105e-09 to=  6.320000e-09
+iavg = -3.68896e-05
+tdiffb = 3.195118e-09
+iavgb               =  -4.210566e-05 from=  3.219604e-09 to=  6.418274e-09
+iavgb = -4.21057e-05
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

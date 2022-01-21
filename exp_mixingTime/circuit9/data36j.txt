@@ -3,6 +3,22 @@ Circuit: *pulseloop
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Note: One successful gmin step
+Trying gmin =   9.3057E-07 Note: One successful gmin step
+Trying gmin =   9.3057E-08 Note: One successful gmin step
+Trying gmin =   9.3057E-09 Note: One successful gmin step
+Trying gmin =   9.3057E-10 Note: One successful gmin step
+Trying gmin =   9.3057E-11 Note: One successful gmin step
+Trying gmin =   9.3057E-12 Note: One successful gmin step
+Trying gmin =   2.9427E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
 
 Initial Transient Solution
 --------------------------
@@ -10,112 +26,73 @@ Initial Transient Solution
 Node                                   Voltage
 ----                                   -------
 pos_supply                                 1.8
-xpg1.reset_loop                       0.863901
-xpg1.critical_node                    0.863901
+xpg1.reset_loop                            1.8
+xpg1.critical_node                     1.74017
 neg_supply                                   0
 snoise                                       0
-outb                                  0.863901
-xpg1.invo                             0.863901
-xpg1.xe                               0.863901
-outa                                  0.863901
-xpg2.reset_loop                       0.863901
-xpg2.critical_node                    0.863901
-xpg2.invo                             0.863901
-xpg2.xe                               0.863901
+outb                               9.68599e-07
+xpg1.invo                          2.45993e-06
+xpg1.xe                                    1.8
+outa                               9.68599e-07
+xpg2.reset_loop                            1.8
+xpg2.critical_node                     1.74017
+xpg2.invo                          2.45993e-06
+xpg2.xe                                    1.8
 xpg3.reset_loop                            1.8
-xpg3.critical_node                     1.73839
+xpg3.critical_node                     1.74017
 npoutb                             9.68599e-07
-xpg3.invo                          2.52675e-06
+xpg3.invo                          2.45993e-06
 xpg3.xe                                    1.8
 npouta                             9.68599e-07
 xpg4.reset_loop                            1.8
 xpg4.critical_node                         1.8
 xpg4.invo                          9.68599e-07
 xpg4.xe                                    1.8
-xpg5.reset_loop                    9.68802e-07
-xpg5.critical_node                    0.387854
-upb                                        1.8
-xpg5.invo                              1.79999
-xpg5.xe                            9.68802e-07
-upa                                        1.8
-xpg6.reset_loop                    9.68666e-07
-xpg6.critical_node                    0.349173
-xpg6.invo                                  1.8
-xpg6.xe                            9.68666e-07
+xpg5.reset_loop                            1.8
+xpg5.critical_node                     1.74017
+upb                                9.68599e-07
+xpg5.invo                          2.45993e-06
+xpg5.xe                                    1.8
+upa                                9.68599e-07
+xpg6.reset_loop                            1.8
+xpg6.critical_node                     1.74017
+xpg6.invo                          2.45993e-06
+xpg6.xe                                    1.8
 v2#branch                                    0
-v4#branch                          0.000389733
-v3#branch                         -0.000389733
-
-doAnalyses: TRAN:  Timestep too small; time = 3.18e-09, timestep = 1.25e-23: cause unrecorded.
+v4#branch                          9.76073e-09
+v3#branch                         -9.76073e-09
 
 
-tran simulation(s) aborted
-responsetimea1      =  2.451020e-10
-responsetimea2      =  2.685242e-10
-responsetimea3      =  3.280508e-10
 
-Error: measure  responsetimea4  (WHEN) : out of interval
- meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
-
-responsetimeb1      =  2.531555e-10
-responsetimeb2      =  2.752797e-10
-responsetimeb3      =  3.030478e-10
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-npresponsetimea1    =  3.379925e-10
-npresponsetimea2    =  3.950879e-10
-npresponsetimea3    =  6.709114e-10
-npresponsetimea4    =  7.292680e-10
-npresponsetimeb1    =  7.583002e-10
-npresponsetimeb2    =  8.013179e-10
-npresponsetimeb3    =  9.342390e-10
-npresponsetimeb4    =  9.831281e-10
-
-Error: measure  responsetimeupa1  (WHEN) : out of interval
- meas tran responsetimeupa1 when v(upa)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeupa2  (WHEN) : out of interval
- meas tran responsetimeupa2 when v(upa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeupa3  (WHEN) : out of interval
- meas tran responsetimeupa3 when v(upa)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeupa4  (WHEN) : out of interval
- meas tran responsetimeupa4 when v(upa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeupb1  (WHEN) : out of interval
- meas tran responsetimeupb1 when v(upb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeupb2  (WHEN) : out of interval
- meas tran responsetimeupb2 when v(upb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeupb3  (WHEN) : out of interval
- meas tran responsetimeupb3 when v(upb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeupb4  (WHEN) : out of interval
- meas tran responsetimeupb4 when v(upb)=1.2 cross=4 failed!
-
-Error(parse.c--checkvalid): responsetimea4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
-
-Error: measure  iavg  (TRIG) : bad syntax of ??
- meas tran iavg avg i(v3) from=2.451020e-10 to=responsetimea4 failed!
-
-Error(parse.c--checkvalid): responsetimeb4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
-Error(parse.c--checkvalid): iavg: no such vector.
-
-Error: measure  iavgb  (TRIG) : bad syntax of ??
- meas tran iavgb avg i(v3) from=2.531555e-10 to=responsetimeb4 failed!
-
-Error(parse.c--checkvalid): iavgb: no such vector.
+No. of Data Rows : 3267
+responsetimea1      =  2.066912e-10
+responsetimea2      =  2.641552e-10
+responsetimea3      =  3.123582e-10
+responsetimea4      =  3.726855e-10
+responsetimeb1      =  2.978094e-10
+responsetimeb2      =  4.450310e-10
+responsetimeb3      =  6.118446e-10
+responsetimeb4      =  6.689289e-10
+npresponsetimea1    =  2.077687e-10
+npresponsetimea2    =  2.651988e-10
+npresponsetimea3    =  3.122638e-10
+npresponsetimea4    =  3.778391e-10
+npresponsetimeb1    =  4.261841e-10
+npresponsetimeb2    =  4.791017e-10
+npresponsetimeb3    =  6.813447e-10
+npresponsetimeb4    =  7.137310e-10
+responsetimeupa1    =  2.911888e-10
+responsetimeupa2    =  3.619470e-10
+responsetimeupa3    =  3.769991e-10
+responsetimeupa4    =  4.507687e-10
+responsetimeupb1    =  3.839230e-10
+responsetimeupb2    =  5.203621e-10
+responsetimeupb3    =  7.486113e-10
+responsetimeupb4    =  8.081288e-10
+tdiff = 1.659943e-10
+iavg                =  -6.552799e-04 from=  2.066912e-10 to=  3.800000e-10
+iavg = -6.55280e-04
+tdiffb = 3.711195e-10
+iavgb               =  -4.855884e-04 from=  2.978094e-10 to=  6.695452e-10
+iavgb = -4.85588e-04
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

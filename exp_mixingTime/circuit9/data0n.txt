@@ -62,37 +62,38 @@ v2#branch                                    0
 v4#branch                          9.76073e-09
 v3#branch                         -9.76073e-09
 
+doAnalyses: TRAN:  Timestep too small; time = 1.86e-09, timestep = 1.25e-23: trouble with node "npoutb"
 
 
-No. of Data Rows : 1842
-responsetimea1      =  2.598732e-10
-responsetimea2      =  3.190621e-10
-responsetimea3      =  4.404049e-10
-responsetimea4      =  5.374201e-10
-responsetimeb1      =  3.417563e-10
-responsetimeb2      =  3.841523e-10
-responsetimeb3      =  5.279702e-10
-responsetimeb4      =  5.987355e-10
-npresponsetimea1    =  2.612287e-10
-npresponsetimea2    =  3.207554e-10
-npresponsetimea3    =  3.965632e-10
-npresponsetimea4    =  5.347125e-10
-npresponsetimeb1    =  4.896650e-10
-npresponsetimeb2    =  6.166889e-10
-npresponsetimeb3    =  8.524722e-10
-npresponsetimeb4    =  8.942186e-10
-responsetimeupa1    =  3.432733e-10
-responsetimeupa2    =  4.027857e-10
-responsetimeupa3    =  4.899003e-10
-responsetimeupa4    =  6.057565e-10
-responsetimeupb1    =  4.258588e-10
-responsetimeupb2    =  4.840501e-10
-responsetimeupb3    =  5.825780e-10
-responsetimeupb4    =  6.747389e-10
-tdiff = 2.775469e-10
-iavg                =  -7.473353e-04 from=  2.598732e-10 to=  5.400000e-10
-tdiff = 2.569792e-10
-iavg = -7.47335e-04
-iavgb               =  -7.033551e-04 from=  3.417563e-10 to=  6.000000e-10
-iavgb = -7.03355e-04
+tran simulation(s) aborted
+responsetimea1      =  1.366210e-10
+responsetimea2      =  1.914062e-10
+responsetimea3      =  4.788412e-10
+responsetimea4      =  5.380765e-10
+responsetimeb1      =  2.178063e-10
+responsetimeb2      =  2.749763e-10
+responsetimeb3      =  5.621927e-10
+responsetimeb4      =  6.187160e-10
+npresponsetimea1    =  1.376511e-10
+npresponsetimea2    =  1.924847e-10
+npresponsetimea3    =  4.797103e-10
+npresponsetimea4    =  5.388960e-10
+npresponsetimeb1    =  5.824498e-10
+npresponsetimeb2    =  6.350292e-10
+npresponsetimeb3    =  1.080741e-09
+npresponsetimeb4    =  1.088886e-09
+responsetimeupa1    =  2.203828e-10
+responsetimeupa2    =  2.791066e-10
+responsetimeupa3    =  5.643015e-10
+responsetimeupa4    =  6.239575e-10
+responsetimeupb1    =  3.009292e-10
+responsetimeupb2    =  3.600595e-10
+responsetimeupb3    =  6.476515e-10
+responsetimeupb4    =  7.059898e-10
+tdiff = 4.014555e-10
+iavg                =  -3.243474e-04 from=  1.366210e-10 to=  5.400000e-10
+iavg = -3.24347e-04
+tdiffb = 4.009097e-10
+iavgb               =  -3.407900e-04 from=  2.178063e-10 to=  6.198750e-10
+iavgb = -3.40790e-04
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

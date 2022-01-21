@@ -64,35 +64,35 @@ v3#branch                         -9.76073e-09
 
 
 
-No. of Data Rows : 5678
-responsetimea1      =  2.372629e-10
-responsetimea2      =  2.854656e-10
-responsetimea3      =  7.295987e-10
-responsetimea4      =  7.385918e-10
-responsetimeb1      =  3.186158e-10
-responsetimeb2      =  3.761627e-10
-responsetimeb3      =  1.078526e-09
-responsetimeb4      =  1.136288e-09
-npresponsetimea1    =  2.383164e-10
-npresponsetimea2    =  2.862785e-10
-npresponsetimea3    =  1.005194e-09
-npresponsetimea4    =  1.058402e-09
-npresponsetimeb1    =  5.188245e-09
-npresponsetimeb2    =  5.203339e-09
-npresponsetimeb3    =  7.826866e-09
-npresponsetimeb4    =  7.835935e-09
-responsetimeupa1    =  3.207428e-10
-responsetimeupa2    =  3.796991e-10
-responsetimeupa3    =  1.082400e-09
-responsetimeupa4    =  1.141570e-09
-responsetimeupb1    =  4.013062e-10
-responsetimeupb2    =  4.603735e-10
-responsetimeupb3    =  1.165338e-09
-responsetimeupb4    =  1.224596e-09
-tdiff = 5.013289e-10
-iavg                =  -2.174998e-04 from=  2.372629e-10 to=  7.400000e-10
-tdiff = 8.176722e-10
-iavg = -2.17500e-04
-iavgb               =  -1.879772e-04 from=  3.186158e-10 to=  1.140000e-09
-iavgb = -1.87977e-04
+No. of Data Rows : 5713
+responsetimea1      =  9.432906e-10
+responsetimea2      =  9.931713e-10
+responsetimea3      =  1.548296e-09
+responsetimea4      =  1.627693e-09
+responsetimeb1      =  1.023439e-09
+responsetimeb2      =  1.082681e-09
+responsetimeb3      =  1.633819e-09
+responsetimeb4      =  1.697023e-09
+npresponsetimea1    =  9.444062e-10
+npresponsetimea2    =  9.941153e-10
+npresponsetimea3    =  1.549145e-09
+npresponsetimea4    =  1.629137e-09
+npresponsetimeb1    =  1.643707e-09
+npresponsetimeb2    =  1.685473e-09
+npresponsetimeb3    =  1.390244e-08
+npresponsetimeb4    =  1.393324e-08
+responsetimeupa1    =  1.026480e-09
+responsetimeupa2    =  1.086689e-09
+responsetimeupa3    =  1.635761e-09
+responsetimeupa4    =  1.700801e-09
+responsetimeupb1    =  1.107706e-09
+responsetimeupb2    =  1.166488e-09
+responsetimeupb3    =  1.719729e-09
+responsetimeupb4    =  1.777900e-09
+tdiff = 6.844024e-10
+iavg                =  -1.700204e-04 from=  9.432906e-10 to=  1.630136e-09
+iavg = -1.70020e-04
+tdiffb = 6.735840e-10
+iavgb               =  -1.623714e-04 from=  1.023439e-09 to=  1.699681e-09
+iavgb = -1.62371e-04
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

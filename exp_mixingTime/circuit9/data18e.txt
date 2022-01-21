@@ -3,6 +3,22 @@ Circuit: *pulseloop
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Note: One successful gmin step
+Trying gmin =   9.3057E-07 Note: One successful gmin step
+Trying gmin =   9.3057E-08 Note: One successful gmin step
+Trying gmin =   9.3057E-09 Note: One successful gmin step
+Trying gmin =   9.3057E-10 Note: One successful gmin step
+Trying gmin =   9.3057E-11 Note: One successful gmin step
+Trying gmin =   9.3057E-12 Note: One successful gmin step
+Trying gmin =   2.9427E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
 
 Initial Transient Solution
 --------------------------
@@ -10,123 +26,73 @@ Initial Transient Solution
 Node                                   Voltage
 ----                                   -------
 pos_supply                                 1.8
-xpg1.reset_loop                       0.863901
-xpg1.critical_node                    0.863901
+xpg1.reset_loop                            1.8
+xpg1.critical_node                     1.74017
 neg_supply                                   0
 snoise                                       0
-outb                                  0.863901
-xpg1.invo                             0.863901
-xpg1.xe                               0.863901
-outa                                  0.863901
-xpg2.reset_loop                       0.863901
-xpg2.critical_node                    0.863901
-xpg2.invo                             0.863901
-xpg2.xe                               0.863901
+outb                               9.68599e-07
+xpg1.invo                          2.45993e-06
+xpg1.xe                                    1.8
+outa                               9.68599e-07
+xpg2.reset_loop                            1.8
+xpg2.critical_node                     1.74017
+xpg2.invo                          2.45993e-06
+xpg2.xe                                    1.8
 xpg3.reset_loop                            1.8
-xpg3.critical_node                     1.73839
+xpg3.critical_node                     1.74017
 npoutb                             9.68599e-07
-xpg3.invo                          2.52675e-06
+xpg3.invo                          2.45993e-06
 xpg3.xe                                    1.8
 npouta                             9.68599e-07
 xpg4.reset_loop                            1.8
 xpg4.critical_node                         1.8
 xpg4.invo                          9.68599e-07
 xpg4.xe                                    1.8
-xpg5.reset_loop                    9.68802e-07
-xpg5.critical_node                    0.387854
-upb                                        1.8
-xpg5.invo                              1.79999
-xpg5.xe                            9.68802e-07
-upa                                        1.8
-xpg6.reset_loop                    9.68666e-07
-xpg6.critical_node                    0.349173
-xpg6.invo                                  1.8
-xpg6.xe                            9.68666e-07
+xpg5.reset_loop                            1.8
+xpg5.critical_node                     1.74017
+upb                                9.68599e-07
+xpg5.invo                          2.45993e-06
+xpg5.xe                                    1.8
+upa                                9.68599e-07
+xpg6.reset_loop                            1.8
+xpg6.critical_node                     1.74017
+xpg6.invo                          2.45993e-06
+xpg6.xe                                    1.8
 v2#branch                                    0
-v4#branch                          0.000389733
-v3#branch                         -0.000389733
+v4#branch                          9.76073e-09
+v3#branch                         -9.76073e-09
 
 
 
-No. of Data Rows : 9755
-responsetimea1      =  1.170124e-10
-
-Error: measure  responsetimea2  (WHEN) : out of interval
- meas tran responsetimea2 when v(outa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimea3  (WHEN) : out of interval
- meas tran responsetimea3 when v(outa)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimea4  (WHEN) : out of interval
- meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
-
-responsetimeb1      =  1.050076e-10
-
-Error: measure  responsetimeb2  (WHEN) : out of interval
- meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-npresponsetimea1    =  8.319259e-10
-npresponsetimea2    =  8.596742e-10
-npresponsetimea3    =  1.424644e-09
-npresponsetimea4    =  1.463590e-09
-npresponsetimeb1    =  1.618350e-08
-npresponsetimeb2    =  1.621652e-08
-npresponsetimeb3    =  1.977993e-08
-npresponsetimeb4    =  1.981158e-08
-
-Error: measure  responsetimeupa1  (WHEN) : out of interval
- meas tran responsetimeupa1 when v(upa)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeupa2  (WHEN) : out of interval
- meas tran responsetimeupa2 when v(upa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeupa3  (WHEN) : out of interval
- meas tran responsetimeupa3 when v(upa)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeupa4  (WHEN) : out of interval
- meas tran responsetimeupa4 when v(upa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeupb1  (WHEN) : out of interval
- meas tran responsetimeupb1 when v(upb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeupb2  (WHEN) : out of interval
- meas tran responsetimeupb2 when v(upb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeupb3  (WHEN) : out of interval
- meas tran responsetimeupb3 when v(upb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeupb4  (WHEN) : out of interval
- meas tran responsetimeupb4 when v(upb)=1.2 cross=4 failed!
-
-Error(parse.c--checkvalid): responsetimea4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
-
-Error: measure  iavg  (TRIG) : bad syntax of ??
- meas tran iavg avg i(v3) from=1.170124e-10 to=responsetimea4 failed!
-
-Error(parse.c--checkvalid): responsetimeb4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
-Error(parse.c--checkvalid): iavg: no such vector.
-
-Error: measure  iavgb  (TRIG) : bad syntax of ??
- meas tran iavgb avg i(v3) from=1.050076e-10 to=responsetimeb4 failed!
-
-Error(parse.c--checkvalid): iavgb: no such vector.
+No. of Data Rows : 9725
+responsetimea1      =  4.973319e-10
+responsetimea2      =  5.519463e-10
+responsetimea3      =  1.742236e-09
+responsetimea4      =  1.766361e-09
+responsetimeb1      =  5.787012e-10
+responsetimeb2      =  6.366081e-10
+responsetimeb3      =  1.829383e-09
+responsetimeb4      =  1.883760e-09
+npresponsetimea1    =  4.983427e-10
+npresponsetimea2    =  5.528867e-10
+npresponsetimea3    =  1.744257e-09
+npresponsetimea4    =  1.765895e-09
+npresponsetimeb1    =  7.616978e-09
+npresponsetimeb2    =  7.651643e-09
+npresponsetimeb3    =  1.563298e-08
+npresponsetimeb4    =  1.565938e-08
+responsetimeupa1    =  5.808290e-10
+responsetimeupa2    =  6.402166e-10
+responsetimeupa3    =  1.850552e-09
+responsetimeupa4    =  1.898794e-09
+responsetimeupb1    =  6.615933e-10
+responsetimeupb2    =  7.205253e-10
+responsetimeupb3    =  1.934324e-09
+responsetimeupb4    =  1.992429e-09
+tdiff = 1.269029e-09
+iavg                =  -8.540394e-05 from=  4.973319e-10 to=  1.767000e-09
+iavg = -8.54039e-05
+tdiffb = 1.305059e-09
+iavgb               =  -7.269429e-05 from=  5.787012e-10 to=  1.884058e-09
+iavgb = -7.26943e-05
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

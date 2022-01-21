@@ -62,38 +62,37 @@ v2#branch                                    0
 v4#branch                          9.76073e-09
 v3#branch                         -9.76073e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 5e-09, timestep = 1.25e-23: cause unrecorded.
 
 
-tran simulation(s) aborted
-responsetimea1      =  7.121139e-11
-responsetimea2      =  1.327184e-10
-responsetimea3      =  5.107058e-10
-responsetimea4      =  5.630315e-10
-responsetimeb1      =  1.515730e-10
-responsetimeb2      =  2.092199e-10
-responsetimeb3      =  5.958980e-10
-responsetimeb4      =  6.400127e-10
-npresponsetimea1    =  7.250367e-11
-npresponsetimea2    =  1.342586e-10
-npresponsetimea3    =  5.117783e-10
-npresponsetimea4    =  5.637974e-10
-npresponsetimeb1    =  1.211930e-09
-npresponsetimeb2    =  1.261937e-09
-npresponsetimeb3    =  2.001751e-09
-npresponsetimeb4    =  2.034065e-09
-responsetimeupa1    =  1.551175e-10
-responsetimeupa2    =  2.136886e-10
-responsetimeupa3    =  5.973117e-10
-responsetimeupa4    =  6.558525e-10
-responsetimeupb1    =  2.369910e-10
-responsetimeupb2    =  2.949481e-10
-responsetimeupb3    =  6.814986e-10
-responsetimeupb4    =  7.401490e-10
-tdiff = 4.918201e-10
-iavg                =  -2.181016e-04 from=  7.121139e-11 to=  5.657218e-10
-tdiff = 4.884397e-10
-iavg = -2.18102e-04
-iavgb               =  -2.348847e-04 from=  1.515730e-10 to=  6.410000e-10
-iavgb = -2.34885e-04
+No. of Data Rows : 3857
+responsetimea1      =  2.587950e-10
+responsetimea2      =  3.152962e-10
+responsetimea3      =  4.641356e-10
+responsetimea4      =  4.756063e-10
+responsetimeb1      =  3.434741e-10
+responsetimeb2      =  3.891862e-10
+responsetimeb3      =  7.897558e-10
+responsetimeb4      =  8.472163e-10
+npresponsetimea1    =  2.597505e-10
+npresponsetimea2    =  3.162196e-10
+npresponsetimea3    =  3.930609e-10
+npresponsetimea4    =  4.376929e-10
+npresponsetimeb1    =  3.608581e-10
+npresponsetimeb2    =  3.989076e-10
+npresponsetimeb3    =  2.073033e-09
+npresponsetimeb4    =  2.112663e-09
+responsetimeupa1    =  3.427867e-10
+responsetimeupa2    =  4.018888e-10
+responsetimeupa3    =  7.964162e-10
+responsetimeupa4    =  8.542905e-10
+responsetimeupb1    =  4.246560e-10
+responsetimeupb2    =  4.833150e-10
+responsetimeupb3    =  8.790208e-10
+responsetimeupb4    =  9.373699e-10
+tdiff = 2.168113e-10
+iavg                =  -6.206070e-04 from=  2.587950e-10 to=  4.800000e-10
+iavg = -6.20607e-04
+tdiffb = 5.037422e-10
+iavgb               =  -6.542365e-05 from=  3.434741e-10 to=  8.493804e-10
+iavgb = -6.54237e-05
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run
