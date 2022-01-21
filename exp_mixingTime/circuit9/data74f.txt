@@ -1,14 +1,106 @@
-Warning: redundant .control card
 
 Circuit: *pulseloop
 
-Error on line 13 :
-  v3 pos_supply 0 1.8
-device already exists, existing one being used
-Error on line 14 :
-  v4 neg_supply 0 0.0
-device already exists, existing one being used
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
-ngspice stopped due to error, no simulation run!
 
-ERROR: fatal error in ngspice, exit(1)
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+pos_supply                                 1.8
+xpg1.reset_loop                       0.863901
+xpg1.critical_node                    0.863901
+neg_supply                                   0
+snoise                                       0
+outb                                  0.863901
+xpg1.invo                             0.863901
+xpg1.xe                               0.863901
+outa                                  0.863901
+xpg2.reset_loop                       0.863901
+xpg2.critical_node                    0.863901
+xpg2.invo                             0.863901
+xpg2.xe                               0.863901
+xpg3.reset_loop                            1.8
+xpg3.critical_node                     1.73839
+npoutb                             9.68599e-07
+xpg3.invo                          2.52675e-06
+xpg3.xe                                    1.8
+npouta                             9.68599e-07
+xpg4.reset_loop                            1.8
+xpg4.critical_node                         1.8
+xpg4.invo                          9.68599e-07
+xpg4.xe                                    1.8
+xpg5.reset_loop                    9.68802e-07
+xpg5.critical_node                    0.387854
+upb                                        1.8
+xpg5.invo                              1.79999
+xpg5.xe                            9.68802e-07
+upa                                        1.8
+xpg6.reset_loop                    9.68666e-07
+xpg6.critical_node                    0.349173
+xpg6.invo                                  1.8
+xpg6.xe                            9.68666e-07
+v2#branch                                    0
+v4#branch                          0.000389733
+v3#branch                         -0.000389733
+
+
+
+No. of Data Rows : 7288
+responsetimea1      =  3.059707e-10
+responsetimea2      =  3.354384e-10
+responsetimea3      =  3.905398e-10
+responsetimea4      =  4.709366e-10
+responsetimeb1      =  3.126526e-10
+responsetimeb2      =  3.975571e-10
+responsetimeb3      =  4.478498e-10
+responsetimeb4      =  5.421136e-10
+npresponsetimea1    =  4.315681e-10
+npresponsetimea2    =  4.887141e-10
+npresponsetimea3    =  1.002568e-09
+npresponsetimea4    =  1.062015e-09
+npresponsetimeb1    =  3.640821e-09
+npresponsetimeb2    =  3.676948e-09
+npresponsetimeb3    =  1.415111e-08
+npresponsetimeb4    =  1.419959e-08
+
+Error: measure  responsetimeupa1  (WHEN) : out of interval
+ meas tran responsetimeupa1 when v(upa)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeupa2  (WHEN) : out of interval
+ meas tran responsetimeupa2 when v(upa)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeupa3  (WHEN) : out of interval
+ meas tran responsetimeupa3 when v(upa)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeupa4  (WHEN) : out of interval
+ meas tran responsetimeupa4 when v(upa)=1.2 cross=4 failed!
+
+
+Error: measure  responsetimeupb1  (WHEN) : out of interval
+ meas tran responsetimeupb1 when v(upb)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeupb2  (WHEN) : out of interval
+ meas tran responsetimeupb2 when v(upb)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeupb3  (WHEN) : out of interval
+ meas tran responsetimeupb3 when v(upb)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeupb4  (WHEN) : out of interval
+ meas tran responsetimeupb4 when v(upb)=1.2 cross=4 failed!
+
+tdiff = 1.649659e-10
+iavg                =  -7.389575e-04 from=  3.059707e-10 to=  4.754081e-10
+tdiff = 2.294610e-10
+iavg = -7.38958e-04
+iavgb               =  -7.224571e-04 from=  3.126526e-10 to=  5.430000e-10
+iavgb = -7.22457e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

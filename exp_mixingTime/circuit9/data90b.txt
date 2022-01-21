@@ -1,14 +1,130 @@
-Warning: redundant .control card
 
 Circuit: *pulseloop
 
-Error on line 13 :
-  v3 pos_supply 0 1.8
-device already exists, existing one being used
-Error on line 14 :
-  v4 neg_supply 0 0.0
-device already exists, existing one being used
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
-ngspice stopped due to error, no simulation run!
 
-ERROR: fatal error in ngspice, exit(1)
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+pos_supply                                 1.8
+xpg1.reset_loop                       0.863901
+xpg1.critical_node                    0.863901
+neg_supply                                   0
+snoise                                       0
+outb                                  0.863901
+xpg1.invo                             0.863901
+xpg1.xe                               0.863901
+outa                                  0.863901
+xpg2.reset_loop                       0.863901
+xpg2.critical_node                    0.863901
+xpg2.invo                             0.863901
+xpg2.xe                               0.863901
+xpg3.reset_loop                            1.8
+xpg3.critical_node                     1.73839
+npoutb                             9.68599e-07
+xpg3.invo                          2.52675e-06
+xpg3.xe                                    1.8
+npouta                             9.68599e-07
+xpg4.reset_loop                            1.8
+xpg4.critical_node                         1.8
+xpg4.invo                          9.68599e-07
+xpg4.xe                                    1.8
+xpg5.reset_loop                    9.68802e-07
+xpg5.critical_node                    0.387854
+upb                                        1.8
+xpg5.invo                              1.79999
+xpg5.xe                            9.68802e-07
+upa                                        1.8
+xpg6.reset_loop                    9.68666e-07
+xpg6.critical_node                    0.349173
+xpg6.invo                                  1.8
+xpg6.xe                            9.68666e-07
+v2#branch                                    0
+v4#branch                          0.000389733
+v3#branch                         -0.000389733
+
+
+
+No. of Data Rows : 34997
+responsetimea1      =  9.142052e-08
+responsetimea2      =  9.143228e-08
+responsetimea3      =  9.155165e-08
+responsetimea4      =  9.161006e-08
+responsetimeb1      =  9.146350e-08
+responsetimeb2      =  9.151814e-08
+responsetimeb3      =  9.163761e-08
+responsetimeb4      =  9.169576e-08
+
+Error: measure  npresponsetimea1  (WHEN) : out of interval
+ meas tran npresponsetimea1 when v(npouta)=1.2 cross=1 failed!
+
+
+Error: measure  npresponsetimea2  (WHEN) : out of interval
+ meas tran npresponsetimea2 when v(npouta)=1.2 cross=2 failed!
+
+
+Error: measure  npresponsetimea3  (WHEN) : out of interval
+ meas tran npresponsetimea3 when v(npouta)=1.2 cross=3 failed!
+
+
+Error: measure  npresponsetimea4  (WHEN) : out of interval
+ meas tran npresponsetimea4 when v(npouta)=1.2 cross=4 failed!
+
+
+Error: measure  npresponsetimeb1  (WHEN) : out of interval
+ meas tran npresponsetimeb1 when v(npoutb)=1.2 cross=1 failed!
+
+
+Error: measure  npresponsetimeb2  (WHEN) : out of interval
+ meas tran npresponsetimeb2 when v(npoutb)=1.2 cross=2 failed!
+
+
+Error: measure  npresponsetimeb3  (WHEN) : out of interval
+ meas tran npresponsetimeb3 when v(npoutb)=1.2 cross=3 failed!
+
+
+Error: measure  npresponsetimeb4  (WHEN) : out of interval
+ meas tran npresponsetimeb4 when v(npoutb)=1.2 cross=4 failed!
+
+
+Error: measure  responsetimeupa1  (WHEN) : out of interval
+ meas tran responsetimeupa1 when v(upa)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeupa2  (WHEN) : out of interval
+ meas tran responsetimeupa2 when v(upa)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeupa3  (WHEN) : out of interval
+ meas tran responsetimeupa3 when v(upa)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeupa4  (WHEN) : out of interval
+ meas tran responsetimeupa4 when v(upa)=1.2 cross=4 failed!
+
+
+Error: measure  responsetimeupb1  (WHEN) : out of interval
+ meas tran responsetimeupb1 when v(upb)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeupb2  (WHEN) : out of interval
+ meas tran responsetimeupb2 when v(upb)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeupb3  (WHEN) : out of interval
+ meas tran responsetimeupb3 when v(upb)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeupb4  (WHEN) : out of interval
+ meas tran responsetimeupb4 when v(upb)=1.2 cross=4 failed!
+
+tdiff = 1.895400e-10
+iavg                =  -5.155712e-04 from=  9.142052e-08 to=  9.161718e-08
+tdiff = 2.322600e-10
+iavg = -5.15571e-04
+iavgb               =  -4.984978e-04 from=  9.146350e-08 to=  9.170000e-08
+iavgb = -4.98498e-04
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
