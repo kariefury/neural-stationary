@@ -26,16 +26,11 @@ meas tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1\n \
 meas tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2\n \
 meas tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3\n \
 meas tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4\n \
-let tdiff = responsetimea4-responsetimea1\n \
-print tdiff\n \
-meas tran iavg avg i(v3) FROM=responsetimea1 TO=responsetimea4 \n \
-print iavg\n "
-
-
-shortfooter = ".control \n \
-*plot v(outA) v(outB) v(sNoise)\n \
-*plot i(v3)\n \
-tran 10ps 20ns \n "
+meas tran iavg_start_to_response_a1 avg i(v3) FROM=0 TO=responsetimea1 \n \
+meas tran iavg_start_to_response_b1 avg i(v3) FROM=0 TO=responsetimeb1 \n \
+meas tran iavg_from_response_a1_to_response_a4 avg i(v3) FROM=responsetimea1 TO=responsetimea4 \n \
+meas tran iavg_from_response_b1_to_response_b4 avg i(v3) FROM=responsetimeb1 TO=responsetimeb4 \n \
+meas tran iavg_from_response_a1_to_response_b1 avg i(v3) FROM=responsetimeb1 TO=responsetimea1 \n "
 
 footer2 = "*quit\n \
 .endc\n \
