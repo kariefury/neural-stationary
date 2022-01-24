@@ -42,35 +42,20 @@ v2#branch                                    0
 v4#branch                          2.79155e-09
 v3#branch                         -2.79155e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.37e-08, timestep = 1.25e-23: trouble with node "xpg1.reset_loop"
 
 
-tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-responsetimea1      =   5.46003e-10
-responsetimea2      =   5.88510e-10
-responsetimea3      =   6.67405e-10
-responsetimea4      =   7.11550e-10
-responsetimeb1      =   1.22142e-09
-responsetimeb2      =   1.27768e-09
-responsetimeb3      =   3.50158e-09
-responsetimeb4      =   3.57190e-09
-iavg                =  -1.890617e-05 from=  2.000000e-10 to=  5.010000e-10
-
-CPU time since last call: 9.493 seconds.
-
-Total CPU time: 9.493 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 120017.101562 MB.
-Total ngspice program size = 43.150391 MB.
-Resident set size = 28.719727 MB.
-Shared ngspice pages = 2.036133 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 26.769531 MB.
-
+No. of Data Rows : 1863
+responsetimea1      =  1.793891e-10
+responsetimea2      =  2.365070e-10
+responsetimea3      =  9.750061e-10
+responsetimea4      =  1.029381e-09
+responsetimeb1      =  1.486045e-09
+responsetimeb2      =  1.549296e-09
+responsetimeb3      =  2.268772e-09
+responsetimeb4      =  2.299810e-09
+iavg_start_to_response_a1=  -1.162691e-04 from=  0.000000e+00 to=  1.800000e-10
+iavg_start_to_response_b1=  -9.315145e-05 from=  0.000000e+00 to=  1.486377e-09
+iavg_from_response_a1_to_response_a4=  -4.523703e-05 from=  1.793891e-10 to=  1.034401e-09
+iavg_from_response_b1_to_response_b4=  -1.660279e-04 from=  1.486045e-09 to=  2.300000e-09
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  1.486045e-09 to=  1.486377e-09
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

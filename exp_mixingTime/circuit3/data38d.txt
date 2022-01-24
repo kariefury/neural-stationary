@@ -44,69 +44,39 @@ v3#branch                         -2.79155e-09
 
 
 
-No. of Data Rows : 26331
-
-  Measurements for Transient Analysis
-
+No. of Data Rows : 12175
+responsetimea1      =  2.703975e-09
+responsetimea2      =  2.748021e-09
+responsetimea3      =  5.789681e-09
+responsetimea4      =  5.821233e-09
 
 Error: measure  responsetimeb1  (WHEN) : out of interval
- .measure tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
+ meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
 
 
 Error: measure  responsetimeb2  (WHEN) : out of interval
- .measure tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
+ meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
 
 
 Error: measure  responsetimeb3  (WHEN) : out of interval
- .measure tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
 
 
 Error: measure  responsetimeb4  (WHEN) : out of interval
- .measure tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-responsetimea1      =   3.11270e-09
-responsetimea2      =   3.15700e-09
-responsetimea3      =   3.85114e-09
-responsetimea4      =   3.89798e-09
-iavg                =  -6.394667e-07 from=  2.000000e-10 to=  5.010000e-10
+iavg_start_to_response_a1=  -8.280705e-06 from=  0.000000e+00 to=  2.704931e-09
 
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
 
+iavg_from_response_a1_to_response_a4=  -1.660798e-05 from=  2.703975e-09 to=  5.823000e-09
 
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimeb1  (WHEN) : out of interval
- .measure tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
 
 
-Error: measure  responsetimeb2  (WHEN) : out of interval
- .measure tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=2.703975e-09 failed!
 
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- .measure tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- .measure tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-responsetimea1      =   3.11270e-09
-responsetimea2      =   3.15700e-09
-responsetimea3      =   3.85114e-09
-responsetimea4      =   3.89798e-09
-iavg                =  -6.394667e-07 from=  2.000000e-10 to=  5.010000e-10
-
-CPU time since last call: 14.701 seconds.
-
-Total CPU time: 14.701 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 120030.429688 MB.
-Total ngspice program size = 47.588867 MB.
-Resident set size = 33.114258 MB.
-Shared ngspice pages = 2.046875 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 31.208008 MB.
-
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

@@ -42,35 +42,20 @@ v2#branch                                    0
 v4#branch                          2.79155e-09
 v3#branch                         -2.79155e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.192e-08, timestep = 1.25e-23: cause unrecorded.
 
 
-tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-responsetimea1      =   7.58528e-11
-responsetimea2      =   3.25961e-10
-responsetimea3      =   5.05081e-10
-responsetimea4      =   5.68500e-10
-responsetimeb1      =   1.72751e-10
-responsetimeb2      =   2.54929e-10
-responsetimeb3      =   1.08444e-09
-responsetimeb4      =   1.12218e-09
-iavg                =  -1.214769e-04 from=  2.000000e-10 to=  5.004367e-10
-
-CPU time since last call: 9.740 seconds.
-
-Total CPU time: 9.740 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 120011.027344 MB.
-Total ngspice program size = 43.055664 MB.
-Resident set size = 28.583008 MB.
-Shared ngspice pages = 2.027344 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 26.674805 MB.
-
+No. of Data Rows : 1431
+responsetimea1      =  9.722999e-11
+responsetimea2      =  1.529755e-10
+responsetimea3      =  3.128993e-10
+responsetimea4      =  3.701473e-10
+responsetimeb1      =  8.872530e-10
+responsetimeb2      =  9.858108e-10
+responsetimeb3      =  1.094184e-09
+responsetimeb4      =  1.143192e-09
+iavg_start_to_response_a1=  -1.940003e-04 from=  0.000000e+00 to=  1.000000e-10
+iavg_start_to_response_b1=  -9.727076e-05 from=  0.000000e+00 to=  8.875715e-10
+iavg_from_response_a1_to_response_a4=  -1.127320e-04 from=  9.722999e-11 to=  3.745783e-10
+iavg_from_response_b1_to_response_b4=  -2.264090e-04 from=  8.872530e-10 to=  1.144655e-09
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  8.872530e-10 to=  8.875715e-10
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

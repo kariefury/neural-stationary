@@ -44,57 +44,27 @@ v3#branch                         -2.79155e-09
 
 
 
-No. of Data Rows : 27649
-
-  Measurements for Transient Analysis
-
+No. of Data Rows : 6481
+responsetimea1      =  5.272285e-10
+responsetimea2      =  5.671769e-10
+responsetimea3      =  1.135406e-09
+responsetimea4      =  1.181403e-09
+responsetimeb1      =  1.096157e-08
+responsetimeb2      =  1.099539e-08
 
 Error: measure  responsetimeb3  (WHEN) : out of interval
- .measure tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
 
 
 Error: measure  responsetimeb4  (WHEN) : out of interval
- .measure tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-responsetimea1      =   5.01271e-10
-responsetimea2      =   5.37470e-10
-responsetimea3      =   1.02468e-09
-responsetimea4      =   1.06643e-09
-responsetimeb1      =   5.16839e-08
-responsetimeb2      =   5.17386e-08
-iavg                =  -3.721055e-05 from=  2.000000e-10 to=  5.009446e-10
+iavg_start_to_response_a1=  -2.367921e-05 from=  0.000000e+00 to=  5.336276e-10
+iavg_start_to_response_b1=  -3.808882e-05 from=  0.000000e+00 to=  1.096300e-08
+iavg_from_response_a1_to_response_a4=  -3.636799e-05 from=  5.272285e-10 to=  1.182861e-09
 
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=1.096157e-08 to=responsetimeb4 failed!
 
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- .measure tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- .measure tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-responsetimea1      =   5.01271e-10
-responsetimea2      =   5.37470e-10
-responsetimea3      =   1.02468e-09
-responsetimea4      =   1.06643e-09
-responsetimeb1      =   5.16839e-08
-responsetimeb2      =   5.17386e-08
-iavg                =  -3.721055e-05 from=  2.000000e-10 to=  5.009446e-10
-
-CPU time since last call: 15.265 seconds.
-
-Total CPU time: 15.265 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 120018.210938 MB.
-Total ngspice program size = 48.011719 MB.
-Resident set size = 33.555664 MB.
-Shared ngspice pages = 2.036133 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 31.630859 MB.
-
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  1.096157e-08 to=  1.096300e-08
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

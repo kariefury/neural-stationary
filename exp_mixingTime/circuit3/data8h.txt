@@ -44,57 +44,18 @@ v3#branch                         -2.79155e-09
 
 
 
-No. of Data Rows : 5757
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- .measure tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- .measure tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-responsetimea1      =   3.59288e-10
-responsetimea2      =   4.11911e-10
-responsetimea3      =   5.30314e-10
-responsetimea4      =   5.52197e-10
-responsetimeb1      =   1.75416e-08
-responsetimeb2      =   1.75836e-08
-iavg                =  -9.494358e-05 from=  2.000000e-10 to=  5.010000e-10
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- .measure tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- .measure tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-responsetimea1      =   3.59288e-10
-responsetimea2      =   4.11911e-10
-responsetimea3      =   5.30314e-10
-responsetimea4      =   5.52197e-10
-responsetimeb1      =   1.75416e-08
-responsetimeb2      =   1.75836e-08
-iavg                =  -9.494358e-05 from=  2.000000e-10 to=  5.010000e-10
-
-CPU time since last call: 10.028 seconds.
-
-Total CPU time: 10.028 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 120032.917969 MB.
-Total ngspice program size = 43.476562 MB.
-Resident set size = 29.037109 MB.
-Shared ngspice pages = 2.030273 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 27.095703 MB.
-
+No. of Data Rows : 4102
+responsetimea1      =  1.547129e-10
+responsetimea2      =  2.105195e-10
+responsetimea3      =  4.856472e-10
+responsetimea4      =  5.414266e-10
+responsetimeb1      =  3.062587e-09
+responsetimeb2      =  3.133002e-09
+responsetimeb3      =  9.193387e-09
+responsetimeb4      =  9.235056e-09
+iavg_start_to_response_a1=  -9.058846e-05 from=  0.000000e+00 to=  1.577425e-10
+iavg_start_to_response_b1=  -7.460186e-05 from=  0.000000e+00 to=  3.063354e-09
+iavg_from_response_a1_to_response_a4=  -9.245279e-05 from=  1.547129e-10 to=  5.430000e-10
+iavg_from_response_b1_to_response_b4=  -6.441752e-05 from=  3.062587e-09 to=  9.236360e-09
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  3.062587e-09 to=  3.063354e-09
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

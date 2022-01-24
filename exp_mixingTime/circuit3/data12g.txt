@@ -44,45 +44,18 @@ v3#branch                         -2.79155e-09
 
 
 
-No. of Data Rows : 28146
-
-  Measurements for Transient Analysis
-
-responsetimea1      =   3.10076e-10
-responsetimea2      =   3.55713e-10
-responsetimea3      =   6.96745e-10
-responsetimea4      =   7.52630e-10
-responsetimeb1      =   8.99586e-09
-responsetimeb2      =   9.04438e-09
-responsetimeb3      =   1.80967e-08
-responsetimeb4      =   1.81538e-08
-iavg                =  -6.586530e-05 from=  2.000000e-10 to=  5.010000e-10
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-  Measurements for Transient Analysis
-
-responsetimea1      =   3.10076e-10
-responsetimea2      =   3.55713e-10
-responsetimea3      =   6.96745e-10
-responsetimea4      =   7.52630e-10
-responsetimeb1      =   8.99586e-09
-responsetimeb2      =   9.04438e-09
-responsetimeb3      =   1.80967e-08
-responsetimeb4      =   1.81538e-08
-iavg                =  -6.586530e-05 from=  2.000000e-10 to=  5.010000e-10
-
-CPU time since last call: 15.723 seconds.
-
-Total CPU time: 15.723 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 120020.179688 MB.
-Total ngspice program size = 48.011719 MB.
-Resident set size = 33.581055 MB.
-Shared ngspice pages = 2.062500 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 31.630859 MB.
-
+No. of Data Rows : 5046
+responsetimea1      =  2.305347e-10
+responsetimea2      =  2.815102e-10
+responsetimea3      =  4.460868e-10
+responsetimea4      =  4.979640e-10
+responsetimeb1      =  1.808489e-09
+responsetimeb2      =  1.872497e-09
+responsetimeb3      =  1.628345e-08
+responsetimeb4      =  1.634411e-08
+iavg_start_to_response_a1=  -5.630963e-05 from=  0.000000e+00 to=  2.365242e-10
+iavg_start_to_response_b1=  -5.355135e-05 from=  0.000000e+00 to=  1.810799e-09
+iavg_from_response_a1_to_response_a4=  -9.873478e-05 from=  2.305347e-10 to=  5.000000e-10
+iavg_from_response_b1_to_response_b4=  -4.972297e-05 from=  1.808489e-09 to=  1.634700e-08
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  1.808489e-09 to=  1.810799e-09
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

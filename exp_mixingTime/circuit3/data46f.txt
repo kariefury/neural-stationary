@@ -44,45 +44,27 @@ v3#branch                         -2.79155e-09
 
 
 
-No. of Data Rows : 27741
+No. of Data Rows : 6570
+responsetimea1      =  1.212750e-10
+responsetimea2      =  1.637853e-10
+responsetimea3      =  2.422889e-10
+responsetimea4      =  3.024306e-10
+responsetimeb1      =  7.696355e-09
+responsetimeb2      =  7.749496e-09
 
-  Measurements for Transient Analysis
-
-responsetimea1      =   3.36901e-10
-responsetimea2      =   4.09560e-10
-responsetimea3      =   5.16945e-10
-responsetimea4      =   5.73012e-10
-responsetimeb1      =   4.29014e-10
-responsetimeb2      =   4.70117e-10
-responsetimeb3      =   8.93881e-09
-responsetimeb4      =   8.96052e-09
-iavg                =  -1.490352e-04 from=  2.000000e-10 to=  5.010000e-10
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
 
 
-  Measurements for Transient Analysis
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-responsetimea1      =   3.36901e-10
-responsetimea2      =   4.09560e-10
-responsetimea3      =   5.16945e-10
-responsetimea4      =   5.73012e-10
-responsetimeb1      =   4.29014e-10
-responsetimeb2      =   4.70117e-10
-responsetimeb3      =   8.93881e-09
-responsetimeb4      =   8.96052e-09
-iavg                =  -1.490352e-04 from=  2.000000e-10 to=  5.010000e-10
+iavg_start_to_response_a1=  -9.551124e-05 from=  0.000000e+00 to=  1.230000e-10
+iavg_start_to_response_b1=  -4.987606e-05 from=  0.000000e+00 to=  7.700000e-09
+iavg_from_response_a1_to_response_a4=  -1.594732e-04 from=  1.212750e-10 to=  3.030000e-10
 
-CPU time since last call: 15.672 seconds.
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=7.696355e-09 to=responsetimeb4 failed!
 
-Total CPU time: 15.672 seconds.
-
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 120027.132812 MB.
-Total ngspice program size = 48.011719 MB.
-Resident set size = 33.572266 MB.
-Shared ngspice pages = 2.053711 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 31.630859 MB.
-
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  7.696355e-09 to=  7.700000e-09
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run

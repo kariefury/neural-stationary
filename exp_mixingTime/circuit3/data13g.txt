@@ -44,45 +44,39 @@ v3#branch                         -2.79155e-09
 
 
 
-No. of Data Rows : 28234
+No. of Data Rows : 5083
+responsetimea1      =  3.037625e-10
+responsetimea2      =  3.578083e-10
+responsetimea3      =  7.895662e-10
+responsetimea4      =  8.450286e-10
 
-  Measurements for Transient Analysis
-
-responsetimea1      =   2.72546e-10
-responsetimea2      =   3.27073e-10
-responsetimea3      =   5.11022e-10
-responsetimea4      =   5.53254e-10
-responsetimeb1      =   2.15064e-08
-responsetimeb2      =   2.15478e-08
-responsetimeb3      =   3.58192e-08
-responsetimeb4      =   3.58849e-08
-iavg                =  -9.662059e-05 from=  2.000000e-10 to=  5.010000e-10
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+Error: measure  responsetimeb1  (WHEN) : out of interval
+ meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
 
 
-  Measurements for Transient Analysis
+Error: measure  responsetimeb2  (WHEN) : out of interval
+ meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
 
-responsetimea1      =   2.72546e-10
-responsetimea2      =   3.27073e-10
-responsetimea3      =   5.11022e-10
-responsetimea4      =   5.53254e-10
-responsetimeb1      =   2.15064e-08
-responsetimeb2      =   2.15478e-08
-responsetimeb3      =   3.58192e-08
-responsetimeb4      =   3.58849e-08
-iavg                =  -9.662059e-05 from=  2.000000e-10 to=  5.010000e-10
 
-CPU time since last call: 15.956 seconds.
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
 
-Total CPU time: 15.956 seconds.
 
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 120020.253906 MB.
-Total ngspice program size = 48.122070 MB.
-Resident set size = 33.651367 MB.
-Shared ngspice pages = 2.003906 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 31.741211 MB.
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
+iavg_start_to_response_a1=  -4.337861e-05 from=  0.000000e+00 to=  3.070000e-10
+
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
+
+iavg_from_response_a1_to_response_a4=  -5.535813e-05 from=  3.037625e-10 to=  8.462458e-10
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=3.037625e-10 failed!
+
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
