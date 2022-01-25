@@ -29,11 +29,11 @@ v3#branch                         -2.79167e-09
 
 
 
-No. of Data Rows : 9469
-responsetimea1      =  8.020616e-10
-responsetimea2      =  8.400041e-10
-responsetimea3      =  1.302265e-09
-responsetimea4      =  1.353777e-09
+No. of Data Rows : 9467
+responsetimea1      =  8.379569e-10
+responsetimea2      =  8.808037e-10
+responsetimea3      =  1.863007e-09
+responsetimea4      =  1.882627e-09
 
 Error: measure  responsetimeb1  (WHEN) : out of interval
  meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
@@ -50,7 +50,18 @@ Error: measure  responsetimeb3  (WHEN) : out of interval
 Error: measure  responsetimeb4  (WHEN) : out of interval
  meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-tdiff = 5.517154e-10
-iavg                =  -5.644073e-05 from=  8.020616e-10 to=  1.357993e-09
-iavg = -5.64407e-05
+iavg_start_to_response_a1=  1.611462e-05 from=  0.000000e+00 to=  8.400000e-10
+
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
+
+iavg_from_response_a1_to_response_a4=  -1.880596e-05 from=  8.379569e-10 to=  1.883000e-09
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=8.379569e-10 failed!
+
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

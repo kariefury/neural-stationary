@@ -27,16 +27,22 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 8.52004e-09, timestep = 1.25e-23: trouble with node "v2#branch"
+doAnalyses: TRAN:  Timestep too small; time = 4.04006e-09, timestep = 1.25e-23: trouble with node "v2#branch"
 
 
 tran simulation(s) aborted
-responsetimea1      =  3.847775e-10
-responsetimea2      =  4.436589e-10
-responsetimea3      =  6.725799e-10
-responsetimea4      =  7.159697e-10
-responsetimeb1      =  4.605279e-09
-responsetimeb2      =  4.641761e-09
+responsetimea1      =  2.303561e-10
+responsetimea2      =  2.838231e-10
+responsetimea3      =  6.234316e-10
+responsetimea4      =  6.644929e-10
+
+Error: measure  responsetimeb1  (WHEN) : out of interval
+ meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeb2  (WHEN) : out of interval
+ meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
+
 
 Error: measure  responsetimeb3  (WHEN) : out of interval
  meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
@@ -45,7 +51,18 @@ Error: measure  responsetimeb3  (WHEN) : out of interval
 Error: measure  responsetimeb4  (WHEN) : out of interval
  meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-tdiff = 3.311922e-10
-iavg                =  -1.171618e-04 from=  3.847775e-10 to=  7.167779e-10
-iavg = -1.17162e-04
+iavg_start_to_response_a1=  -2.509257e-05 from=  0.000000e+00 to=  2.311821e-10
+
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
+
+iavg_from_response_a1_to_response_a4=  -1.318742e-04 from=  2.303561e-10 to=  6.667428e-10
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=2.303561e-10 failed!
+
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

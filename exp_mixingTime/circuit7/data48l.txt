@@ -27,16 +27,16 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 8.4e-10, timestep = 1.25e-23: cause unrecorded.
+doAnalyses: TRAN:  Timestep too small; time = 8.20064e-10, timestep = 1.25e-23: trouble with node "v2#branch"
 
 
 tran simulation(s) aborted
-responsetimea1      =  1.197532e-10
-responsetimea2      =  1.804759e-10
-responsetimea3      =  3.296431e-10
-responsetimea4      =  3.906321e-10
-responsetimeb1      =  4.430244e-10
-responsetimeb2      =  4.646958e-10
+responsetimea1      =  1.657374e-10
+responsetimea2      =  2.529808e-10
+responsetimea3      =  3.145030e-10
+responsetimea4      =  3.798526e-10
+responsetimeb1      =  6.625179e-10
+responsetimeb2      =  7.124565e-10
 
 Error: measure  responsetimeb3  (WHEN) : out of interval
  meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
@@ -45,7 +45,12 @@ Error: measure  responsetimeb3  (WHEN) : out of interval
 Error: measure  responsetimeb4  (WHEN) : out of interval
  meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-tdiff = 2.708789e-10
-iavg                =  -1.632781e-04 from=  1.197532e-10 to=  3.950221e-10
-iavg = -1.63278e-04
+iavg_start_to_response_a1=  -9.341356e-05 from=  0.000000e+00 to=  1.685008e-10
+iavg_start_to_response_b1=  -1.679874e-04 from=  0.000000e+00 to=  6.635242e-10
+iavg_from_response_a1_to_response_a4=  -2.597695e-04 from=  1.657374e-10 to=  3.800000e-10
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=6.625179e-10 to=responsetimeb4 failed!
+
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  6.625179e-10 to=  6.635242e-10
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

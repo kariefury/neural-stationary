@@ -27,22 +27,16 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 2.14009e-09, timestep = 1.25e-23: trouble with node "v2#branch"
+doAnalyses: TRAN:  Timestep too small; time = 1.46e-09, timestep = 1.25e-23: cause unrecorded.
 
 
 tran simulation(s) aborted
-responsetimea1      =  1.935481e-10
-responsetimea2      =  2.578177e-10
-responsetimea3      =  6.684420e-10
-responsetimea4      =  7.114220e-10
-
-Error: measure  responsetimeb1  (WHEN) : out of interval
- meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb2  (WHEN) : out of interval
- meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
-
+responsetimea1      =  2.155497e-10
+responsetimea2      =  2.533509e-10
+responsetimea3      =  3.656389e-10
+responsetimea4      =  4.290690e-10
+responsetimeb1      =  1.187356e-09
+responsetimeb2      =  1.247691e-09
 
 Error: measure  responsetimeb3  (WHEN) : out of interval
  meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
@@ -51,7 +45,12 @@ Error: measure  responsetimeb3  (WHEN) : out of interval
 Error: measure  responsetimeb4  (WHEN) : out of interval
  meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-tdiff = 5.178739e-10
-iavg                =  -6.903419e-05 from=  1.935481e-10 to=  7.192101e-10
-iavg = -6.90342e-05
+iavg_start_to_response_a1=  6.411112e-05 from=  0.000000e+00 to=  2.200000e-10
+iavg_start_to_response_b1=  -5.173357e-05 from=  0.000000e+00 to=  1.187528e-09
+iavg_from_response_a1_to_response_a4=  -1.788471e-04 from=  2.155497e-10 to=  4.321271e-10
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=1.187356e-09 to=responsetimeb4 failed!
+
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  1.187356e-09 to=  1.187528e-09
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

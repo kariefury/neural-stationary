@@ -27,18 +27,42 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
+doAnalyses: TRAN:  Timestep too small; time = 5.18002e-09, timestep = 1.25e-23: trouble with node "v2#branch"
 
 
-No. of Data Rows : 4423
-responsetimea1      =  2.840465e-10
-responsetimea2      =  3.459152e-10
-responsetimea3      =  1.012975e-09
-responsetimea4      =  1.052406e-09
-responsetimeb1      =  1.541184e-09
-responsetimeb2      =  1.594466e-09
-responsetimeb3      =  3.276031e-09
-responsetimeb4      =  3.326821e-09
-tdiff = 7.683595e-10
-iavg                =  -6.552630e-05 from=  2.840465e-10 to=  1.056676e-09
-iavg = -6.55263e-05
+tran simulation(s) aborted
+responsetimea1      =  5.003839e-10
+responsetimea2      =  5.123499e-10
+responsetimea3      =  8.035649e-10
+responsetimea4      =  8.573547e-10
+
+Error: measure  responsetimeb1  (WHEN) : out of interval
+ meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeb2  (WHEN) : out of interval
+ meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
+
+iavg_start_to_response_a1=  -1.458747e-04 from=  0.000000e+00 to=  5.010000e-10
+
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
+
+iavg_from_response_a1_to_response_a4=  -4.951477e-05 from=  5.003839e-10 to=  8.600000e-10
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=5.003839e-10 failed!
+
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

@@ -27,25 +27,20 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.568e-08, timestep = 1.25e-23: cause unrecorded.
 
 
-tran simulation(s) aborted
-responsetimea1      =  1.313615e-10
-responsetimea2      =  1.729615e-10
-responsetimea3      =  3.853941e-10
-responsetimea4      =  4.328681e-10
-responsetimeb1      =  4.005233e-09
-responsetimeb2      =  4.040358e-09
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-tdiff = 3.015066e-10
-iavg                =  -1.078275e-04 from=  1.313615e-10 to=  4.400000e-10
-iavg = -1.07828e-04
+No. of Data Rows : 7087
+responsetimea1      =  5.155900e-10
+responsetimea2      =  5.532618e-10
+responsetimea3      =  1.485236e-09
+responsetimea4      =  1.544886e-09
+responsetimeb1      =  4.703157e-09
+responsetimeb2      =  4.727950e-09
+responsetimeb3      =  2.156818e-08
+responsetimeb4      =  2.160855e-08
+iavg_start_to_response_a1=  -2.341440e-05 from=  0.000000e+00 to=  5.200000e-10
+iavg_start_to_response_b1=  -4.736847e-05 from=  0.000000e+00 to=  4.705926e-09
+iavg_from_response_a1_to_response_a4=  -3.786775e-05 from=  5.155900e-10 to=  1.544905e-09
+iavg_from_response_b1_to_response_b4=  -3.923942e-05 from=  4.703157e-09 to=  2.161362e-08
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  4.703157e-09 to=  4.705926e-09
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

@@ -27,18 +27,42 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
+doAnalyses: TRAN:  Timestep too small; time = 4.88e-09, timestep = 1.25e-23: cause unrecorded.
 
 
-No. of Data Rows : 7140
-responsetimea1      =  1.609935e-10
-responsetimea2      =  2.185251e-10
-responsetimea3      =  5.192123e-10
-responsetimea4      =  5.744150e-10
-responsetimeb1      =  1.858389e-09
-responsetimeb2      =  1.880033e-09
-responsetimeb3      =  9.898983e-09
-responsetimeb4      =  9.943221e-09
-tdiff = 4.134215e-10
-iavg                =  -1.054256e-04 from=  1.609935e-10 to=  5.800000e-10
-iavg = -1.05426e-04
+tran simulation(s) aborted
+responsetimea1      =  1.774992e-09
+responsetimea2      =  1.830712e-09
+responsetimea3      =  2.870965e-09
+responsetimea4      =  2.918231e-09
+
+Error: measure  responsetimeb1  (WHEN) : out of interval
+ meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeb2  (WHEN) : out of interval
+ meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
+
+iavg_start_to_response_a1=  -4.926605e-06 from=  0.000000e+00 to=  1.779022e-09
+
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
+
+iavg_from_response_a1_to_response_a4=  -7.119894e-05 from=  1.774992e-09 to=  2.919867e-09
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=1.774992e-09 failed!
+
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

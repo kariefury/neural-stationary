@@ -27,19 +27,42 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 2.22e-09, timestep = 1.25e-23: cause unrecorded.
+doAnalyses: TRAN:  Timestep too small; time = 3.6e-09, timestep = 1.25e-23: cause unrecorded.
 
 
 tran simulation(s) aborted
-responsetimea1      =  1.831952e-10
-responsetimea2      =  2.463321e-10
-responsetimea3      =  3.221898e-10
-responsetimea4      =  4.099227e-10
-responsetimeb1      =  2.916598e-10
-responsetimeb2      =  3.393489e-10
-responsetimeb3      =  1.454946e-09
-responsetimeb4      =  1.487195e-09
-tdiff = 2.267275e-10
-iavg                =  -2.654816e-04 from=  1.831952e-10 to=  4.102238e-10
-iavg = -2.65482e-04
+responsetimea1      =  9.695038e-11
+responsetimea2      =  1.652856e-10
+responsetimea3      =  2.794052e-10
+responsetimea4      =  2.801021e-10
+
+Error: measure  responsetimeb1  (WHEN) : out of interval
+ meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeb2  (WHEN) : out of interval
+ meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
+
+iavg_start_to_response_a1=  -1.177935e-04 from=  0.000000e+00 to=  1.000000e-10
+
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
+
+iavg_from_response_a1_to_response_a4=  8.187593e-04 from=  9.695038e-11 to=  2.802337e-10
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=9.695038e-11 failed!
+
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run
