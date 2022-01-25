@@ -30,43 +30,17 @@ v3#branch                         -0.000118001
 
 
 No. of Data Rows : 72124
-
-Error: measure  responsetimea1  (WHEN) : out of interval
- meas tran responsetimea1 when v(outa)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimea2  (WHEN) : out of interval
- meas tran responsetimea2 when v(outa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimea3  (WHEN) : out of interval
- meas tran responsetimea3 when v(outa)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimea4  (WHEN) : out of interval
- meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeb1  (WHEN) : out of interval
- meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb2  (WHEN) : out of interval
- meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-Error(parse.c--checkvalid): responsetimea4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
-
-Error: measure  iavg  (TRIG) : bad syntax of ??
- meas tran iavg avg i(v3) from=responsetimea1 to=responsetimea4 failed!
-
-Error(parse.c--checkvalid): iavg: no such vector.
+responsetimea1      =  1.156807e-10
+responsetimea2      =  1.833735e-10
+responsetimea3      =  2.532279e-10
+responsetimea4      =  3.248059e-10
+responsetimeb1      =  9.768560e-11
+responsetimeb2      =  1.097442e-10
+responsetimeb3      =  1.699586e-10
+responsetimeb4      =  2.529695e-10
+iavg_start_to_response_a1=  -1.397983e-04 from=  0.000000e+00 to=  1.200000e-10
+iavg_start_to_response_b1=  -1.237457e-04 from=  0.000000e+00 to=  1.000000e-10
+iavg_from_response_a1_to_response_a4=  -2.487116e-04 from=  1.156807e-10 to=  3.270000e-10
+iavg_from_response_b1_to_response_b4=  -2.579099e-04 from=  9.768560e-11 to=  2.550000e-10
+iavg_from_response_a1_to_response_b1=  -2.307854e-04 from=  9.768560e-11 to=  1.200000e-10
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

@@ -28,26 +28,18 @@ v3#branch                         -0.000118001
 
 
 
-No. of Data Rows : 5091
-responsetimea1      =  3.771578e-11
-responsetimea2      =  1.036903e-10
-responsetimea3      =  1.381594e-10
-
-Error: measure  responsetimea4  (WHEN) : out of interval
- meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
-
-responsetimeb1      =  6.467058e-11
-responsetimeb2      =  1.767808e-10
-responsetimeb3      =  2.101463e-10
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-Error(parse.c--checkvalid): responsetimea4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
-
-Error: measure  iavg  (TRIG) : bad syntax of ??
- meas tran iavg avg i(v3) from=3.771578e-11 to=responsetimea4 failed!
-
-Error(parse.c--checkvalid): iavg: no such vector.
+No. of Data Rows : 5113
+responsetimea1      =  6.378520e-11
+responsetimea2      =  1.064383e-10
+responsetimea3      =  1.497920e-10
+responsetimea4      =  2.452955e-10
+responsetimeb1      =  9.933735e-11
+responsetimeb2      =  1.738952e-10
+responsetimeb3      =  2.277245e-10
+responsetimeb4      =  3.148572e-10
+iavg_start_to_response_a1=  -1.273107e-04 from=  0.000000e+00 to=  6.646634e-11
+iavg_start_to_response_b1=  -1.723809e-04 from=  0.000000e+00 to=  1.000000e-10
+iavg_from_response_a1_to_response_a4=  -2.855514e-04 from=  6.378520e-11 to=  2.458877e-10
+iavg_from_response_b1_to_response_b4=  -2.763947e-04 from=  9.933735e-11 to=  3.200000e-10
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  9.933735e-11 to=  1.000000e-10
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

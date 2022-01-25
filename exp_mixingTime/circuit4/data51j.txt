@@ -28,38 +28,24 @@ v3#branch                         -0.000118001
 
 
 
-No. of Data Rows : 2816
-responsetimea1      =  9.103166e-11
-
-Error: measure  responsetimea2  (WHEN) : out of interval
- meas tran responsetimea2 when v(outa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimea3  (WHEN) : out of interval
- meas tran responsetimea3 when v(outa)=1.2 cross=3 failed!
-
+No. of Data Rows : 2904
+responsetimea1      =  1.075592e-10
+responsetimea2      =  2.141410e-10
+responsetimea3      =  2.550576e-10
 
 Error: measure  responsetimea4  (WHEN) : out of interval
  meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
 
-responsetimeb1      =  8.534212e-11
+responsetimeb1      =  7.545223e-11
+responsetimeb2      =  1.421170e-10
+responsetimeb3      =  1.789181e-10
+responsetimeb4      =  2.844403e-10
+iavg_start_to_response_a1=  -1.790454e-04 from=  0.000000e+00 to=  1.110707e-10
+iavg_start_to_response_b1=  -1.323062e-04 from=  0.000000e+00 to=  7.911053e-11
 
-Error: measure  responsetimeb2  (WHEN) : out of interval
- meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
+Error: measure  iavg_from_response_a1_to_response_a4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_a4 avg i(v3) from=1.075592e-10 to=responsetimea4 failed!
 
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-Error(parse.c--checkvalid): responsetimea4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
-
-Error: measure  iavg  (TRIG) : bad syntax of ??
- meas tran iavg avg i(v3) from=9.103166e-11 to=responsetimea4 failed!
-
-Error(parse.c--checkvalid): iavg: no such vector.
+iavg_from_response_b1_to_response_b4=  -2.968998e-04 from=  7.545223e-11 to=  2.855778e-10
+iavg_from_response_a1_to_response_b1=  -2.896722e-04 from=  7.545223e-11 to=  1.110707e-10
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

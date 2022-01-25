@@ -29,19 +29,18 @@ v3#branch                         -0.000118001
 
 
 
-No. of Data Rows : 6425
-responsetimea1      =  5.755538e-11
-responsetimea2      =  9.390468e-11
-responsetimea3      =  1.255626e-10
-responsetimea4      =  2.528138e-10
-responsetimeb1      =  7.937267e-11
-responsetimeb2      =  1.611832e-10
-responsetimeb3      =  1.988972e-10
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-tdiff = 1.952584e-10
-iavg                =  -2.817494e-04 from=  5.755538e-11 to=  2.550000e-10
-iavg = -2.81749e-04
+No. of Data Rows : 6396
+responsetimea1      =  1.784375e-10
+responsetimea2      =  2.460864e-10
+responsetimea3      =  3.458622e-10
+responsetimea4      =  4.102378e-10
+responsetimeb1      =  1.170375e-10
+responsetimeb2      =  1.736524e-10
+responsetimeb3      =  2.615339e-10
+responsetimeb4      =  3.194342e-10
+iavg_start_to_response_a1=  -1.806447e-04 from=  0.000000e+00 to=  1.800000e-10
+iavg_start_to_response_b1=  -1.446206e-04 from=  0.000000e+00 to=  1.200000e-10
+iavg_from_response_a1_to_response_a4=  -2.040000e-04 from=  1.784375e-10 to=  4.106124e-10
+iavg_from_response_b1_to_response_b4=  -2.200836e-04 from=  1.170375e-10 to=  3.200000e-10
+iavg_from_response_a1_to_response_b1=  -2.507092e-04 from=  1.170375e-10 to=  1.800000e-10
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

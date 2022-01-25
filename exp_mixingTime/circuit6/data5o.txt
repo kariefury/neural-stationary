@@ -27,11 +27,10 @@ v2#branch                                    0
 v4#branch                          0.000118001
 v3#branch                         -0.000118001
 
-doAnalyses: TRAN:  Timestep too small; time = 3.38004e-09, timestep = 1.25e-23: trouble with node "v2#branch"
 
 
-tran simulation(s) aborted
-responsetimea1      =  5.028022e-11
+No. of Data Rows : 1457
+responsetimea1      =  4.587390e-11
 
 Error: measure  responsetimea2  (WHEN) : out of interval
  meas tran responsetimea2 when v(outa)=1.2 cross=2 failed!
@@ -44,7 +43,7 @@ Error: measure  responsetimea3  (WHEN) : out of interval
 Error: measure  responsetimea4  (WHEN) : out of interval
  meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
 
-responsetimeb1      =  7.654469e-11
+responsetimeb1      =  7.159231e-11
 
 Error: measure  responsetimeb2  (WHEN) : out of interval
  meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
@@ -57,11 +56,15 @@ Error: measure  responsetimeb3  (WHEN) : out of interval
 Error: measure  responsetimeb4  (WHEN) : out of interval
  meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-Error(parse.c--checkvalid): responsetimea4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
+iavg_start_to_response_a1=  -1.447740e-04 from=  0.000000e+00 to=  4.843929e-11
+iavg_start_to_response_b1=  -2.036215e-04 from=  0.000000e+00 to=  7.491352e-11
 
-Error: measure  iavg  (TRIG) : bad syntax of ??
- meas tran iavg avg i(v3) from=5.028022e-11 to=responsetimea4 failed!
+Error: measure  iavg_from_response_a1_to_response_a4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_a4 avg i(v3) from=4.587390e-11 to=responsetimea4 failed!
 
-Error(parse.c--checkvalid): iavg: no such vector.
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=7.159231e-11 to=responsetimeb4 failed!
+
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  7.159231e-11 to=  7.491352e-11
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

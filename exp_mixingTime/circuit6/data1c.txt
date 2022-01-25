@@ -29,16 +29,18 @@ v3#branch                         -0.000118001
 
 
 
-No. of Data Rows : 18273
-responsetimea1      =  9.998598e-11
-responsetimea2      =  1.346648e-10
-responsetimea3      =  2.483752e-10
-responsetimea4      =  3.086304e-10
-responsetimeb1      =  1.643718e-10
-responsetimeb2      =  2.235034e-10
-responsetimeb3      =  3.318470e-10
-responsetimeb4      =  3.891508e-10
-tdiff = 2.086444e-10
-iavg                =  -2.024546e-04 from=  9.998598e-11 to=  3.142382e-10
-iavg = -2.02455e-04
+No. of Data Rows : 18278
+responsetimea1      =  1.079090e-10
+responsetimea2      =  1.910798e-10
+responsetimea3      =  2.555691e-10
+responsetimea4      =  3.337443e-10
+responsetimeb1      =  8.104545e-11
+responsetimeb2      =  1.213970e-10
+responsetimeb3      =  1.731192e-10
+responsetimeb4      =  2.616015e-10
+iavg_start_to_response_a1=  -1.546736e-04 from=  0.000000e+00 to=  1.150000e-10
+iavg_start_to_response_b1=  -1.255132e-04 from=  0.000000e+00 to=  8.300000e-11
+iavg_from_response_a1_to_response_a4=  -2.580656e-04 from=  1.079090e-10 to=  3.350000e-10
+iavg_from_response_b1_to_response_b4=  -2.710945e-04 from=  8.104545e-11 to=  2.630000e-10
+iavg_from_response_a1_to_response_b1=  -2.515627e-04 from=  8.104545e-11 to=  1.150000e-10
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run
