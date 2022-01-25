@@ -27,18 +27,42 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
+doAnalyses: TRAN:  Timestep too small; time = 1.024e-08, timestep = 1.25e-23: trouble with node "v2#branch"
 
 
-No. of Data Rows : 7083
-responsetimea1      =  1.454027e-10
-responsetimea2      =  1.962688e-10
-responsetimea3      =  8.365826e-10
-responsetimea4      =  8.940777e-10
-responsetimeb1      =  1.040823e-08
-responsetimeb2      =  1.042157e-08
-responsetimeb3      =  1.422278e-08
-responsetimeb4      =  1.425451e-08
-tdiff = 7.486750e-10
-iavg                =  -4.022426e-05 from=  1.454027e-10 to=  8.969827e-10
-iavg = -4.02243e-05
+tran simulation(s) aborted
+responsetimea1      =  9.675944e-10
+responsetimea2      =  1.028246e-09
+responsetimea3      =  1.842495e-09
+responsetimea4      =  1.902586e-09
+
+Error: measure  responsetimeb1  (WHEN) : out of interval
+ meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
+
+
+Error: measure  responsetimeb2  (WHEN) : out of interval
+ meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
+
+
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
+
+
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
+
+iavg_start_to_response_a1=  -3.707480e-05 from=  0.000000e+00 to=  9.677613e-10
+
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
+
+iavg_from_response_a1_to_response_a4=  -1.547332e-05 from=  9.675944e-10 to=  1.903000e-09
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=9.675944e-10 failed!
+
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

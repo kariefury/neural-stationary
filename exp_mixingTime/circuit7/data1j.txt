@@ -27,31 +27,21 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.70001e-09, timestep = 1.25e-23: trouble with node "m.xpg2.xm7.msky130_fd_pr__nfet_01v8#body"
+doAnalyses: TRAN:  Timestep too small; time = 5.98e-09, timestep = 1.25e-23: cause unrecorded.
 
 
 tran simulation(s) aborted
-responsetimea1      =  3.289227e-10
-responsetimea2      =  3.916065e-10
-responsetimea3      =  5.401563e-10
-responsetimea4      =  5.997546e-10
-
-Error: measure  responsetimeb1  (WHEN) : out of interval
- meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb2  (WHEN) : out of interval
- meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-tdiff = 2.708319e-10
-iavg                =  -1.629369e-04 from=  3.289227e-10 to=  6.000000e-10
-iavg = -1.62937e-04
+responsetimea1      =  2.096573e-10
+responsetimea2      =  2.566310e-10
+responsetimea3      =  3.029765e-10
+responsetimea4      =  4.602219e-10
+responsetimeb1      =  2.692823e-09
+responsetimeb2      =  2.703384e-09
+responsetimeb3      =  4.174572e-09
+responsetimeb4      =  4.205248e-09
+iavg_start_to_response_a1=  -4.880538e-05 from=  0.000000e+00 to=  2.101129e-10
+iavg_start_to_response_b1=  -1.366604e-04 from=  0.000000e+00 to=  2.693625e-09
+iavg_from_response_a1_to_response_a4=  -2.928967e-04 from=  2.096573e-10 to=  4.607959e-10
+iavg_from_response_b1_to_response_b4=  -1.415912e-04 from=  2.692823e-09 to=  4.209400e-09
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  2.692823e-09 to=  2.693625e-09
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

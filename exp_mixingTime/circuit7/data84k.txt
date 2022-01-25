@@ -27,34 +27,16 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; initial timepoint: cause unrecorded.
+doAnalyses: TRAN:  Timestep too small; time = 1.78e-09, timestep = 1.25e-23: cause unrecorded.
 
 
 tran simulation(s) aborted
-
-Error: measure  responsetimea1  (WHEN) : out of interval
- meas tran responsetimea1 when v(outa)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimea2  (WHEN) : out of interval
- meas tran responsetimea2 when v(outa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimea3  (WHEN) : out of interval
- meas tran responsetimea3 when v(outa)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimea4  (WHEN) : out of interval
- meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeb1  (WHEN) : out of interval
- meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb2  (WHEN) : out of interval
- meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
-
+responsetimea1      =  2.523841e-10
+responsetimea2      =  3.109651e-10
+responsetimea3      =  4.452310e-10
+responsetimea4      =  4.856667e-10
+responsetimeb1      =  1.391574e-09
+responsetimeb2      =  1.402047e-09
 
 Error: measure  responsetimeb3  (WHEN) : out of interval
  meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
@@ -63,11 +45,12 @@ Error: measure  responsetimeb3  (WHEN) : out of interval
 Error: measure  responsetimeb4  (WHEN) : out of interval
  meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-Error(parse.c--checkvalid): responsetimea4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
+iavg_start_to_response_a1=  -2.125345e-04 from=  0.000000e+00 to=  2.600000e-10
+iavg_start_to_response_b1=  -1.795825e-04 from=  0.000000e+00 to=  1.394173e-09
+iavg_from_response_a1_to_response_a4=  -4.801141e-05 from=  2.523841e-10 to=  4.857074e-10
 
-Error: measure  iavg  (TRIG) : bad syntax of ??
- meas tran iavg avg i(v3) from=responsetimea1 to=responsetimea4 failed!
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=1.391574e-09 to=responsetimeb4 failed!
 
-Error(parse.c--checkvalid): iavg: no such vector.
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  1.391574e-09 to=  1.394173e-09
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

@@ -27,22 +27,16 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.3e-09, timestep = 1.25e-23: trouble with node "v2#branch"
+doAnalyses: TRAN:  Timestep too small; time = 5.6e-10, timestep = 1.25e-23: cause unrecorded.
 
 
 tran simulation(s) aborted
-responsetimea1      =  1.551247e-10
-responsetimea2      =  2.121986e-10
-responsetimea3      =  3.056661e-10
-responsetimea4      =  4.227837e-10
-
-Error: measure  responsetimeb1  (WHEN) : out of interval
- meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb2  (WHEN) : out of interval
- meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
-
+responsetimea1      =  1.253332e-10
+responsetimea2      =  2.156368e-10
+responsetimea3      =  2.992968e-10
+responsetimea4      =  3.840650e-10
+responsetimeb1      =  2.408416e-10
+responsetimeb2      =  2.877462e-10
 
 Error: measure  responsetimeb3  (WHEN) : out of interval
  meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
@@ -51,7 +45,12 @@ Error: measure  responsetimeb3  (WHEN) : out of interval
 Error: measure  responsetimeb4  (WHEN) : out of interval
  meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-tdiff = 2.676590e-10
-iavg                =  -2.018296e-04 from=  1.551247e-10 to=  4.233780e-10
-iavg = -2.01830e-04
+iavg_start_to_response_a1=  -3.857466e-05 from=  0.000000e+00 to=  1.267132e-10
+iavg_start_to_response_b1=  -1.439908e-04 from=  0.000000e+00 to=  2.412120e-10
+iavg_from_response_a1_to_response_a4=  -2.895194e-04 from=  1.253332e-10 to=  3.843352e-10
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=2.408416e-10 to=responsetimeb4 failed!
+
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  2.408416e-10 to=  2.412120e-10
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

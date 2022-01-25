@@ -27,14 +27,13 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.032e-08, timestep = 1.25e-23: trouble with node "xpg1.reset_loop"
 
 
-tran simulation(s) aborted
-responsetimea1      =  6.470700e-10
-responsetimea2      =  6.687601e-10
-responsetimea3      =  1.886412e-09
-responsetimea4      =  1.945215e-09
+No. of Data Rows : 7119
+responsetimea1      =  4.032222e-10
+responsetimea2      =  4.388302e-10
+responsetimea3      =  1.102298e-09
+responsetimea4      =  1.147346e-09
 
 Error: measure  responsetimeb1  (WHEN) : out of interval
  meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
@@ -51,7 +50,18 @@ Error: measure  responsetimeb3  (WHEN) : out of interval
 Error: measure  responsetimeb4  (WHEN) : out of interval
  meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
-tdiff = 1.298145e-09
-iavg                =  -2.153994e-05 from=  6.470700e-10 to=  1.945316e-09
-iavg = -2.15399e-05
+iavg_start_to_response_a1=  -7.959474e-06 from=  0.000000e+00 to=  4.051709e-10
+
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
+
+iavg_from_response_a1_to_response_a4=  -5.711405e-05 from=  4.032222e-10 to=  1.148068e-09
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=4.032222e-10 failed!
+
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

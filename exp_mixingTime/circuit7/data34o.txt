@@ -27,19 +27,21 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.62e-09, timestep = 1.25e-23: cause unrecorded.
+doAnalyses: TRAN:  Timestep too small; time = 3.42001e-09, timestep = 1.25e-23: trouble with node "v2#branch"
 
 
 tran simulation(s) aborted
-responsetimea1      =  7.195464e-11
-responsetimea2      =  2.167693e-10
-responsetimea3      =  2.656794e-10
-responsetimea4      =  3.522475e-10
-responsetimeb1      =  3.802545e-10
-responsetimeb2      =  4.231718e-10
-responsetimeb3      =  5.113620e-10
-responsetimeb4      =  5.685507e-10
-tdiff = 2.802929e-10
-iavg                =  -3.190305e-04 from=  7.195464e-11 to=  3.546506e-10
-iavg = -3.19030e-04
+responsetimea1      =  7.399812e-11
+responsetimea2      =  1.734908e-10
+responsetimea3      =  2.563855e-10
+responsetimea4      =  3.161085e-10
+responsetimeb1      =  1.045996e-09
+responsetimeb2      =  1.082683e-09
+responsetimeb3      =  2.062027e-09
+responsetimeb4      =  2.130701e-09
+iavg_start_to_response_a1=  -6.001496e-05 from=  0.000000e+00 to=  7.441683e-11
+iavg_start_to_response_b1=  -2.154163e-04 from=  0.000000e+00 to=  1.046519e-09
+iavg_from_response_a1_to_response_a4=  -2.463434e-04 from=  7.399812e-11 to=  3.200000e-10
+iavg_from_response_b1_to_response_b4=  -2.628479e-04 from=  1.045996e-09 to=  2.137549e-09
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  1.045996e-09 to=  1.046519e-09
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

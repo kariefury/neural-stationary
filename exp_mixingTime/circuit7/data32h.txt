@@ -27,19 +27,20 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 3.52012e-09, timestep = 1.25e-23: trouble with node "m.xpg2.xm5.msky130_fd_pr__nfet_01v8#sbody"
 
 
-tran simulation(s) aborted
-responsetimea1      =  2.359463e-10
-responsetimea2      =  2.909262e-10
-responsetimea3      =  3.709527e-10
-responsetimea4      =  4.341543e-10
-responsetimeb1      =  2.243216e-09
-responsetimeb2      =  2.287803e-09
-responsetimeb3      =  2.408413e-09
-responsetimeb4      =  2.453076e-09
-tdiff = 1.982080e-10
-iavg                =  -2.130417e-04 from=  2.359463e-10 to=  4.400000e-10
-iavg = -2.13042e-04
+No. of Data Rows : 4521
+responsetimea1      =  1.568710e-10
+responsetimea2      =  2.030031e-10
+responsetimea3      =  6.234679e-10
+responsetimea4      =  6.864309e-10
+responsetimeb1      =  9.671178e-09
+responsetimeb2      =  9.712820e-09
+responsetimeb3      =  1.076660e-08
+responsetimeb4      =  1.082009e-08
+iavg_start_to_response_a1=  -8.258036e-06 from=  0.000000e+00 to=  1.600000e-10
+iavg_start_to_response_b1=  -7.585882e-05 from=  0.000000e+00 to=  9.672773e-09
+iavg_from_response_a1_to_response_a4=  -6.907318e-05 from=  1.568710e-10 to=  6.873820e-10
+iavg_from_response_b1_to_response_b4=  -9.421214e-05 from=  9.671178e-09 to=  1.082100e-08
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  9.671178e-09 to=  9.672773e-09
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run

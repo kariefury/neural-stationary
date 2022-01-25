@@ -27,47 +27,21 @@ v2#branch                                    0
 v4#branch                          2.79167e-09
 v3#branch                         -2.79167e-09
 
-doAnalyses: TRAN:  Timestep too small; time = 1.8e-10, timestep = 1.25e-23: cause unrecorded.
+doAnalyses: TRAN:  Timestep too small; time = 2.36e-09, timestep = 1.25e-23: cause unrecorded.
 
 
 tran simulation(s) aborted
-
-Error: measure  responsetimea1  (WHEN) : out of interval
- meas tran responsetimea1 when v(outa)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimea2  (WHEN) : out of interval
- meas tran responsetimea2 when v(outa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimea3  (WHEN) : out of interval
- meas tran responsetimea3 when v(outa)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimea4  (WHEN) : out of interval
- meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeb1  (WHEN) : out of interval
- meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeb2  (WHEN) : out of interval
- meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeb3  (WHEN) : out of interval
- meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeb4  (WHEN) : out of interval
- meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
-
-Error(parse.c--checkvalid): responsetimea4: no such vector.
-Error(parse.c--checkvalid): tdiff: no such vector.
-
-Error: measure  iavg  (TRIG) : bad syntax of ??
- meas tran iavg avg i(v3) from=responsetimea1 to=responsetimea4 failed!
-
-Error(parse.c--checkvalid): iavg: no such vector.
+responsetimea1      =  1.439111e-10
+responsetimea2      =  2.384127e-10
+responsetimea3      =  4.148907e-10
+responsetimea4      =  4.766926e-10
+responsetimeb1      =  5.115971e-10
+responsetimeb2      =  5.301926e-10
+responsetimeb3      =  1.518070e-09
+responsetimeb4      =  1.554395e-09
+iavg_start_to_response_a1=  -6.695403e-05 from=  0.000000e+00 to=  1.457774e-10
+iavg_start_to_response_b1=  -1.134978e-04 from=  0.000000e+00 to=  5.117496e-10
+iavg_from_response_a1_to_response_a4=  -1.635523e-04 from=  1.439111e-10 to=  4.790414e-10
+iavg_from_response_b1_to_response_b4=  -2.642190e-04 from=  5.115971e-10 to=  1.558200e-09
+iavg_from_response_a1_to_response_b1=  0.000000e+00 from=  5.115971e-10 to=  5.117496e-10
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run
