@@ -3,8 +3,6 @@
  * Circuit 5, 2 pulse gate in ring, sNoise input to PMOS
 R1 sNoise sNoiseIn 61710
 C1 sNoise neg_supply 10pF 
- Xpg1 outA sNoise outB pos_supply neg_supply pgNegPos 
- Xpg2 outB outA pos_supply neg_supply pgNeg1 
  Xpg1 outA sNoise outB pos_supply neg_supply pgNegPos
  Xpg2 outB outA pos_supply neg_supply pgNeg1
  v3 pos_supply 0 1.8
