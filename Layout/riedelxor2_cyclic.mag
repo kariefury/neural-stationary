@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1644010583
+timestamp 1644013847
 << poly >>
 rect 160 681 234 698
 rect 160 647 183 681
@@ -53,12 +53,23 @@ rect 1946 188 2630 284
 rect 1194 -48 2038 48
 rect 1910 -260 2038 -48
 rect 1910 -356 2596 -260
-use xor2  xor2_0
-timestamp 1644004558
-transform 1 0 0 0 1 0
-box -38 -48 1234 592
 use xor2  xor2_1
 timestamp 1644004558
 transform 1 0 2590 0 1 -308
 box -38 -48 1234 592
+use xor2  xor2_0
+timestamp 1644004558
+transform 1 0 0 0 1 0
+box -38 -48 1234 592
+<< labels >>
+rlabel locali 522 634 542 648 1 ainput
+port 1 n
+rlabel locali 1790 160 1810 174 1 binside
+port 2 n
+rlabel locali 1760 -410 1780 -396 1 ycyclic
+port 3 n
+rlabel metal1 1858 534 1878 548 1 powin
+port 4 n
+rlabel metal1 1818 -14 1838 0 1 gndin
+port 5 n
 << end >>
