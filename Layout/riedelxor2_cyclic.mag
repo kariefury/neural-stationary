@@ -1,0 +1,15 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1644005730
+<< error_s >>
+rect 1197 211 1207 245
+use xor2  xor2_1
+timestamp 1644004558
+transform 1 0 1235 0 1 -50
+box -38 -48 1234 592
+use xor2  xor2_0
+timestamp 1644004558
+transform 1 0 0 0 1 0
+box -38 -48 1234 592
+<< end >>
