@@ -1,16 +1,16 @@
 *PulseLoop
  .include sky130nm.lib
  .option scale=10n
- *Xxor2 neg_supply bin ain pos_supply xoutxor2 neg_supply xor2
+*Xxor2 neg_supply bin ain pos_supply xoutxor2 neg_supply xor2
  Xxor3 ain bin neg_supply neg_supply pos_supply pos_supply xoutmodel sky130_fd_sc_hd__xor2_1
  v3 pos_supply 0 1.8
  v4 neg_supply 0 0.0
- v2 ain 0 PULSE 0 1.8 1n 20p 20p 80p 4ns
- v5 bin 0 PULSE 0 1.8 1n 2n 2n 8n 4ns
+ v2 ain 0 PULSE 0 1.8 1n 20p 20p 2n 4ns
+ v5 bin 0 PULSE 0 1.8 2n 20p 20p 2n 4ns
  
 .control  
  tran 1ps 20ns 
- plot v(ain) v(bin) v(xoutxor2)+2 v(xoutmodel)
+ plot v(ain) v(bin) v(xoutxor2)+2 v(xoutmodel)+4
 .endc
  
  
@@ -27,40 +27,40 @@ X8 a_285_297# a_35_297# X VPB sky130_fd_pr__pfet_01v8 w=100 l=15
 X9 VGND A a_285_47# VNB sky130_fd_pr__nfet_01v8 w=65 l=15
 .ends
 
- .subckt xor2 VNB B A VPWR X VGND 
-X0 a_470_297# A VPWR VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X1 VPWR A a_470_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X2 a_112_47# B VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
-X3 a_470_47# B X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
-X4 VGND A a_112_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
-X5 a_112_47# A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
-X6 VGND B a_112_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
-X7 VPWR A a_27_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X8 a_470_297# B VPWR VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X9 X a_112_47# VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
-X10 VPWR B a_470_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X11 VGND a_112_47# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
-X12 VGND A a_470_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
-X13 a_27_297# B a_112_47# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X14 X a_112_47# a_470_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X15 a_470_297# a_112_47# X VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X16 X B a_470_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
-X17 a_112_47# B a_27_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X18 a_27_297# A VPWR VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
-X19 a_470_47# A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+ .subckt xor2 VNB B A VPWR X VGND VPB
+X0 a_470_297# A VPWR VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X1 VPWR A a_470_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X2 a_112_47# B VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
+X3 a_470_47# B X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
+X4 VGND A a_112_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
+X5 a_112_47# A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
+X6 VGND B a_112_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
+X7 VPWR A a_27_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X8 a_470_297# B VPWR VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X9 X a_112_47# VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
+X10 VPWR B a_470_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X11 VGND a_112_47# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
+X12 VGND A a_470_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
+X13 a_27_297# B a_112_47# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X14 X a_112_47# a_470_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X15 a_470_297# a_112_47# X VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X16 X B a_470_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
+X17 a_112_47# B a_27_297# VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X18 a_27_297# A VPWR VPB sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=100 l=15
+X19 a_470_47# A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=65 l=15
 C0 VGND VNB 1.01fF
 C1 VPB VNB 1.22fF
 .ends
 
 .subckt riedelxor2_cyclic ainput binside ycyclic powin gndin
-Xxor2_0 SUB ycyclic ainput powin binside gndin xor2
-Xxor2_1 SUB ainput xor2_1/A powin ycyclic gndin xor2
-C0 xor2_1/VPB SUB 1.22fF **FLOATING
+Xxor2_0 SUB ycyclic ainput powin binside gndin powin xor2
+Xxor2_1 SUB ainput xor2_1/A powin ycyclic gndin powin xor2
+C0 powin SUB 1.22fF **FLOATING
 C1 gndin SUB 2.64fF
 C2 powin SUB 2.50fF
 C3 ycyclic SUB 1.54fF
 C4 ainput SUB 2.71fF
-C5 xor2_0/VPB SUB 1.22fF **FLOATING
+C5 powin SUB 1.22fF **FLOATING
 .ends
 
  
