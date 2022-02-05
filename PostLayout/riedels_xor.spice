@@ -6,7 +6,7 @@
  Xriedels ain binside ycyclic pos_supply neg_supply neg_supply riedelxor2_cyclic
  v3 pos_supply 0 1.8
  v4 neg_supply 0 0.0
- v2 ain 0 PULSE 1.8 1.8 1n 20p 20p 2n 4ns
+ v2 ain 0 PULSE 0.0 1.8 1n 20p 20p 2n 4ns
  v5 bin 0 PULSE 0 1.8 2n 20p 20p 2n 4ns
  
 .control  
