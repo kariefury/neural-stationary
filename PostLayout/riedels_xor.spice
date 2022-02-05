@@ -1,29 +1,66 @@
 *PulseLoop
  .include sky130nm.lib
- * Circuit 5, 2 pulse gate in ring, sNoise input to PMOS
-R1 sNoise sNoiseIn 5610
-C1 sNoise neg_supply 10pF 
- Xpg1 outA sNoise outB pos_supply neg_supply pgNegPos
- Xpg2 outB outA pos_supply neg_supply pgNeg1
+ Xxor2 neg_supply bin ain pos_supply xoutxor2 neg_supply xor2
+ Xxor3 ain bin neg_supply neg_supply pos_supply pos_supply xoutmodel sky130_fd_sc_hd__xor2_1
  v3 pos_supply 0 1.8
  v4 neg_supply 0 0.0
- v2 sNoise 0 dc 0 trrandom (2 2ns 0 5.699999999999996 0.1)
+ v2 ain 0 PULSE 0 1.8 1n 20p 20p 80p 4ns
+ v5 bin 0 PULSE 0 1.8 1n 2n 2n 8n 4ns
+ 
 .control 
- *plot v(outA) v(outB) v(sNoise)
- *plot i(v3)
- tran 1ps 0.342998262142139ns 
- meas tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1 
- meas tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2
- meas tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3
- meas tran responseTimeA4 WHEN v(outA)=1.2 CROSS=4
- meas tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1
- meas tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2
- meas tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3
- meas tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4
- let tdiff = responsetimea4-responsetimea1
- print tdiff
- meas tran iavg avg i(v3) FROM=responsetimea1 TO=responsetimea4 
- print iavg
- *quit
+ 
+ tran 1ps 20ns 
+ plot v(ain) v(bin) v(xoutxor2)+2 v(xoutmodel)
  .endc
+ 
+ 
+ .subckt sky130_fd_sc_hd__xor2_1 A B VGND VNB VPB VPWR X
+X0 a_35_297# A VGND VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
+X1 VGND B a_35_297# VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
+X2 X a_35_297# VGND VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
+X3 a_285_297# B VPWR VPB sky130_fd_pr__pfet_01v8_hvt w=1e+06u l=150000u
+X4 VPWR A a_285_297# VPB sky130_fd_pr__pfet_01v8_hvt w=1e+06u l=150000u
+X5 a_35_297# B a_117_297# VPB sky130_fd_pr__pfet_01v8_hvt w=1e+06u l=150000u
+X6 a_117_297# A VPWR VPB sky130_fd_pr__pfet_01v8_hvt w=1e+06u l=150000u
+X7 a_285_47# B X VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
+X8 a_285_297# a_35_297# X VPB sky130_fd_pr__pfet_01v8_hvt w=1e+06u l=150000u
+X9 VGND A a_285_47# VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
+.ends
+
+ .subckt xor2 VNB B A VPWR X VGND 
+X0 a_470_297# A VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X1 VPWR A a_470_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X2 a_112_47# B VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X3 a_470_47# B X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X4 VGND A a_112_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X5 a_112_47# A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X6 VGND B a_112_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X7 VPWR A a_27_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X8 a_470_297# B VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X9 X a_112_47# VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X10 VPWR B a_470_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X11 VGND a_112_47# X VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X12 VGND A a_470_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X13 a_27_297# B a_112_47# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X14 X a_112_47# a_470_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X15 a_470_297# a_112_47# X VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X16 X B a_470_47# VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+X17 a_112_47# B a_27_297# VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X18 a_27_297# A VPWR VPB sky130_fd_pr__pfet_01v8_hvt ad=0p pd=0u as=0p ps=0u w=1e+06u l=150000u
+X19 a_470_47# A VGND VNB sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=650000u l=150000u
+C0 VGND VNB 1.01fF
+C1 VPB VNB 1.22fF
+.ends
+
+.subckt riedelxor2_cyclic ainput binside ycyclic powin gndin
+Xxor2_0 SUB ycyclic ainput powin binside gndin xor2
+Xxor2_1 SUB ainput xor2_1/A powin ycyclic gndin xor2
+C0 xor2_1/VPB SUB 1.22fF **FLOATING
+C1 gndin SUB 2.64fF
+C2 powin SUB 2.50fF
+C3 ycyclic SUB 1.54fF
+C4 ainput SUB 2.71fF
+C5 xor2_0/VPB SUB 1.22fF **FLOATING
+.ends
+
  
