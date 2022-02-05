@@ -3,14 +3,15 @@
  .option scale=10n
  Xxor2 neg_supply bin ain pos_supply xoutxor2 neg_supply pos_supply xor2
  Xxor3 ain bin neg_supply neg_supply pos_supply pos_supply xoutmodel sky130_fd_sc_hd__xor2_1
+ riedels ain binside ycyclic pos_supply neg_supply riedelxor2_cyclic
  v3 pos_supply 0 1.8
  v4 neg_supply 0 0.0
  v2 ain 0 PULSE 0 1.8 1n 20p 20p 2n 4ns
  v5 bin 0 PULSE 0 1.8 2n 20p 20p 2n 4ns
  
 .control  
- tran 1ps 20ns 
- plot v(ain) v(bin) v(xoutxor2)+2 v(xoutmodel)+4
+ tran 1ps 6ns 
+ plot v(ain) v(bin) v(xoutxor2)+2 v(xoutmodel)+4 v(binside)+6 v(ycyclic)+8
 .endc
  
  
