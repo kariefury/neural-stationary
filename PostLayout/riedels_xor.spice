@@ -1,5 +1,6 @@
 *PulseLoop
  .include sky130nm.lib
+ .option scale=10n
  *Xxor2 neg_supply bin ain pos_supply xoutxor2 neg_supply xor2
  Xxor3 ain bin neg_supply neg_supply pos_supply pos_supply xoutmodel sky130_fd_sc_hd__xor2_1
  v3 pos_supply 0 1.8
@@ -7,24 +8,23 @@
  v2 ain 0 PULSE 0 1.8 1n 20p 20p 80p 4ns
  v5 bin 0 PULSE 0 1.8 1n 2n 2n 8n 4ns
  
-.control 
- 
+.control  
  tran 1ps 20ns 
  plot v(ain) v(bin) v(xoutxor2)+2 v(xoutmodel)
- .endc
+.endc
  
  
- .subckt sky130_fd_sc_hd__xor2_1 A B VGND VNB VPB VPWR X
-X0 a_35_297# A VGND VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
-X1 VGND B a_35_297# VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
-X2 X a_35_297# VGND VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
-X3 a_285_297# B VPWR VPB sky130_fd_pr__pfet_01v8 w=1e+06u l=150000u
-X4 VPWR A a_285_297# VPB sky130_fd_pr__pfet_01v8 w=1e+06u l=150000u
-X5 a_35_297# B a_117_297# VPB sky130_fd_pr__pfet_01v8 w=1e+06u l=150000u
-X6 a_117_297# A VPWR VPB sky130_fd_pr__pfet_01v8 w=1e+06u l=150000u
-X7 a_285_47# B X VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
-X8 a_285_297# a_35_297# X VPB sky130_fd_pr__pfet_01v8 w=1e+06u l=150000u
-X9 VGND A a_285_47# VNB sky130_fd_pr__nfet_01v8 w=650000u l=150000u
+.subckt sky130_fd_sc_hd__xor2_1 A B VGND VNB VPB VPWR X
+X0 a_35_297# A VGND VNB sky130_fd_pr__nfet_01v8 w=65 l=15
+X1 VGND B a_35_297# VNB sky130_fd_pr__nfet_01v8 w=65 l=15
+X2 X a_35_297# VGND VNB sky130_fd_pr__nfet_01v8 w=65 l=15
+X3 a_285_297# B VPWR VPB sky130_fd_pr__pfet_01v8 w=100 l=15
+X4 VPWR A a_285_297# VPB sky130_fd_pr__pfet_01v8 w=100 l=15
+X5 a_35_297# B a_117_297# VPB sky130_fd_pr__pfet_01v8 w=100 l=15
+X6 a_117_297# A VPWR VPB sky130_fd_pr__pfet_01v8 w=100 l=15
+X7 a_285_47# B X VNB sky130_fd_pr__nfet_01v8 w=65 l=15
+X8 a_285_297# a_35_297# X VPB sky130_fd_pr__pfet_01v8 w=100 l=15
+X9 VGND A a_285_47# VNB sky130_fd_pr__nfet_01v8 w=65 l=15
 .ends
 
  .subckt xor2 VNB B A VPWR X VGND 
