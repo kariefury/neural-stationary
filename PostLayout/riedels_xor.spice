@@ -56,12 +56,12 @@ C1 VPB VNB 1.22fF
 .subckt riedelxor2_cyclic ainput binside ycyclic powin gndin SUB
 Xxor2_0 SUB ycyclic ainput powin binside gndin powin xor2
 Xxor2_1 SUB ainput binside powin ycyclic gndin powin xor2
-C0 powin SUB 1.22fF **FLOATING
+C0 powin SUB 1.22fF 
 C1 gndin SUB 2.64fF
 C2 powin SUB 2.50fF
 C3 ycyclic SUB 1.54fF
 C4 ainput SUB 2.71fF
-C5 powin SUB 1.22fF **FLOATING
+C5 powin SUB 1.22fF
 .ends
 
  
