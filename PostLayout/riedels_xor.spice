@@ -10,7 +10,7 @@
  v5 bin 0 PULSE 0 1.8 2n 20p 20p 2n 4ns
  
 .control  
- tran 1ps 6ns 
+ tran 1ps 20ns 
  plot v(ain) v(bin) v(xoutxor2)+2 v(xoutmodel)+4 v(binside)+6 v(ycyclic)+8
 .endc
  
