@@ -1,6 +1,6 @@
 *PulseLoop
  .include sky130nm.lib
- Xxor2 neg_supply bin ain pos_supply xoutxor2 neg_supply xor2
+ *Xxor2 neg_supply bin ain pos_supply xoutxor2 neg_supply xor2
  Xxor3 ain bin neg_supply neg_supply pos_supply pos_supply xoutmodel sky130_fd_sc_hd__xor2_1
  v3 pos_supply 0 1.8
  v4 neg_supply 0 0.0
