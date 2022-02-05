@@ -3,7 +3,7 @@
  .option scale=10n
  Xxor2 neg_supply bin ain pos_supply xoutxor2 neg_supply pos_supply xor2
  Xxor3 ain bin neg_supply neg_supply pos_supply pos_supply xoutmodel sky130_fd_sc_hd__xor2_1
- riedels ain binside ycyclic pos_supply neg_supply riedelxor2_cyclic
+ riedels ain binside ycyclic pos_supply neg_supply neg_supply riedelxor2_cyclic
  v3 pos_supply 0 1.8
  v4 neg_supply 0 0.0
  v2 ain 0 PULSE 0 1.8 1n 20p 20p 2n 4ns
@@ -53,9 +53,9 @@ C0 VGND VNB 1.01fF
 C1 VPB VNB 1.22fF
 .ends
 
-.subckt riedelxor2_cyclic ainput binside ycyclic powin gndin
+.subckt riedelxor2_cyclic ainput binside ycyclic powin gndin SUB
 Xxor2_0 SUB ycyclic ainput powin binside gndin powin xor2
-Xxor2_1 SUB ainput xor2_1/A powin ycyclic gndin powin xor2
+Xxor2_1 SUB ainput binside powin ycyclic gndin powin xor2
 C0 powin SUB 1.22fF **FLOATING
 C1 gndin SUB 2.64fF
 C2 powin SUB 2.50fF
