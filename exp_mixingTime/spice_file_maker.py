@@ -13,7 +13,7 @@ Xpg4 NPoutA sNoise NPoutB pos_supply neg_supply pgNegPos\n \
 * Phase Circuit \n \
 Xpg5 NPoutA upB upA pos_supply neg_supply pgNeg\n \
 Xpg6 upA outA upB pos_supply neg_supply pgNeg\n \
-v3 pos_supply 0 1.8\n \
+v3 pos_supply 0 SINE(0 1.8 10000000 0 0 0) \n \
 v4 neg_supply 0 0.0\n "
 
 footer = ".control \n \
