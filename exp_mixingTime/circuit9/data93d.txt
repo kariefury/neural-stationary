@@ -3,80 +3,65 @@ Circuit: *pulseloop
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
-Note: Starting dynamic gmin stepping
-Trying gmin =   1.0000E-03 Note: One successful gmin step
-Trying gmin =   1.0000E-04 Note: One successful gmin step
-Trying gmin =   1.0000E-05 Warning: Further gmin increment
-Trying gmin =   5.6234E-05 Note: One successful gmin step
-Trying gmin =   2.3714E-05 Note: One successful gmin step
-Trying gmin =   6.4938E-06 Note: One successful gmin step
-Trying gmin =   9.3057E-07 Note: One successful gmin step
-Trying gmin =   9.3057E-08 Note: One successful gmin step
-Trying gmin =   9.3057E-09 Note: One successful gmin step
-Trying gmin =   9.3057E-10 Note: One successful gmin step
-Trying gmin =   9.3057E-11 Note: One successful gmin step
-Trying gmin =   9.3057E-12 Note: One successful gmin step
-Trying gmin =   2.9427E-12 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
-Note: Dynamic gmin stepping completed
+Warning: v3: no DC value, transient time 0 value used
 
 Initial Transient Solution
 --------------------------
 
 Node                                   Voltage
 ----                                   -------
-pos_supply                                 1.8
-xpg1.reset_loop                            1.8
-xpg1.critical_node                     1.74017
+pos_supply                                   0
+xpg1.reset_loop                   -8.12365e-17
+xpg1.critical_node                -8.80841e-17
 neg_supply                                   0
 snoise                                       0
-outb                               9.68599e-07
-xpg1.invo                          2.45993e-06
-xpg1.xe                                    1.8
-outa                               9.68599e-07
-xpg2.reset_loop                            1.8
-xpg2.critical_node                     1.74017
-xpg2.invo                          2.45993e-06
-xpg2.xe                                    1.8
-xpg3.reset_loop                            1.8
-xpg3.critical_node                     1.74017
-npoutb                             9.68599e-07
-xpg3.invo                          2.45993e-06
-xpg3.xe                                    1.8
-npouta                             9.68599e-07
-xpg4.reset_loop                            1.8
-xpg4.critical_node                         1.8
-xpg4.invo                          9.68599e-07
-xpg4.xe                                    1.8
-xpg5.reset_loop                            1.8
-xpg5.critical_node                     1.74017
-upb                                9.68599e-07
-xpg5.invo                          2.45993e-06
-xpg5.xe                                    1.8
-upa                                9.68599e-07
-xpg6.reset_loop                            1.8
-xpg6.critical_node                     1.74017
-xpg6.invo                          2.45993e-06
-xpg6.xe                                    1.8
+outb                              -8.03416e-17
+xpg1.invo                         -9.97178e-17
+xpg1.xe                           -8.12365e-17
+outa                              -8.20934e-17
+xpg2.reset_loop                   -7.77454e-17
+xpg2.critical_node                -8.26566e-17
+xpg2.invo                         -9.75528e-17
+xpg2.xe                           -7.77454e-17
+xpg3.reset_loop                    4.42443e-15
+xpg3.critical_node                 1.71154e-15
+npoutb                             1.04917e-18
+xpg3.invo                          4.44647e-15
+xpg3.xe                            4.42443e-15
+npouta                             2.18895e-15
+xpg4.reset_loop                      1.586e-19
+xpg4.critical_node                 2.86647e-18
+xpg4.invo                         -4.27022e-20
+xpg4.xe                              1.586e-19
+xpg5.reset_loop                    5.35403e-14
+xpg5.critical_node                 3.93795e-15
+upb                                 9.4555e-14
+xpg5.invo                         -2.60077e-14
+xpg5.xe                            5.35403e-14
+upa                                9.64704e-14
+xpg6.reset_loop                    5.25477e-14
+xpg6.critical_node                 4.57034e-15
+xpg6.invo                         -2.53868e-14
+xpg6.xe                            5.25445e-14
 v2#branch                                    0
-v4#branch                          9.76073e-09
-v3#branch                         -9.76073e-09
+v4#branch                          7.88613e-25
+v3#branch                         -7.88613e-25
 
 
 
-No. of Data Rows : 13526
-responsetimea1      =  2.385532e-09
-responsetimea2      =  2.407648e-09
-responsetimea3      =  4.060336e-09
-responsetimea4      =  4.102247e-09
-responsetimeb1      =  2.470503e-09
-responsetimeb2      =  2.523781e-09
-responsetimeb3      =  4.142332e-09
-responsetimeb4      =  4.201575e-09
-npresponsetimea1    =  2.387515e-09
-npresponsetimea2    =  2.407148e-09
-npresponsetimea3    =  4.061539e-09
-npresponsetimea4    =  4.102511e-09
+No. of Data Rows : 13350
+responsetimea1      =  1.526742e-08
+responsetimea2      =  1.529984e-08
+responsetimea3      =  1.752936e-08
+responsetimea4      =  1.758948e-08
+responsetimeb1      =  9.826368e-09
+responsetimeb2      =  9.864410e-09
+responsetimeb3      =  1.318631e-08
+responsetimeb4      =  1.326889e-08
+npresponsetimea1    =  1.527070e-08
+npresponsetimea2    =  1.529869e-08
+npresponsetimea3    =  1.753337e-08
+npresponsetimea4    =  1.759218e-08
 
 Error: measure  npresponsetimeb1  (WHEN) : out of interval
  meas tran npresponsetimeb1 when v(npoutb)=1.2 cross=1 failed!
@@ -93,18 +78,18 @@ Error: measure  npresponsetimeb3  (WHEN) : out of interval
 Error: measure  npresponsetimeb4  (WHEN) : out of interval
  meas tran npresponsetimeb4 when v(npoutb)=1.2 cross=4 failed!
 
-responsetimeupa1    =  2.490481e-09
-responsetimeupa2    =  2.538609e-09
-responsetimeupa3    =  4.145090e-09
-responsetimeupa4    =  4.204583e-09
-responsetimeupb1    =  2.572049e-09
-responsetimeupb2    =  2.630381e-09
-responsetimeupb3    =  4.228493e-09
-responsetimeupb4    =  4.287101e-09
-tdiff = 1.716715e-09
-iavg                =  -5.037804e-05 from=  2.385532e-09 to=  4.103000e-09
-iavg = -5.03780e-05
-tdiffb = 1.731072e-09
-iavgb               =  -5.745710e-05 from=  2.470503e-09 to=  4.203000e-09
-iavgb = -5.74571e-05
+responsetimeupa1    =  9.824949e-09
+responsetimeupa2    =  9.854879e-09
+responsetimeupa3    =  1.333972e-08
+responsetimeupa4    =  1.339117e-08
+responsetimeupb1    =  9.179740e-09
+responsetimeupb2    =  9.201599e-09
+responsetimeupb3    =  1.014426e-08
+responsetimeupb4    =  1.018756e-08
+tdiff = 2.322060e-09
+iavg                =  -4.833476e-05 from=  1.526742e-08 to=  1.759016e-08
+iavg = -4.83348e-05
+tdiffb = 3.442522e-09
+iavgb               =  -1.273326e-05 from=  9.826368e-09 to=  1.327108e-08
+iavgb = -1.27333e-05
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run
