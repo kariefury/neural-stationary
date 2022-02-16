@@ -3,64 +3,65 @@ Circuit: *pulseloop
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
+Warning: v3: no DC value, transient time 0 value used
 
 Initial Transient Solution
 --------------------------
 
 Node                                   Voltage
 ----                                   -------
-pos_supply                                 1.8
-xpg1.reset_loop                       0.863901
-xpg1.critical_node                    0.863901
+pos_supply                                   0
+xpg1.reset_loop                   -8.12365e-17
+xpg1.critical_node                -8.80841e-17
 neg_supply                                   0
 snoise                                       0
-outb                                  0.863901
-xpg1.invo                             0.863901
-xpg1.xe                               0.863901
-outa                                  0.863901
-xpg2.reset_loop                       0.863901
-xpg2.critical_node                    0.863901
-xpg2.invo                             0.863901
-xpg2.xe                               0.863901
-xpg3.reset_loop                            1.8
-xpg3.critical_node                     1.73839
-npoutb                             9.68599e-07
-xpg3.invo                          2.52675e-06
-xpg3.xe                                    1.8
-npouta                             9.68599e-07
-xpg4.reset_loop                            1.8
-xpg4.critical_node                         1.8
-xpg4.invo                          9.68599e-07
-xpg4.xe                                    1.8
-xpg5.reset_loop                    9.68802e-07
-xpg5.critical_node                    0.387854
-upb                                        1.8
-xpg5.invo                              1.79999
-xpg5.xe                            9.68802e-07
-upa                                        1.8
-xpg6.reset_loop                    9.68666e-07
-xpg6.critical_node                    0.349173
-xpg6.invo                                  1.8
-xpg6.xe                            9.68666e-07
+outb                              -8.03416e-17
+xpg1.invo                         -9.97178e-17
+xpg1.xe                           -8.12365e-17
+outa                              -8.20934e-17
+xpg2.reset_loop                   -7.77454e-17
+xpg2.critical_node                -8.26566e-17
+xpg2.invo                         -9.75528e-17
+xpg2.xe                           -7.77454e-17
+xpg3.reset_loop                    4.42443e-15
+xpg3.critical_node                 1.71154e-15
+npoutb                             1.04917e-18
+xpg3.invo                          4.44647e-15
+xpg3.xe                            4.42443e-15
+npouta                             2.18895e-15
+xpg4.reset_loop                      1.586e-19
+xpg4.critical_node                 2.86647e-18
+xpg4.invo                         -4.27022e-20
+xpg4.xe                              1.586e-19
+xpg5.reset_loop                    5.35403e-14
+xpg5.critical_node                 3.93795e-15
+upb                                 9.4555e-14
+xpg5.invo                         -2.60077e-14
+xpg5.xe                            5.35403e-14
+upa                                9.64704e-14
+xpg6.reset_loop                    5.25477e-14
+xpg6.critical_node                 4.57034e-15
+xpg6.invo                         -2.53868e-14
+xpg6.xe                            5.25445e-14
 v2#branch                                    0
-v4#branch                          0.000389733
-v3#branch                         -0.000389733
+v4#branch                          7.88613e-25
+v3#branch                         -7.88613e-25
 
 
 
-No. of Data Rows : 20442
-responsetimea1      =  1.101230e-08
-responsetimea2      =  1.104460e-08
-responsetimea3      =  1.112605e-08
-responsetimea4      =  1.118705e-08
-responsetimeb1      =  1.103937e-08
-responsetimeb2      =  1.111153e-08
-responsetimeb3      =  1.121166e-08
-responsetimeb4      =  1.127043e-08
-npresponsetimea1    =  1.099518e-08
-npresponsetimea2    =  1.103150e-08
-npresponsetimea3    =  4.895742e-08
-npresponsetimea4    =  4.900275e-08
+No. of Data Rows : 20033
+responsetimea1      =  1.526167e-08
+responsetimea2      =  1.531535e-08
+responsetimea3      =  1.860882e-08
+responsetimea4      =  1.861567e-08
+responsetimeb1      =  1.228133e-08
+responsetimeb2      =  1.237806e-08
+responsetimeb3      =  1.537588e-08
+responsetimeb4      =  1.545410e-08
+npresponsetimea1    =  1.526720e-08
+npresponsetimea2    =  1.531816e-08
+npresponsetimea3    =  1.861602e-08
+npresponsetimea4    =  1.862027e-08
 
 Error: measure  npresponsetimeb1  (WHEN) : out of interval
  meas tran npresponsetimeb1 when v(npoutb)=1.2 cross=1 failed!
@@ -77,42 +78,18 @@ Error: measure  npresponsetimeb3  (WHEN) : out of interval
 Error: measure  npresponsetimeb4  (WHEN) : out of interval
  meas tran npresponsetimeb4 when v(npoutb)=1.2 cross=4 failed!
 
-
-Error: measure  responsetimeupa1  (WHEN) : out of interval
- meas tran responsetimeupa1 when v(upa)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeupa2  (WHEN) : out of interval
- meas tran responsetimeupa2 when v(upa)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeupa3  (WHEN) : out of interval
- meas tran responsetimeupa3 when v(upa)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeupa4  (WHEN) : out of interval
- meas tran responsetimeupa4 when v(upa)=1.2 cross=4 failed!
-
-
-Error: measure  responsetimeupb1  (WHEN) : out of interval
- meas tran responsetimeupb1 when v(upb)=1.2 cross=1 failed!
-
-
-Error: measure  responsetimeupb2  (WHEN) : out of interval
- meas tran responsetimeupb2 when v(upb)=1.2 cross=2 failed!
-
-
-Error: measure  responsetimeupb3  (WHEN) : out of interval
- meas tran responsetimeupb3 when v(upb)=1.2 cross=3 failed!
-
-
-Error: measure  responsetimeupb4  (WHEN) : out of interval
- meas tran responsetimeupb4 when v(upb)=1.2 cross=4 failed!
-
-tdiff = 1.747500e-10
-iavg                =  -5.524635e-04 from=  1.101230e-08 to=  1.119396e-08
-tdiff = 2.310600e-10
-iavg = -5.52463e-04
-iavgb               =  -4.875925e-04 from=  1.103937e-08 to=  1.127676e-08
-iavgb = -4.87592e-04
+responsetimeupa1    =  1.279648e-08
+responsetimeupa2    =  1.280116e-08
+responsetimeupa3    =  1.538297e-08
+responsetimeupa4    =  1.546084e-08
+responsetimeupb1    =  9.258607e-09
+responsetimeupb2    =  9.282550e-09
+responsetimeupb3    =  1.294917e-08
+responsetimeupb4    =  1.303856e-08
+tdiff = 3.354000e-09
+iavg                =  -2.758309e-05 from=  1.526167e-08 to=  1.861682e-08
+iavg = -2.75831e-05
+tdiffb = 3.172770e-09
+iavgb               =  -2.784486e-05 from=  1.228133e-08 to=  1.546000e-08
+iavgb = -2.78449e-05
 Note: No ".plot", ".print", or ".fourier" lines; no simulations run
