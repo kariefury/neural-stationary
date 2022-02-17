@@ -10,13 +10,14 @@ R1 sNoise sNoiseIn "
 header_part_2 = "C1 sNoise neg_supply 10pF \n \
 Xpg1 outA sNoise outB pos_supply neg_supply pgNegPos\n \
 Xpg2 outB outA pos_supply neg_supply pgNeg1\n \
-v3 pos_supply 0 1.8\n \
+v3 pos_supply 0 SINE(0 1.8 10000000 0 0 0) \n \
 v4 neg_supply 0 0.0\n "
 
 footer = ".control \n \
 *plot v(outA) v(outB) v(sNoise)\n \
 *plot i(v3)\n \
 tran 1ps "
+
 
 meas_footer = "ns \n \
 meas tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1 \n \
@@ -27,11 +28,14 @@ meas tran responseTimeB1 WHEN v(outB)=1.2 CROSS=1\n \
 meas tran responseTimeB2 WHEN v(outB)=1.2 CROSS=2\n \
 meas tran responseTimeB3 WHEN v(outB)=1.2 CROSS=3\n \
 meas tran responseTimeB4 WHEN v(outB)=1.2 CROSS=4\n \
-let tdiff = responsetimea4-responsetimea1\n \
-print tdiff\n \
-meas tran iavg avg i(v3) FROM=responsetimea1 TO=responsetimea4 \n \
-print iavg\n "
-
+meas tran iavg_start_to_response_a1 avg i(v3) FROM=0 TO=responsetimea1 \n \
+meas tran iavg_start_to_response_b1 avg i(v3) FROM=0 TO=responsetimeb1 \n \
+meas tran vavg_from_response_a1_to_response_a4 avg v(v3) FROM=responsetimea1 TO=responsetimea4 \n \
+meas tran vavg_from_response_b1_to_response_b4 avg v(v3) FROM=responsetimeb1 TO=responsetimeb4 \n \
+meas tran vavg_from_response_a1_to_response_b1 avg v(v3) FROM=responsetimeb1 TO=responsetimea1 \n \
+meas tran iavg_from_response_a1_to_response_a4 avg i(v3) FROM=responsetimea1 TO=responsetimea4 \n \
+meas tran iavg_from_response_b1_to_response_b4 avg i(v3) FROM=responsetimeb1 TO=responsetimeb4 \n \
+meas tran iavg_from_response_a1_to_response_b1 avg i(v3) FROM=responsetimeb1 TO=responsetimea1 \n "
 
 footer2 = "*quit\n \
 .endc\n \
@@ -173,27 +177,24 @@ filenames = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"]
 std_dev = 0.1
 voltage = 0.1
 name_o_file = "PreLayout/exp_mixing_time_circuit5_"
-shell_script_string = ""
 for n in filenames:
-    i = 10
-    while i < 100000:
-        resistor = str(i)
-        sim_name_o_file = "../" + name_o_file + n +"_"+resistor+".cir"
-        f = open(sim_name_o_file, "w")
-        f.write(header)
-        f.write(str(i) +"\n")
-        f.write(header_part_2)
-        f.write("v2 sNoise 0 dc 0 trrandom (2 2ns 0 "+str(std_dev)+ " " + str(voltage) + ")\n")
-        std_dev += 0.1
-        f.write(footer)
-        f.write(str(30.0/(std_dev*std_dev*2.6)))
-        f.write(meas_footer)
-        #f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")
-        f.write(footer2)
-        cmd_begin = "ngspice -b -o exp_mixingTime/circuit5/data"
-        shell_script_string += cmd_begin + n + "_" + resistor + ".txt " + name_o_file + n + "_" + resistor + ".cir\n"
-        i += 100
+    sim_name_o_file = "../" + name_o_file + n + ".cir"
+    f = open(sim_name_o_file,"w")
+    f.write(header)
+    f.write("v2 sNoise 0 dc 0 trrandom (2 20p 0 "+str(std_dev)+ " " + str(voltage) + ")\n")
+    std_dev += 0.1
+    f.write(footer)
+    f.write(str(30.0/(std_dev*std_dev*2.6)))
+    f.write(meas_footer)
+    #f.write("hardcopy plot1"+n+" v(out)+2 v(sNoise) \n")
+    f.write(footer2)
+
 
 name_o_sh = "run_exp_mixing_time_circuit5.sh"
-f = open(name_o_sh, "w")
-f.write(shell_script_string)
+f = open(name_o_sh,"w")
+q = 0
+for n in filenames:
+    q = 0
+    while q < 100:
+        f.write("ngspice -b -o exp_mixingTime/circuit5/data" +str(q) + n + ".txt "+ name_o_file + n + ".cir\n")
+        q += 1

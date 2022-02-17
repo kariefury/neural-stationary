@@ -4,9 +4,9 @@ import statistics
 import matplotlib.pyplot as plt
 import statistics
 
-paths = ['circuit3/', 'circuit4/', 'circuit6/', 'circuit7/']
+paths = ['circuit2/','circuit3/', 'circuit4/', 'circuit6/', 'circuit7/','circuit9/']
 
-circuit_marker = ["d", "x", "h", "^"]
+circuit_marker = ["|","d", "x", "h", "^","."]
 
 filenames = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"]
 label = {"a": 0.1, "b": 0.2, "c": 0.3, "d": 0.4, "e": 0.5, "f": 0.6, "g": 0.7, "h": 0.8, "i": 0.9, "j": 1.0, "k": 1.1,
@@ -128,12 +128,18 @@ def tau_plot_by_circuit(plot_file_name, paths, title):
             a1_bool = False
             a2_bool = False
             for line in f:
-                if line.startswith('responsetimea1'):
+                mes_label = 'responsetimeb1'
+                if (circuit_label == 'circuit9'):
+                    mes_label = 'responsetimeupb1'
+                if line.startswith(mes_label):
                     line_split = line.split()
                     print("A1", line_split)
                     res_a1 = float(line_split[2]) * 1000000000.0
                     a1_bool = True
-                if line.startswith('responsetimea2'):
+                mes_label = 'responsetimeb2'
+                if (circuit_label == 'circuit9'):
+                    mes_label = 'responsetimeupb2'
+                if line.startswith(mes_label):
                     line_split = line.split()
                     print("A2", line_split)
                     a2_bool = True
@@ -166,6 +172,6 @@ def tau_plot_by_circuit(plot_file_name, paths, title):
                                       plot_file_name)
 
 
-tau_plot_by_circuit('exp_mixing_time_tau_tapa_cross1_tapa_cross2.png',
+tau_plot_by_circuit('exp_mixing_time_tau_tapb_cross1_tapb_cross2.png',
                        paths,
-                       'Tap A, Cross 1 to Cross 2')
+                       'Tap B, Cross 1 to Cross 2')
