@@ -3,81 +3,96 @@ Circuit: *pulseloop
 
 Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
 
+Warning: v3: no DC value, transient time 0 value used
 
 Initial Transient Solution
 --------------------------
 
 Node                                   Voltage
 ----                                   -------
-xpg1.1                                     1.8
-xpg1.reset_loop                            1.8
-xpg1.critical_node                         1.8
-outa                               9.68599e-07
+pos_supply                                   0
+xpg1.reset_loop                    1.14942e-18
+xpg1.critical_node                 4.71161e-19
+neg_supply                                   0
+outa                               2.05213e-15
 snoise                                       0
-xpg1.invo                          9.68599e-07
-xpg1.xe                                    1.8
-outb                               9.68599e-07
-xpg2.1                                     1.8
-xpg2.reset_loop                            1.8
-xpg2.critical_node                     1.78087
-xpg2.invo                          1.31489e-06
-xpg2.xe                                    1.8
+xpg1.invo                          5.90945e-19
+xpg1.xe                            1.14942e-18
+outb                               -8.5387e-20
+xpg2.reset_loop                    4.38596e-15
+xpg2.critical_node                 1.71649e-15
+xpg2.invo                          3.01874e-15
+xpg2.xe                            4.38704e-15
 v2#branch                                    0
-v.xpg2.v1#branch                  -1.18436e-09
-v.xpg1.v1#branch                  -1.01106e-09
+v4#branch                          2.67006e-26
+v3#branch                         -2.67006e-26
 
-doAnalyses: TRAN:  Timestep too small; time = 3.28e-09, timestep = 1.25e-23: trouble with node "xpg1.critical_node"
+doAnalyses: TRAN:  Timestep too small; time = 1.9e-09, timestep = 1.25e-24: trouble with node "xpg1.reset_loop"
 
 
 tran simulation(s) aborted
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Error: measure  responsetimea1  (WHEN) : out of interval
+ meas tran responsetimea1 when v(outa)=1.2 cross=1 failed!
 
 
-  Measurements for Transient Analysis
+Error: measure  responsetimea2  (WHEN) : out of interval
+ meas tran responsetimea2 when v(outa)=1.2 cross=2 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=1 failed!
+Error: measure  responsetimea3  (WHEN) : out of interval
+ meas tran responsetimea3 when v(outa)=1.2 cross=3 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=2 failed!
+Error: measure  responsetimea4  (WHEN) : out of interval
+ meas tran responsetimea4 when v(outa)=1.2 cross=4 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=3 failed!
+Error: measure  responsetimeb1  (WHEN) : out of interval
+ meas tran responsetimeb1 when v(outb)=1.2 cross=1 failed!
 
 
-Error: measure  responsetimea  (WHEN) : out of interval
- .measure tran responsetimea when v(outa)=1.2 cross=4 failed!
+Error: measure  responsetimeb2  (WHEN) : out of interval
+ meas tran responsetimeb2 when v(outb)=1.2 cross=2 failed!
 
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=1 failed!
+Error: measure  responsetimeb3  (WHEN) : out of interval
+ meas tran responsetimeb3 when v(outb)=1.2 cross=3 failed!
 
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=2 failed!
+Error: measure  responsetimeb4  (WHEN) : out of interval
+ meas tran responsetimeb4 when v(outb)=1.2 cross=4 failed!
 
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=3 failed!
+Error: measure  iavg_start_to_response_a1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_a1 avg i(v3) from=0 to=responsetimea1 failed!
 
 
-Error: measure  responsetimeb  (WHEN) : out of interval
- .measure tran responsetimeb when v(outb)=1.2 cross=4 failed!
+Error: measure  iavg_start_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_start_to_response_b1 avg i(v3) from=0 to=responsetimeb1 failed!
 
 
-CPU time since last call: 8.555 seconds.
+Error: measure  vavg_from_response_a1_to_response_a4  (TRIG) : bad syntax of ??
+ meas tran vavg_from_response_a1_to_response_a4 avg v(v3) from=responsetimea1 to=responsetimea4 failed!
 
-Total CPU time: 8.555 seconds.
 
-Total DRAM available = 128860.140625 MB.
-DRAM currently available = 121904.433594 MB.
-Total ngspice program size = 41.359375 MB.
-Resident set size = 26.837891 MB.
-Shared ngspice pages = 1.952148 MB.
-Text (code) pages = 1.597656 MB.
-Stack = 0 bytes.
-Library pages = 24.978516 MB.
+Error: measure  vavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran vavg_from_response_b1_to_response_b4 avg v(v3) from=responsetimeb1 to=responsetimeb4 failed!
 
+
+Error: measure  vavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran vavg_from_response_a1_to_response_b1 avg v(v3) from=responsetimeb1 to=responsetimea1 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_a4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_a4 avg i(v3) from=responsetimea1 to=responsetimea4 failed!
+
+
+Error: measure  iavg_from_response_b1_to_response_b4  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_b1_to_response_b4 avg i(v3) from=responsetimeb1 to=responsetimeb4 failed!
+
+
+Error: measure  iavg_from_response_a1_to_response_b1  (TRIG) : bad syntax of ??
+ meas tran iavg_from_response_a1_to_response_b1 avg i(v3) from=responsetimeb1 to=responsetimea1 failed!
+
+Note: No ".plot", ".print", or ".fourier" lines; no simulations run
