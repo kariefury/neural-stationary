@@ -6,8 +6,6 @@
 header = "*PulseLoop\n \
 .include sky130nm.lib\n \
 * Circuit 5, 2 pulse gate in ring, sNoise input to PMOS\n\
-R1 sNoise sNoiseIn " 
-header_part_2 = "C1 sNoise neg_supply 10pF \n \
 Xpg1 outA sNoise outB pos_supply neg_supply pgNegPos\n \
 Xpg2 outB outA pos_supply neg_supply pgNeg1\n \
 v3 pos_supply 0 SINE(0 1.8 10000000 0 0 0) \n \
