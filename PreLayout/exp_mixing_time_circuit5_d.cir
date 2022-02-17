@@ -2,6 +2,7 @@
  .include sky130nm.lib
  * Circuit 5, 2 pulse gate in ring, sNoise input to PMOS
 Xpg1 outA sNoise outB pos_supply neg_supply pgNegPos
+ C1 sNoise neg_supply 10pF 
  Xpg2 outB outA pos_supply neg_supply pgNeg1
  v3 pos_supply 0 SINE(0 1.8 10000000 0 0 0) 
  v4 neg_supply 0 0.0
@@ -9,7 +10,7 @@ Xpg1 outA sNoise outB pos_supply neg_supply pgNegPos
 .control 
  *plot v(outA) v(outB) v(sNoise)
  *plot i(v3)
- tran 1ps 46.15384615384615ns 
+ tran 1ps 100ns 
  meas tran responseTimeA1 WHEN v(outA)=1.2 CROSS=1 
  meas tran responseTimeA2 WHEN v(outA)=1.2 CROSS=2
  meas tran responseTimeA3 WHEN v(outA)=1.2 CROSS=3
